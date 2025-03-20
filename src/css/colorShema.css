@@ -1,0 +1,146 @@
+:root {
+  --schema-color-background: rgb(245, 245, 245);
+  --schema-color-text: black;
+  --schema-color-shadow: rgb(0, 0, 0, 0.5);
+  --schema-color-text-content: rgb(78, 78, 78);
+
+  /*Header*/
+  --color-header-background: var(--color-main-background);
+  --color-header-text: var(--color-main-title);
+
+  /*Button*/
+  --color-button-background: lightgray;
+  --color-button-text: black;
+
+  /*ButtonImage*/
+  --color-button_image-border: gray;
+  --color-button_image_background: #FFFFFF;
+  --color-button_image_background-hover: #D0D0D0;
+  --color-button_image_text: rgb(15, 115, 225);
+
+  /*Main*/
+  --color-main-background: #F5F5F5;
+  --color-main-title: #333333;
+  --color-main-text: #666666;
+  --color-main-button: #D9D9D9;
+  --color-main-link: #007BFF;
+  --color-main-shadow: #808080;
+  --color-main_card-background: #FFFFFF;
+  --color-main_card-background-hover: #DFDFDF;
+  --color-main_card-text: #333333;
+
+  /*Route*/
+  --color-route-background: #F1F8E9;
+  --color-route-title: #388E3C;
+  --color-route-text: #2E7D32;
+  --color-route-button: #4CAF50;
+  --color-route-link: #1B5E20;
+  --color-route-shadow: #809580;
+  --color-route_card-background: #C8E6C9;
+  --color-route_card-background-hover: #88A689;
+  --color-route_card-text: #2E7D32;
+
+  /*Report*/
+  --color-report-background: #E3F2FD;
+  --color-report-title: #1976D2;
+  --color-report-text: #0D47A1;
+  --color-report-button: #2196F3;
+  --color-report-link: #1565C0;
+  --color-report-shadow: #808095;
+  --color-report_card-background: #BBDEFB;
+  --color-report_card-background-hover: #9BBEDB;
+  --color-report_card-text: #0D47A1;
+
+  /*Event*/
+  --color-event-background: #F5F0FF;
+  --color-event-title: #6A5ACD;
+  --color-event-text: #4B0082;
+  --color-event-button: #8A2BE2;
+  --color-event-link: #7B68EE;
+  --color-event-shadow: #808080;
+  --color-event_card-background: #E6E6FA;
+  --color-event_card-background-hover: #B6B6DA;
+  --color-event_card-text: #483D8B;
+
+  /*Footer*/
+  --color-footer-background: var(--color-main-background);
+  --color-footer-text: var(--color-main-text);
+}
+
+:root[data-theme='dark'] {
+  --schema-color-background: rgb(125, 125, 125);
+  --schema-color-text: white;
+  --schema-color-shadow: rgba(255, 255, 255, 0.5);
+  --schema-color-text-content: rgb(211, 211, 211);
+
+  /*Header*/
+  --color-header-background: var(--color-main-background);
+  --color-header-text: var(--color-main-title);
+
+  /*Button*/
+  --color-button-background: black;
+  --color-button-text: lightgray;
+
+  /*ButtonImage*/
+  --color-button_image-border: gray;
+  --color-button_image_background: rgb(33, 86, 68);
+  --color-button_image_background-hover: #D0D0D0;
+  --color-button_image_text: rgb(154, 194, 239);
+
+  /*Main*/
+  --color-main-background: #1A1A1A;
+  --color-main-title: #E0E0E0;
+  --color-main-text: #B3B3B3;
+  --color-main-button: #333333;
+  --color-main-link: #66A3FF;
+  --color-main-shadow: #808080;
+  --color-main_card-background: #2A2A2A;
+  --color-main_card-background-hover: #4A4A4A;
+  --color-main_card-text: #E0E0E0;
+
+  /*Route*/
+  --color-route-background: #27592D; /*#27592D*/
+  --color-route-title: #A5D6A7;
+  --color-route-text: #C8E6C9;
+  --color-route-button: #66BB6A;
+  --color-route-link: #B2FF59;
+  --color-route-shadow: #002000;
+  --color-route_card-background: #2E7D32;
+  --color-route_card-background-hover: #4E9D52;
+  --color-route_card-text: #E8F5E9;
+
+  /*ReportList*/
+  --color-report_list-background: rgb(100, 100, 100);
+  --color-report_list-text: white;
+
+  /*ReportItem*/
+  --color-report_item-background: rgb(75, 75, 75);
+  --color-report_item-background-hover: rgb(255, 255, 255);
+  --color-report_item-text: var(--schema-color-text);
+
+  /*Report*/
+  --color-report-background: #0D47A1;
+  --color-report-title: #90CAF9;
+  --color-report-text: #E3F2FD;
+  --color-report-button: #42A5F5;
+  --color-report-link: #BBDEFB;
+  --color-report-shadow: #000020;
+  --color-report_card-background: #1976D2;
+  --color-report_card-text: #E3F2FD;
+
+  /*Event*/
+  --color-event-background: #1E1E2F;
+  --color-event-title: #BA55D3;
+  --color-event-text: #E0E0E0;
+  --color-event-button: #9370DB;
+  --color-event-link: #DA70D6;
+  --color-event-shadow: #000000;
+  --color-event_card-background: #2E2E3A;
+  --color-event_card-background-hover: #4E4E5A;
+  --color-event_card-text: #FFFFFF;
+
+  /*Footer*/
+  --color-footer-background: var(--color-main-background);
+  --color-footer-text: var(--color-main-text);
+
+}

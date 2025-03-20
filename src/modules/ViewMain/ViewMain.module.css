@@ -1,0 +1,52 @@
+@import "/src/css/colorShema.css";
+
+.viewMain {
+  padding: 1rem;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.buttonRoute {
+  background-color: var(--color-route_card-background) !important;
+  color: var(--color-route_card-text) !important;
+}
+
+.buttonRoute:hover {
+  background-color: var(--color-route_card-background-hover) !important;
+  box-shadow: var(--color-route-shadow) 0.5rem 0.5rem 0.5rem !important;
+}
+
+.buttonReport {
+  background-color: var(--color-report_card-background) !important;
+  color: var(--color-report_card-text) !important;
+}
+
+.buttonReport:hover {
+  background-color: var(--color-report_card-background-hover) !important;
+  box-shadow: var(--color-report-shadow) 0.5rem 0.5rem 0.5rem !important;
+}
+
+.buttonEvent {
+  background-color: var(--color-event_card-background) !important;
+  color: var(--color-event_card-text) !important;
+}
+
+.buttonEvent:hover {
+  background-color: var(--color-event_card-background-hover) !important;
+  box-shadow: var(--color-event-shadow) 0.5rem 0.5rem 0.5rem !important;
+}
+
+@media screen and (max-width: 650px) {
+  .buttonGroup {
+    align-items: center;
+    flex-direction: column;
+  }
+}

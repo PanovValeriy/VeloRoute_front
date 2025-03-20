@@ -1,0 +1,50 @@
+.eventItem {
+  background-color: var(--color-event_card-background);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 1rem;
+  box-sizing: border-box;
+  padding: 0.25rem;
+}
+
+.eventItemHistory {
+  opacity: 0.25;
+}
+
+.eventItem:hover {
+  background-color: var(--color-event_card-background-hover);
+}
+
+.content {
+  padding: 0.25rem;
+}
+
+.title {
+  font-size: 1.25em;
+  font-weight: bold;
+  text-align: center;
+  color: var(--color-event_card-text);
+}
+
+.param {
+  font-size: 0.75em;
+  color: var(--color-event_card-text);
+}
+
+.photoWrapper {
+  align-self: center;
+  display: flex;
+  flex-direction: column-reverse;
+  border-radius: 1rem;
+  overflow: hidden;
+  max-width: 100%;
+  max-height: 9rem;
+}
+
+.photo {
+  bottom: 0;
+  max-width: 100%;
+  max-height: 100%;
+}
+

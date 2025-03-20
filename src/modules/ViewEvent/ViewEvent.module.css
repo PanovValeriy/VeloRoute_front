@@ -1,0 +1,73 @@
+.viewEvent {
+  background-color: var(--color-event-background);
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-event-title);
+}
+.params {
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.paramsImageWrapper {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.paramsImage {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.eventParams {
+  width: 50%;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  color: var(--color-event-text);
+}
+
+.paragraph {
+  margin: 0.5rem;
+  padding: 0;
+  width: 80%;
+  text-align: justify;
+  font-size: 1.25em;
+}
+
+.photo {
+  max-width: 37rem;
+  box-shadow: 0.625rem 0.3125rem 0.625rem var(--color-event-shadow);
+}
+
+.button {
+  background-color: var(--color-event-button);
+}
+
+@media screen and (max-width: 650px) {
+  .params {
+    flex-wrap: wrap;
+  }
+  .paramsImageWrapper {
+    width: 100%;
+  }
+  .eventParams {
+    width: 100%;
+  }
+  .photo {
+    max-width: 80%;
+  }
+}
+

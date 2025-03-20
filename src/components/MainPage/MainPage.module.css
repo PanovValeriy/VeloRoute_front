@@ -1,0 +1,5 @@
+.mainPage {
+  background-color: var(--color-main-background);
+  max-width: 81rem;
+  margin: auto;
+}

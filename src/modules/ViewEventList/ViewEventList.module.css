@@ -1,0 +1,32 @@
+.viewEventList {
+  background-color: var(--color-event-background);
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-event-title);
+}
+
+.linkItem {
+  text-decoration: none;
+}
+
+.eventList {
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.eventItem {
+  width: 15rem;
+  min-width: 15rem;
+  height: 20rem;
+}
+
+.button {
+  background-color: var(--color-event-button);
+}

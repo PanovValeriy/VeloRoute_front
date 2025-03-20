@@ -1,0 +1,35 @@
+.routeParams {
+  padding: 0.5rem;
+  border-radius: 1rem;
+  box-shadow: 0.5rem 0.5rem 0.5rem var(--color-route-shadow);
+  background-color: var(--color-route_card-background);
+  color: var(--color-route_card-text)
+}
+
+.groupParam {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.param {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+
+}
+
+.paramLabel {
+  font-size: 1em;
+  text-decoration: underline;
+}
+
+.paramValue {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.paramValue > a {
+  color: var(--color-route-link)
+}

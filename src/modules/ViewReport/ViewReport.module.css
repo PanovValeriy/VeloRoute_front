@@ -1,0 +1,42 @@
+.viewReport {
+  background-color: var(--color-report-background);
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-report-title);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  color: var(--color-report-text);
+}
+
+.paragraph {
+  margin: 0.5rem;
+  padding: 0;
+  width: 80%;
+  text-align: justify;
+  font-size: 1.25rem;
+}
+
+.photo {
+  max-width: 37rem;
+  box-shadow: 0.625rem 0.3125rem 0.625rem var(--color-report-shadow);
+}
+
+.button {
+  background-color: var(--color-report-button);
+}
+
+@media screen and (max-width: 650px) {
+  .photo {
+    max-width: 90%;
+  }
+}

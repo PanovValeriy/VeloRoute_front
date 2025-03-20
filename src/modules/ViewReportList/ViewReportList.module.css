@@ -1,0 +1,32 @@
+.viewReportList {
+  background-color: var(--color-report-background);
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-report-title);
+}
+
+.linkItem {
+  text-decoration: none;
+}
+
+.reportList {
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.reportItem {
+  width: 15rem;
+  min-width: 15rem;
+  height: 20rem;
+}
+
+.button {
+  background-color: var(--color-report-button);
+}

@@ -1,0 +1,36 @@
+
+.eventParams {
+  padding: 0.5rem;
+  background-color: var(--color-event_card-background);
+  border-radius: 1rem;
+  box-shadow: 0.5rem 0.5rem 0.5rem var(--color-event-shadow);
+}
+
+.groupParam {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--color-event_card-text)
+}
+
+.param {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  color: var(--color-event_card-text)
+}
+
+.paramLabel {
+  font-size: 1em;
+  text-decoration: underline;
+}
+
+.paramValue {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.paramValue > a {
+  color: var(--color-event-link)
+}

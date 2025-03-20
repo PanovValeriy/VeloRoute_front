@@ -1,0 +1,29 @@
+.header {
+  background-color: var(--color-header-background);
+  display: flex;
+  align-items: center;
+  color: var(--color-header-text);
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  color: var(--color-header-text);
+  font-weight: bold;
+  font-size: 2.5em;
+}
+
+.theme {
+  color: var(--color-header-text);
+}
+
+.button {
+  background-color: var(--color-button-background);
+  color: var(--color-button-text);
+}
+
+@media screen and (max-width: 650px) {
+  .header {
+    flex-wrap: wrap;
+  }
+}

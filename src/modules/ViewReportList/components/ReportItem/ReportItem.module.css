@@ -1,0 +1,44 @@
+.reportItem {
+  background-color: var(--color-report_card-background);
+  color: var(--color-report_card-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 1rem;
+  box-sizing: border-box;
+  padding: 0.25rem;
+}
+
+.reportItem:hover {
+  background-color: var(--color-report_card-background-hover);
+}
+
+.content {
+  padding: 0.25rem;
+}
+
+.title {
+  font-size: 1.25em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.date {
+  font-size: 0.75em;
+}
+
+.photoWrapper {
+  align-self: center;
+  display: flex;
+  flex-direction: column-reverse;
+  border-radius: 1rem;
+  overflow: hidden;
+  max-width: 100%;
+  max-height: 9rem;
+}
+
+.photo {
+  bottom: 0;
+  max-width: 100%;
+  max-height: 100%;
+}
