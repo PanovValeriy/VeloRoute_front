@@ -52,6 +52,10 @@
   box-shadow: 0.625rem 0.3125rem 0.625rem var(--color-event-shadow);
 }
 
+.link {
+  color: var(--color-event-link);
+}
+
 .button {
   background-color: var(--color-event-button);
 }

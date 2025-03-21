@@ -57,6 +57,11 @@
   border-radius: 2rem;
 }
 
+.link {
+  color: var(--color-route-link);
+  font-weight: bold;
+}
+
 .button {
   background-color: var(--color-route-button);
 }

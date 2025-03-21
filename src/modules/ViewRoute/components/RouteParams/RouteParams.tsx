@@ -34,7 +34,7 @@ export default function RouteParams({className, route}: IProps) {
         </div>
       </div>
       <div className={styles.param}>
-        <div className={styles.paramLabel}>Трек с маршрутом:</div>
+        <div className={styles.paramLabel}>Трек маршрута:</div>
         <div className={styles.paramValue}>
           <a href={route.trackFileURL}>{route.name}</a>
         </div>

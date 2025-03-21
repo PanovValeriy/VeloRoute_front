@@ -31,6 +31,10 @@
   box-shadow: 0.625rem 0.3125rem 0.625rem var(--color-report-shadow);
 }
 
+.link {
+  color: var(--color-report-link);
+}
+
 .button {
   background-color: var(--color-report-button);
 }
