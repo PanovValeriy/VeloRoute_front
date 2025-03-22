@@ -31,8 +31,15 @@
   box-shadow: 0.625rem 0.3125rem 0.625rem var(--color-report-shadow);
 }
 
+.map {
+  width: 80%;
+  height: 30rem;
+  border-radius: 2rem;
+}
+
 .link {
   color: var(--color-report-link);
+  font-weight: bold;
 }
 
 .button {
