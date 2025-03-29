@@ -11,7 +11,7 @@ export const dataRouteList: IRoute[] =
     // pavement: {
       asphalt: 5,
       grader: 55,
-      soit: 40,
+      soil: 40,
       jungle: 0,
 //    },
     complexity: {id: 1, name: 'легкий'},
@@ -46,7 +46,7 @@ export const dataRouteList: IRoute[] =
     // pavement: {
       asphalt: 49,
       grader: 14,
-      soit: 35,
+      soil: 35,
       jungle: 2,
 //    },
     complexity: {id: 2, name: 'средний'},
@@ -77,7 +77,7 @@ export const dataRouteList: IRoute[] =
     // pavement: {
       asphalt: 0,
       grader: 0,
-      soit: 0,
+      soil: 0,
       jungle: 0,
 //    },
     complexity: {id: 1, name: 'легкий'},
@@ -94,7 +94,7 @@ export const dataRouteList: IRoute[] =
     // pavement: {
       asphalt: 0,
       grader: 0,
-      soit: 0,
+      soil: 0,
       jungle: 0,
 //    },
     complexity: {id: 1, name: 'легкий'},
@@ -111,7 +111,7 @@ export const dataRouteList: IRoute[] =
     // pavement: {
       asphalt: 0,
       grader: 0,
-      soit: 0,
+      soil: 0,
       jungle: 0,
 //    },
     complexity: {id: 1, name: 'легкий'},
@@ -128,7 +128,7 @@ export const dataRouteList: IRoute[] =
     // pavement: {
       asphalt: 0,
       grader: 0,
-      soit: 0,
+      soil: 0,
       jungle: 0,
 //    },
     complexity: {id: 1, name: 'легкий'},
@@ -145,7 +145,7 @@ export const dataRouteList: IRoute[] =
     // pavement: {
       asphalt: 0,
       grader: 0,
-      soit: 0,
+      soil: 0,
       jungle: 0,
 //    },
     complexity: {id: 1, name: 'легкий'},
@@ -162,7 +162,7 @@ export const dataRouteList: IRoute[] =
     // pavement: {
       asphalt: 0,
       grader: 0,
-      soit: 0,
+      soil: 0,
       jungle: 0,
 //    },
     complexity: {id: 2, name: 'средний'},
@@ -179,7 +179,7 @@ export const dataRouteList: IRoute[] =
     // pavement: {
       asphalt: 0,
       grader: 0,
-      soit: 0,
+      soil: 0,
       jungle: 0,
 //    },
     complexity: {id: 1, name: 'легкий'},
@@ -196,7 +196,7 @@ export const dataRouteList: IRoute[] =
     // pavement: {
       asphalt: 0,
       grader: 0,
-      soit: 0,
+      soil: 0,
       jungle: 0,
 //    },
     complexity: {id: 1, name: 'легкий'},
@@ -213,7 +213,7 @@ export const dataRouteList: IRoute[] =
     // pavement: {
       asphalt: 0,
       grader: 0,
-      soit: 0,
+      soil: 0,
       jungle: 0,
 //    },
     complexity: {id: 1, name: 'легкий'},
@@ -230,7 +230,7 @@ export const dataRouteList: IRoute[] =
     // pavement: {
       asphalt: 0,
       grader: 0,
-      soit: 0,
+      soil: 0,
       jungle: 0,
 //    },
     complexity: {id: 1, name: 'легкий'},
@@ -247,7 +247,7 @@ export const dataRouteList: IRoute[] =
     // pavement: {
       asphalt: 0,
       grader: 0,
-      soit: 0,
+      soil: 0,
       jungle: 0,
 //    },
     complexity: {id: 2, name: 'средний'},
@@ -264,7 +264,7 @@ export const dataRouteList: IRoute[] =
     // pavement: {
       asphalt: 0,
       grader: 0,
-      soit: 0,
+      soil: 0,
       jungle: 0,
 //    },
     complexity: {id: 2, name: 'средний'},
@@ -281,7 +281,7 @@ export const dataRouteList: IRoute[] =
     // pavement: {
       asphalt: 0,
       grader: 0,
-      soit: 0,
+      soil: 0,
       jungle: 0,
 //    },
     complexity: {id: 1, name: 'легкий'},
@@ -298,7 +298,7 @@ export const dataRouteList: IRoute[] =
     // pavement: {
       asphalt: 0,
       grader: 0,
-      soit: 0,
+      soil: 0,
       jungle: 0,
 //    },
     complexity: {id: 1, name: 'легкий'},
@@ -315,7 +315,7 @@ export const dataRouteList: IRoute[] =
     // pavement: {
       asphalt: 0,
       grader: 0,
-      soit: 0,
+      soil: 0,
       jungle: 0,
 //    },
     complexity: {id: 2, name: 'средний'},
@@ -332,7 +332,7 @@ export const dataRouteList: IRoute[] =
     // pavement: {
       asphalt: 0,
       grader: 0,
-      soit: 0,
+      soil: 0,
       jungle: 0,
 //    },
     complexity: {id: 2, name: 'средний'},
@@ -349,7 +349,7 @@ export const dataRouteList: IRoute[] =
     // pavement: {
       asphalt: 0,
       grader: 0,
-      soit: 0,
+      soil: 0,
       jungle: 0,
 //    },
     complexity: {id: 1, name: 'легкий'},
@@ -366,7 +366,7 @@ export const dataRouteList: IRoute[] =
     // pavement: {
       asphalt: 0,
       grader: 0,
-      soit: 0,
+      soil: 0,
       jungle: 0,
 //    },
     complexity: {id:3, name:'сложный'},
@@ -383,7 +383,7 @@ export const dataRouteList: IRoute[] =
   //   // pavement: {
   //     asphalt: 0,
   //     grader: 0,
-  //     soit: 0,
+  //     soil: 0,
   //     jungle: 0,
   //   },
   //   complexity: '',

@@ -50,7 +50,7 @@ export interface IRoute {
   complexity: IComplexity;// сложность
   asphalt: number;        // асфальт
   grader: number;         // грейдер
-  soit: number;           // грунт
+  soil: number;           // грунт
   jungle: number;         // дебри
 }
 
@@ -64,7 +64,7 @@ export interface IRouteShort {
   complexity: IComplexity;// сложность
   asphalt: number;        // асфальт
   grader: number;         // грейдер
-  soit: number;           // грунт
+  soil: number;           // грунт
   jungle: number;         // дебри
 }
 

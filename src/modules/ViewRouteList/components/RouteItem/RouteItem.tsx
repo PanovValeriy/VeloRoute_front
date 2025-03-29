@@ -28,7 +28,7 @@ export default function RouteItem({classname, route}: IProps) {
           <ul className={styles.pavementList}>
             <li>асфальт: {route.asphalt}%</li>
             <li>грейдер: {route.grader}%</li>
-            <li>грунт: {route.soit}%</li>
+            <li>грунт: {route.soil}%</li>
             <li>дебри: {route.jungle}%</li>
           </ul>
         </div>

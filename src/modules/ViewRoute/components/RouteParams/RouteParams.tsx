@@ -20,7 +20,7 @@ export default function RouteParams({className, route}: IProps) {
       </div>
       <div className={styles.param}>
         <div className={styles.paramLabel}>Характер покрытия:</div>
-        <div className={styles.paramValue}>асфальт:{route.asphalt}%, грейдер:{route.grader}%, грунт:{route.soit}%, дебри:{route.jungle}%</div>
+        <div className={styles.paramValue}>асфальт:{route.asphalt}%, грейдер:{route.grader}%, грунт:{route.soil}%, дебри:{route.jungle}%</div>
       </div>
       <div className={styles.param}>
         <div className={styles.paramLabel}>Сложность маршрута:</div>

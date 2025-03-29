@@ -1,9 +1,4 @@
 :root {
-  --schema-color-background: rgb(245, 245, 245);
-  --schema-color-text: black;
-  --schema-color-shadow: rgb(0, 0, 0, 0.5);
-  --schema-color-text-content: rgb(78, 78, 78);
-
   /*Header*/
   --color-header-background: var(--color-main-background);
   --color-header-text: var(--color-main-title);
@@ -68,11 +63,6 @@
 }
 
 :root[data-theme='dark'] {
-  --schema-color-background: rgb(125, 125, 125);
-  --schema-color-text: white;
-  --schema-color-shadow: rgba(255, 255, 255, 0.5);
-  --schema-color-text-content: rgb(211, 211, 211);
-
   /*Header*/
   --color-header-background: var(--color-main-background);
   --color-header-text: var(--color-main-title);
