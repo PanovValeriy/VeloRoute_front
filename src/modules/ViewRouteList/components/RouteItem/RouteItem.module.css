@@ -1,21 +1,3 @@
-.routeItem {
-  background-color: var(--color-route_card-background);
-  color: var(--color-route_card-text);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-radius: 1rem;
-  box-sizing: border-box;
-  padding: 0.25rem;
-  border: var(--color-button_image-border) 0.125rem solid;
-  transition: background-color 1s, border-color 0.25s;
-}
-
-.routeItem:hover {
-  background-color: var(--color-route_card-background-hover);
-  border-color: transparent;
-}
-
 .content {
   padding: 0.25rem;
 }

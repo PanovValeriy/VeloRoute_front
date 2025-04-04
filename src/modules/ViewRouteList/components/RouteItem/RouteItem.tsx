@@ -1,18 +1,14 @@
 import styles from './RouteItem.module.css'
 import {IRouteShort} from "../../../../types/types";
-import cn from "classnames";
 
 interface IProps {
-  classname?: string;
   route: IRouteShort;
 }
 
-export default function RouteItem({classname, route}: IProps) {
-
-  const cnRouteItem = cn(styles.routeItem, classname)
+export default function RouteItem({route}: IProps) {
 
   return (
-    <div className={cnRouteItem}>
+    <>
       <div className={styles.content}>
         <div className={styles.title}>
           {route.name}
@@ -36,6 +32,6 @@ export default function RouteItem({classname, route}: IProps) {
       <div className={styles.photoWrapper}>
         <img className={styles.photo} src={route.photoURL} alt=""/>
       </div>
-    </div>
+    </>
   )
 }

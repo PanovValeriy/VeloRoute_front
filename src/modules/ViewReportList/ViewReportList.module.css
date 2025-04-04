@@ -14,19 +14,16 @@
   text-decoration: none;
 }
 
-.reportList {
-  padding: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.reportItem {
-  width: 15rem;
-  min-width: 15rem;
-  height: 20rem;
-}
-
 .button {
   background-color: var(--color-report-button);
 }
+
+.reportItem {
+  background-color: var(--color-report_card-background);
+  color: var(--color-report_card-text);
+}
+
+.reportItem:hover {
+  background-color: var(--color-report_card-background-hover);
+}
+

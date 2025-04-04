@@ -81,9 +81,10 @@ export default function Content({pStyles, body}: IPros) {
               >
                 {label}
               </a>
+              {p.slice(linkEnd+7, p.length)}
             </p>
           )
-          pStart = linkEnd + 7
+          pStart = p.length
         }
       }
 

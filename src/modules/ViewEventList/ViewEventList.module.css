@@ -14,19 +14,18 @@
   text-decoration: none;
 }
 
-.eventList {
-  padding: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+.button {
+  background-color: var(--color-event-button);
 }
 
 .eventItem {
-  width: 15rem;
-  min-width: 15rem;
-  height: 20rem;
+  background-color: var(--color-event_card-background);
 }
 
-.button {
-  background-color: var(--color-event-button);
+.eventItemHistory {
+  opacity: 0.5;
+}
+
+.eventItem:hover {
+  background-color: var(--color-event_card-background-hover);
 }

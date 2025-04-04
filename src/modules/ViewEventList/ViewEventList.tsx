@@ -3,6 +3,10 @@ import EventItem from "./components/EventItem/EventItem";
 import {Link} from "react-router-dom";
 import {useLazyGetEventListQuery} from "../../store/services/eventApi";
 import {useEffect} from "react";
+import CardItem from "../../components/CardItem/CardItem";
+import cn from "classnames";
+import dayjs from "dayjs";
+import CardList from "../../components/CardList/CardList";
 
 export default function ViewEventList() {
 
@@ -20,13 +24,15 @@ export default function ViewEventList() {
     <div className={styles.viewEventList}>
       <Link to={"/"}><button className={styles.button}>На главную</button></Link>
       <div className={styles.title}>События</div>
-      <div className={styles.eventList}>
+      <CardList>
         {data!.eventList.map((event, idx) => (
           <Link key={idx} className={styles.linkItem} to={"/event/"+event.id}>
-            <EventItem classname={styles.eventItem} key={idx} event={event}/>
+            <CardItem className={cn(styles.eventItem, (dayjs(event.startDateTime) < dayjs(Date())) ? styles.eventItemHistory : null)}>
+              <EventItem key={idx} event={event}/>
+            </CardItem>
           </Link>
         ))}
-      </div>
+      </CardList>
       <Link to={"/"}><button className={styles.button}>На главную</button></Link>
     </div>
   )

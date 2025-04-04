@@ -14,19 +14,16 @@
   text-decoration: none;
 }
 
-.routeList {
-  padding: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+.button {
+  background-color: var(--color-route-button);
 }
 
 .routeItem {
-  width: 15rem;
-  min-width: 15rem;
-  height: 20rem;
+  background-color: var(--color-route_card-background);
+  color: var(--color-route_card-text);
+  border: var(--color-button_image-border) 0.125rem solid;
 }
 
-.button {
-  background-color: var(--color-route-button);
+.routeItem:hover {
+  background-color: var(--color-route_card-background-hover);
 }

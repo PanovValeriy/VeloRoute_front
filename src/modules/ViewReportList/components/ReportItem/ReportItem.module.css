@@ -1,18 +1,3 @@
-.reportItem {
-  background-color: var(--color-report_card-background);
-  color: var(--color-report_card-text);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-radius: 1rem;
-  box-sizing: border-box;
-  padding: 0.25rem;
-}
-
-.reportItem:hover {
-  background-color: var(--color-report_card-background-hover);
-}
-
 .content {
   padding: 0.25rem;
 }

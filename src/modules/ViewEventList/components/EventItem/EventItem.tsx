@@ -1,22 +1,15 @@
 import styles from './EventItem.module.css'
-import cn from 'classnames'
 import {IEventShort} from "../../../../types/types";
 import dayjs from "dayjs";
 
 interface IProps {
-  classname?: string,
   event: IEventShort,
 }
 
-export default function EventItem({classname, event}: IProps) {
-
-  let cnEventItem = cn(styles.eventItem, classname)
-  if (dayjs(event.startDateTime) < dayjs(Date())) {
-    cnEventItem = cn(cnEventItem, styles.eventItemHistory)
-  }
+export default function EventItem({event}: IProps) {
 
   return (
-    <div className={cnEventItem}>
+    <>
       <div className={styles.content}>
         <div className={styles.title}>
           {event.name}
@@ -43,6 +36,6 @@ export default function EventItem({classname, event}: IProps) {
       <div className={styles.photoWrapper}>
         <img className={styles.photo} src={event.photoURL} alt=""/>
       </div>
-    </div>
+    </>
   )
 }

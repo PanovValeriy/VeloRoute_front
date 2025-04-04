@@ -1,0 +1,16 @@
+.cardItem {
+  width: 15rem;
+  min-width: 15rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 1rem;
+  box-sizing: border-box;
+  padding: 0.25rem;
+  transition: background-color 1s, border-color 0.25s;
+}
+
+.cardItem:hover {
+  border-color: transparent;
+}

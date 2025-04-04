@@ -3,6 +3,8 @@ import RouteItem from "./components/RouteItem/RouteItem";
 import {Link, useSearchParams} from "react-router-dom";
 import {IRouteListParam, useLazyGetRouteListQuery} from "../../store/services/routeApi";
 import {useEffect, useMemo} from "react";
+import CardItem from "../../components/CardItem/CardItem";
+import CardList from "../../components/CardList/CardList";
 
 export default function ViewRouteList() {
 
@@ -27,13 +29,15 @@ export default function ViewRouteList() {
     <div className={styles.viewRouteList}>
       <Link to={"/"}><button className={styles.button}>На главную</button></Link>
       <div className={styles.title}>Список маршрутов</div>
-        <div className={styles.routeList}>
+        <CardList>
           {data!.routeList.map((route, idx) => (
             <Link key={idx} className={styles.linkItem} to={"/route/"+route.id.toString()}>
-              <RouteItem classname={styles.routeItem} route={route} />
+              <CardItem className={styles.routeItem}>
+                <RouteItem route={route} />
+              </CardItem>
             </Link>
           ))}
-        </div>
+        </CardList>
        <Link to={"/"}><button className={styles.button}>На главную</button></Link>
     </div>
   )
