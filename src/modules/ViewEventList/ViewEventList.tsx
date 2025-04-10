@@ -28,7 +28,7 @@ export default function ViewEventList() {
     if (page !== 1 && pageSize === param.limit) {
       urlParam.append('page', page)
     }
-    if (pageSize !== 0) {
+    if (pageSize !== eventDefault.limit) {
       urlParam.append('limit', pageSize)
     }
     if (param.search !== '') {

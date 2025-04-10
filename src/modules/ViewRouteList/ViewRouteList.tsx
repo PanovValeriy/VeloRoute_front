@@ -5,9 +5,9 @@ import {IRouteListParam, useLazyGetRouteListQuery} from "../../store/services/ro
 import {useEffect, useMemo} from "react";
 import CardItem from "../../components/CardItem/CardItem";
 import CardList from "../../components/CardList/CardList";
-import Pagination from "../../components/Pagination/Pagination";
 // import SearchPanel from "./components/SearchPanel/SearchPanel";
 import {routeDefault} from "../../constants";
+import Pagination from "../../components/Pagination/Pagination";
 
 export default function ViewRouteList() {
 
@@ -26,7 +26,7 @@ export default function ViewRouteList() {
     if (page !== 1 && pageSize === param.limit) {
       urlParam.append('page', page)
     }
-    if (pageSize !== 0) {
+    if (pageSize !== routeDefault.limit) {
       urlParam.append('limit', pageSize)
     }
     if (param.search !== '') {
