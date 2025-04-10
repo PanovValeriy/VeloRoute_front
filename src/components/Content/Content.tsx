@@ -66,7 +66,7 @@ export default function Content({pStyles, body}: IPros) {
           let url = p.slice(linkStart + 6, linkEnd)
           const labelStart = url.indexOf('[LABEL]')
           const labelEnd = url.indexOf('[/LABEL]', labelStart)
-          if (labelStart != -1 && labelEnd > labelStart) {
+          if (labelStart !== -1 && labelEnd > labelStart) {
             label = url.slice(labelStart + 7, labelEnd)
             url = url.slice(labelEnd + 8,url.length)
           }

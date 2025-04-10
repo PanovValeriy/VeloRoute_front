@@ -27,3 +27,9 @@
 .routeItem:hover {
   background-color: var(--color-route_card-background-hover);
 }
+
+.pagination {
+  --color-pagination_page-text: var(--color-route-text);
+  --color-pagination-active_page-background: var(--color-route-button);
+  --color-pagination-active_page-text: var(--color-button-text);
+}

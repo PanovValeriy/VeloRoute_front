@@ -1,0 +1,29 @@
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  gap: 0.625rem;
+  background-color: var(--color-pagination-background);
+}
+
+.buttonPage {
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0.25rem 0.5rem;
+  gap: 0.25rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  background-color: var(--color-pagination_page-backgroud);
+  color: var(--color-pagination_page-text);
+  border: var(--color-pagination_page-border) 0.0625rem solid;
+}
+
+.buttonPageActive {
+  cursor: default;
+  background-color: var(--color-pagination-active_page-background);
+  color: var(--color-pagination-active_page-text);
+  border: var(--color-pagination-active_page-border) 0.0625rem solid;
+}

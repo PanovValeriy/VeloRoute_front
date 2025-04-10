@@ -13,6 +13,15 @@
   --color-button_image_background-hover: #D0D0D0;
   --color-button_image_text: rgb(15, 115, 225);
 
+  /*Pagination*/
+  --color-pagination-background: transparent;
+  --color-pagination_page-backgroud: transparent;
+  --color-pagination_page-text: #459df5;
+  --color-pagination_page-border: transparent;
+  --color-pagination-active_page-background: #459df5;
+  --color-pagination-active_page-text: #ffffff;
+  --color-pagination-active_page-border: transparent;
+
   /*Main*/
   --color-main-background: #F5F5F5;
   --color-main-title: #333333;
@@ -76,6 +85,16 @@
   --color-button_image_background: rgb(33, 86, 68);
   --color-button_image_background-hover: #D0D0D0;
   --color-button_image_text: rgb(154, 194, 239);
+
+  /*Pagination*/
+  --color-pagination-background: transparent;
+  --color-pagination_page-background: transparent;
+  --color-pagination_page-text: #459df5;
+  --color-pagination_page-border: transparent;
+  --color-pagination-active_page-background: #459df5;
+  --color-pagination-active_page-text: #2b2d33;
+  --color-pagination-active_page-border: transparent;
+
 
   /*Main*/
   --color-main-background: #1A1A1A;
