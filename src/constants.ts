@@ -5,6 +5,7 @@ export const API_SERVER = `${SERVER}api/`
 
 export const routeDefault = {
   limit: 10,
+  sort: 'name',
 }
 
 export const eventDefault = {
