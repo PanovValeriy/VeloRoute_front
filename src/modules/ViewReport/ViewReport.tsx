@@ -25,12 +25,10 @@ export default function ViewReport() {
     )
   }
 
-
-
   return (
     <div className={styles.viewReport}>
       <button className={styles.button} onClick={() => navigate(-1)}>Назад</button>
-      <div className={styles.title}>{report.name}</div>
+      <div className={styles.title}>Отчет "{report.name}"</div>
       <div className={styles.body}>
         <Content pStyles={styles} body={report.body} />
       </div>

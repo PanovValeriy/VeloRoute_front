@@ -28,7 +28,7 @@ export default function ViewEvent() {
   return (
     <div className={styles.viewEvent}>
       <button className={styles.button} onClick={() => navigate(-1)}>Назад</button>
-      <div className={styles.title}>{event.name} - ({dayjs(event.startDateTime).format('DD.MM.YYYY')})</div>
+      <div className={styles.title}>Событие "{event.name}" ({dayjs(event.startDateTime).format('DD.MM.YYYY')})</div>
 
       <div className={styles.params}>
         <div className={styles.paramsImageWrapper}>
