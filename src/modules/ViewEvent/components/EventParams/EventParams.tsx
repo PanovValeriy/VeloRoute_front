@@ -15,6 +15,13 @@ export default function EventParams({className, event}: IProps) {
   return (
     <div className={cnEventParams}>
       <div className={styles.groupParam}>Параметры маршрута</div>
+      {(event.route)
+        ? <div className={styles.param}>
+            <div className={styles.paramLabel}>Маршрут взятый за основу:</div>
+            <div className={styles.paramValue}><a href={`/route/${event.route?.id}`}>{event.route?.name}</a></div>
+          </div>
+        : null
+      }
       <div className={styles.param}>
         <div className={styles.paramLabel}>Протяженность маршрута:</div>
         <div className={styles.paramValue}>{event.length}км</div>
