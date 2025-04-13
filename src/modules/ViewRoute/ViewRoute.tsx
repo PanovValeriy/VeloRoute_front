@@ -27,6 +27,7 @@ export default function ViewRoute() {
 
   return (
     <div className={styles.viewRoute}>
+      <button className={styles.button} onClick={() => navigate(-1)}>Назад</button>
       <div className={styles.title}>Маршрут "{route.name}"</div>
       <div className={styles.params}>
         <div className={styles.paramsImageWrapper}>
