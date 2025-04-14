@@ -1,6 +1,6 @@
 import styles from "./SearchPanel.module.css"
 import cn from "classnames"
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Select from "../Select/Select";
 
 interface IProps {
@@ -27,11 +27,11 @@ export default function SearchPanel({className, fields, search='', lengthFrom=0,
   }
 
   function handleChangeLengthFrom({target:{value}}: React.ChangeEvent<HTMLInputElement>): void {
-    setLengthFromValue(parseInt(value))
+    setLengthFromValue(parseInt(value) || 0)
   }
 
   function handleChangeLengthTo({target:{value}}: React.ChangeEvent<HTMLInputElement>): void {
-    setLengthToValue(parseInt(value))
+    setLengthToValue(parseInt(value) || 0)
   }
 
   function handleChangeComplexity({target:{value}}: React.ChangeEvent<HTMLSelectElement>): void {
@@ -39,7 +39,13 @@ export default function SearchPanel({className, fields, search='', lengthFrom=0,
   }
 
   function handleClickApply(): void {
-    onApply(searchValue, lengthFromValue, lengthToValue, complexityValue)
+    onApply(searchValue, lengthFromValue || 0, lengthToValue || 0, complexityValue)
+  }
+
+  function handleKeyDown(evt: React.KeyboardEvent<HTMLInputElement>): void {
+    if (evt.code === 'Enter' || evt.code === 'NumpadEnter') {
+      handleClickApply()
+    }
   }
 
   function handleClickClear(): void {
@@ -50,12 +56,16 @@ export default function SearchPanel({className, fields, search='', lengthFrom=0,
     onApply('', 0, 0, 0)
   }
 
+  useEffect(() => {
+    handleClickApply()
+  }, [complexityValue])
+
   return (
     <div className={cnSearchPanel}>
       {(fields.indexOf('search') !== -1)
         ? <>
             <div>Строка поиска</div>
-            <input type="text" value={searchValue} onChange={handleChangeSearch} />
+            <input type="text" value={searchValue} onChange={handleChangeSearch} onKeyDown={handleKeyDown} />
           </>
         : null
       }
@@ -63,9 +73,9 @@ export default function SearchPanel({className, fields, search='', lengthFrom=0,
         ? <>
             <div>Протяженность</div>
             <div>от</div>
-            <input type="number" value={lengthFromValue} onChange={handleChangeLengthFrom} />
+            <input type="number" value={lengthFromValue.toString()} onChange={handleChangeLengthFrom} onKeyDown={handleKeyDown} />
             <div>до</div>
-            <input type="number" value={lengthToValue} onChange={handleChangeLengthTo} />
+            <input type="number" value={lengthToValue.toString()} onChange={handleChangeLengthTo} onKeyDown={handleKeyDown} />
         </>
         : null
       }
