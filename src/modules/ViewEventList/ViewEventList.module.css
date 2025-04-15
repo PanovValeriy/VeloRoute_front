@@ -18,6 +18,21 @@
   background-color: var(--color-event-button);
 }
 
+.eventList {
+  display: flex;
+  align-self: flex-start;
+}
+
+.eventParam {
+  height: 100%;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  background-color: var(--color-event_card-background);
+  border-radius: 0.5rem;
+}
+
 .eventItem {
   background-color: var(--color-event_card-background);
 }

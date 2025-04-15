@@ -19,16 +19,19 @@ interface IProps {
   lengthTo?: number;
   complexityList?: {value: number, label: string}[];
   complexity?: number;
+  hideArchive?: boolean;
   onApply: (param: IOnApplySearch) => void;
 }
 
-export default function SearchPanel({className, fields, search='', lengthFrom=0, lengthTo=0, complexityList=[], complexity=0, onApply}: IProps) {
+export default function SearchPanel({className, fields, search='', lengthFrom=0, lengthTo=0, complexityList=[], complexity=0, hideArchive=false, onApply}: IProps) {
 
   const [searchValue, setSearchValue] = useState<string>(search)
   const [lengthFromValue, setLengthFromValue] = useState<number>(lengthFrom)
   const [lengthToValue, setLengthToValue] = useState<number>(lengthTo)
   const [complexityValue, setComplexityValue] = useState<number>(complexity)
+  const [hideArchiveValue, setHideArchiveValue] = useState<boolean>(hideArchive)
   const cnSearchPanel = cn(styles.searchPanel, className)
+
 
   function handleChangeSearch({target:{value}}: React.ChangeEvent<HTMLInputElement>): void {
     setSearchValue(value)
@@ -46,8 +49,12 @@ export default function SearchPanel({className, fields, search='', lengthFrom=0,
     setComplexityValue(parseInt(value))
   }
 
+  function handleChangeHideArchive({target: {checked}}: React.ChangeEvent<HTMLInputElement>): void {
+    setHideArchiveValue(checked)
+  }
+
   function handleClickApply(): void {
-    onApply({search: searchValue, lengthFrom: (lengthFromValue || 0), lengthTo: (lengthToValue || 0), complexity: complexityValue})
+    onApply({search: searchValue, lengthFrom: (lengthFromValue || 0), lengthTo: (lengthToValue || 0), complexity: complexityValue, hideArchive: hideArchiveValue})
   }
 
   function handleKeyDown(evt: React.KeyboardEvent<HTMLInputElement>): void {
@@ -61,12 +68,13 @@ export default function SearchPanel({className, fields, search='', lengthFrom=0,
     setLengthFromValue(0)
     setLengthToValue(0)
     setComplexityValue(0)
-    onApply({search: '', lengthFrom: 0, lengthTo: 0, complexity: 0})
+    setHideArchiveValue(false)
+    onApply({search: '', lengthFrom: 0, lengthTo: 0, complexity: 0, hideArchive: false})
   }
 
   useEffect(() => {
     handleClickApply()
-  }, [complexityValue])
+  }, [complexityValue, hideArchiveValue])
 
   return (
     <div className={cnSearchPanel}>
@@ -91,6 +99,13 @@ export default function SearchPanel({className, fields, search='', lengthFrom=0,
         ? <>
             <div>Сложность</div>
             <Select options={complexityList?.map(item => ({value: item.value.toString(), label: item.label}))} value={complexityValue.toString()} onChange={handleChangeComplexity} />
+          </>
+        : null
+      }
+      {(fields.indexOf('hideArchive') !== -1)
+        ? <>
+            <div>Прошедшие события</div>
+            <label>Скрыть <input type="checkbox" checked={hideArchiveValue} onChange={handleChangeHideArchive}/></label>
           </>
         : null
       }
