@@ -8,7 +8,7 @@ import CardList from "../../components/CardList/CardList";
 import Pagination from "../../components/Pagination/Pagination";
 import {reportDefault, routeDefault} from "../../constants";
 import SortPanel from "../../components/SortPanel/SortPanel";
-import SearchPanel from "../../components/SearchPanel/SearchPanel";
+import SearchPanel, {IOnApplySearch} from "../../components/SearchPanel/SearchPanel";
 
 const sortList = [
   {value: 'name', label: 'по возрастанию названия'},
@@ -50,7 +50,7 @@ export default function ViewReportList() {
     navigate(`/reports?${urlParam}`)
   }
 
-  function handleApplySearch(search: string): void {
+  function handleApplySearch({search= ''}: IOnApplySearch): void {
     const urlParam: Record<string, any> = new URLSearchParams()
     if (param.limit !== routeDefault.limit) {
       urlParam.append('limit', param.limit)

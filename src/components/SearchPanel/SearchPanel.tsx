@@ -3,6 +3,14 @@ import cn from "classnames"
 import React, {useEffect, useState} from "react";
 import Select from "../Select/Select";
 
+export interface IOnApplySearch {
+  search?: string,
+  lengthFrom?:number,
+  lengthTo?: number,
+  complexity?: number,
+  hideArchive?: boolean,
+}
+
 interface IProps {
   className?: string;
   fields: string[];
@@ -11,7 +19,7 @@ interface IProps {
   lengthTo?: number;
   complexityList?: {value: number, label: string}[];
   complexity?: number;
-  onApply: (search: string, lengthFrom:number, lengthTo: number, complexity: number) => void;
+  onApply: (param: IOnApplySearch) => void;
 }
 
 export default function SearchPanel({className, fields, search='', lengthFrom=0, lengthTo=0, complexityList=[], complexity=0, onApply}: IProps) {
@@ -39,7 +47,7 @@ export default function SearchPanel({className, fields, search='', lengthFrom=0,
   }
 
   function handleClickApply(): void {
-    onApply(searchValue, lengthFromValue || 0, lengthToValue || 0, complexityValue)
+    onApply({search: searchValue, lengthFrom: (lengthFromValue || 0), lengthTo: (lengthToValue || 0), complexity: complexityValue})
   }
 
   function handleKeyDown(evt: React.KeyboardEvent<HTMLInputElement>): void {
@@ -53,7 +61,7 @@ export default function SearchPanel({className, fields, search='', lengthFrom=0,
     setLengthFromValue(0)
     setLengthToValue(0)
     setComplexityValue(0)
-    onApply('', 0, 0, 0)
+    onApply({search: '', lengthFrom: 0, lengthTo: 0, complexity: 0})
   }
 
   useEffect(() => {

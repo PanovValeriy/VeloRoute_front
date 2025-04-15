@@ -5,7 +5,7 @@ import {IRouteListParam, useLazyGetRouteListQuery} from "../../store/services/ro
 import React, {useEffect, useMemo, useState} from "react";
 import CardItem from "../../components/CardItem/CardItem";
 import CardList from "../../components/CardList/CardList";
-import SearchPanel from "../../components/SearchPanel/SearchPanel";
+import SearchPanel, {IOnApplySearch} from "../../components/SearchPanel/SearchPanel";
 import {routeDefault} from "../../constants";
 import Pagination from "../../components/Pagination/Pagination";
 import SortPanel from "../../components/SortPanel/SortPanel";
@@ -61,7 +61,7 @@ export default function ViewRouteList() {
     navigate(`/routes?${urlParam}`)
   }
 
-  function handleApplySearch(search: string, lengthFrom: number, lengthTo: number, complexity: number): void {
+  function handleApplySearch({search='', lengthFrom=0, lengthTo=0, complexity=0} : IOnApplySearch): void {
     const urlParam: Record<string, any> = new URLSearchParams()
     if (param.limit !== routeDefault.limit) {
       urlParam.append('limit', param.limit)
@@ -79,7 +79,6 @@ export default function ViewRouteList() {
       urlParam.append('sort', param.sort)
     }
     navigate(`/routes?${urlParam}`)
-
   }
 
   function handleApplySort(sort: string) {
