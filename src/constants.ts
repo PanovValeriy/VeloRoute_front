@@ -4,7 +4,7 @@ export const SERVER = 'http://localhost:8000/'
 export const API_SERVER = `${SERVER}api/`
 
 export const routeDefault = {
-  limit: 10,
+  limit: 8,
   sort: 'name',
 }
 
@@ -13,5 +13,6 @@ export const eventDefault = {
 }
 
 export const reportDefault = {
-  limit: 10,
+  limit: 8,
+  sort: 'date:desc'
 }

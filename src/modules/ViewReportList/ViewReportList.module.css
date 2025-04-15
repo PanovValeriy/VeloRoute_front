@@ -10,6 +10,21 @@
   color: var(--color-report-title);
 }
 
+.reportList {
+  display: flex;
+  align-self: flex-start;
+}
+
+.reportParam {
+  height: 100%;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  background-color: var(--color-report_card-background);
+  border-radius: 0.5rem;
+}
+
 .linkItem {
   text-decoration: none;
 }
