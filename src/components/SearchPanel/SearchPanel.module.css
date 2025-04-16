@@ -1,6 +1,17 @@
+
 .searchPanel {
   display: flex;
   flex-direction: column;
   justify-content: stretch;
   gap: 0.5rem;
+}
+
+.searchPanel button {
+  color: var(--color-button-text);
+  background-color: var(--color-button-background);
+}
+
+.searchPanel input, .searchPanel select {
+  color: var(--color-input-text);
+  background-color: var(--color-input-background);
 }

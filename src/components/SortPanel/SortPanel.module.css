@@ -4,3 +4,8 @@
   justify-content: stretch;
   gap: 0.5rem;
 }
+
+.sortPanel select {
+  color: var(--color-input-text);
+  background-color: var(--color-input-background);
+}
