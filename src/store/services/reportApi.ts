@@ -1,9 +1,10 @@
 import {IGetListParam, IReport, IReportShort} from "../../types/types";
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
-import {API_SERVER} from "../../constants";
+import {API_SERVER, reportDefault} from "../../constants";
 
 export interface IReportListParam extends IGetListParam {
   search?: string,
+  sort: string,
 }
 
 interface IReportListResponse {
@@ -17,11 +18,12 @@ const reportApi = createApi({
   tagTypes: ['REPORT_LIST', 'REPORT'],
   endpoints: (builder) => ({
       getReportList: builder.query<IReportListResponse, IReportListParam>({
-        query: ({page=1, limit=10, search=''}) => {
+        query: ({page=1, limit=reportDefault.limit, search='', sort=''}) => {
           const params = new URLSearchParams({
             page: page.toString(),
             limit: limit.toString(),
-            search: search
+            search: search,
+            sort: sort,
           })
           return {
             url: `/report/?${params}`

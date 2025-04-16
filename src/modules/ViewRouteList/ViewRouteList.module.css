@@ -10,6 +10,26 @@
   color: var(--color-route-text);
 }
 
+.routeList {
+  display: flex;
+  align-self: flex-start;
+}
+
+.routeParam {
+  height: 100%;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  background-color: var(--color-route_card-background);
+  border-radius: 0.5rem;
+}
+
+
+.searchPanel {
+
+}
+
 .linkItem {
   text-decoration: none;
 }
@@ -33,3 +53,4 @@
   --color-pagination-active_page-background: var(--color-route-button);
   --color-pagination-active_page-text: var(--color-button-text);
 }
+

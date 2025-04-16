@@ -2,8 +2,10 @@ import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 import {API_SERVER, eventDefault} from "../../constants";
 import {IEvent, IEventShort, IGetListParam} from "../../types/types";
 
-interface IEventListParams extends IGetListParam {
+export interface IEventListParams extends IGetListParam {
   search?: string,
+  hideArchive?: boolean,
+  sort?: string,
 }
 
 interface IEventListResponse {
@@ -18,11 +20,13 @@ const eventApi = createApi({
   tagTypes: ['EVENT_LIST', 'EVENT'],
   endpoints: (builder)=> ({
     getEventList: builder.query<IEventListResponse, IEventListParams>({
-      query: ({page=1, limit=eventDefault.limit, search=''}) => {
+      query: ({page=1, limit=eventDefault.limit, search='', hideArchive=false, sort=eventDefault.sort}) => {
         const params = new URLSearchParams({
           page: page.toString(),
           limit: limit.toString(),
           search: search,
+          hideArchive: (hideArchive) ? 'true' : 'false',
+          sort: sort,
         })
         return {
           url: `/event/?${params}`
