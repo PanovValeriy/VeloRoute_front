@@ -42,3 +42,13 @@
   background-color: var(--color-report_card-background-hover);
 }
 
+@media screen and (max-width: 540px) {
+  .reportList {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .reportParam {
+    align-self: center;
+  }
+}
