@@ -17,10 +17,8 @@ const sortList = [
   {value: 'name:desc', label: 'по убыванию названия'},
   {value: 'startDateTime', label: 'по возрастанию даты старта'},
   {value: 'startDateTime:desc', label: 'по убыванию даты старта'},
-  {value: 'dateCreate', label: 'сначала созданные раньше'},
-  {value: 'dateCreate:desc', label: 'сначала созданные позже'},
-  {value: 'dateUpdate', label: 'сначала обновленные раньше'},
-  {value: 'dateUpdate:desc', label: 'сначала обновленные позже'},
+  {value: 'dateCreate:desc', label: 'сначала новые'},
+  {value: 'dateCreate', label: 'сначала старые'},
 ]
 
 export default function ViewEventList() {

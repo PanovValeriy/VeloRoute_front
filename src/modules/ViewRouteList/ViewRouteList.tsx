@@ -15,10 +15,8 @@ const sortList = [
   {value: 'name:desc', label: 'по убыванию названия'},
   {value: 'length', label: 'по возрастанию протяженности'},
   {value: 'length:desc', label: 'по убыванию протяженности'},
-  {value: 'dateCreate', label: 'сначала созданные раньше'},
-  {value: 'dateCreate:desc', label: 'сначала созданные позже'},
-  {value: 'dateUpdate', label: 'сначала обновленные раньше'},
-  {value: 'dateUpdate:desc', label: 'сначала обновленные позже'},
+  {value: 'dateCreate:desc', label: 'сначала новые'},
+  {value: 'dateCreate', label: 'сначала старые'},
 ]
 
 export default function ViewRouteList() {
