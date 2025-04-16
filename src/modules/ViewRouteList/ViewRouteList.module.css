@@ -23,6 +23,7 @@
   gap: 3rem;
   background-color: var(--color-route_card-background);
   border-radius: 0.5rem;
+  width: 15rem;
 }
 
 
@@ -54,3 +55,13 @@
   --color-pagination-active_page-text: var(--color-button-text);
 }
 
+@media screen and (max-width: 540px) {
+  .routeList {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .routeParam {
+    align-self: center;
+  }
+}

@@ -44,3 +44,14 @@
 .eventItem:hover {
   background-color: var(--color-event_card-background-hover);
 }
+
+@media screen and (max-width: 540px) {
+  .eventList {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .eventParam {
+    align-self: center;
+  }
+}
