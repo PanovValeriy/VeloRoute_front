@@ -7,6 +7,10 @@
   --color-button-background: lightgray;
   --color-button-text: black;
 
+  /*Input*/
+  --color-input-background: white;
+  --color-input-text: black;
+
   /*ButtonImage*/
   --color-button_image-border: gray;
   --color-button_image_background: #FFFFFF;
@@ -77,8 +81,12 @@
   --color-header-text: var(--color-main-title);
 
   /*Button*/
-  --color-button-background: black;
+  --color-button-background: #212121;
   --color-button-text: lightgray;
+
+  /*Input*/
+  --color-input-background: #212121;
+  --color-input-text: lightgray;
 
   /*ButtonImage*/
   --color-button_image-border: gray;

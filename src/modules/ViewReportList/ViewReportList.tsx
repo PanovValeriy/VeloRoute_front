@@ -15,10 +15,8 @@ const sortList = [
   {value: 'name:desc', label: 'по убыванию названия'},
   {value: 'date', label: 'по возрастанию даты поездки'},
   {value: 'date:desc', label: 'по убыванию даты поездки'},
-  {value: 'dateCreate', label: 'сначала созданные раньше'},
-  {value: 'dateCreate:desc', label: 'сначала созданные позже'},
-  {value: 'dateUpdate', label: 'сначала обновленные раньше'},
-  {value: 'dateUpdate:desc', label: 'сначала обновленные позже'},
+  {value: 'dateCreate:desc', label: 'сначала новые'},
+  {value: 'dateCreate', label: 'сначала старые'},
 ]
 
 export default function ViewReportList() {
