@@ -133,7 +133,7 @@ export default function ViewRouteList() {
       <div className={styles.routeList}>
         <div className={styles.routeParam}>
           <SortPanel options={sortList} value={param.sort} onApply={handleApplySort}/>
-          <SearchPanel className={styles.searchPanel} fields={['search','length', 'complexity']} search={param.search} lengthFrom={lengthFrom} lengthTo={lengthTo} complexityList={complexityList} complexity={param.complexity} onApply={handleApplySearch}/>
+          <SearchPanel fields={['search','length', 'complexity']} search={param.search} lengthFrom={lengthFrom} lengthTo={lengthTo} complexityList={complexityList} complexity={param.complexity} onApply={handleApplySearch}/>
         </div>
         <div>
         <CardList>
