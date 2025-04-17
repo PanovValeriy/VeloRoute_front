@@ -80,37 +80,37 @@ export default function SearchPanel({className, fields, search='', lengthFrom=0,
     <div className={cnSearchPanel}>
       {(fields.indexOf('search') !== -1)
         ? <>
-            <div>Строка поиска</div>
-            <input type="text" value={searchValue} onChange={handleChangeSearch} onKeyDown={handleKeyDown} />
+            <div className={styles.label}>Строка поиска</div>
+            <input className={styles.input} type="text" value={searchValue} onChange={handleChangeSearch} onKeyDown={handleKeyDown} />
           </>
         : null
       }
       {(fields.indexOf('length') !== -1)
         ? <>
-            <div>Протяженность</div>
-            <div>от</div>
-            <input type="number" value={lengthFromValue.toString()} onChange={handleChangeLengthFrom} onKeyDown={handleKeyDown} />
-            <div>до</div>
-            <input type="number" value={lengthToValue.toString()} onChange={handleChangeLengthTo} onKeyDown={handleKeyDown} />
+            <div className={styles.label}>Протяженность</div>
+            <div className={styles.label}>от</div>
+            <input className={styles.input} type="number" value={lengthFromValue.toString()} onChange={handleChangeLengthFrom} onKeyDown={handleKeyDown} />
+            <div className={styles.label}>до</div>
+            <input className={styles.input} type="number" value={lengthToValue.toString()} onChange={handleChangeLengthTo} onKeyDown={handleKeyDown} />
         </>
         : null
       }
       {(fields.indexOf('complexity') !== -1)
         ? <>
-            <div>Сложность</div>
-            <Select options={complexityList?.map(item => ({value: item.value.toString(), label: item.label}))} value={complexityValue.toString()} onChange={handleChangeComplexity} />
+            <div className={styles.label}>Сложность</div>
+            <Select className={styles.input} options={complexityList?.map(item => ({value: item.value.toString(), label: item.label}))} value={complexityValue.toString()} onChange={handleChangeComplexity} />
           </>
         : null
       }
       {(fields.indexOf('hideArchive') !== -1)
         ? <>
-            <div>Прошедшие события</div>
-            <label>Скрыть <input type="checkbox" checked={hideArchiveValue} onChange={handleChangeHideArchive}/></label>
+            <div className={styles.label}>Прошедшие события</div>
+            <label className={styles.label}>Скрыть <input className={styles.input} type="checkbox" checked={hideArchiveValue} onChange={handleChangeHideArchive}/></label>
           </>
         : null
       }
-      <button onClick={handleClickApply}>Применить</button>
-      <button onClick={handleClickClear}>Очистить</button>
+      <button className={styles.button} onClick={handleClickApply}>Применить</button>
+      <button className={styles.button} onClick={handleClickClear}>Очистить</button>
     </div>
   )
 }

@@ -5,7 +5,11 @@
   gap: 0.5rem;
 }
 
-.sortPanel select {
+.label{
+  color: var(--color-main_card-text);
+}
+
+.input {
   color: var(--color-input-text);
   background-color: var(--color-input-background);
 }
