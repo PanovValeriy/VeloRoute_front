@@ -81,7 +81,7 @@ export default function SearchPanel({className, fields, search='', lengthFrom=0,
       {(fields.indexOf('search') !== -1)
         ? <>
             <div className={styles.label}>Строка поиска</div>
-            <input className={styles.input} type="text" value={searchValue} onChange={handleChangeSearch} onKeyDown={handleKeyDown} />
+            <input className={styles.input} type="text" value={searchValue} onChange={handleChangeSearch} onKeyDown={handleKeyDown} onBlur={handleClickApply}  />
           </>
         : null
       }
@@ -89,9 +89,9 @@ export default function SearchPanel({className, fields, search='', lengthFrom=0,
         ? <>
             <div className={styles.label}>Протяженность</div>
             <div className={styles.label}>от</div>
-            <input className={styles.input} type="number" value={lengthFromValue.toString()} onChange={handleChangeLengthFrom} onKeyDown={handleKeyDown} />
+            <input className={styles.input} type="number" value={lengthFromValue.toString()} onChange={handleChangeLengthFrom} onKeyDown={handleKeyDown} onBlur={handleClickApply}/>
             <div className={styles.label}>до</div>
-            <input className={styles.input} type="number" value={lengthToValue.toString()} onChange={handleChangeLengthTo} onKeyDown={handleKeyDown} />
+            <input className={styles.input} type="number" value={lengthToValue.toString()} onChange={handleChangeLengthTo} onKeyDown={handleKeyDown} onBlur={handleClickApply} />
         </>
         : null
       }
@@ -109,7 +109,7 @@ export default function SearchPanel({className, fields, search='', lengthFrom=0,
           </>
         : null
       }
-      <button className={styles.button} onClick={handleClickApply}>Применить</button>
+      {/*<button className={styles.button} onClick={handleClickApply}>Применить</button>*/}
       <button className={styles.button} onClick={handleClickClear}>Очистить</button>
     </div>
   )
