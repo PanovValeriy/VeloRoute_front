@@ -1,6 +1,6 @@
 import styles from './ViewRoute.module.css'
 import {useParams} from "react-router";
-import {Link, useNavigate} from "react-router-dom";
+import {Link, useNavigate, useSearchParams} from "react-router-dom";
 import RouteParams from "./components/RouteParams/RouteParams";
 import {useGetRouteQuery} from "../../store/services/routeApi";
 import Content from "../../components/Content/Content";
@@ -9,8 +9,10 @@ export default function ViewRoute() {
 
   const navigate = useNavigate()
   const {id} = useParams();
+  const [searchParams] = useSearchParams()
+  const code = searchParams.get('code') || ''
   const routeId: number = Number(id);
-  const {data: route, isLoading } = useGetRouteQuery(routeId)
+  const {data: route, isLoading } = useGetRouteQuery({routeId, code})
 
   if (isLoading) {
     return (<div>Загрузка</div>)

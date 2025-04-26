@@ -7,6 +7,11 @@ export interface IReportListParam extends IGetListParam {
   sort: string,
 }
 
+interface IReportParam {
+  reportId: number;
+  code?: string;
+}
+
 interface IReportListResponse {
   recCount: number,
   reportList: IReportShort[],
@@ -31,8 +36,8 @@ const reportApi = createApi({
         },
         providesTags: ['REPORT_LIST']
       }),
-      getReport: builder.query<IReport, number>({
-        query: (reportId) => ({url: `/report/${reportId}/`}),
+      getReport: builder.query<IReport, IReportParam>({
+        query: ({reportId, code=''}) => ({url: `/report/${reportId}/?code=${code}`}),
         providesTags: ['REPORT'],
       })
   })

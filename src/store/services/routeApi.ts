@@ -14,6 +14,11 @@ interface IRouteListResponse {
   routeList: IRouteShort[];
 }
 
+interface IRouteParam {
+  routeId: number;
+  code?: string;
+}
+
 const routeApi = createApi({
   reducerPath: 'route',
   baseQuery: fetchBaseQuery({baseUrl: API_SERVER}),
@@ -35,8 +40,8 @@ const routeApi = createApi({
       },
       providesTags: ['ROUTE_LIST'],
     }),
-    getRoute: builder.query<IRoute, number>({
-      query: (routeId) => ({url: `route/${routeId}/`}),
+    getRoute: builder.query<IRoute, IRouteParam>({
+      query: ({routeId, code = ''}) => ({url: `route/${routeId}/?code=${code}`}),
       providesTags: ['ROUTE'],
     }),
   })

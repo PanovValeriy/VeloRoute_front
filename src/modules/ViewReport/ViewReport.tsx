@@ -1,6 +1,6 @@
 import styles from './ViewReport.module.css'
 import {useParams} from "react-router";
-import {Link, useNavigate} from "react-router-dom";
+import {Link, useNavigate, useSearchParams} from "react-router-dom";
 import {useGetReportQuery} from "../../store/services/reportApi";
 import Content from "../../components/Content/Content";
 
@@ -8,9 +8,11 @@ export default function ViewReport() {
 
   const navigate = useNavigate()
   const {id} = useParams()
+  const [searchParams] = useSearchParams()
   const reportId: number = Number(id)
 
-  const {data: report, isLoading} = useGetReportQuery(reportId)
+  const code = searchParams.get('code') || ''
+  const {data: report, isLoading} = useGetReportQuery({reportId, code})
 
   if (isLoading) {
     return (<div>Загрузка</div>)

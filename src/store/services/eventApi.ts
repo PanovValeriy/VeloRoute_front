@@ -8,6 +8,11 @@ export interface IEventListParams extends IGetListParam {
   sort?: string,
 }
 
+interface IEventParams {
+  eventId: number;
+  code?: string;
+}
+
 interface IEventListResponse {
   recCount: number,
   eventList: IEventShort[],
@@ -34,10 +39,10 @@ const eventApi = createApi({
       },
       providesTags: ['EVENT_LIST']
     }),
-    getEvent: builder.query<IEvent, number>({
-      query: (eventId: number) => {
+    getEvent: builder.query<IEvent, IEventParams>({
+      query: ({eventId, code=''}) => {
         return {
-          url: `/event/${eventId}/`
+          url: `/event/${eventId}/?code=${code}`
         }
       },
       providesTags: ['EVENT']

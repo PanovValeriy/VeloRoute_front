@@ -1,6 +1,6 @@
 import styles from './ViewEvent.module.css'
 import {useParams} from "react-router";
-import {Link, useNavigate} from "react-router-dom";
+import {Link, useNavigate, useSearchParams} from "react-router-dom";
 import EventParams from "./components/EventParams/EventParams";
 import dayjs from "dayjs";
 import {useGetEventQuery} from "../../store/services/eventApi";
@@ -9,9 +9,11 @@ import Content from "../../components/Content/Content";
 export default function ViewEvent() {
 
   const {id} = useParams();
+  const [searchParams] = useSearchParams()
   const navigate = useNavigate()
   const eventId: number = Number(id);
-  const {data: event, isLoading} = useGetEventQuery(eventId)
+  const code = searchParams.get('code') || ''
+  const {data: event, isLoading} = useGetEventQuery({eventId, code})
 
   if (isLoading) {
     return (<div>Загрузка</div>)
