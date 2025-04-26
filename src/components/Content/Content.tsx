@@ -12,6 +12,13 @@ interface IPros {
   body: string;
 }
 
+/*
+    text
+    [IMG]url[/IMG]
+    [MAP]url[/MAP]
+    text [LINK][LABEL]text[/LABEL]url[/LINK] text [LINK][LABEL]text[/LABEL]url[/LINK] text
+ */
+
 export default function Content({pStyles, body}: IPros) {
 
   const styles = pStyles || curStyles
@@ -25,6 +32,7 @@ export default function Content({pStyles, body}: IPros) {
     }
     for (const p of bodyArr) {
       let pStart = 0
+      const resultParagraph = []
       while (p.indexOf('[IMG]', pStart) !== -1 || p.indexOf('[MAP]', pStart) !== -1 || p.indexOf('[LINK]', pStart) !== -1) {
         const imgStart = p.indexOf('[IMG]', pStart)
         const imgEnd = p.indexOf('[/IMG]', imgStart)
@@ -57,7 +65,6 @@ export default function Content({pStyles, body}: IPros) {
               className={styles.map}
               key={getKey()}
               src={p.slice(mapStart + 5, mapEnd)} ></iframe>
-
           )
           pStart = mapEnd + 6
         }
@@ -71,9 +78,9 @@ export default function Content({pStyles, body}: IPros) {
             url = url.slice(labelEnd + 8,url.length)
           }
 
-          result.push(
-            <p className={styles.paragraph} key={getKey()}>
-              {p.slice(0, (linkStart))}
+          resultParagraph.push(
+            <span key={getKey()}>
+              {p.slice(pStart, (linkStart))}
               <a
                 className={styles.link}
                 key={getKey()}
@@ -81,18 +88,25 @@ export default function Content({pStyles, body}: IPros) {
               >
                 {label}
               </a>
-              {p.slice(linkEnd+7, p.length)}
-            </p>
+            </span>
           )
-          pStart = p.length
+          pStart = linkEnd+7
         }
       }
-
-      result.push(
-        <p className={styles.paragraph} key={getKey()}>
+      if (p.slice(pStart, p.length) !== '') {
+        resultParagraph.push(
+          <span key={getKey()}>
           {p.slice(pStart, p.length)}
-        </p>
-      )
+        </span>
+        )
+      }
+      if (resultParagraph.length !== 0) {
+        result.push(
+          <p className={styles.paragraph} key={getKey()}>
+            {resultParagraph}
+          </p>
+        )
+      }
     }
     return result
   }
