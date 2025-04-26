@@ -21,7 +21,7 @@ export default function ViewRoute() {
   if (!route) {
     return (
       <>
-        <Link to={'/routes'}><button className={styles.button} onClick={() => navigate(-1)}>К списку маршрутов</button></Link>
+        <button className={styles.button} onClick={() => navigate(-1)}>Назад</button>
         <div>Маршрут не найден</div>
       </>
     )
