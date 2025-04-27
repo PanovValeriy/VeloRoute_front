@@ -1,7 +1,8 @@
 import styles from './Header.module.css'
-import Logo from "../Logo/Logo";
 import {readTheme, THEME_LABELS, toggleTheme} from "../../libs/libs";
 import {useState} from "react";
+import {Link} from "react-router-dom";
+import Logo from "../Logo/Logo";
 
 export default function Header() {
 
@@ -15,7 +16,7 @@ export default function Header() {
   return (
     <>
       <div className={styles.header}>
-        <Logo />
+        <Link to={"/"}><Logo /></Link>
         <div className={styles.title}>
           Велосипедные маршруты Смоленской области
         </div>

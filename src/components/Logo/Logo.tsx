@@ -1,6 +1,8 @@
 export default function Logo() {
 
   return (
-    <div></div>
+    <div>
+      <img src="\static\logo.png" alt="логотип"/>
+    </div>
   )
 }
