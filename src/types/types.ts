@@ -119,3 +119,13 @@ export interface IEventShort {
   startDateTime: Date;    // дата и время старта
   startPlace: string;     // место старта
 }
+
+// Новость
+export interface INews {
+  oper: number;           // вид операции [Добавлена, Обновлена]
+  type: number;           // вид карточки [Маршрут, Отчет, Событие]
+  id: number;             // идентификатор карточки
+  dateCreate: Date;       // дата создания
+  dateUpdate: Date;       // дата обновления
+  name: string;           // название
+}

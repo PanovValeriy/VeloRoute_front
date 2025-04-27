@@ -1,0 +1,9 @@
+.newsItem {
+  margin: 0.5rem;
+  color: var(--color-news-link);
+}
+
+.link {
+  font-weight: bold;
+  color: var(--color-news-link);
+}

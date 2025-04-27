@@ -70,6 +70,14 @@
   --color-event_card-background-hover: #B6B6DA;
   --color-event_card-text: #483D8B;
 
+  /*News*/
+  --color-news-background: #FFFFE0;
+  --color-news-border: gray;
+  --color-news-title: #FFC837;
+  --color-news-text: #333333;
+  --color-news-button: #FDDA0D;
+  --color-news-link: #BFA500;
+
   /*Footer*/
   --color-footer-background: var(--color-main-background);
   --color-footer-text: var(--color-main-text);
@@ -155,6 +163,14 @@
   --color-event_card-background: #2E2E3A;
   --color-event_card-background-hover: #4E4E5A;
   --color-event_card-text: #FFFFFF;
+
+  /*News*/
+  --color-news-background: #333333;
+  --color-news-border: gray;
+  --color-news-title: #FFCC00;
+  --color-news-text: #CCCCCC;
+  --color-news-button: #FFD700;
+  --color-news-link: #FFEBCD;
 
   /*Footer*/
   --color-footer-background: var(--color-main-background);
