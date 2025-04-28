@@ -2,7 +2,13 @@
   background-color: var(--color-header-background);
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   color: var(--color-header-text);
+}
+
+.logo {
+  order: 0;
 }
 
 .title {
@@ -11,10 +17,15 @@
   color: var(--color-header-text);
   font-weight: bold;
   font-size: 2.5em;
+  order: 2;
 }
 
 .theme {
   color: var(--color-header-text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  order: 3;
 }
 
 .button {
@@ -26,4 +37,9 @@
   .header {
     flex-wrap: wrap;
   }
+
+  .theme {
+    order: 1;
+  }
+
 }

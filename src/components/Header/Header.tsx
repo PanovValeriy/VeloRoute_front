@@ -16,12 +16,14 @@ export default function Header() {
   return (
     <>
       <div className={styles.header}>
-        <Link to={"/"}><Logo /></Link>
+        <Link to={"/"} className={styles.logo}><Logo /></Link>
         <div className={styles.title}>
           Велосипедные маршруты Смоленской области
         </div>
+        <div className={styles.theme}>
+            Тема
+            <button className={styles.button} onClick={handleToggleTheme}>{THEME_LABELS[theme]}</button></div>
       </div>
-      <div className={styles.theme}>Тема:&nbsp;&nbsp;<button className={styles.button} onClick={handleToggleTheme}>{THEME_LABELS[theme]}</button></div>
     </>
   )
 }
