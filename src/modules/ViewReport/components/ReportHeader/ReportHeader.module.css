@@ -1,0 +1,5 @@
+.reportHeader {
+  padding: 1rem;
+  font-size: 1.25rem;
+  color: var(--color-report-text);
+}
