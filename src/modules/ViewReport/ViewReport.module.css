@@ -10,6 +10,12 @@
   color: var(--color-report-title);
 }
 
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-report-title);
+}
+
 .body {
   display: flex;
   flex-direction: column;

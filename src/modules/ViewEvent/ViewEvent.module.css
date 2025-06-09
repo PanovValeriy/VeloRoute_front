@@ -9,6 +9,13 @@
   font-weight: bold;
   color: var(--color-event-title);
 }
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-event-title);
+}
+
 .params {
   padding: 1rem;
   display: flex;

@@ -33,17 +33,21 @@ export default function Content({pStyles, body}: IPros) {
     for (const p of bodyArr) {
       let pStart = 0
       const resultParagraph = []
-      while (p.indexOf('[IMG]', pStart) !== -1 || p.indexOf('[MAP]', pStart) !== -1 || p.indexOf('[LINK]', pStart) !== -1) {
+      while (p.indexOf('[IMG]', pStart) !== -1 || p.indexOf('[MAP]', pStart) !== -1 || p.indexOf('[LINK]', pStart) !== -1 || p.indexOf('[TITLE]', pStart) !== -1) {
         const imgStart = p.indexOf('[IMG]', pStart)
         const imgEnd = p.indexOf('[/IMG]', imgStart)
         const mapStart = p.indexOf('[MAP]', pStart)
         const mapEnd = p.indexOf('[/MAP]', mapStart)
         const linkStart = p.indexOf('[LINK]', pStart)
         const linkEnd = p.indexOf('[/LINK]', linkStart)
-        if (linkStart === -1) {
+        const titleStart = p.indexOf('[TITLE]', pStart)
+        const titleEnd = p.indexOf('[/TITLE]', titleStart)
+        const boldStart = p.indexOf('[BOLD]', pStart)
+        const boldEnd = p.indexOf('[/BOLD]', boldStart)
+        if (linkStart === -1)  {
           result.push(
             <p className={styles.paragraph} key={getKey()}>
-              {p.slice(0, (imgStart + mapStart + 1))}
+              {p.slice(0, (imgStart + mapStart + titleStart + 2))}
             </p>
           )
         }
@@ -68,6 +72,15 @@ export default function Content({pStyles, body}: IPros) {
           )
           pStart = mapEnd + 6
         }
+        if (titleStart !== -1) {
+          resultParagraph.push(
+            <span key={getKey()} className={styles.subtitle}>
+              {p.slice(titleStart + 7, titleEnd)}
+            </span>
+          )
+          pStart = titleEnd + 8
+        }
+
         if (linkStart !== -1) {
           let label = 'Скачать'
           let url = p.slice(linkStart + 6, linkEnd)
