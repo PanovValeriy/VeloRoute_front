@@ -26,7 +26,7 @@ export default function NewsItem({className, news}: IProps) {
   return (
     <div className={cnNewsItem}>
       {`${dayjs(news.oper === 1 ? news.dateCreate : news.dateUpdate).format('DD.MM.YYYY')} - ${OPER_TEXT[news.oper-1][news.type-1]}: `}
-      <a href={OPER_URL[news.type-1]+news.id.toString()} className={styles.link}>{news.name}</a>
+      <a href={OPER_URL[news.type-1]+news.id.toString()} className={styles.link}>{(news.type === 2) ? `${news.name} (${dayjs(news.date).format('DD.MM.YYYY')})` : news.name}</a>
     </div>
   )
 }

@@ -127,5 +127,6 @@ export interface INews {
   id: number;             // идентификатор карточки
   dateCreate: Date;       // дата создания
   dateUpdate: Date;       // дата обновления
+  date?: Date;            // дата поездки (для отчета)
   name: string;           // название
 }
