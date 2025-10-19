@@ -10,7 +10,7 @@ interface IProps {
 
 export default function NewsPanel({className}: IProps) {
   const cnNewsPanel = cn(styles.newsPanel, className)
-  const {data, isLoading} = useGetNewsListQuery({count: 5, operation: 1, showEventArchive: false})
+  const {data, isLoading} = useGetNewsListQuery({count: 5, operation: 1, showEventArchive: true})
 
   if (isLoading) {
     return (

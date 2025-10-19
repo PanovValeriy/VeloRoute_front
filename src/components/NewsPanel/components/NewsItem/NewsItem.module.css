@@ -5,5 +5,28 @@
 
 .link {
   font-weight: bold;
-  color: var(--color-news-link);
+}
+
+.newsRoute {
+  color: var(--color-route-text);
+}
+
+.newsRoute .link {
+  color: var(--color-route-link);
+}
+
+.newsReport {
+  color: var(--color-report-text);
+}
+
+.newsReport .link {
+  color: var(--color-report-link);
+}
+
+.newsEvent {
+  color: var(--color-event-text);
+}
+
+.newsEvent .link {
+  color: var(--color-event-link);
 }
