@@ -1,20 +1,23 @@
 import styles from './ViewRoute.module.css'
-import {useParams} from "react-router";
-import {Link, useNavigate, useSearchParams} from "react-router-dom";
+import {NavigateFunction, useParams} from "react-router";
+import {useNavigate, useSearchParams} from "react-router-dom";
 import RouteParams from "./components/RouteParams/RouteParams";
 import {useGetRouteQuery} from "../../store/services/routeApi";
 import Content from "../../components/Content/Content";
+import ReportList from "./components/ReportList/ReportList";
+import {useGetReportListQuery} from "../../store/services/reportApi";
 
 export default function ViewRoute() {
 
-  const navigate = useNavigate()
+  const navigate : NavigateFunction = useNavigate()
   const {id} = useParams();
   const [searchParams] = useSearchParams()
-  const code = searchParams.get('code') || ''
-  const routeId: number = Number(id);
-  const {data: route, isLoading } = useGetRouteQuery({routeId, code})
+  const code : string = searchParams.get('code') || ''
+  const routeId: number = Number(id)
+  const {data: route, isLoading: isLoadingRoute } = useGetRouteQuery({routeId, code})
+  const {data: dataReportList} = useGetReportListQuery({sort: 'date:desc', routeId})
 
-  if (isLoading) {
+  if (isLoadingRoute) {
     return (<div>Загрузка</div>)
   }
 
@@ -42,6 +45,7 @@ export default function ViewRoute() {
       <div className={styles.body}>
         <Content pStyles={styles} body={route.description} />
       </div>
+      {((dataReportList) && (dataReportList.recCount !== 0)) ? <ReportList reportList = {dataReportList.reportList}/> : null}
       <button className={styles.button} onClick={() => navigate(-1)}>Назад</button>
     </div>
   )
