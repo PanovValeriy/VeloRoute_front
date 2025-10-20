@@ -17,6 +17,9 @@
   --color-button_image_background-hover: #D0D0D0;
   --color-button_image_text: rgb(15, 115, 225);
 
+  /*ReportListTable*/
+  --color-report_list_table-border: lightgray;
+
   /*Pagination*/
   --color-pagination-background: transparent;
   --color-pagination_page-backgroud: transparent;
@@ -101,6 +104,9 @@
   --color-button_image_background: rgb(33, 86, 68);
   --color-button_image_background-hover: #D0D0D0;
   --color-button_image_text: rgb(154, 194, 239);
+
+  /*Table*/
+  --color-report_list_table-border: gray;
 
   /*Pagination*/
   --color-pagination-background: transparent;

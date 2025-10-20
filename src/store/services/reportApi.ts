@@ -6,6 +6,7 @@ export interface IReportListParam extends IGetListParam {
   search?: string;
   sort?: string;
   routeId?: number;
+  eventId?: number;
 }
 
 interface IReportParam {
@@ -24,13 +25,14 @@ const reportApi = createApi({
   tagTypes: ['REPORT_LIST', 'REPORT'],
   endpoints: (builder) => ({
       getReportList: builder.query<IReportListResponse, IReportListParam>({
-        query: ({page=1, limit=reportDefault.limit, search='', sort='', routeId=0}) => {
+        query: ({page=1, limit=reportDefault.limit, search='', sort='', routeId=0, eventId=0}) => {
           const params = new URLSearchParams({
             page: page.toString(),
             limit: limit.toString(),
             search: search,
             sort: sort,
             routeId: routeId.toString(),
+            eventId: eventId.toString(),
           })
           return {
             url: `/report/?${params}`

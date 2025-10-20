@@ -1,11 +1,12 @@
 import styles from './ViewRoute.module.css'
+import stylesReportList from '../../components/ReportList/ReportList.module.css'
 import {NavigateFunction, useParams} from "react-router";
 import {useNavigate, useSearchParams} from "react-router-dom";
 import RouteParams from "./components/RouteParams/RouteParams";
 import {useGetRouteQuery} from "../../store/services/routeApi";
 import Content from "../../components/Content/Content";
-import ReportList from "./components/ReportList/ReportList";
 import {useGetReportListQuery} from "../../store/services/reportApi";
+import ReportList from "../../components/ReportList/ReportList";
 
 export default function ViewRoute() {
 
@@ -29,7 +30,6 @@ export default function ViewRoute() {
       </>
     )
   }
-
   return (
     <div className={styles.viewRoute}>
       <button className={styles.button} onClick={() => navigate(-1)}>Назад</button>
@@ -45,7 +45,7 @@ export default function ViewRoute() {
       <div className={styles.body}>
         <Content pStyles={styles} body={route.description} />
       </div>
-      {((dataReportList) && (dataReportList.recCount !== 0)) ? <ReportList reportList = {dataReportList.reportList}/> : null}
+      {((dataReportList) && (dataReportList.recCount !== 0)) ? <ReportList className={stylesReportList.fromRoute} reportList = {dataReportList.reportList}/> : null}
       <button className={styles.button} onClick={() => navigate(-1)}>Назад</button>
     </div>
   )

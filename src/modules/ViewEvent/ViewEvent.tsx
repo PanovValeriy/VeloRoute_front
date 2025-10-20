@@ -1,10 +1,13 @@
 import styles from './ViewEvent.module.css'
+import stylesReportList from '../../components/ReportList/ReportList.module.css'
 import {useParams} from "react-router";
-import {Link, useNavigate, useSearchParams} from "react-router-dom";
+import {useNavigate, useSearchParams} from "react-router-dom";
 import EventParams from "./components/EventParams/EventParams";
 import dayjs from "dayjs";
 import {useGetEventQuery} from "../../store/services/eventApi";
 import Content from "../../components/Content/Content";
+import {useGetReportListQuery} from "../../store/services/reportApi";
+import ReportList from "../../components/ReportList/ReportList";
 
 export default function ViewEvent() {
 
@@ -14,6 +17,7 @@ export default function ViewEvent() {
   const eventId: number = Number(id);
   const code = searchParams.get('code') || ''
   const {data: event, isLoading} = useGetEventQuery({eventId, code})
+  const {data: dataReportList} = useGetReportListQuery({eventId, sort: 'date:desc'})
 
   if (isLoading) {
     return (<div>Загрузка</div>)
@@ -44,6 +48,7 @@ export default function ViewEvent() {
       <div className={styles.body}>
         <Content pStyles={styles} body={event.description} />
       </div>
+      {((dataReportList) && (dataReportList.recCount !== 0)) ? <ReportList className={stylesReportList.fromEvent} reportList = {dataReportList.reportList}/> : null}
       <button className={styles.button} onClick={() => navigate(-1)}>Назад</button>
     </div>
   )

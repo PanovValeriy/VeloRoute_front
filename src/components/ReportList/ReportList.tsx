@@ -1,8 +1,10 @@
 import styles from './ReportList.module.css'
-import {IReportShort} from "../../../../types/types";
+import {IReportShort} from "../../types/types";
 import dayjs from "dayjs";
+import cn from "classnames";
 
 interface IProps {
+  className?: string,
   reportList: IReportShort[],
 }
 
@@ -30,11 +32,13 @@ function drawItem(report: IReportShort | null) {
 }
 
 
-export default function ReportList({reportList}: IProps) {
+export default function ReportList({className, reportList}: IProps) {
+
+  const title = 'Список отчетов по ' + ((className === styles.fromEvent) ? 'событию' : 'маршруту')
 
   return (
-    <div className={styles.reportList}>
-      <div className={styles.title}>Список отчетов по маршруту</div>
+    <div className={cn(className, styles.reportList)}>
+      <div className={styles.title}>{title}</div>
       <div className={styles.table}>
         {drawItem(null)}
         {reportList.map((item: IReportShort) => (drawItem(item)))}
