@@ -38,9 +38,14 @@ export default function EventParams({className, event}: IProps) {
         </div>
       </div>
       <div className={styles.param}>
-        <div className={styles.paramLabel}>Трек с маршрутом:</div>
-        <div className={styles.paramValue}><a
-          href={event.trackFileURL}>{event.name}</a></div>
+        { (event.trackFileURL)
+          ? <>
+              <div className={styles.paramLabel}>Трек с маршрутом:</div>
+              <div className={styles.paramValue}>
+                <a href={event.trackFileURL}>{event.name}</a>
+              </div>
+            </>
+          : null }
       </div>
       <div className={styles.groupParam}>Место и время старта</div>
       <div className={styles.param}>
