@@ -35,6 +35,8 @@
 .photo {
   max-width: 37rem;
   box-shadow: 0.625rem 0.3125rem 0.625rem var(--color-report-shadow);
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .map {
@@ -45,6 +47,21 @@
 
 .link {
   color: var(--color-report-link);
+  font-weight: bold;
+}
+
+.routeLink {
+  color: var(--color-route-link);
+  font-weight: bold;
+}
+
+.reportLink {
+  color: var(--color-report-link);
+  font-weight: bold;
+}
+
+.eventLink {
+  color: var(--color-event-link);
   font-weight: bold;
 }
 

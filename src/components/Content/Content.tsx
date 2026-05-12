@@ -1,3 +1,4 @@
+import parse from 'html-react-parser';
 import curStyles from "./Content.module.css";
 
 interface IStyles {
@@ -12,148 +13,44 @@ interface IProps {
   body: string;
 }
 
-interface IResultFindTags {
-  result: boolean;
-  imgStart: number;
-  imgEnd: number;
-  mapStart: number;
-  mapEnd: number;
-  linkStart: number;
-  linkEnd: number;
-  titleStart: number;
-  titleEnd: number;
-  boldStart: number;
-  boldEnd: number;
-}
-
-function createContent(body: string, styles: IStyles) {
-
-
+function createContent(content: string, styles: IStyles) {
   let key = 0
+  
   function getKey() {
     return `rc_${++key}`
   }
 
+  const contentArr: string[] = content.split('\n')
+  const formatBOLD = '<strong>$1</strong>'
+  const formatTITLE = '<span key="'+getKey()+'" className="' + styles.subtitle + '">$1</span>'
+  const formatIMG = '<img className="' + styles.photo + '" key="' + getKey() + '" src="$1" alt="Фото" />'
+  const formatMAP = '<iframe title="' + getKey() + '" className="' + styles.map + '" key="' + getKey() + '" src="$1"></iframe>'
+  const formatLINK = '<a className="' + styles.link + '" key="' + getKey() + '" href="$2">$1</a>'
+  const formatROUTE = '<a className="' + styles.routeLink + '" key="' + getKey() + '" href="$2">$1</a>'
+  const formatREPORT = '<a className="' + styles.reportLink + '" key="' + getKey() + '" href="$2">$1</a>'
+  const formatEVENT = '<a className="' + styles.eventLink + '" key="' + getKey() + '" href="$2">$1</a>'
 
-  function findTags(content:string, findStart: number): IResultFindTags {
-    const imgStart: number = content.indexOf('[IMG]', findStart)
-    const imgEnd: number = content.indexOf('[/IMG]', imgStart)
-    const mapStart: number = content.indexOf('[MAP]', findStart)
-    const mapEnd: number = content.indexOf('[/MAP]', mapStart)
-    const linkStart: number = content.indexOf('[LINK]', findStart)
-    const linkEnd: number = content.indexOf('[/LINK]', linkStart)
-    const titleStart: number = content.indexOf('[TITLE]', findStart)
-    const titleEnd: number = content.indexOf('[/TITLE]', titleStart)
-    const boldStart: number = content.indexOf('[BOLD]', findStart)
-    const boldEnd: number = content.indexOf('[/BOLD]', boldStart)
-    const result: boolean = imgStart !== -1 || mapStart !== -1 || linkStart !== -1 || titleStart !== -1 || boldStart !== -1;
-    return {result, imgStart, imgEnd, mapStart, mapEnd, linkStart, linkEnd, titleStart, titleEnd, boldStart, boldEnd}
+  for (let i=0; i < contentArr.length; i++) {
+    if (contentArr[i].slice(0, 5) !== '[IMG]' && contentArr[i].slice(0,5) !== '[MAP]' && contentArr[i].slice(0,7) !== '[TITLE]') {
+      contentArr[i] = '<p className="' + styles.paragraph + '" key="' + getKey() + '">' + contentArr[i] + '</p>'
+    }
+    contentArr[i] = contentArr[i].replace(/\[BOLD](.*?)\[\/BOLD]/, formatBOLD)
+    contentArr[i] = contentArr[i].replace(/\[TITLE](.*?)\[\/TITLE]/, formatTITLE)
+    contentArr[i] = contentArr[i].replace(/\[LINK]\[LABEL](.*?)\[\/LABEL](.*?)\[\/LINK]/, formatLINK)
+    contentArr[i] = contentArr[i].replace(/\[ROUTELINK]\[LABEL](.*?)\[\/LABEL](.*?)\[\/ROUTELINK]/, formatROUTE)
+    contentArr[i] = contentArr[i].replace(/\[REPORTLINK]\[LABEL](.*?)\[\/LABEL](.*?)\[\/REPORTLINK]/, formatREPORT)
+    contentArr[i] = contentArr[i].replace(/\[EVENTLINK]\[LABEL](.*?)\[\/LABEL](.*?)\[\/EVENTLINK]/, formatEVENT)
+    contentArr[i] = contentArr[i].replace(/\[IMG](.*?)\[\/IMG]/, formatIMG)
+    contentArr[i] = contentArr[i].replace(/\[MAP](.*?)\[\/MAP]/, formatMAP)
   }
 
-
-  const bodyArr: string[] = body.split('\n')
-  let result = []
-
-  for (const p of bodyArr) {
-    let pStart = 0
-    const resultParagraph = []
-    let find: IResultFindTags = findTags(p, pStart);
-    while (find.result) {
-      if (find.linkStart === -1 && find.boldStart === -1) {
-        result.push(
-          <p className={styles.paragraph} key={getKey()}>
-            {p.slice(0, (find.imgStart + find.mapStart + find.titleStart + 2))}
-          </p>
-        )
-      }
-      if (find.imgStart !== -1) {
-        result.push(
-          <img
-            className={styles.photo}
-            key={getKey()}
-            src={p.slice(find.imgStart + 5, find.imgEnd)}
-            alt="Фото"
-          />
-        )
-        pStart = find.imgEnd + 6
-      }
-      if (find.mapStart !== -1) {
-        result.push(
-          <iframe
-            title={getKey()}
-            className={styles.map}
-            key={getKey()}
-            src={p.slice(find.mapStart + 5, find.mapEnd)} ></iframe>
-        )
-        pStart = find.mapEnd + 6
-      }
-      if (find.titleStart !== -1) {
-        resultParagraph.push(
-          <span key={getKey()} className={styles.subtitle}>
-              {p.slice(find.titleStart + 7, find.titleEnd)}
-            </span>
-        )
-        pStart = find.titleEnd + 8
-      }
-      if (find.boldStart !== -1) {
-        resultParagraph.push(
-          <span key={getKey()}>
-            {p.slice(pStart, (find.boldStart))}
-            <strong key={getKey()}>
-              {p.slice(find.boldStart + 6, find.boldEnd)}
-            </strong>
-          </span>
-        )
-        pStart = find.boldEnd + 7
-      }
-      if (find.linkStart !== -1) {
-        let label = 'Скачать'
-        let url = p.slice(find.linkStart + 6, find.linkEnd)
-        const labelStart = url.indexOf('[LABEL]')
-        const labelEnd = url.indexOf('[/LABEL]', labelStart)
-        if (labelStart !== -1 && labelEnd > labelStart) {
-          label = url.slice(labelStart + 7, labelEnd)
-          url = url.slice(labelEnd + 8,url.length)
-        }
-
-        resultParagraph.push(
-          <span key={getKey()}>
-              {p.slice(pStart, (find.linkStart))}
-            <a
-              className={styles.link}
-              key={getKey()}
-              href={url}
-            >
-                {label}
-              </a>
-            </span>
-        )
-        pStart = find.linkEnd + 7
-      }
-      find = findTags(p, pStart);
-    }
-    if (p.slice(pStart, p.length) !== '') {
-      resultParagraph.push(
-        <span key={getKey()}>
-          {p.slice(pStart, p.length)}
-        </span>
-      )
-    }
-    if (resultParagraph.length !== 0) {
-      result.push(
-        <p className={styles.paragraph} key={getKey()}>
-          {resultParagraph}
-        </p>
-      )
-    }
-  }
-  return result
+  content = contentArr.join('')
+  return content
 }
-
 
 export default function Content({pStyles, body}: IProps) {
 
   return (
-    <>{createContent(body, pStyles || curStyles)}</>
+    <>{parse(createContent(body, pStyles || curStyles))}</>
   )
 }
