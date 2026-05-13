@@ -66,6 +66,7 @@ export interface IRouteShort {
   grader: number;         // грейдер
   soil: number;           // грунт
   jungle: number;         // дебри
+  viewsCount: number;     // количество просмотров
 }
 
 // Отчет
@@ -87,6 +88,7 @@ export interface IReportShort {
   date: Date;             // дата поездки
   name: string;           // название отчета
   photoURL: string;       // ссылка на фотографию
+  viewsCount: number;     // количество просмотров
 }
 
 // Событие
@@ -118,6 +120,7 @@ export interface IEventShort {
   tempo: ITempo;          // темп
   startDateTime: Date;    // дата и время старта
   startPlace: string;     // место старта
+  viewsCount: number;     // количество просмотров
 }
 
 // Новость

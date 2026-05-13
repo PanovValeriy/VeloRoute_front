@@ -1,6 +1,7 @@
 import styles from './EventItem.module.css'
 import {IEventShort} from "../../../../types/types";
 import dayjs from "dayjs";
+import ViewsCount from "../../../../components/ViewsCount/ViewsCount";
 
 interface IProps {
   event: IEventShort,
@@ -11,6 +12,7 @@ export default function EventItem({event}: IProps) {
   return (
     <>
       <div className={styles.content}>
+        <ViewsCount viewsCount={event.viewsCount}/>
         <div className={styles.title}>
           {event.name}
         </div>
