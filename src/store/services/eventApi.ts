@@ -6,6 +6,7 @@ export interface IEventListParams extends IGetListParam {
   search?: string,
   hideArchive?: boolean,
   sort?: string,
+  showCount?: string;
 }
 
 interface IEventParams {

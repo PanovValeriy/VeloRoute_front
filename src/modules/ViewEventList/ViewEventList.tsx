@@ -32,8 +32,9 @@ export default function ViewEventList() {
     page: parseInt(searchParams.get('page') || '1'),
     limit: parseInt(searchParams.get('limit') || eventDefault.limit.toString()),
     search: searchParams.get('search') || '',
-    hideArchive: searchParams.get('hideArchive' || '') === 'true',
+    hideArchive: searchParams.get('hideArchive') === 'true',
     sort: searchParams.get('sort') || eventDefault.sort,
+    showCount: searchParams.get('showCount') || '',
   }),[searchParams])
 
   function handleChangePage(page: number, pageSize: number) {
@@ -50,6 +51,9 @@ export default function ViewEventList() {
     if (param.hideArchive) {
       urlParam.append('hideArchive', 'true')
     }
+    if (param.showCount) {
+      urlParam.append('showCount', param.showCount)
+    }
     navigate(`/events?${urlParam}`)
   }
 
@@ -63,6 +67,9 @@ export default function ViewEventList() {
     }
     if (hideArchive) {
       urlParam.append('hideArchive', 'true')
+    }
+    if (param.showCount) {
+      urlParam.append('showCount', param.showCount)
     }
     navigate(`/events?${urlParam}`)
   }
@@ -83,6 +90,9 @@ export default function ViewEventList() {
     }
     if (sort !== eventDefault.sort) {
       urlParam.append('sort', sort)
+    }
+    if (param.showCount) {
+      urlParam.append('showCount', param.showCount)
     }
     navigate(`/events?${urlParam}`)
   }
@@ -117,7 +127,7 @@ export default function ViewEventList() {
             {data!.eventList.map((event, idx) => (
               <Link key={idx} className={styles.linkItem} to={"/event/"+event.id}>
                 <CardItem className={cn(styles.eventItem, (dayjs(event.startDateTime) < dayjs(Date())) ? styles.eventItemHistory : null)}>
-                  <ViewsCount className={styles.viewsCount} viewsCount={event.viewsCount}/>
+                  {param.showCount !== '' ? <ViewsCount className={styles.viewsCount} viewsCount={event.viewsCount}/> : null}
                   <EventItem key={idx} event={event}/>
                 </CardItem>
               </Link>

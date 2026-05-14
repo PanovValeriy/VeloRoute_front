@@ -7,6 +7,7 @@ export interface IReportListParam extends IGetListParam {
   sort?: string;
   routeId?: number;
   eventId?: number;
+  showCount?: string;
 }
 
 interface IReportParam {

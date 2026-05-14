@@ -7,6 +7,7 @@ export interface IRouteListParam extends IGetListParam {
   length?: string;
   complexity?: number;
   sort?: string;
+  showCount?: string;
 }
 
 interface IRouteListResponse {

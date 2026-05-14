@@ -30,6 +30,7 @@ export default function ViewReportList() {
     limit: parseInt(searchParams.get('limit') || reportDefault.limit.toString()),
     search: searchParams.get('search') || '',
     sort: searchParams.get('sort') || reportDefault.sort,
+    showCount: searchParams.get('showCount') || '',
   }),[searchParams])
 
   function handleChangePage(page: number, pageSize: number) {
@@ -46,6 +47,9 @@ export default function ViewReportList() {
     if (param.sort !== reportDefault.sort) {
       urlParam.append('sort', param.sort)
     }
+    if (param.showCount !== '') {
+      urlParam.append('showCount', param.showCount)
+    }
     navigate(`/reports?${urlParam}`)
   }
 
@@ -59,6 +63,9 @@ export default function ViewReportList() {
     }
     if (param.sort !== reportDefault.sort) {
       urlParam.append('sort', param.sort)
+    }
+    if (param.showCount !== '') {
+      urlParam.append('showCount', param.showCount)
     }
     navigate(`/reports?${urlParam}`)
   }
@@ -76,6 +83,9 @@ export default function ViewReportList() {
     }
     if (sort !== reportDefault.sort) {
       urlParam.append('sort', sort)
+    }
+    if (param.showCount !== '') {
+      urlParam.append('showCount', param.showCount)
     }
     navigate(`/reports?${urlParam}`)
   }
@@ -113,7 +123,7 @@ export default function ViewReportList() {
           {data!.reportList.map((report, idx) => (
             <Link key={idx} className={styles.linkItem} to={"/report/"+report.id}>
               <CardItem className={styles.reportItem}>
-                <ViewsCount className={styles.viewsCount} viewsCount={report.viewsCount} />
+                {param.showCount !== '' ? <ViewsCount className={styles.viewsCount} viewsCount={report.viewsCount} /> : null}
                 <ReportItem report={report}/>
               </CardItem>
             </Link>

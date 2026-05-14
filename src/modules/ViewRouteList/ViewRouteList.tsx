@@ -34,8 +34,8 @@ export default function ViewRouteList() {
     length: searchParams.get('length') || '',
     complexity: parseInt(searchParams.get('complexity') || '0'),
     sort: searchParams.get('sort') || routeDefault.sort,
+    showCount: searchParams.get('showCount') || '',
   }),[searchParams])
-
 
   function handleChangePage(page: number, pageSize: number) {
     const urlParam: Record<string, any> = new URLSearchParams()
@@ -57,6 +57,9 @@ export default function ViewRouteList() {
     if (param.sort !== routeDefault.sort) {
       urlParam.append('sort', param.sort)
     }
+    if (param.showCount !== '') {
+      urlParam.append('showCount', param.showCount)
+    }
     navigate(`/routes?${urlParam}`)
   }
 
@@ -76,6 +79,9 @@ export default function ViewRouteList() {
     }
     if (param.sort !== routeDefault.sort) {
       urlParam.append('sort', param.sort)
+    }
+    if (param.showCount !== '') {
+      urlParam.append('showCount', param.showCount)
     }
     navigate(`/routes?${urlParam}`)
   }
@@ -99,6 +105,9 @@ export default function ViewRouteList() {
     }
     if (sort !== routeDefault.sort) {
       urlParam.append('sort', sort)
+    }
+    if (param.showCount !== '') {
+      urlParam.append('showCount', param.showCount)
     }
     navigate(`/routes?${urlParam}`)
   }
@@ -141,7 +150,7 @@ export default function ViewRouteList() {
           {data!.routeList.map((route, idx) => (
             <Link key={idx} className={styles.linkItem} to={"/route/"+route.id.toString()}>
               <CardItem className={styles.routeItem}>
-                <ViewsCount className={styles.viewsCount} viewsCount={route.viewsCount}/>
+                {param.showCount !== '' ? <ViewsCount className={styles.viewsCount} viewsCount={route.viewsCount}/> : null}
                 <RouteItem route={route} />
               </CardItem>
             </Link>
