@@ -84,6 +84,11 @@
   /*Footer*/
   --color-footer-background: var(--color-main-background);
   --color-footer-text: var(--color-main-text);
+
+  /*ViewsCount*/
+  --color-views_count-text: #FFFFFF;
+  --color-views_count-background: #FF0000;
+  --color-views_count-border: #FF0000;
 }
 
 :root[data-theme='dark'] {
@@ -144,11 +149,6 @@
   --color-report_list-background: rgb(100, 100, 100);
   --color-report_list-text: white;
 
-  /*ReportItem*/
-  --color-report_item-background: rgb(75, 75, 75);
-  --color-report_item-background-hover: rgb(255, 255, 255);
-  --color-report_item-text: var(--schema-color-text);
-
   /*Report*/
   --color-report-background: #0D47A1;
   --color-report-title: #90CAF9;
@@ -182,4 +182,8 @@
   --color-footer-background: var(--color-main-background);
   --color-footer-text: var(--color-main-text);
 
+  /*ViewsCount*/
+  --color-views_count-text: #FFFFFF;
+  --color-views_count-background: #A80909FF;
+  --color-views_count-border: #A80909FF;
 }
