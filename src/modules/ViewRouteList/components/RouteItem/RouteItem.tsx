@@ -1,6 +1,5 @@
 import styles from './RouteItem.module.css'
 import {IRouteShort} from "../../../../types/types";
-import ViewsCount from "../../../../components/ViewsCount/ViewsCount";
 
 interface IProps {
   route: IRouteShort;
@@ -11,7 +10,6 @@ export default function RouteItem({route}: IProps) {
   return (
     <>
       <div className={styles.content}>
-        <ViewsCount viewsCount={route.viewsCount}/>
         <div className={styles.title}>
           {route.name}
         </div>

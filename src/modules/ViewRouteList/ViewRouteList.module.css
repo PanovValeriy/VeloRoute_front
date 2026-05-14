@@ -35,6 +35,7 @@
 }
 
 .routeItem {
+  position: relative;
   background-color: var(--color-route_card-background);
   color: var(--color-route_card-text);
   border: var(--color-button_image-border) 0.125rem solid;
@@ -42,6 +43,11 @@
 
 .routeItem:hover {
   background-color: var(--color-route_card-background-hover);
+}
+
+.viewsCount {
+  right: 0;
+  bottom: 0;
 }
 
 .pagination {

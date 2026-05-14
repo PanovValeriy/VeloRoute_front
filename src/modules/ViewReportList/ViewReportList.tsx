@@ -9,6 +9,7 @@ import Pagination from "../../components/Pagination/Pagination";
 import {reportDefault, routeDefault} from "../../constants";
 import SortPanel from "../../components/SortPanel/SortPanel";
 import SearchPanel, {IOnApplySearch} from "../../components/SearchPanel/SearchPanel";
+import ViewsCount from '../../components/ViewsCount/ViewsCount';
 
 const sortList = [
   {value: 'name', label: 'по возрастанию названия'},
@@ -112,6 +113,7 @@ export default function ViewReportList() {
           {data!.reportList.map((report, idx) => (
             <Link key={idx} className={styles.linkItem} to={"/report/"+report.id}>
               <CardItem className={styles.reportItem}>
+                <ViewsCount className={styles.viewsCount} viewsCount={report.viewsCount} />
                 <ReportItem report={report}/>
               </CardItem>
             </Link>

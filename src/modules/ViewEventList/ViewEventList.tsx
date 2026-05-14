@@ -11,6 +11,7 @@ import {eventDefault} from "../../constants";
 import Pagination from "../../components/Pagination/Pagination";
 import SortPanel from "../../components/SortPanel/SortPanel";
 import SearchPanel, {IOnApplySearch} from "../../components/SearchPanel/SearchPanel";
+import ViewsCount from '../../components/ViewsCount/ViewsCount';
 
 const sortList = [
   {value: 'name', label: 'по возрастанию названия'},
@@ -116,6 +117,7 @@ export default function ViewEventList() {
             {data!.eventList.map((event, idx) => (
               <Link key={idx} className={styles.linkItem} to={"/event/"+event.id}>
                 <CardItem className={cn(styles.eventItem, (dayjs(event.startDateTime) < dayjs(Date())) ? styles.eventItemHistory : null)}>
+                  <ViewsCount className={styles.viewsCount} viewsCount={event.viewsCount}/>
                   <EventItem key={idx} event={event}/>
                 </CardItem>
               </Link>

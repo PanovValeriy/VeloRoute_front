@@ -1,10 +1,10 @@
 .viewsCount {
   position: absolute;
-  bottom: 0;
-  right: 0;
   padding: 0 0.25rem;
   border-radius: 40%;
-  border: 2px solid green;
-  background-color: white;
+  border: 2px solid gray;
+  background-color: red;
+  color: white;
+  font-weight: bold;
 }
 

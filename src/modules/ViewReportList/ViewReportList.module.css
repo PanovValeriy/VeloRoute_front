@@ -34,12 +34,18 @@
 }
 
 .reportItem {
+  position: relative;
   background-color: var(--color-report_card-background);
   color: var(--color-report_card-text);
 }
 
 .reportItem:hover {
   background-color: var(--color-report_card-background-hover);
+}
+
+.viewsCount {
+  right: 0;
+  bottom: 0;
 }
 
 @media screen and (max-width: 540px) {

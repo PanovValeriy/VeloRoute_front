@@ -34,7 +34,13 @@
 }
 
 .eventItem {
+  position: relative;
   background-color: var(--color-event_card-background);
+}
+
+.viewsCount {
+  right: 0;
+  bottom: 0;
 }
 
 .eventItemHistory {

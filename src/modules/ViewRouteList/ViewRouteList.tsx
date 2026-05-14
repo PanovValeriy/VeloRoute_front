@@ -9,6 +9,7 @@ import SearchPanel, {IOnApplySearch} from "../../components/SearchPanel/SearchPa
 import {routeDefault} from "../../constants";
 import Pagination from "../../components/Pagination/Pagination";
 import SortPanel from "../../components/SortPanel/SortPanel";
+import ViewsCount from '../../components/ViewsCount/ViewsCount';
 
 const sortList = [
   {value: 'name', label: 'по возрастанию названия'},
@@ -140,6 +141,7 @@ export default function ViewRouteList() {
           {data!.routeList.map((route, idx) => (
             <Link key={idx} className={styles.linkItem} to={"/route/"+route.id.toString()}>
               <CardItem className={styles.routeItem}>
+                <ViewsCount className={styles.viewsCount} viewsCount={route.viewsCount}/>
                 <RouteItem route={route} />
               </CardItem>
             </Link>
