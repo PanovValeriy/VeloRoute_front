@@ -30,7 +30,13 @@
 }
 
 .button {
-  background-color: var(--color-report-button);
+  background-color: var(--color-report-button) !important;
+  width: 7rem;
+}
+
+.button:hover {
+  background-color: var(--color-report-button-hover) !important;
+  width: 7rem;
 }
 
 .reportItem {

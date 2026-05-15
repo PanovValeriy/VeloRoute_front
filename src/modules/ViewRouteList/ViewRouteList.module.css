@@ -31,7 +31,13 @@
 }
 
 .button {
-  background-color: var(--color-route-button);
+  background-color: var(--color-route-button) !important;
+  width: 7rem;
+}
+
+.button:hover {
+  background-color: var(--color-route-button-hover) !important;
+  width: 7rem;
 }
 
 .routeItem {

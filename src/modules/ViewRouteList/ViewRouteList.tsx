@@ -10,6 +10,7 @@ import {routeDefault} from "../../constants";
 import Pagination from "../../components/Pagination/Pagination";
 import SortPanel from "../../components/SortPanel/SortPanel";
 import ViewsCount from '../../components/ViewsCount/ViewsCount';
+import Button from '../../components/Button/Button';
 
 const sortList = [
   {value: 'name', label: 'по возрастанию названия'},
@@ -138,7 +139,7 @@ export default function ViewRouteList() {
 
   return (
     <div className={styles.viewRouteList}>
-      <Link to={"/"}><button className={styles.button}>На главную</button></Link>
+      <Link className={styles.linkItem} to={"/"}><Button className={styles.button}>На главную</Button></Link>
       <div className={styles.title}>Список маршрутов</div>
       <div className={styles.routeList}>
         <div className={styles.routeParam}>
@@ -159,7 +160,7 @@ export default function ViewRouteList() {
         <Pagination className={styles.pagination} current={param.page} pageSize={param.limit} total={data.recCount} hideOnSinglePage={true} onChange={handleChangePage} />
         </div>
       </div>
-      <Link to={"/"}><button className={styles.button}>На главную</button></Link>
+      <Link className={styles.linkItem} to={"/"}><Button className={styles.button}>На главную</Button></Link>
     </div>
   )
 }

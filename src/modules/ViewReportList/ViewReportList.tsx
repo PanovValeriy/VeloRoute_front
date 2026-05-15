@@ -10,6 +10,7 @@ import {reportDefault, routeDefault} from "../../constants";
 import SortPanel from "../../components/SortPanel/SortPanel";
 import SearchPanel, {IOnApplySearch} from "../../components/SearchPanel/SearchPanel";
 import ViewsCount from '../../components/ViewsCount/ViewsCount';
+import Button from '../../components/Button/Button';
 
 const sortList = [
   {value: 'name', label: 'по возрастанию названия'},
@@ -111,7 +112,7 @@ export default function ViewReportList() {
 
   return (
     <div className={styles.viewReportList}>
-      <Link to={"/"}><button className={styles.button}>На главную</button></Link>
+      <Link className={styles.linkItem} to={"/"}><Button className={styles.button}>На главную</Button></Link>
       <div className={styles.title}>Отчеты</div>
         <div className={styles.reportList}>
         <div className={styles.reportParam}>
@@ -132,7 +133,7 @@ export default function ViewReportList() {
           <Pagination current={param.page} pageSize={param.limit} total={data.recCount} hideOnSinglePage={true} onChange={handleChangePage} />
         </div>
       </div>
-      <Link to={"/"}><button className={styles.button}>На главную</button></Link>
+      <Link className={styles.linkItem} to={"/"}><Button className={styles.button}>На главную</Button></Link>
     </div>
   )
 }

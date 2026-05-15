@@ -3,6 +3,8 @@ import {readTheme, THEME_LABELS, toggleTheme} from "../../libs/libs";
 import {useState} from "react";
 import {Link} from "react-router-dom";
 import Logo from "../Logo/Logo";
+import Icon from '../Icon/Icon';
+import Button from '../Button/Button';
 
 export default function Header() {
 
@@ -21,8 +23,10 @@ export default function Header() {
           Велосипедные маршруты Смоленской области
         </div>
         <div className={styles.theme}>
-            Тема
-            <button className={styles.button} onClick={handleToggleTheme}>{THEME_LABELS[theme]}</button></div>
+            <Button className={styles.button} onClick={handleToggleTheme}>
+              <Icon iconName={ theme === 0 ? "sun" : "moon" } className={styles.iconTheme} />{THEME_LABELS[theme]}
+            </Button>
+        </div>
       </div>
     </>
   )

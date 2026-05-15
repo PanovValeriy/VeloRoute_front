@@ -3,9 +3,17 @@
   --color-header-background: var(--color-main-background);
   --color-header-text: var(--color-main-title);
 
+  /*IconTheme*/
+  --color-icon_theme-stroke: #FFFFFF;
+  --color-icon_theme-fill: #FFFFFF;
+  --opacity-icon_theme: 0.5;
+
   /*Button*/
-  --color-button-background: lightgray;
-  --color-button-text: black;
+  --color-button-background: #459df5;
+  --color-button-text: #ffffff;
+  --color-button-hover-background: #2474ff;
+  --color-button-hover-border: #0000ff;
+  --color-button-hover-text: #ffffff;
 
   /*Input*/
   --color-input-background: white;
@@ -45,6 +53,7 @@
   --color-route-title: #388E3C;
   --color-route-text: #2E7D32;
   --color-route-button: #4CAF50;
+  --color-route-button-hover: #097f0f;
   --color-route-link: #1B5E20;
   --color-route-shadow: #809580;
   --color-route_card-background: #C8E6C9;
@@ -56,6 +65,7 @@
   --color-report-title: #1976D2;
   --color-report-text: #0D47A1;
   --color-report-button: #2196F3;
+  --color-report-button-hover: #2474ff;
   --color-report-link: #1565C0;
   --color-report-shadow: #808095;
   --color-report_card-background: #BBDEFB;
@@ -67,6 +77,7 @@
   --color-event-title: #6A5ACD;
   --color-event-text: #4B0082;
   --color-event-button: #8A2BE2;
+  --color-event-button-hover: #7323be;
   --color-event-link: #7B68EE;
   --color-event-shadow: #808080;
   --color-event_card-background: #E6E6FA;
@@ -96,10 +107,18 @@
   --color-header-background: var(--color-main-background);
   --color-header-text: var(--color-main-title);
 
-  /*Button*/
-  --color-button-background: #212121;
-  --color-button-text: lightgray;
+  /*IconTheme*/
+  --color-icon_theme-stroke: #2b2d33;
+  --color-icon_theme-fill: #2b2d33;
+  --opacity-icon_theme: 1;
 
+  /*Button*/
+  --color-button-background: #459df5;
+  --color-button-text: #2b2d33;
+  --color-button-hover-background: #2474ff;
+  --color-button-hover-border: #0000ff;
+  --color-button-hover-text: #2b2d33;
+  
   /*Input*/
   --color-input-background: #212121;
   --color-input-text: lightgray;
@@ -122,7 +141,6 @@
   --color-pagination-active_page-text: #2b2d33;
   --color-pagination-active_page-border: transparent;
 
-
   /*Main*/
   --color-main-background: #1A1A1A;
   --color-main-title: #E0E0E0;
@@ -139,6 +157,7 @@
   --color-route-title: #A5D6A7;
   --color-route-text: #C8E6C9;
   --color-route-button: #66BB6A;
+  --color-route-button-hover: #097f0f;
   --color-route-link: #B2FF59;
   --color-route-shadow: #002000;
   --color-route_card-background: #2E7D32;
