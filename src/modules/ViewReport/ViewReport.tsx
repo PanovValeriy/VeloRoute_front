@@ -4,6 +4,7 @@ import {Link, useNavigate, useSearchParams} from "react-router-dom";
 import {useGetReportQuery} from "../../store/services/reportApi";
 import Content from "../../components/Content/Content";
 import ReportHeader from "./components/ReportHeader/ReportHeader";
+import Button from "../../components/Button/Button";
 
 export default function ViewReport() {
 
@@ -29,13 +30,13 @@ export default function ViewReport() {
   }
   return (
     <div className={styles.viewReport}>
-      <button className={styles.button} onClick={() => navigate(-1)}>Назад</button>
+      <Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>
       <div className={styles.title}>Отчет "{report.name}"</div>
       <ReportHeader dateReport={report.date} route={report.route} event={report.event} />
       <div className={styles.body}>
         <Content pStyles={styles} body={report.body} />
       </div>
-      <button className={styles.button} onClick={() => navigate(-1)}>Назад</button>
+      <Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>
     </div>
   )
 }

@@ -11,6 +11,6 @@ interface IProps {
 export default function Button ({className, onClick, children}: IProps) {
     const cnButton = cn(styles.button, className)
     return (
-        <div className={cnButton} onClick={onClick}>{children}</div>
+      <div className={cnButton} onClick={onClick}><div className={styles.buttonInner}>{children}</div></div>
     )
 }

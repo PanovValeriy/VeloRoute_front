@@ -8,6 +8,7 @@ import {useGetEventQuery} from "../../store/services/eventApi";
 import Content from "../../components/Content/Content";
 import {useGetReportListQuery} from "../../store/services/reportApi";
 import ReportList from "../../components/ReportList/ReportList";
+import Button from "../../components/Button/Button";
 
 export default function ViewEvent() {
 
@@ -33,7 +34,7 @@ export default function ViewEvent() {
   }
   return (
     <div className={styles.viewEvent}>
-      <button className={styles.button} onClick={() => navigate(-1)}>Назад</button>
+      <Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>
       <div className={styles.title}>Событие "{event.name}" ({dayjs(event.startDateTime).format('DD.MM.YYYY')})</div>
 
       <div className={styles.params}>
@@ -49,7 +50,7 @@ export default function ViewEvent() {
         <Content pStyles={styles} body={event.description} />
       </div>
       {((dataReportList) && (dataReportList.recCount !== 0)) ? <ReportList className={stylesReportList.fromEvent} reportList = {dataReportList.reportList}/> : null}
-      <button className={styles.button} onClick={() => navigate(-1)}>Назад</button>
+      <Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>
     </div>
   )
 }

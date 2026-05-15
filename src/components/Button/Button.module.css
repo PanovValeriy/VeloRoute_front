@@ -1,13 +1,11 @@
 .button {
+  box-sizing: border-box;
   border: none;
-  padding: 0.5rem 1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
   border-radius: 0.25rem;
-  gap: 0.5rem;
+  padding: 0;
+  display: inline-block;
   cursor: pointer;
-  height: 1.5rem;
+  height: 2rem;
   background-color: var(--color-button-background);
   color: var(--color-button-text);
   font-size: 1.25rem;
@@ -17,4 +15,18 @@
   border-color: var(--color-button-hover-border);
   background-color: var(--color-button-hover-background);
   color: var(--color-button-hover-text);
+}
+
+.buttonInner {
+  border: none;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  height: 2rem;
+  /*background-color: var(--color-button-background);*/
+  /*color: var(--color-button-text);*/
+  /*font-size: 1.25rem;*/
 }

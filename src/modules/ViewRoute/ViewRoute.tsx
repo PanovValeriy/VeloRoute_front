@@ -7,6 +7,7 @@ import {useGetRouteQuery} from "../../store/services/routeApi";
 import Content from "../../components/Content/Content";
 import {useGetReportListQuery} from "../../store/services/reportApi";
 import ReportList from "../../components/ReportList/ReportList";
+import Button from "../../components/Button/Button";
 
 export default function ViewRoute() {
 
@@ -25,14 +26,14 @@ export default function ViewRoute() {
   if (!route) {
     return (
       <>
-        <button className={styles.button} onClick={() => navigate(-1)}>Назад</button>
+        <Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>
         <div>Маршрут не найден</div>
       </>
     )
   }
   return (
     <div className={styles.viewRoute}>
-      <button className={styles.button} onClick={() => navigate(-1)}>Назад</button>
+      <Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>
       <div className={styles.title}>Маршрут "{route.name}"</div>
       <div className={styles.params}>
         <div className={styles.paramsImageWrapper}>
@@ -46,7 +47,7 @@ export default function ViewRoute() {
         <Content pStyles={styles} body={route.description} />
       </div>
       {((dataReportList) && (dataReportList.recCount !== 0)) ? <ReportList className={stylesReportList.fromRoute} reportList = {dataReportList.reportList}/> : null}
-      <button className={styles.button} onClick={() => navigate(-1)}>Назад</button>
+      <Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>
     </div>
   )
 }

@@ -87,7 +87,11 @@
 }
 
 .button {
-  background-color: var(--color-route-button);
+  background-color: var(--color-route-button) !important;
+}
+
+.button:hover {
+  background-color: var(--color-route-button-hover) !important;
 }
 
 @media screen and (max-width: 650px) {

@@ -23,7 +23,7 @@ export default function Header() {
           Велосипедные маршруты Смоленской области
         </div>
         <div className={styles.theme}>
-            <Button className={styles.button} onClick={handleToggleTheme}>
+            <Button onClick={handleToggleTheme}>
               <Icon iconName={ theme === 0 ? "sun" : "moon" } className={styles.iconTheme} />{THEME_LABELS[theme]}
             </Button>
         </div>

@@ -66,7 +66,11 @@
 }
 
 .button {
-  background-color: var(--color-report-button);
+  background-color: var(--color-report-button) !important;
+}
+
+.button:hover {
+  background-color: var(--color-report-button-hover) !important;
 }
 
 @media screen and (max-width: 650px) {
