@@ -8,6 +8,7 @@ import Content from "../../components/Content/Content";
 import {useGetReportListQuery} from "../../store/services/reportApi";
 import ReportList from "../../components/ReportList/ReportList";
 import Button from "../../components/Button/Button";
+import DateCreateUpdate from "../../components/DateCreateUpdate/DateCreateUpdate";
 
 export default function ViewRoute() {
 
@@ -34,6 +35,7 @@ export default function ViewRoute() {
   return (
     <div className={styles.viewRoute}>
       <Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>
+      <DateCreateUpdate className={styles.dateCreateUpdate} dateCreate={route.dateCreate} dateUpdate={route.dateUpdate} />
       <div className={styles.title}>Маршрут "{route.name}"</div>
       <div className={styles.params}>
         <div className={styles.paramsImageWrapper}>

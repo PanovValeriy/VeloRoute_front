@@ -52,6 +52,8 @@ export interface IRoute {
   grader: number;         // грейдер
   soil: number;           // грунт
   jungle: number;         // дебри
+  dateCreate: Date;       // дата создания
+  dateUpdate: Date;       // дата обновления
 }
 
 // Маршрут сокращенный (для списка)
@@ -79,6 +81,8 @@ export interface IReport {
   event: IEvent | null;   // мероприятие
   photoURL: string;       // ссылка на фотографию
   body: string;           // тело отчета
+  dateCreate: Date;       // дата создания
+  dateUpdate: Date;       // дата обновления
 }
 
 // Отчет сокращенный (для списка)
@@ -106,6 +110,8 @@ export interface IEvent {
   tempo: ITempo;          // темп
   startDateTime: Date;    // дата и время старта
   startPlace: string;     // место старта
+  dateCreate: Date;       // дата создания
+  dateUpdate: Date;       // дата обновления
 }
 
 // Событие сокращенное (для списка)

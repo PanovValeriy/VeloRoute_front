@@ -16,6 +16,10 @@
   color: var(--color-event-title);
 }
 
+.dateCreateUpdate {
+  color: var(--color-event-text);
+}
+
 .params {
   padding: 1rem;
   display: flex;

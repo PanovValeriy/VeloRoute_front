@@ -5,6 +5,7 @@ import {useGetReportQuery} from "../../store/services/reportApi";
 import Content from "../../components/Content/Content";
 import ReportHeader from "./components/ReportHeader/ReportHeader";
 import Button from "../../components/Button/Button";
+import DateCreateUpdate from "../../components/DateCreateUpdate/DateCreateUpdate";
 
 export default function ViewReport() {
 
@@ -31,6 +32,7 @@ export default function ViewReport() {
   return (
     <div className={styles.viewReport}>
       <Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>
+      <DateCreateUpdate className={styles.dateCreateUpdate} dateCreate={report.dateCreate} dateUpdate={report.dateUpdate} />
       <div className={styles.title}>Отчет "{report.name}"</div>
       <ReportHeader dateReport={report.date} route={report.route} event={report.event} />
       <div className={styles.body}>

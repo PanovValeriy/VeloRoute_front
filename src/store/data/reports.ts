@@ -73,7 +73,9 @@ export const dataReportList: IReport[] =
         '[IMG]https://lh3.googleusercontent.com/pw/AP1GczNt2tPPtG_PGz9JQy4CX04vaIyT7vV2CzBeXRWcjPImVROCm1RbqAWBKmJk7cX-ZS-czaV6bD6aysW-go_VkGMLZLVUF_muL0tPXYoCn6MLPPEV6Z4v3UE40TtKfZQlB1vTwKigVqhde3PYAlYbNKM=w542-h963-s-no-gm[/IMG]\n' +
         '[IMG]https://lh3.googleusercontent.com/pw/AP1GczO9Ai3ukwSg_odbCY7uk-VKAHt6CAXAPqjUnkufOgXCkYvOzfKF-R5A03nDeC7wCDAMWvSi3vjK0NQqrbvht56Rb7P4zOi0zr9qS0MoMW-CazxLN2qy7912TrQLY6snrg4w1G3R_gTeOf-jMLfAGPU=w542-h963-s-no-gm[/IMG]\n' +
         'Вот такая интересная получилась покатушка.\n' +
-        'Поеду ли я по данному маршруту еще раз? Маловероятно, несмотря на то, что остались еще несколько мест, которые бы я хотел посетить в окрестностях Озёрного.'
+        'Поеду ли я по данному маршруту еще раз? Маловероятно, несмотря на то, что остались еще несколько мест, которые бы я хотел посетить в окрестностях Озёрного.',
+      dateCreate: new Date(2026, 5, 25),
+      dateUpdate: new Date(2026, 5, 30)
     },
     {
       id: 2,
@@ -97,7 +99,9 @@ export const dataReportList: IReport[] =
         'На открытии велосезона не заехать в Реадовский парк я не мог.\n' +
         '[IMG]https://lh3.googleusercontent.com/pw/AP1GczNIJ0jla8qN1jQ8j7EIIMr4xhrKTp6AFqv_SW4hx4J9kCrXRwprMFSEwWBnzmYpaqBJoxLz0l-BzvYf-YuCrpfKEWRmg1jtMZiSjYoDDcPAuAt2Za7v1YyOKiQE1IHVGOkr_4TCbrlWQ5X-2s4j6CY=w1024-h576-s-no?authuser=1[/IMG]\n' +
         'К этому времени солнце уже скрылось,а к возвращению домой уже пошел снег.\n' +
-        'Для открытия сезона получилась очень маленькая покатушка (15,5 км), но начало положено и есть надежда, что дальше будет быстрее и больше.'
+        'Для открытия сезона получилась очень маленькая покатушка (15,5 км), но начало положено и есть надежда, что дальше будет быстрее и больше.',
+      dateCreate: new Date(2026, 5, 25),
+      dateUpdate: new Date(2026, 5, 30)
     },
     {
       id: 3,
@@ -126,7 +130,9 @@ export const dataReportList: IReport[] =
         '[IMG]https://lh3.googleusercontent.com/pw/AP1GczPS9AqztGp5UPrrhySokyq4U9eHWyhhbDG7Vv3rCE6bNu-vOQqTu6l0vZyPuWqq6ID4LL2-A7-PG-K-YiLge6rk2pco_G9y6iqHLpLfzq_pS0Z981afaDUdblRvBH0p-iyaNDwm3N_b71ErYH0pkN0=w1024-h576-s-no?authuser=1[/IMG]\n' +
         'Вспоминил про рождественскую покатушку 2018 года, она была грязевая.\n' +
         '[IMG]https://lh3.googleusercontent.com/pw/AP1GczNsCR4DITiSMspiWjpyoAGER0xwklOtiMJQ3Ij7MLlHaO4Wjz6qrsBOIZQ_iGjDVJHzH0225mH7Ms4PgaA2KDJ8yDJRo89zkzy7biiKQay7T3F6D4lZzagdqcRVNRlkFlMBJVn6EaumZRfJrTBJrr0=w768-h576-s-no?authuser=1[/IMG]\n' +
-        'Домой я приехал конечно же мокрый, но план выполнен, я остался доволен.'
+        'Домой я приехал конечно же мокрый, но план выполнен, я остался доволен.',
+      dateCreate: new Date(2026, 5, 25),
+      dateUpdate: new Date(2026, 5, 30)
     },
     {
       id: 4,
@@ -167,7 +173,9 @@ export const dataReportList: IReport[] =
         'От асфальта я ничего лучшего и не ожидал\n' +
         '[IMG]https://lh3.googleusercontent.com/pw/AP1GczPp3Ytw6jxFS04kKpL_EegoBlKKFjp2bZhz-AJGNfjAGWUSMSU4cY9shoPEMjwHUXcF3oiRLUvPS7voLVSVglmGt9ayJXWg4PshQjsZZCAr0YV46c19GMKVz0dc2qAxwGeMCkbt6Dtme0SIZ-cOhgk=w1024-h576-s-no?authuser=1[/IMG]\n' +
         'Подъезжаю к Краснинскому шоссе, на улице уже пасмурно, а к дому я подъезжал уже в метель.\n' +
-        '[IMG]https://lh3.googleusercontent.com/pw/AP1GczMl0YC9SXET_pQFXxb3kk9KGNK4r7QrzhS5MFF3VlktrCBGkcupbgBANmUiA6Dby7t0o0JYEAO6TpcEmeEFXgcO3Hp95jzqHQth_o9gKMUY7BDpb4Lh3LIePVqpq3kkU8HpHDsgqfjMXyskxTeYJq0=w1024-h576-s-no?authuser=1[/IMG]'
+        '[IMG]https://lh3.googleusercontent.com/pw/AP1GczMl0YC9SXET_pQFXxb3kk9KGNK4r7QrzhS5MFF3VlktrCBGkcupbgBANmUiA6Dby7t0o0JYEAO6TpcEmeEFXgcO3Hp95jzqHQth_o9gKMUY7BDpb4Lh3LIePVqpq3kkU8HpHDsgqfjMXyskxTeYJq0=w1024-h576-s-no?authuser=1[/IMG]',
+      dateCreate: new Date(2026, 5, 25),
+      dateUpdate: new Date(2026, 5, 30)
     },
     {
       id: 5,
@@ -190,7 +198,9 @@ export const dataReportList: IReport[] =
         'В Рябиновой поляне появились места где асфальт сильно разбит.\n' +
         'Состояние окружной дороги схожее с Рославльским шоссе. А вот третий этап проходил по Досуговскому шоссе, где положили новый асфальт и местами сделали тротуары. После зимы около бордюров много песка.\n' +
         'В целом хорошее начало вечерних покатушек.\n' +
-        'Итого получилось около 29км'
+        'Итого получилось около 29км',
+      dateCreate: new Date(2026, 5, 25),
+      dateUpdate: new Date(2026, 5, 30)
     },
     {
       id: 6,
@@ -232,7 +242,9 @@ export const dataReportList: IReport[] =
         '[IMG]https://lh3.googleusercontent.com/pw/AP1GczO5g8MSF239JKqhF9ZAMZOtlLpfkaiR9cIpLhfR9Xgea1OJeh4WoZ1Ho1DWnUCUTWE5uMq0rerRapBein1K4zlGnOGKsWzoGjkWcceA7mfVeD2Z61WaHKMgQdafG96x8E5FcIssmDhX2YRvn2ZMuN0=w800-h450-s-no-gm[/IMG]\n' +
         'В Ясенной сворачиваю к р.Днепр, там уже успел проехать квадроцикл, но из-за того что снега мало, трудностей мне эти следы не доствили.\n' +
         '[IMG]https://lh3.googleusercontent.com/pw/AP1GczMZrT29jtRjUtIQSWhmVAixf1SopGzW-RX-sC3_TM3-MTluurb9vvSKuuIgtNq6R2r_YuNwfCjxibvpvyYgr9n6HmR1l8SxG9uFltOPuuVZscCuWSCX38KvuXfk2cEWZOU4BHHUGhKJMGs2wqtLa4A=w800-h450-s-no-gm[/IMG]\n' +
-        'Итого получилось около 29км.'
+        'Итого получилось около 29км.',
+      dateCreate: new Date(2026, 5, 25),
+      dateUpdate: new Date(2026, 5, 30)
     },
     // {
     //   name: '',

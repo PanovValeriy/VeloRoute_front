@@ -35,7 +35,10 @@ export const dataRouteList: IRoute[] =
       '6. Проезд от Александровского озера через тропинку вместо подъема в Александровку. Данный вариант может быть не проезжаем во время подъема воды в р.Ясенная, т.к. затапливает мостик, так же в сырую погоду он мало подходит из мокрой высокой травы и грязной дороги после мостика.\n' +
       '[IMG]https://lh3.googleusercontent.com/pw/AP1GczOK7NQVdE8aNs1EnMdzodHftZWuIvTOxTM8LteSRbb1-xOq8m7zU7H4fue7zWdjePPKFCKSzpw1S8tAoVFXfhPwM9_ph8uXfqqZAFqkQY3kYFeMa1l9K4BLMqBPDXb5O80QwmjeF8k2KIeualtpHsE=w1155-h887-s-no?authuser[/IMG]\n' +
       '7. Если нужно выехать на Краснинское шоссе или грутовая часть основного маршрута грязная, то можно проехать через Верхнеясенный водозабор\n' +
-      '[IMG]https://lh3.googleusercontent.com/pw/AP1GczPPIkFRuQC5zj8fVbM-j3X0JW7gm-6qycbqxEE2GXAAwVVOTRLxNccpQBp57yS1O2iQKMteENincP34EOvTSgln-tnjvfEBbS4nMsyMcGYnhHaWTQTlcFLgkJoQCrKOlenYNvZQQwJVIW1l3cb3U3g=w1155-h887-s-no?authuser=1[/IMG]'
+      '[IMG]https://lh3.googleusercontent.com/pw/AP1GczPPIkFRuQC5zj8fVbM-j3X0JW7gm-6qycbqxEE2GXAAwVVOTRLxNccpQBp57yS1O2iQKMteENincP34EOvTSgln-tnjvfEBbS4nMsyMcGYnhHaWTQTlcFLgkJoQCrKOlenYNvZQQwJVIW1l3cb3U3g=w1155-h887-s-no?authuser=1[/IMG]',
+    dateCreate: new Date(2026, 5, 25),
+    dateUpdate: new Date(2026, 5, 30)
+
   },
   {
     id: 2,
@@ -66,7 +69,9 @@ export const dataRouteList: IRoute[] =
       '4. Проехать лес из Волково вместо "дороги посланника". Средне статистически данный участок считается более легким и в прохождении и в ориентировании.\n' +
       '[IMG]https://lh3.googleusercontent.com/pw/AP1GczN0Bgg1BsGviRYn9IUqmk6sHNnBaQ9FHo3jy3eDy5Uo1J5g4RqnaE8TI__1T2s6kVs10MpZtouQJr123ak5OAx1nZlNiCqNBFGY7HXqvXa5P3AEOuzLzrJU-8UibLHbDGf9RU8owv8XxbA5NuQgaso=w1592-h542-s-no?authuser=1[/IMG]\n' +
       '5. Из Чекулино до Телешей ехать по асфальту. Можно использовать для облегчения маршрута или во время раскисших грунтов.\n' +
-      '[IMG]https://lh3.googleusercontent.com/pw/AP1GczNCWQcYhCVsAt5bLOwBCKlB5rg_GYYVb478WplQ35muwgRZp0t7gHeQB07JB8t9x2u3oreNicjx6ecidzKE3MSd_P4Pcxp6IUMn1SPbieMekp8WallLi51dr7sTFgPJbVXSa9349twElSilKRBi-uE=w1587-h542-s-no?authuser=1[/IMG]'
+      '[IMG]https://lh3.googleusercontent.com/pw/AP1GczNCWQcYhCVsAt5bLOwBCKlB5rg_GYYVb478WplQ35muwgRZp0t7gHeQB07JB8t9x2u3oreNicjx6ecidzKE3MSd_P4Pcxp6IUMn1SPbieMekp8WallLi51dr7sTFgPJbVXSa9349twElSilKRBi-uE=w1587-h542-s-no?authuser=1[/IMG]',
+    dateCreate: new Date(2026, 5, 25),
+    dateUpdate: new Date(2026, 5, 30)
   },
   {
     id: 3,
@@ -84,6 +89,8 @@ export const dataRouteList: IRoute[] =
     pointList: 'Гусино - Сырокоренье - Городец - Волково - Сыроквашино - Чекулино - Боровая - Смоленск',
     trackFileURL: '',
     description: 'Описание маршрута и возможных вариантов',
+    dateCreate: new Date(2026, 5, 25),
+    dateUpdate: new Date(2026, 5, 30)
   },
   {
     id: 4,
@@ -101,6 +108,8 @@ export const dataRouteList: IRoute[] =
     pointList: 'Реадовка - Александровка - Алексино - Деменщина - Михновка - Кореневщина - Дроветчино - Боровая - Ясенная - Краснинскаое шоссе',
     trackFileURL: '',
     description: 'Описание маршрута и возможных вариантов',
+    dateCreate: new Date(2026, 5, 25),
+    dateUpdate: new Date(2026, 5, 30)
   },
   {
     id: 5,
@@ -118,6 +127,8 @@ export const dataRouteList: IRoute[] =
     pointList: 'Красникнское шоссе - Ясенная - Боровая - оз.Сказка - Красный Бор - Витебское шоссе',
     trackFileURL: '',
     description: 'Описание маршрута и возможных вариантов',
+    dateCreate: new Date(2026, 5, 25),
+    dateUpdate: new Date(2026, 5, 30)
   },
   {
     id: 6,
@@ -135,6 +146,8 @@ export const dataRouteList: IRoute[] =
     pointList: 'Верхнеясенный водозабор - оз.Александровское - Михновка - Кореневщина - Дроветчино - Деминовка - Телеши - Чекулино - Слизнево - Телеши - Боровая - Ясееная - Краснинское шоссе',
     trackFileURL: '',
     description: 'Описание маршрута и возможных вариантов',
+    dateCreate: new Date(2026, 5, 25),
+    dateUpdate: new Date(2026, 5, 30)
   },
   {
     id: 7,
@@ -152,6 +165,8 @@ export const dataRouteList: IRoute[] =
     pointList: 'Верхнеясенный водозабор - оз.Александровское - Михновка - Кореневщина - Дроветчино - Деминовка - Слизнево - Чекулино - Катынь Покровская - Уфинье - Слизнево - Телеши - Боровая - Ясееная - Краснинское шоссе',
     trackFileURL: '',
     description: 'Описание маршрута и возможных вариантов',
+    dateCreate: new Date(2026, 5, 25),
+    dateUpdate: new Date(2026, 5, 30)
   },
   {
     id: 8,
@@ -169,6 +184,8 @@ export const dataRouteList: IRoute[] =
     pointList: 'Верхнеясенный водозабор - оз.Александровское - Михновка - Кореневщина - Дроветчино - Деминовка - Телеши - Каменщина - Зубовщина - Хохлово - Рязаново - Лоево - Корытня - Кончинка - Сыроквашино - Уфинье - Чекулино - Слизнево - Телеши - Боровая - Ясееная - Краснинское шоссе',
     trackFileURL: '',
     description: 'Описание маршрута и возможных вариантов',
+    dateCreate: new Date(2026, 5, 25),
+    dateUpdate: new Date(2026, 5, 30)
   },
   {
     id: 9,
@@ -186,6 +203,8 @@ export const dataRouteList: IRoute[] =
     pointList: 'Рославльское шоссе - Рябиновая поляна - Смоленская окружная дорога - Досуговское шоссе - пр-кт Гагарина',
     trackFileURL: '',
     description: 'Описание маршрута и возможных вариантов',
+    dateCreate: new Date(2026, 5, 25),
+    dateUpdate: new Date(2026, 5, 30)
   },
   {
     id: 10,
@@ -203,6 +222,8 @@ export const dataRouteList: IRoute[] =
     pointList: 'Рославльское шоссе - Рябиновая поляна - Цыбульники - Сож - Дрюцк - Киевское шоссе - пр-кт Гагарина',
     trackFileURL: '',
     description: 'Описание маршрута и возможных вариантов',
+    dateCreate: new Date(2026, 5, 25),
+    dateUpdate: new Date(2026, 5, 30)
   },
   {
     id: 11,
@@ -220,6 +241,8 @@ export const dataRouteList: IRoute[] =
     pointList: 'Рославльское шоссе - Пригорское - Талашкино - Бобыри - Сож - Дрюцк - Киевское шоссе - пр-кт Гагарина',
     trackFileURL: '',
     description: 'Описание маршрута и возможных вариантов',
+    dateCreate: new Date(2026, 5, 25),
+    dateUpdate: new Date(2026, 5, 30)
   },
   {
     id: 12,
@@ -237,6 +260,8 @@ export const dataRouteList: IRoute[] =
     pointList: 'пр-кт Гагарина - Киевское шоссе - Миловидово - Рай - Дрюцк - Миловидово - Киевское шоссе - пр-кт Гагарина',
     trackFileURL: '',
     description: 'Описание маршрута и возможных вариантов',
+    dateCreate: new Date(2026, 5, 25),
+    dateUpdate: new Date(2026, 5, 30)
   },
   {
     id: 13,
@@ -254,6 +279,8 @@ export const dataRouteList: IRoute[] =
     pointList: 'Киевское шоссе - Миловидово - Дрюцк - Сож - Цыбульники - Нагать - Пригорское - оз.Голубое - Знаменка - Борщевщина - Селифоново - Козино - Богородицкое - Рославльское шоссе',
     trackFileURL: '',
     description: 'Описание маршрута и возможных вариантов',
+    dateCreate: new Date(2026, 5, 25),
+    dateUpdate: new Date(2026, 5, 30)
   },
   {
     id: 14,
@@ -271,6 +298,8 @@ export const dataRouteList: IRoute[] =
     pointList: 'Киевское шоссе - Миловидово - Дрюцк - Сож - оз.Муханино - Гевино - Кощино - Яново - Рябцево - Уколово - Бубново - Селифоново - Горяны - Рославльское шоссе',
     trackFileURL: '',
     description: 'Описание маршрута и возможных вариантов',
+    dateCreate: new Date(2026, 5, 25),
+    dateUpdate: new Date(2026, 5, 30)
   },
   {
     id: 15,
@@ -288,6 +317,8 @@ export const dataRouteList: IRoute[] =
     pointList: 'Москоское шоссе - Орловская сортировочная - Колодня - Соколья Гора - Ясная поляна - ТЭЦ-2 - ул.Шейна - ул. Соболева - набережная р.Днепр',
     trackFileURL: '',
     description: 'Описание маршрута и возможных вариантов',
+    dateCreate: new Date(2026, 5, 25),
+    dateUpdate: new Date(2026, 5, 30)
   },
   {
     id: 16,
@@ -305,6 +336,8 @@ export const dataRouteList: IRoute[] =
     pointList: 'Витебское шоссе - Верхняя Дубровенка - оз.Подснежники - пруд № 9 - Ольшанский карьер - Пронино - Красный Бор - Витебское шоссе',
     trackFileURL: '',
     description: 'Описание маршрута и возможных вариантов',
+    dateCreate: new Date(2026, 5, 25),
+    dateUpdate: new Date(2026, 5, 30)
   },
   {
     id: 17,
@@ -322,6 +355,8 @@ export const dataRouteList: IRoute[] =
     pointList: 'ул. Кутузова - Печерск - Стабна - Мощинки - Спас-Липки - Сыр-Липки - Аполье - Самолюбово - Гряда - Язвище - Каспля - Верховье - Афоньки - Ольша - Верхняя дубровенка - Витебское шоссе',
     trackFileURL: '',
     description: 'Описание маршрута и возможных вариантов',
+    dateCreate: new Date(2026, 5, 25),
+    dateUpdate: new Date(2026, 5, 30)
   },
   {
     id: 18,
@@ -339,6 +374,8 @@ export const dataRouteList: IRoute[] =
     pointList: 'Краснинское шоссе - Ракитня - Старое Куприно - Лелеквинская - Волоковая - Агапоново - Верховье - Ольша - Пруд № 9 - Подснежники - Верхняя Дубровенка - Витебское шоссе',
     trackFileURL: '',
     description: 'Описание маршрута и возможных вариантов',
+    dateCreate: new Date(2026, 5, 25),
+    dateUpdate: new Date(2026, 5, 30)
   },
   {
     id: 19,
@@ -356,6 +393,8 @@ export const dataRouteList: IRoute[] =
     pointList: 'Лелеквинская - Зарубинки - Каспля - Верховье - Ольша - Пруд № 9 - Подснежники - Верхняя Дубровенка - Витебское шоссе',
     trackFileURL: '',
     description: 'Описание маршрута и возможных вариантов',
+    dateCreate: new Date(2026, 5, 25),
+    dateUpdate: new Date(2026, 5, 30)
   },
   {
     id: 20,
@@ -373,6 +412,8 @@ export const dataRouteList: IRoute[] =
     pointList: 'Печарск - Стабна - Фефелово - Чижево - Петрищево - Холм - Демидов - Каспля - Верховье - Ольша - Верхняя Дуброверка - Витебское шоссе',
     trackFileURL: '',
     description: 'Описание маршрута и возможных вариантов',
+    dateCreate: new Date(2026, 5, 25),
+    dateUpdate: new Date(2026, 5, 30)
   },
   // {
   //   id: 0,

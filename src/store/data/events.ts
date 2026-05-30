@@ -29,7 +29,9 @@ export const dataEventList: IEvent[] = [
     trackFileURL: '',
     description:
       'Тут подробное описание события\n' +
-      '[IMG]https://lh3.googleusercontent.com/pw/AP1GczPVU4op4t5NUFoyfzpQfpLdOxyd1yvTuLRHqY6QtkIpYHx6IY0_u81-OyL5WAwi0C1OyDEjmF_gDU53Zjc8pX718aLfl-yF2nGE0ZEExkJ4RnFYS79sZlu7BigSBPZlCwcJskB5pS3aZ7JH986qVCE=w1280-h720-s-no-gm[/IMG]'
+      '[IMG]https://lh3.googleusercontent.com/pw/AP1GczPVU4op4t5NUFoyfzpQfpLdOxyd1yvTuLRHqY6QtkIpYHx6IY0_u81-OyL5WAwi0C1OyDEjmF_gDU53Zjc8pX718aLfl-yF2nGE0ZEExkJ4RnFYS79sZlu7BigSBPZlCwcJskB5pS3aZ7JH986qVCE=w1280-h720-s-no-gm[/IMG]',
+    dateCreate: new Date(2026, 5, 25),
+    dateUpdate: new Date(2026, 5, 30)
   },
   // {
   //   id: 0,
