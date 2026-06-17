@@ -24,7 +24,7 @@ export default function EventItem({event}: IProps) {
           Место старта: {event.startPlace}
         </div>
         <div className={styles.param}>
-          Протяженность: {event.length}
+          Протяженность: {event.length} км
         </div>
         <div className={styles.param}>
           Тип: {event.typeEvent.name}

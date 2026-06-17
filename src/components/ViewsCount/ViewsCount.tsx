@@ -9,6 +9,6 @@ interface IProps {
 export default function ViewsCount({className, viewsCount}: IProps) {
   const cnViewCount = cn(styles.viewsCount, className)
   return (
-    <div className={cnViewCount}>{viewsCount}</div>
+    <div className={cnViewCount}>{(viewsCount) ? viewsCount : 0}</div>
   )
 }
