@@ -4,6 +4,7 @@ import {setupListeners} from "@reduxjs/toolkit/query";
 import reportApi from "./services/reportApi";
 import eventApi from "./services/eventApi";
 import newsApi from "./services/newsApi";
+import infoApi from "./services/infoApi";
 
 export const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ export const store = configureStore({
     [reportApi.reducerPath]: reportApi.reducer,
     [eventApi.reducerPath]: eventApi.reducer,
     [newsApi.reducerPath]: newsApi.reducer,
+    [infoApi.reducerPath]: infoApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat([
@@ -18,6 +20,7 @@ export const store = configureStore({
       reportApi.middleware,
       eventApi.middleware,
       newsApi.middleware,
+      infoApi.middleware,
     ])
 })
 

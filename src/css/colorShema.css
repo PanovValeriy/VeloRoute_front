@@ -84,6 +84,30 @@
   --color-event_card-background-hover: #B6B6DA;
   --color-event_card-text: #483D8B;
 
+  /*Info*/
+  --color-info-background: #F5F5DC;
+  --color-info-title: #4B4620;
+  --color-info-text: #3D3529;
+  --color-info-button: #D2B48C;
+  --color-info-button-hover: #C3A66F;
+  --color-info-button-text: #FFFFFF;
+  --color-info-link: #8B4513;
+  --color-info-shadow: rgba(0, 0, 0, 0.1);
+  --color-info_card-background: #FFF8DC;
+  --color-info_card-background-hover: #FFE7BA ;
+  --color-info_card-text: #3D3529;
+
+  /*--color-info-background: #E3F2FD;*/
+  /*--color-info-title: #1976D2;*/
+  /*--color-info-text: #0D47A1;*/
+  /*--color-info-button: #2196F3;*/
+  /*--color-info-button-hover: #2474ff;*/
+  /*--color-info-link: #1565C0;*/
+  /*--color-info-shadow: #808095;*/
+  /*--color-info_card-background: #BBDEFB;*/
+  /*--color-info_card-background-hover: #9BBEDB;*/
+  /*--color-info_card-text: #0D47A1;*/
+
   /*News*/
   --color-news-background: #FFFFE0;
   --color-news-border: gray;
@@ -114,10 +138,10 @@
 
   /*Button*/
   --color-button-background: #459df5;
-  --color-button-text: #2b2d33;
+  --color-button-text: #ffffff;
   --color-button-hover-background: #2474ff;
   --color-button-hover-border: #0000ff;
-  --color-button-hover-text: #2b2d33;
+  --color-button-hover-text: #ffffff;
   
   /*Input*/
   --color-input-background: #212121;
@@ -188,6 +212,19 @@
   --color-event_card-background: #2E2E3A;
   --color-event_card-background-hover: #4E4E5A;
   --color-event_card-text: #FFFFFF;
+
+  /*Info*/
+  --color-info-background: #2C2C2C;
+  --color-info-title: #E6D8AD;
+  --color-info-text: #E6D8AD;
+  --color-info-button: #4A4137;
+  --color-info-button-hover: #60554B;
+  --color-info-button-text: #FFFFFF;
+  --color-info-link: #FFE4C4;
+  --color-info-shadow: rgba(255, 255, 255, 0.1);
+  --color-info_card-background: #3A3530;
+  --color-info_card-background-hover: #4A4137;
+  --color-info_card-text: #E6D8AD;
 
   /*News*/
   --color-news-background: #333333;

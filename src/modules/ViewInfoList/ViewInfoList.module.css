@@ -1,0 +1,60 @@
+.viewInfoList {
+  background-color: var(--color-info-background);
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-info-title);
+}
+
+.infoList {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.infoParam {
+  height: 100%;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  background-color: var(--color-info_card-background);
+  border-radius: 0.5rem;
+}
+
+.linkItem {
+  text-decoration: none;
+  color: var(--color-info-link);
+}
+
+.button {
+  background-color: var(--color-info-button) !important;
+}
+
+.button:hover {
+  background-color: var(--color-info-button-hover) !important;
+}
+
+.infoItem {
+  position: relative;
+  background-color: var(--color-info_card-background);
+  color: var(--color-info_card-text);
+}
+
+.infoItem:hover {
+  background-color: var(--color-info_card-background-hover);
+}
+
+@media screen and (max-width: 540px) {
+  .infoList {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .infoParam {
+    align-self: center;
+  }
+}

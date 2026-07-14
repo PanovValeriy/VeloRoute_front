@@ -139,3 +139,19 @@ export interface INews {
   date?: Date;            // дата поездки (для отчета)
   name: string;           // название
 }
+
+// Информация
+export interface IInfo {
+  id: number;             // идентификатор сообщения
+  name: string;           // название сообщения
+  body: string;           // тело сообщения
+  dateCreate: Date;       // дата создания
+  dateUpdate: Date;       // дата обновления
+}
+
+// Информация сокращенная (для списка)
+export interface IInfoShort {
+  id: number;             // идентификатор сообщения
+  name: string;           // название сообщения
+  body: string;           // тело сообщения
+}

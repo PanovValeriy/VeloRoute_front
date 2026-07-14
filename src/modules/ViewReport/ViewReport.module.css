@@ -69,6 +69,11 @@
   font-weight: bold;
 }
 
+.infoLink {
+  color: var(--color-info-link);
+  font-weight: bold;
+}
+
 .button {
   background-color: var(--color-report-button) !important;
 }

@@ -17,3 +17,7 @@ export const reportDefault = {
   limit: 8,
   sort: 'date:desc'
 }
+
+export const infoDefault = {
+  limit: 10,
+}

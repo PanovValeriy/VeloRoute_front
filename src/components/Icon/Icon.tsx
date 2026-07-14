@@ -3,7 +3,7 @@ import {ReactComponent as SvgRoute} from "./icons/icon-route.svg";
 import {ReactComponent as SvgReport} from "./icons/icon-report.svg";
 import {ReactComponent as SvgMoon} from "./icons/icon-moon.svg";
 import {ReactComponent as SvgSun} from "./icons/icon-sun.svg";
-
+import {ReactComponent as SvgInfo} from "./icons/icon-info.svg";
 
 interface IProps {
   iconName: string;
@@ -20,6 +20,9 @@ export default function Icon ({ iconName, className }: IProps) {
 
     case "report":
       return <SvgReport className={className} />;
+
+    case "info":
+      return <SvgInfo className={className} />;
 
     case "moon":
       return <SvgMoon className={className} />;

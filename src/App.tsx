@@ -9,6 +9,8 @@ import ViewMain from "./modules/ViewMain/ViewMain";
 import ViewEventList from "./modules/ViewEventList/ViewEventList";
 import ViewEvent from "./modules/ViewEvent/ViewEvent";
 import {readTheme, showTheme} from "./libs/libs";
+import ViewInfoList from "./modules/ViewInfoList/ViewInfoList";
+import ViewInfo from "./modules/ViewInfo/ViewInfo";
 function App() {
 
   showTheme(readTheme())
@@ -24,6 +26,8 @@ function App() {
           <Route path="/report/:id" element={<ViewReport />}/>
           <Route path="/events" element={<ViewEventList />}/>
           <Route path="/event/:id" element={<ViewEvent />}/>
+          <Route path="/infos" element={<ViewInfoList />} />
+          <Route path="/info/:id" element={<ViewInfo />}/>
         </Route>
       </Routes>
     </BrowserRouter>

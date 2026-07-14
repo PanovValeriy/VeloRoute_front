@@ -114,7 +114,7 @@ export default function ViewReportList() {
     <div className={styles.viewReportList}>
       <Link className={styles.linkItem} to={"/"}><Button className={styles.button}>На главную</Button></Link>
       <div className={styles.title}>Отчеты</div>
-        <div className={styles.reportList}>
+      <div className={styles.reportList}>
         <div className={styles.reportParam}>
           <SortPanel options={sortList} value={param.sort} onApply={handleApplySort}/>
           <SearchPanel className={styles.searchPanel} fields={['search']} search={param.search} onApply={handleApplySearch}/>
@@ -129,8 +129,8 @@ export default function ViewReportList() {
               </CardItem>
             </Link>
           ))}
-          </CardList>
-          <Pagination current={param.page} pageSize={param.limit} total={data.recCount} hideOnSinglePage={true} onChange={handleChangePage} />
+        </CardList>
+        <Pagination current={param.page} pageSize={param.limit} total={data.recCount} hideOnSinglePage={true} onChange={handleChangePage} />
         </div>
       </div>
       <Link className={styles.linkItem} to={"/"}><Button className={styles.button}>На главную</Button></Link>

@@ -44,6 +44,16 @@
   box-shadow: var(--color-event-shadow) 0.5rem 0.5rem 0.5rem !important;
 }
 
+.buttonInfo {
+  background-color: var(--color-info_card-background) !important;
+  color: var(--color-info_card-text) !important;
+}
+
+.buttonInfo:hover {
+  background-color: var(--color-info_card-background-hover) !important;
+  box-shadow: var(--color-info-shadow) 0.5rem 0.5rem 0.5rem !important;
+}
+
 @media screen and (max-width: 650px) {
   .buttonGroup {
     align-items: center;
