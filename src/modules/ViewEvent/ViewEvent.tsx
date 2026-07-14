@@ -33,6 +33,10 @@ export default function ViewEvent() {
       </>
     )
   }
+  let eventBody: string = event.description
+  if (event.miniReport) {
+    eventBody = eventBody + '\n[TITLE]Миниотчет[/TITLE]\n' + event.miniReport;
+  }
   return (
     <div className={styles.viewEvent}>
       <Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>
@@ -49,7 +53,7 @@ export default function ViewEvent() {
       </div>
 
       <div className={styles.body}>
-        <Content pStyles={styles} body={event.description} />
+        <Content pStyles={styles} body={eventBody} />
       </div>
       {((dataReportList) && (dataReportList.recCount !== 0)) ? <ReportList className={stylesReportList.fromEvent} reportList = {dataReportList.reportList}/> : null}
       <Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>

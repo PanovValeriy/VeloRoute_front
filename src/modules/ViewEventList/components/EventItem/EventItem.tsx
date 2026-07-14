@@ -32,6 +32,9 @@ export default function EventItem({event}: IProps) {
         <div className={styles.param}>
           Темп: {event.tempo.name}
         </div>
+        <div className={styles.param}>
+          Миниотчет: {event.miniReportTrue ? 'Есть' : 'Нет'}
+        </div>
       </div>
       <div className={styles.photoWrapper}>
         <img className={styles.photo} src={event.photoURL} alt=""/>

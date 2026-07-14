@@ -112,6 +112,7 @@ export interface IEvent {
   startPlace: string;     // место старта
   dateCreate: Date;       // дата создания
   dateUpdate: Date;       // дата обновления
+  miniReport: string;     // миниотчет
 }
 
 // Событие сокращенное (для списка)
@@ -127,6 +128,7 @@ export interface IEventShort {
   startDateTime: Date;    // дата и время старта
   startPlace: string;     // место старта
   viewsCount: number;     // количество просмотров
+  miniReportTrue: boolean;// наличие миниотчета
 }
 
 // Новость
