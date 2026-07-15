@@ -8,16 +8,17 @@ import IItem from "../../types/types"
 interface IProps {
   className?: string;
   items: IItem[];
+  setSelected: Function;
 }
 
 
-export default function Menu({className, items}:IProps) {
+export default function Menu({className, items, setSelected}:IProps) {
 
   const cnMenu = cn(styles.menu, className)
 
   return (
     <div className={styles.menu}>
-      {items.map((item) => <MenuItem item={item}/>)}
+      {items.map((item, idx) => <MenuItem item={item} setSelected={() => setSelected(idx)}/>)}
     </div>
   )
 }

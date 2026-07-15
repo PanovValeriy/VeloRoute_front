@@ -1,16 +1,26 @@
 .firstEvent {
-  height: 100%;
+  text-decoration: none;
+  padding: 0.5rem;
+  height: 3rem;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 0.5rem;
   background: var(--color-light_green);
   cursor: pointer;
+  border-radius: 1rem;
 }
 
-.icon {
-  stroke: var(--color-accent_green);
+.icon path{
+  fill: var(--color-primary_green);
 }
+
 
 .param {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
 }
 
@@ -18,20 +28,18 @@
   color: var(--color-text_primary);
   font-family: Inter;
   font-weight: 400;
-  font-style: Regular;
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 100%;
-  letter-spacing: 0%;
-
 }
 
 .description {
-  color: var(--color-text_primary);
+  color: var(--color-text_secondary);
   font-family: Inter;
   font-weight: 400;
-  font-style: Regular;
   font-size: 12px;
   line-height: 100%;
-  letter-spacing: 0%;
-
+  max-width: 15rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

@@ -1,0 +1,23 @@
+.title {
+  display: inline-block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  padding-left: 96px;
+  align-self: flex-start;
+}
+
+.subtitle_big {
+
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 3.5rem;
+  color: var(--color-text_primary);
+}
+
+.subtitle_small {
+  margin-top: 1rem;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-text_secondary);
+}

@@ -1,18 +1,17 @@
 import styles from './Header.module.css'
+import cn from "classnames"
 import {readTheme, THEME_LABELS, toggleTheme} from "../../libs/libs";
 import {useState} from "react";
-import {Link} from "react-router-dom";
-import Logo from "../Logo/Logo";
-import Icon from '../Icon/Icon';
-import Button from '../Button/Button';
-import Menu from '../Menu/Menu';
 import IItem from '../../types/types';
-import FirstEvent from '../FirstEvent/FirstEvent';
-import { dataEventList } from '../../store/data/events';
 import NavBar from '../NavBar/NavBar';
+import Title from "./components/Title/Title";
 
-export default function Header() {
+interface IProps {
+  mainPage?: boolean;
+}
 
+export default function Header({mainPage}: IProps) {
+  const cnHeader = cn(styles.header, {[styles.headerBackground]: mainPage})
   const [theme, setTheme] = useState(readTheme())
 
   const menuItems: IItem[] = [
@@ -29,8 +28,9 @@ export default function Header() {
 
   return (
     <>
-      <div className={styles.header}>
+      <div className={cnHeader}>
         <NavBar />
+        {mainPage ? <Title /> : null }
         {/* <Link to={"/"} className={styles.logoLink}><Logo className={styles.logo}/></Link>
         {/* <div className={styles.title}>
           Велосипедные маршруты Смоленской области

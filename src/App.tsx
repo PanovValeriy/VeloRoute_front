@@ -18,7 +18,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<MainPage/>}>
+        <Route element={<MainPage />}>
           <Route path={"/"} element={<ViewMain />} />
           <Route path="/routes" element={<ViewRouteList />}/>
           <Route path="/route/:id" element={<ViewRoute />}/>

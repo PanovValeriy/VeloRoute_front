@@ -12,12 +12,13 @@ import Icon from "../Icon/Icon"
 export default function NavBar() {
 
   const [theme, setTheme] = useState(readTheme())
+  const [selected, setSelected] = useState<number>(0)
 
   const menuItems: IItem[] = [
-    {name: "Главная", url: '/', selected: false},
-    {name: "Маршруты", url: '/routes', selected: true},
-    {name: "Отчеты", url: '/reports', selected: false},
-    {name: "События", url: '/events', selected: false},
+    {name: "Главная", url: '/', selected: selected === 0},
+    {name: "Маршруты", url: '/routes', selected: selected === 1},
+    {name: "Отчеты", url: '/reports', selected: selected === 2},
+    {name: "События", url: '/events', selected: selected === 3},
   ]
 
   function handleToggleTheme() {
@@ -32,7 +33,7 @@ export default function NavBar() {
         {/* <div className={styles.title}>
           Велосипедные маршруты Смоленской области
         </div> */}
-        <Menu items={menuItems}/>
+        <Menu items={menuItems} setSelected={setSelected} />
 				<div className={styles.right}>
 					<FirstEvent event={dataEventList[0]}/>
 					<div className={styles.theme} onClick={handleToggleTheme}>

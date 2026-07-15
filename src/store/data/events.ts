@@ -2,13 +2,14 @@ import {IEvent} from "../../types/types";
 
 export const dataEventList: IEvent[] = [
   {
-    id: 1,
+    id: 15,
     author:
       {
         id: 1,
         nikName: 'nikName',
       },
-    name: 'Сказка',
+    name: 'Корпоративная сказка sdfsfsd sdf s dsfgdsfd dsfsdf sdsdfsd f sfds fds fssf sdfdsfds df se',
+    // name: 'Корпоративная',
     startDateTime: new Date(2025, 3, 5, 9, 0),
     startPlace: 'Место старта',
     photoURL: 'https://lh3.googleusercontent.com/pw/AP1GczPVU4op4t5NUFoyfzpQfpLdOxyd1yvTuLRHqY6QtkIpYHx6IY0_u81-OyL5WAwi0C1OyDEjmF_gDU53Zjc8pX718aLfl-yF2nGE0ZEExkJ4RnFYS79sZlu7BigSBPZlCwcJskB5pS3aZ7JH986qVCE=w1280-h720-s-no-gm',

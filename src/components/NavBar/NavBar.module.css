@@ -1,38 +1,48 @@
 .navBar {
   position: relative;
-  width: 1250px;
-  height: 64px;
-  top: 12px;
-  border-radius: 24px;
+  width: 85rem;
+  height: 4rem;
+  top: 0.75rem;
+  border-radius: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
   background-color: var(--color-surface);
   padding: 0.5rem;
+  box-shadow: 0 0.25rem 1.25rem #0000000F;
 }
 
 .logoLink {
   order: 0;
+  height: 100%;
 }
 
 .logo {
-  width: 10rem;
+  height: 100%;
 }
+
+.logo g path{
+  fill: var(--color-primary_green);
+}
+
+.logo svg > path {
+  stroke: var(--color-primary_green);
+}
+
 
 .right {
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
 
 .theme {
-  order: 3;
+  height: 2rem;
 }
 
 .iconTheme {
-  /* stroke: var(--color-icon_theme-stroke);
-  fill: var(--color-icon_theme-fill); */
-  height: 2rem;
+  height: 100%;
   display: inline;
   opacity: var(--opacity-icon_theme);
   cursor: pointer;
