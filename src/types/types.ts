@@ -157,3 +157,10 @@ export interface IInfoShort {
   name: string;           // название сообщения
   body: string;           // тело сообщения
 }
+
+// Пункт меню
+export default interface IItem {
+  name: string;
+  url: string;
+  selected: boolean
+}

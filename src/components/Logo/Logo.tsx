@@ -1,8 +1,18 @@
-export default function Logo() {
+import cn from "classnames";
+import styles from "./Logo.module.css";
+import {ReactComponent as SvgLogo} from "./logo.svg";
 
+interface IProps {
+  className?: string;
+}
+
+export default function Logo({className}: IProps) {
+
+  const cnLogo = cn(styles.logo, className)
+  
   return (
-    <div>
-      <img src="\static\logo.png" alt="логотип"/>
+    <div className={cnLogo}>
+      <SvgLogo className={styles.svgLogo}/>
     </div>
   )
 }

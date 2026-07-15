@@ -1,0 +1,37 @@
+.firstEvent {
+  height: 100%;
+  display: flex;
+  gap: 0.5rem;
+  background: var(--color-light_green);
+  cursor: pointer;
+}
+
+.icon {
+  stroke: var(--color-accent_green);
+}
+
+.param {
+
+}
+
+.title {
+  color: var(--color-text_primary);
+  font-family: Inter;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+
+}
+
+.description {
+  color: var(--color-text_primary);
+  font-family: Inter;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+
+}

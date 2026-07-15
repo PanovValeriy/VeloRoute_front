@@ -1,0 +1,39 @@
+.navBar {
+  position: relative;
+  width: 1250px;
+  height: 64px;
+  top: 12px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: var(--color-surface);
+  padding: 0.5rem;
+}
+
+.logoLink {
+  order: 0;
+}
+
+.logo {
+  width: 10rem;
+}
+
+.right {
+  display: flex;
+  gap: 1rem;
+}
+
+.theme {
+  order: 3;
+}
+
+.iconTheme {
+  /* stroke: var(--color-icon_theme-stroke);
+  fill: var(--color-icon_theme-fill); */
+  height: 2rem;
+  display: inline;
+  opacity: var(--opacity-icon_theme);
+  cursor: pointer;
+}

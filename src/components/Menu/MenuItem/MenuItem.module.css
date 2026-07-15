@@ -1,0 +1,19 @@
+.menuItem {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: 100%;
+  font-family: Inter;
+  font-weight: 600;
+  font-style: Semi Bold;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: var(--color-primary_green);
+  text-decoration: none;
+}
+
+.menuItemSelected {
+  border-bottom: 2px solid var(--color-primary_green);
+}

@@ -30,12 +30,12 @@
 }
 
 .button {
-  background-color: var(--color-report-button) !important;
+  width: 150px;
 }
 
-.button:hover {
+/* .button:hover {
   background-color: var(--color-report-button-hover) !important;
-}
+} */
 
 .reportItem {
   position: relative;
