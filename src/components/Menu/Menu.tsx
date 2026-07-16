@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import styles from "./Menu.module.css"
 import cn from "classnames"
 import MenuItem from "./MenuItem/MenuItem";
@@ -18,7 +17,7 @@ export default function Menu({className, items, setSelected}:IProps) {
 
   return (
     <div className={cnMenu}>
-      {items.map((item, idx) => <MenuItem item={item} setSelected={() => setSelected(idx)}/>)}
+      {items.map((item, idx) => <MenuItem key={idx} item={item} setSelected={() => setSelected(idx)}/>)}
     </div>
   )
 }

@@ -1,6 +1,7 @@
+import styles from "./EventCard.module.css"
+import cn from "classnames"
 import { Link } from "react-router"
 import Button from "../Button/Button"
-import styles from "./EventCard.module.css"
 import { IEventShort } from "../../types/types";
 import Icon from "../Icon/Icon";
 import dayjs from "dayjs";
@@ -13,10 +14,11 @@ interface IProps {
 }
 
 export default function EventCard({className, event, showViews}:IProps) {
+  const cnEventCard = cn(styles.eventCard, className)
   const closed = dayjs(event.startDateTime) < dayjs(new Date())
 
   return (
-    <div className={styles.eventCard}>
+    <div className={cnEventCard}>
       <div className={styles.photo}>
         <img src={event.photoURL} alt="Фото" />
       </div>
@@ -38,7 +40,7 @@ export default function EventCard({className, event, showViews}:IProps) {
           </div>
           <Icon iconName="delimeter" />
           <div className={styles.pace}>
-            <Icon iconName="pace" className={styles.pace} />
+            <Icon iconName="pace" className={styles.icon} />
             {event.tempo.name}
           </div>
           <Icon iconName="delimeter" />

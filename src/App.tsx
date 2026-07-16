@@ -8,13 +8,13 @@ import ViewReport from "./modules/ViewReport/ViewReport";
 import ViewMain from "./modules/ViewMain/ViewMain";
 import ViewEventList from "./modules/ViewEventList/ViewEventList";
 import ViewEvent from "./modules/ViewEvent/ViewEvent";
-import {readTheme, showTheme} from "./libs/libs";
+import {readTheme, showTheme, setBackgroundImageRandom} from "./libs/libs";
 import ViewInfoList from "./modules/ViewInfoList/ViewInfoList";
 import ViewInfo from "./modules/ViewInfo/ViewInfo";
 function App() {
 
   showTheme(readTheme())
-
+  setBackgroundImageRandom()
   return (
     <BrowserRouter>
       <Routes>
@@ -22,7 +22,6 @@ function App() {
           <Route path={"/"} element={<ViewMain />} />
         </Route>
         <Route element={<MainPage />}>
-          <Route path={"/"} element={<ViewMain />} />
           <Route path="/routes" element={<ViewRouteList />}/>
           <Route path="/route/:id" element={<ViewRoute />}/>
           <Route path="/reports" element={<ViewReportList />}/>

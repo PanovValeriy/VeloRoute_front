@@ -5,18 +5,15 @@
   border-color: var(--color-accent_green);
   border-style: solid;
   color: var(--color-accent_green);
-  background-color: var(--color-background);
+  background-color: var(--color-background_button);
   cursor: pointer;
   font-family: Inter;
   font-weight: 600;
-  font-style: Semi Bold;
-  leading-trim: NONE;
   line-height: 0.75rem;
-  letter-spacing: 0%;
 }
 
 .button:hover {
-  background-color: var(--color-primary_hover);
+  background-color: var(--color-accent_green);
   color: var(--color-surface);
 }
 

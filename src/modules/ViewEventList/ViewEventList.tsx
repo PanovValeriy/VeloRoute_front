@@ -1,17 +1,12 @@
 import styles from './ViewEventList.module.css'
-import EventItem from "./components/EventItem/EventItem";
 import {Link, useNavigate, useSearchParams} from "react-router-dom";
 import {IEventListParams, useLazyGetEventListQuery} from "../../store/services/eventApi";
 import React, {useEffect, useMemo} from "react";
-import CardItem from "../../components/CardItem/CardItem";
-import cn from "classnames";
-import dayjs from "dayjs";
 import CardList from "../../components/CardList/CardList";
 import {eventDefault} from "../../constants";
 import Pagination from "../../components/Pagination/Pagination";
 import SortPanel from "../../components/SortPanel/SortPanel";
 import SearchPanel, {IOnApplySearch} from "../../components/SearchPanel/SearchPanel";
-import ViewsCount from '../../components/ViewsCount/ViewsCount';
 import Button from '../../components/Button/Button';
 import EventCard from '../../components/EventCard/EventCard';
 
@@ -127,13 +122,7 @@ export default function ViewEventList() {
         <div>
           <CardList>
             {data!.eventList.map((event, idx) => (
-              // <Link key={idx} className={styles.linkItem} to={"/event/"+event.id}>
-              //   <CardItem className={cn(styles.eventItem, (dayjs(event.startDateTime) < dayjs(Date())) ? styles.eventItemHistory : null)}>
-              //     {param.showCount !== '' ? <ViewsCount className={styles.viewsCount} viewsCount={event.viewsCount}/> : null}
-              //     <EventItem key={idx} event={event}/>
-              //   </CardItem>
-              // </Link>
-              <EventCard event={event} />
+              <EventCard key={idx} event={event} showViews={param.showCount !== ''} />
             ))}
           </CardList>
           <Pagination className={styles.pagination} current={param.page} pageSize={param.limit} total={data.recCount} hideOnSinglePage={true} onChange={handleChangePage} />

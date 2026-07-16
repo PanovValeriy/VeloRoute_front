@@ -33,12 +33,13 @@
   font-size: 1rem;
   line-height: 100%;
   vertical-align: middle;
+  color: var(--color-text_primary);
 }
 
 .details {
   height: 0.75rem;
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
 
 }
 
@@ -55,7 +56,12 @@
 }
 
 .detailIcon {
+  width: 0.75rem;
   height: 0.75rem;
+}
+
+.detailIcon path {
+  stroke: var(--color-text_secondary);
 }
 
 .difficulty {
@@ -63,12 +69,20 @@
   gap: 0.5rem;
   font-family: Inter;
   font-weight: 600;
-  font-style: Semi Bold;
   font-size: 0.625rem;
   line-height: 0.75rem;
   text-align: center;
   vertical-align: middle;
   color: var(--color-success);
+  &.light{
+    color: var(--color-success);
+  }
+  &.medium{
+    color: var(--color-info);
+  }
+  &.hard{
+    color: var(--color-error);
+  }
 }
 
 .views {
@@ -84,7 +98,6 @@
 }
 
 .buttonMore {
-  /* width: 376px; */
   height: 2rem;
   border-radius: 0.5rem;
   border-width: 0.0625rem;

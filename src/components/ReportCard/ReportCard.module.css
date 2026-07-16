@@ -52,6 +52,8 @@
 .date {
   height: 0.75rem;
   display: flex;
+  justify-items: center;
+  align-items: center;
   gap: 0.5rem;
   font-family: Inter;
   font-weight: 600;

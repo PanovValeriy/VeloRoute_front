@@ -21,3 +21,5 @@ export const reportDefault = {
 export const infoDefault = {
   limit: 10,
 }
+
+export const backgroundImageList = ['/static/back_img_01.jpg']

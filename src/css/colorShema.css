@@ -16,15 +16,9 @@
   --color-info: #2196F3;
   --color-error: #E53935;
   --color-shadow: #1F293714;
-  --color-gradient_000: rgba(255, 255, 255, 1);
-  --color-gradient_035: rgba(255, 255, 255, 1);
-  --color-gradient_100: rgba(255, 255, 255, 0);
-  --gradient-header: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 35%, rgba(255, 255, 255, 0) 100%), url(/public/static/back_img.jpg);
-
-  /* - ComplexityRouteEasy : Success
-  - ComplexityRouteMedium : Info
-  - ComplexityRouteHard : Error */
-
+  --color-background_button: transparent;
+  --image-name: url(/public/static/back_img.jpg);
+  --gradient-header: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 35%, rgba(255, 255, 255, 0) 100%), var(--image-name);
 
   /*Header*/
   --color-header-background: var(--color-main-background);
@@ -123,17 +117,6 @@
   --color-info_card-background: #FFF8DC;
   --color-info_card-background-hover: #FFE7BA ;
   --color-info_card-text: #3D3529;
-
-  /*--color-info-background: #E3F2FD;*/
-  /*--color-info-title: #1976D2;*/
-  /*--color-info-text: #0D47A1;*/
-  /*--color-info-button: #2196F3;*/
-  /*--color-info-button-hover: #2474ff;*/
-  /*--color-info-link: #1565C0;*/
-  /*--color-info-shadow: #808095;*/
-  /*--color-info_card-background: #BBDEFB;*/
-  /*--color-info_card-background-hover: #9BBEDB;*/
-  /*--color-info_card-text: #0D47A1;*/
 
   /*News*/
   --color-news-background: #FFFFE0;

@@ -1,15 +1,12 @@
 import styles from './ViewReportList.module.css'
-import ReportItem from "./components/ReportItem/ReportItem";
 import {Link, useNavigate, useSearchParams} from "react-router-dom";
 import {IReportListParam, useLazyGetReportListQuery} from "../../store/services/reportApi";
 import React, {useEffect, useMemo} from "react";
-import CardItem from "../../components/CardItem/CardItem";
 import CardList from "../../components/CardList/CardList";
 import Pagination from "../../components/Pagination/Pagination";
 import {reportDefault, routeDefault} from "../../constants";
 import SortPanel from "../../components/SortPanel/SortPanel";
 import SearchPanel, {IOnApplySearch} from "../../components/SearchPanel/SearchPanel";
-import ViewsCount from '../../components/ViewsCount/ViewsCount';
 import Button from '../../components/Button/Button';
 import ReportCard from '../../components/ReportCard/ReportCard';
 
@@ -123,13 +120,7 @@ export default function ViewReportList() {
         <div>
           <CardList>
           {data!.reportList.map((report, idx) => (
-            // <Link key={idx} className={styles.linkItem} to={"/report/"+report.id}>
-            //   <CardItem className={styles.reportItem}>
-            //     {param.showCount !== '' ? <ViewsCount className={styles.viewsCount} viewsCount={report.viewsCount} /> : null}
-            //     <ReportItem report={report}/>
-            //   </CardItem>
-            // </Link>
-            <ReportCard report={report} />
+            <ReportCard key={idx} report={report} showViews={param.showCount !== ''} />
           ))}
         </CardList>
         <Pagination current={param.page} pageSize={param.limit} total={data.recCount} hideOnSinglePage={true} onChange={handleChangePage} />

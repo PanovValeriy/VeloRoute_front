@@ -1,15 +1,12 @@
 import styles from './ViewRouteList.module.css'
-import RouteItem from "./components/RouteItem/RouteItem";
 import {Link, useNavigate, useSearchParams} from "react-router-dom";
 import {IRouteListParam, useLazyGetRouteListQuery} from "../../store/services/routeApi";
 import React, {useEffect, useMemo, useState} from "react";
-import CardItem from "../../components/CardItem/CardItem";
 import CardList from "../../components/CardList/CardList";
 import SearchPanel, {IOnApplySearch} from "../../components/SearchPanel/SearchPanel";
 import {routeDefault} from "../../constants";
 import Pagination from "../../components/Pagination/Pagination";
 import SortPanel from "../../components/SortPanel/SortPanel";
-import ViewsCount from '../../components/ViewsCount/ViewsCount';
 import Button from '../../components/Button/Button';
 import RouteCard from '../../components/RouteCard/RouteCard';
 
@@ -150,13 +147,7 @@ export default function ViewRouteList() {
         <div>
         <CardList>
           {data!.routeList.map((route, idx) => (
-            // <Link key={idx} className={styles.linkItem} to={"/route/"+route.id.toString()}>
-            //   <CardItem className={styles.routeItem}>
-            //     {param.showCount !== '' ? <ViewsCount className={styles.viewsCount} viewsCount={route.viewsCount}/> : null}
-            //     <RouteItem route={route} />
-            //   </CardItem>
-            // </Link>
-            <RouteCard route={route} />
+            <RouteCard key={idx} route={route} showViews={param.showCount !== ''}/>
           ))}
         </CardList>
         <Pagination className={styles.pagination} current={param.page} pageSize={param.limit} total={data.recCount} hideOnSinglePage={true} onChange={handleChangePage} />

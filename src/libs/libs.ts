@@ -1,3 +1,4 @@
+import {backgroundImageList} from "../constants"
 export const THEME_VALUES = ['light', 'dark']
 export const THEME_LABELS = ['Светлая', 'Темная']
 
@@ -12,6 +13,12 @@ export function readTheme(): number {
 export function showTheme(theme: number) {
   document.documentElement.dataset.theme = THEME_VALUES[theme]
 }
+
+export function setBackgroundImageRandom() {
+  const num = Math.floor(Math.random() * backgroundImageList.length)
+  document.documentElement.style.setProperty('--image-name',`url(${backgroundImageList[num]})`)
+}
+
 export function toggleTheme() {
   const theme = (readTheme() + 1) % 2
   window.localStorage.setItem('theme', theme.toString())

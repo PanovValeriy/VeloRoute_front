@@ -22,7 +22,6 @@
 }
 
 .info {
-  /* width: 400px; */
   height: 7.8125rem;
   padding: 0.75rem;
   display: flex;
@@ -31,7 +30,6 @@
 }
 
 .title {
-  /* width: 376px; */
   height: 1.5rem;
   display: flex;
   justify-content: space-between;
@@ -53,14 +51,12 @@
 }
 
 .details {
-  /* width: 376px; */
   height: 0.75rem;
   display: flex;
-  justify-content: space-between;
+  gap: 0.5rem;
 }
 
 .startDateTime {
-  /* width: 110px; */
   height: 0.75rem;
   display: flex;
   gap: 0.5rem;
@@ -74,7 +70,6 @@
 }
 
 .distance {
-  /* width: 43px; */
   height: 0.75rem;
   display: flex;
   gap: 0.5rem;
@@ -90,7 +85,6 @@
 }
 
 .pace {
-  /* width: 80px; */
   height: 0.75rem;
   display: flex;
   gap: 0.5rem;
@@ -104,7 +98,6 @@
 }
 
 .type {
-  /* width: 19px; */
   height: 0.75rem;
   gap: 0.5rem;
   display: flex;
@@ -122,8 +115,11 @@
   height: 0.75rem;
 }
 
+.icon path {
+  fill: var(--color-text_secondary);
+}
+
 .buttonMore {
-  /* width: 376px; */
   height: 2rem;
   border-radius: 0.5rem;
   border-width: 0.0625rem;
