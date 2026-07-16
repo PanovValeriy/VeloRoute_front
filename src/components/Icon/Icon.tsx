@@ -1,10 +1,27 @@
 import {ReactComponent as SvgEvent} from "./icons/icon-event.svg";
-import {ReactComponent as SvgRoute} from "./icons/icon-route.svg";
 import {ReactComponent as SvgReport} from "./icons/icon-report.svg";
 import {ReactComponent as SvgMoon} from "./icons/icon_moon.svg";
 import {ReactComponent as SvgSun} from "./icons/icon_sun.svg";
 import {ReactComponent as SvgInfo} from "./icons/icon-info.svg";
-import {ReactComponent as SvgCalendar} from "./icons/icon-calendar.svg"
+import {ReactComponent as SvgCalendar} from "./icons/icon_calendar.svg"
+import {ReactComponent as SvgDelimeter} from "./icons/icon_delimeter.svg"
+import {ReactComponent as SvgDistance} from "./icons/icon_distance.svg"
+import {ReactComponent as SvgDifficulty} from "./icons/icon_difficulty.svg"
+import {ReactComponent as SvgViews} from "./icons/icon_views.svg"
+import {ReactComponent as SvgRoute} from "./icons/icon_route.svg"
+import {ReactComponent as SvgArrowDown} from "./icons/icon_arrow-down.svg"
+import {ReactComponent as SvgArrowLeft} from "./icons/icon_arrow-left.svg"
+import {ReactComponent as SvgArrowRight} from "./icons/icon_arrow-right.svg"
+import {ReactComponent as SvgAsphatl} from "./icons/icon_asphalt.svg"
+import {ReactComponent as SvgGravel} from "./icons/icon_gravel.svg"
+import {ReactComponent as SvgDirt} from "./icons/icon_dirt.svg"
+import {ReactComponent as SvgOffroad} from "./icons/icon_offroad.svg"
+import {ReactComponent as SvgClock} from "./icons/icon_clock.svg"
+import {ReactComponent as SvgDownload} from "./icons/icon_download.svg"
+import {ReactComponent as SvgLocation} from "./icons/icon_location.svg"
+import {ReactComponent as SvgPace} from "./icons/icon_pace.svg"
+import {ReactComponent as SvgSearch} from "./icons/icon_search.svg"
+
 
 interface IProps {
   iconName: string;
@@ -33,6 +50,54 @@ export default function Icon ({ iconName, className }: IProps) {
 
     case "calendar":
       return <SvgCalendar className={className} />
+
+    case "delimeter":
+      return <SvgDelimeter className={className} />
+
+    case "distance":
+      return <SvgDistance className={className} />
+
+    case "difficulty":
+      return <SvgDifficulty className={className} />
+
+    case "views":
+      return <SvgViews className={className} />
+
+    case "arrowDown":
+      return <SvgArrowDown className={className} />
+
+    case "arrowLeft":
+      return <SvgArrowLeft className={className} />
+
+    case "arrowRight":
+      return <SvgArrowRight className={className} />
+
+    case "asphatl":
+      return <SvgAsphatl className={className} />
+
+    case "gravel":
+      return <SvgGravel className={className} />
+
+    case "dirt":
+      return <SvgDirt className={className} />
+
+    case "offroad":
+      return <SvgOffroad className={className} />
+
+    case "clock":
+      return <SvgClock className={className} />
+
+    case "download":
+      return <SvgDownload className={className} />
+
+    case "location":
+      return <SvgLocation className={className} />
+
+    case "pace":
+      return <SvgPace className={className} />
+
+    case "search":
+      return <SvgSearch className={className} />
 
     default:
       return null;

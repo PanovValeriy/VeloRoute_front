@@ -1,6 +1,6 @@
 import styles from './Header.module.css'
 import cn from "classnames"
-import {readTheme, THEME_LABELS, toggleTheme} from "../../libs/libs";
+import {readTheme, toggleTheme} from "../../libs/libs";
 import {useState} from "react";
 import IItem from '../../types/types';
 import NavBar from '../NavBar/NavBar';

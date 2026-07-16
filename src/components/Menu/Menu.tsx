@@ -17,7 +17,7 @@ export default function Menu({className, items, setSelected}:IProps) {
   const cnMenu = cn(styles.menu, className)
 
   return (
-    <div className={styles.menu}>
+    <div className={cnMenu}>
       {items.map((item, idx) => <MenuItem item={item} setSelected={() => setSelected(idx)}/>)}
     </div>
   )

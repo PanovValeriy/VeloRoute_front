@@ -1,8 +1,7 @@
 .menu {
-  width: 454px;
-  height: 64px;
+  width: 30rem;
+  height: 4rem;
   display : flex;
   justify-content: space-between;
   align-content: center;
-  
 }

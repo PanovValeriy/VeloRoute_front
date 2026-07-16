@@ -13,6 +13,7 @@ import SortPanel from "../../components/SortPanel/SortPanel";
 import SearchPanel, {IOnApplySearch} from "../../components/SearchPanel/SearchPanel";
 import ViewsCount from '../../components/ViewsCount/ViewsCount';
 import Button from '../../components/Button/Button';
+import EventCard from '../../components/EventCard/EventCard';
 
 const sortList = [
   {value: 'name', label: 'по возрастанию названия'},
@@ -126,12 +127,13 @@ export default function ViewEventList() {
         <div>
           <CardList>
             {data!.eventList.map((event, idx) => (
-              <Link key={idx} className={styles.linkItem} to={"/event/"+event.id}>
-                <CardItem className={cn(styles.eventItem, (dayjs(event.startDateTime) < dayjs(Date())) ? styles.eventItemHistory : null)}>
-                  {param.showCount !== '' ? <ViewsCount className={styles.viewsCount} viewsCount={event.viewsCount}/> : null}
-                  <EventItem key={idx} event={event}/>
-                </CardItem>
-              </Link>
+              // <Link key={idx} className={styles.linkItem} to={"/event/"+event.id}>
+              //   <CardItem className={cn(styles.eventItem, (dayjs(event.startDateTime) < dayjs(Date())) ? styles.eventItemHistory : null)}>
+              //     {param.showCount !== '' ? <ViewsCount className={styles.viewsCount} viewsCount={event.viewsCount}/> : null}
+              //     <EventItem key={idx} event={event}/>
+              //   </CardItem>
+              // </Link>
+              <EventCard event={event} />
             ))}
           </CardList>
           <Pagination className={styles.pagination} current={param.page} pageSize={param.limit} total={data.recCount} hideOnSinglePage={true} onChange={handleChangePage} />

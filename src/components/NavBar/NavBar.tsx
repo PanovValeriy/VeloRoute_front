@@ -30,9 +30,6 @@ export default function NavBar() {
     <>
       <div className={styles.navBar}>
         <Link to={"/"} className={styles.logoLink}><Logo className={styles.logo}/></Link>
-        {/* <div className={styles.title}>
-          Велосипедные маршруты Смоленской области
-        </div> */}
         <Menu items={menuItems} setSelected={setSelected} />
 				<div className={styles.right}>
 					<FirstEvent event={dataEventList[0]}/>

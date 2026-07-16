@@ -1,5 +1,4 @@
 .header {
-  /*height: 20rem;*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,21 +7,6 @@
 }
 
 .headerBackground {
-  background-image: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 35%, rgba(255, 255, 255, 0) 100%), url(/public/static/back_img.jpg);
+  background-image: var(--gradient-header);
   background-size: cover;
-}
-
-/*.title {*/
-/*  text-align: center;*/
-/*  color: var(--color-header-text);*/
-/*  font-weight: bold;*/
-/*  font-size: 2.5em;*/
-/*  order: 2;*/
-/*}*/
-
-@media screen and (max-width: 650px) {
-  .header {
-    flex-wrap: wrap;
-  }
-
 }

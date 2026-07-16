@@ -1,8 +1,8 @@
 .title {
   display: inline-block;
-  padding-top: 32px;
-  padding-bottom: 32px;
-  padding-left: 96px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 6rem;
   align-self: flex-start;
 }
 

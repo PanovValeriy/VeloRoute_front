@@ -11,6 +11,7 @@ import SortPanel from "../../components/SortPanel/SortPanel";
 import SearchPanel, {IOnApplySearch} from "../../components/SearchPanel/SearchPanel";
 import ViewsCount from '../../components/ViewsCount/ViewsCount';
 import Button from '../../components/Button/Button';
+import ReportCard from '../../components/ReportCard/ReportCard';
 
 const sortList = [
   {value: 'name', label: 'по возрастанию названия'},
@@ -122,12 +123,13 @@ export default function ViewReportList() {
         <div>
           <CardList>
           {data!.reportList.map((report, idx) => (
-            <Link key={idx} className={styles.linkItem} to={"/report/"+report.id}>
-              <CardItem className={styles.reportItem}>
-                {param.showCount !== '' ? <ViewsCount className={styles.viewsCount} viewsCount={report.viewsCount} /> : null}
-                <ReportItem report={report}/>
-              </CardItem>
-            </Link>
+            // <Link key={idx} className={styles.linkItem} to={"/report/"+report.id}>
+            //   <CardItem className={styles.reportItem}>
+            //     {param.showCount !== '' ? <ViewsCount className={styles.viewsCount} viewsCount={report.viewsCount} /> : null}
+            //     <ReportItem report={report}/>
+            //   </CardItem>
+            // </Link>
+            <ReportCard report={report} />
           ))}
         </CardList>
         <Pagination current={param.page} pageSize={param.limit} total={data.recCount} hideOnSinglePage={true} onChange={handleChangePage} />

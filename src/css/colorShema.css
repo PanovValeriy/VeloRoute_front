@@ -15,6 +15,11 @@
   --color-success: #4CAF50;
   --color-info: #2196F3;
   --color-error: #E53935;
+  --color-shadow: #1F293714;
+  --color-gradient_000: rgba(255, 255, 255, 1);
+  --color-gradient_035: rgba(255, 255, 255, 1);
+  --color-gradient_100: rgba(255, 255, 255, 0);
+  --gradient-header: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 35%, rgba(255, 255, 255, 0) 100%), url(/public/static/back_img.jpg);
 
   /* - ComplexityRouteEasy : Success
   - ComplexityRouteMedium : Info
@@ -164,8 +169,13 @@
   --color-success: #4ADE80;
   --color-info: #38BDF8;
   --color-error: #E53935;
+  --color-shadow: #000000;
+  --color-gradient_000: rgba(0, 0, 0, 1);
+  --color-gradient_035: rgba(0, 0, 0, 1);
+  --color-gradient_100: rgba(0, 0, 0, 0);
+  --gradient-header: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 35%, rgba(255, 255, 255, 0) 100%), url(/public/static/back_img.jpg);
 
-  
+
   /*Header*/
   --color-header-background: var(--color-main-background);
   --color-header-text: var(--color-main-title);

@@ -11,6 +11,7 @@ import Pagination from "../../components/Pagination/Pagination";
 import SortPanel from "../../components/SortPanel/SortPanel";
 import ViewsCount from '../../components/ViewsCount/ViewsCount';
 import Button from '../../components/Button/Button';
+import RouteCard from '../../components/RouteCard/RouteCard';
 
 const sortList = [
   {value: 'name', label: 'по возрастанию названия'},
@@ -149,12 +150,13 @@ export default function ViewRouteList() {
         <div>
         <CardList>
           {data!.routeList.map((route, idx) => (
-            <Link key={idx} className={styles.linkItem} to={"/route/"+route.id.toString()}>
-              <CardItem className={styles.routeItem}>
-                {param.showCount !== '' ? <ViewsCount className={styles.viewsCount} viewsCount={route.viewsCount}/> : null}
-                <RouteItem route={route} />
-              </CardItem>
-            </Link>
+            // <Link key={idx} className={styles.linkItem} to={"/route/"+route.id.toString()}>
+            //   <CardItem className={styles.routeItem}>
+            //     {param.showCount !== '' ? <ViewsCount className={styles.viewsCount} viewsCount={route.viewsCount}/> : null}
+            //     <RouteItem route={route} />
+            //   </CardItem>
+            // </Link>
+            <RouteCard route={route} />
           ))}
         </CardList>
         <Pagination className={styles.pagination} current={param.page} pageSize={param.limit} total={data.recCount} hideOnSinglePage={true} onChange={handleChangePage} />
