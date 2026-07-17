@@ -23,7 +23,7 @@ interface IEventListResponse {
 const eventApi = createApi({
   reducerPath: 'event',
   baseQuery: fetchBaseQuery({baseUrl: API_SERVER}),
-  tagTypes: ['EVENT_LIST', 'EVENT'],
+  tagTypes: ['EVENT_LIST', 'EVENT', 'EVENT_FIRST'],
   endpoints: (builder)=> ({
     getEventList: builder.query<IEventListResponse, IEventListParams>({
       query: ({page=1, limit=eventDefault.limit, search='', hideArchive=false, sort=eventDefault.sort}) => {
@@ -47,13 +47,22 @@ const eventApi = createApi({
         }
       },
       providesTags: ['EVENT']
+    }),
+    getEventFirst: builder.query<IEventShort, null>({
+      query: () => {
+        return {
+          url: `/event/first/`
+        }
+      },
+      providesTags: ['EVENT_FIRST']
     })
   })
 })
 
 export const {
   useLazyGetEventListQuery,
-  useGetEventQuery
+  useGetEventQuery,
+  useGetEventFirstQuery,
 } = eventApi
 
 export default eventApi

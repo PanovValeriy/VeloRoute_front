@@ -6,8 +6,8 @@ import Logo from "../Logo/Logo"
 import { Link } from "react-router"
 import Menu from "../Menu/Menu"
 import FirstEvent from "../FirstEvent/FirstEvent"
-import { dataEventList } from "../../store/data/events"
 import Icon from "../Icon/Icon"
+import { useGetEventFirstQuery } from "../../store/services/eventApi"
 
 export default function NavBar() {
 
@@ -26,18 +26,19 @@ export default function NavBar() {
     setTheme(readTheme())
   }
 
+  const {data: event, isLoading} = useGetEventFirstQuery(null)
+
+
   return (
-    <>
-      <div className={styles.navBar}>
-        <Link to={"/"} className={styles.logoLink}><Logo className={styles.logo}/></Link>
-        <Menu items={menuItems} setSelected={setSelected} />
-				<div className={styles.right}>
-					<FirstEvent event={dataEventList[0]}/>
-					<div className={styles.theme} onClick={handleToggleTheme}>
-						<Icon iconName={ theme === 0 ? "sun" : "moon" } className={styles.iconTheme} />
-					</div>
-				</div>
+    <div className={styles.navBar}>
+      <Link to={"/"} className={styles.logoLink}><Logo className={styles.logo}/></Link>
+      <Menu items={menuItems} setSelected={setSelected} />
+      <div className={styles.right}>
+        <FirstEvent event={event} isLoading={isLoading} />
+        <div className={styles.theme} onClick={handleToggleTheme}>
+          <Icon iconName={ theme === 0 ? "sun" : "moon" } className={styles.iconTheme} />
+        </div>
       </div>
-    </>
+    </div>
   )
 }
