@@ -1,5 +1,5 @@
 import styles from './ViewReportList.module.css'
-import {Link, useNavigate, useSearchParams} from "react-router-dom";
+import {useNavigate, useSearchParams} from "react-router-dom";
 import {IReportListParam, useLazyGetReportListQuery} from "../../store/services/reportApi";
 import React, {useEffect, useMemo} from "react";
 import CardList from "../../components/CardList/CardList";
@@ -7,7 +7,6 @@ import Pagination from "../../components/Pagination/Pagination";
 import {reportDefault, routeDefault} from "../../constants";
 import SortPanel from "../../components/SortPanel/SortPanel";
 import SearchPanel, {IOnApplySearch} from "../../components/SearchPanel/SearchPanel";
-import Button from '../../components/Button/Button';
 import ReportCard from '../../components/ReportCard/ReportCard';
 
 const sortList = [
@@ -110,8 +109,10 @@ export default function ViewReportList() {
 
   return (
     <div className={styles.viewReportList}>
-      <Link className={styles.linkItem} to={"/"}><Button className={styles.button}>На главную</Button></Link>
-      <div className={styles.title}>Отчеты</div>
+      <div className={styles.title}>
+        <div className={styles.maintitle}>Отчеты</div>
+        <div className={styles.subtitle}>Находите и выбирайте лучшие веломаршруты для новых приключений</div>
+      </div>
       <div className={styles.reportList}>
         <div className={styles.reportParam}>
           <SortPanel options={sortList} value={param.sort} onApply={handleApplySort}/>
@@ -126,7 +127,6 @@ export default function ViewReportList() {
         <Pagination current={param.page} pageSize={param.limit} total={data.recCount} hideOnSinglePage={true} onChange={handleChangePage} />
         </div>
       </div>
-      <Link className={styles.linkItem} to={"/"}><Button className={styles.button}>На главную</Button></Link>
     </div>
   )
 }

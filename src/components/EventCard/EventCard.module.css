@@ -46,10 +46,6 @@
   color: var(--color-text_primary);
 }
 
-.status {
-
-}
-
 .details {
   height: 0.75rem;
   display: flex;
@@ -63,7 +59,6 @@
   font-family: Inter;
   font-weight: 600;
   font-size: 0.625rem;
-  line-height: 0.75rem;
   text-align: center;
   vertical-align: middle;
   color: var(--color-text_secondary);
@@ -73,11 +68,9 @@
   height: 0.75rem;
   display: flex;
   gap: 0.5rem;
-
   font-family: Inter;
   font-weight: 600;
   font-size: 0.625rem;
-  line-height: 100%;
   text-align: center;
   vertical-align: middle;
   color: var(--color-text_secondary);
@@ -91,7 +84,6 @@
   font-family: Inter;
   font-weight: 600;
   font-size: 0.625rem;
-  line-height: 0.75rem;
   text-align: center;
   vertical-align: middle;
   color: var(--color-text_secondary);
@@ -104,7 +96,6 @@
   font-family: Inter;
   font-weight: 600;
   font-size: 0.625rem;
-  line-height: 0.75rem;
   text-align: center;
   vertical-align: middle;
   color: var(--color-text_secondary);
@@ -120,11 +111,10 @@
 }
 
 .buttonMore {
-  height: 2rem;
-  border-radius: 0.5rem;
-  border-width: 0.0625rem;
+  display: flex;
+  justify-content: center;
 }
 
-.buttonMore button {
+.button {
   width: 100%;
 }

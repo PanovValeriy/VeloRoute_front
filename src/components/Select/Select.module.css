@@ -18,10 +18,10 @@
 }
 
 .select:hover {
-  border-color: var(--color-primary_hover);
+  border-color: var(--color-text_primary);
 }
 
 .select:focus {
-  border-color: var(--color-primary_hover);
-  outline: 0.125rem solid var(--color-primary_hover);
+  border-color: var(--color-text_primary);
+  outline: 0.0625rem solid var(--color-text_primary);
 }

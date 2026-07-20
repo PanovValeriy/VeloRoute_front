@@ -29,7 +29,6 @@
   font-family: Inter;
   font-weight: 400;
   font-size: 0.75rem;
-  line-height: 100%;
 }
 
 .description {
@@ -37,7 +36,6 @@
   font-family: Inter;
   font-weight: 400;
   font-size: 0.75rem;
-  line-height: 100%;
   max-width: 15rem;
   overflow: hidden;
   white-space: nowrap;

@@ -9,12 +9,12 @@ export const routeDefault = {
 }
 
 export const eventDefault = {
-  limit: 8,
+  limit: 6,
   sort: 'startDateTime:desc',
 }
 
 export const reportDefault = {
-  limit: 8,
+  limit: 9,
   sort: 'date:desc'
 }
 

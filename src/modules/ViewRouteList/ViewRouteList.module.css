@@ -1,6 +1,5 @@
 .viewRouteList {
   padding: 0 6rem;
-  background-color: var(--color-background);
 }
 
 .title {
@@ -16,7 +15,6 @@
   font-family: Inter;
   font-weight: 700;
   font-size: 2.5rem;
-  line-height: 100%;
   color: var(--color-text_primary);
 }
 
@@ -25,7 +23,6 @@
   font-family: Inter;
   font-weight: 400;
   font-size: 0.875rem;
-  line-height: 100%;
   color: var(--color-text_secondary);
 }
 
@@ -35,8 +32,8 @@
 }
 
 .routeParam {
-  height: 100%;
-  padding: 0.5rem;
+  border-radius: 1.5rem;
+  padding: 1rem;
   display: flex;
   gap: 2rem;
   align-items: center;

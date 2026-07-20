@@ -110,10 +110,9 @@ export default function SearchPanel({className, fields, search='', lengthFrom=0,
         : null
       }
       {(fields.indexOf('hideArchive') !== -1)
-        ? <>
-            <div className={styles.label}>Прошедшие события</div>
-            <label className={styles.label}>Скрыть <input className={styles.input} type="checkbox" checked={hideArchiveValue} onChange={handleChangeHideArchive}/></label>
-          </>
+        ? <div className={styles.hiveArchiveField}>
+            <input id="hideArchive" className={styles.input} type="checkbox" checked={hideArchiveValue} onChange={handleChangeHideArchive}/><label htmlFor="hideArchive" className={styles.label}>Скрыть прошедшие</label>
+          </div>
         : null
       }
       {/*<button className={styles.button} onClick={handleClickApply}>Применить</button>*/}

@@ -36,16 +36,20 @@
   gap: 1rem;
 }
 
+.hiveArchiveField {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .label{
   font-family: Inter;
   font-weight: 600;
   font-size: 0.75rem;
-  line-height: 100%;
   color: var(--color-text_primary, #1F2937);
 }
 
 .input {
-  height: 1.9375rem;
   border-radius: 0.5rem;
   padding: 0.5rem;
   gap: 0.625rem;
@@ -55,14 +59,13 @@
   font-family: Inter;
   font-weight: 400;
   font-size: 0.75rem;
-  line-height: 100%;
 }
 
 .input:hover {
-  border-color: var(--color-primary_hover);
+  border-color: var(--color-text_primary);
 }
 
 .input:focus {
-  border-color: var(--color-primary_hover);
-  outline: 0.125rem solid var(--color-primary_hover);
+  border-color: var(--color-text_primary);
+  outline: 0.0625rem solid var(--color-text_primary);
 }

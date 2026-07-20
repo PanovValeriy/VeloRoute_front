@@ -1,5 +1,5 @@
 import styles from './ViewEventList.module.css'
-import {Link, useNavigate, useSearchParams} from "react-router-dom";
+import {useNavigate, useSearchParams} from "react-router-dom";
 import {IEventListParams, useLazyGetEventListQuery} from "../../store/services/eventApi";
 import React, {useEffect, useMemo} from "react";
 import CardList from "../../components/CardList/CardList";
@@ -7,7 +7,6 @@ import {eventDefault} from "../../constants";
 import Pagination from "../../components/Pagination/Pagination";
 import SortPanel from "../../components/SortPanel/SortPanel";
 import SearchPanel, {IOnApplySearch} from "../../components/SearchPanel/SearchPanel";
-import Button from '../../components/Button/Button';
 import EventCard from '../../components/EventCard/EventCard';
 
 const sortList = [
@@ -112,8 +111,10 @@ export default function ViewEventList() {
 
   return (
     <div className={styles.viewEventList}>
-      <Link className={styles.linkItem} to={"/"}><Button className={styles.button}>На главную</Button></Link>
-      <div className={styles.title}>События</div>
+      <div className={styles.title}>
+        <div className={styles.maintitle}>События</div>
+        <div className={styles.subtitle}>Находите и выбирайте лучшие веломаршруты для новых приключений</div>
+      </div>
       <div className={styles.eventList}>
         <div className={styles.eventParam}>
           <SortPanel options={sortList} value={param.sort} onApply={handleApplySort}/>
@@ -128,7 +129,6 @@ export default function ViewEventList() {
           <Pagination className={styles.pagination} current={param.page} pageSize={param.limit} total={data.recCount} hideOnSinglePage={true} onChange={handleChangePage} />
         </div>
       </div>
-      <Link className={styles.linkItem} to={"/"}><Button className={styles.button}>На главную</Button></Link>
     </div>
   )
 }

@@ -3,7 +3,7 @@ import styles from "./NavBar.module.css"
 import { readTheme, toggleTheme } from "../../libs/libs"
 import IItem from "../../types/types"
 import Logo from "../Logo/Logo"
-import { Link } from "react-router"
+import {Link, useLocation} from "react-router"
 import Menu from "../Menu/Menu"
 import FirstEvent from "../FirstEvent/FirstEvent"
 import Icon from "../Icon/Icon"
@@ -11,7 +11,18 @@ import Icon from "../Icon/Icon"
 export default function NavBar() {
 
   const [theme, setTheme] = useState(readTheme())
-  const [selected, setSelected] = useState<number>(0)
+  const {pathname} = useLocation()
+  let initialMenu = 0
+  if (pathname.includes('route')) {
+    initialMenu = 1
+  }
+  if (pathname.includes('report')) {
+    initialMenu = 2
+  }
+  if (pathname.includes('event')) {
+    initialMenu = 3
+  }
+  const [selected, setSelected] = useState<number>(initialMenu)
 
   const menuItems: IItem[] = [
     {name: "Главная", url: '/', selected: selected === 0},
@@ -24,7 +35,6 @@ export default function NavBar() {
     toggleTheme()
     setTheme(readTheme())
   }
-
 
   return (
     <div className={styles.navBar}>

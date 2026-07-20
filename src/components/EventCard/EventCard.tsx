@@ -1,11 +1,10 @@
 import styles from "./EventCard.module.css"
 import cn from "classnames"
-import { Link } from "react-router"
-import Button from "../Button/Button"
 import { IEventShort } from "../../types/types";
 import Icon from "../Icon/Icon";
 import dayjs from "dayjs";
 import Status from "../Status/Status";
+import ButtonLink from "../ButtonLink/ButtonLink";
 
 interface IProps {
   className?: string;
@@ -14,8 +13,8 @@ interface IProps {
 }
 
 export default function EventCard({className, event, showViews}:IProps) {
-  const cnEventCard = cn(styles.eventCard, className)
   const closed = dayjs(event.startDateTime) < dayjs(new Date())
+  const cnEventCard = cn(styles.eventCard, className)
 
   return (
     <div className={cnEventCard}>
@@ -49,9 +48,7 @@ export default function EventCard({className, event, showViews}:IProps) {
           </div>
         </div>
         <div className={styles.buttonMore}>
-          <Link to={'/event/'+event.id.toString()}>
-          <Button>Подробнее</Button>
-          </Link> 
+          <ButtonLink className={styles.button} to={'/event/'+event.id.toString()}>Подробнее</ButtonLink>
         </div>
       </div>
     </div>

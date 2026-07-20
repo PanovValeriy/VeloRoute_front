@@ -2,7 +2,6 @@ import styles from "./ReportCardList.module.css"
 import Icon from "../../../../components/Icon/Icon";
 import {Link} from "react-router-dom";
 import {useGetReportRandomQuery} from "../../../../store/services/reportApi";
-import RouteCard from "../../../../components/RouteCard/RouteCard";
 import ReportCard from "../../../../components/ReportCard/ReportCard";
 
 export default function ReportCardList() {
