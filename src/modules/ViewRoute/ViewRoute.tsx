@@ -9,6 +9,9 @@ import {useGetReportListQuery} from "../../store/services/reportApi";
 import ReportList from "../../components/ReportList/ReportList";
 import Button from "../../components/Button/Button";
 import DateCreateUpdate from "../../components/DateCreateUpdate/DateCreateUpdate";
+import CardList from "../../components/CardList/CardList";
+import ReportCard from "../../components/ReportCard/ReportCard";
+import React from "react";
 
 export default function ViewRoute() {
 
@@ -34,9 +37,8 @@ export default function ViewRoute() {
   }
   return (
     <div className={styles.viewRoute}>
-      <Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>
+      {/*<Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>*/}
       <DateCreateUpdate className={styles.dateCreateUpdate} dateCreate={route.dateCreate} dateUpdate={route.dateUpdate} />
-      <div className={styles.title}>Маршрут "{route.name}"</div>
       <div className={styles.params}>
         <div className={styles.paramsImageWrapper}>
           <img className={styles.paramsImage}
@@ -46,10 +48,21 @@ export default function ViewRoute() {
         <RouteParams className={styles.routeParams} route={route}/>
       </div>
       <div className={styles.body}>
+        <div className={styles.title}>Описание маршрута</div>
         <Content pStyles={styles} body={route.description} />
       </div>
-      {((dataReportList) && (dataReportList.recCount !== 0)) ? <ReportList className={stylesReportList.fromRoute} reportList = {dataReportList.reportList}/> : null}
-      <Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>
+      {((dataReportList) && (dataReportList.recCount !== 0))
+        ? <>
+
+          <div className={styles.listReportTitle}>Отчеты по маршруту</div>
+          <CardList>
+            {dataReportList!.reportList.map((report, idx) => (
+              <ReportCard key={idx} report={report} showViews={false} />
+            ))}
+          </CardList>
+        </>
+        : null}
+      {/*<Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>*/}
     </div>
   )
 }

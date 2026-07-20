@@ -14,8 +14,8 @@ import {ReactComponent as SvgArrowLeft} from "./icons/icon_arrow-left.svg"
 import {ReactComponent as SvgArrowRight} from "./icons/icon_arrow-right.svg"
 import {ReactComponent as SvgAsphatl} from "./icons/icon_asphalt.svg"
 import {ReactComponent as SvgGravel} from "./icons/icon_gravel.svg"
-import {ReactComponent as SvgDirt} from "./icons/icon_dirt.svg"
-import {ReactComponent as SvgOffroad} from "./icons/icon_offroad.svg"
+import {ReactComponent as SvgSoil} from "./icons/icon_soil.svg"
+import {ReactComponent as SvgJungle} from "./icons/icon_jungle.svg"
 import {ReactComponent as SvgClock} from "./icons/icon_clock.svg"
 import {ReactComponent as SvgDownload} from "./icons/icon_download.svg"
 import {ReactComponent as SvgLocation} from "./icons/icon_location.svg"
@@ -72,17 +72,17 @@ export default function Icon ({ iconName, className }: IProps) {
     case "arrowRight":
       return <SvgArrowRight className={className} />
 
-    case "asphatl":
+    case "asphalt":
       return <SvgAsphatl className={className} />
 
     case "gravel":
       return <SvgGravel className={className} />
 
-    case "dirt":
-      return <SvgDirt className={className} />
+    case "soil":
+      return <SvgSoil className={className} />
 
-    case "offroad":
-      return <SvgOffroad className={className} />
+    case "jungle":
+      return <SvgJungle className={className} />
 
     case "clock":
       return <SvgClock className={className} />

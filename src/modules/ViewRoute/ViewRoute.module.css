@@ -1,12 +1,13 @@
 .viewRoute {
-  background-color: var(--color-route-background);
+  padding: 0 6rem;
 }
 
 .title {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--color-route-title);
+  align-self: start;
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--color-text_primary);
 }
 
 .subtitle {
@@ -20,16 +21,15 @@
 }
 
 .params {
-  padding: 1rem;
+  padding: 1rem 0;
   display: flex;
   gap: 1rem;
 }
 
 .paramsImageWrapper {
-  width: 50%;
+  width: 40%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
 }
 
 .paramsImage {
@@ -38,40 +38,48 @@
 }
 
 .routeParams {
-  width: 50%;
+  width: 60%;
 }
 
 .body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0;
-  color: var(--color-route-text);
+  color: var(--color-text_secondary);
+
+  width: 1348px;
+  gap: 16px;
+  border-radius: 16px;
+  padding: 24px;
+  background: var(--color-surface);
+
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
 }
 
 .paragraph {
-  margin: 0.5rem;
+  margin: 0;
   padding: 0;
-  width: 80%;
+  width: 100%;
   text-align: justify;
-  font-size: 1.25em;
 }
 
 .photo {
   max-width: 37rem;
-  box-shadow: 0.625rem 0.3125rem 0.625rem var(--color-route-shadow);
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px 0 #1F293714;
 }
 
 .map {
-  width: 80%;
+  width: 60%;
   height: 30rem;
   border-radius: 2rem;
 }
 
 .link {
-  color: var(--color-route-link);
+  color: var(--color-text_secondary);
   font-weight: bold;
 }
 
@@ -103,20 +111,9 @@
   background-color: var(--color-route-button-hover) !important;
 }
 
-@media screen and (max-width: 650px) {
-  .params {
-    flex-wrap: wrap;
-  }
-
-  .paramsImageWrapper {
-    width: 100%;
-  }
-
-  .routeParams {
-    width: 100%;
-  }
-
-  .photo {
-    max-width: 80%;
-  }
+.listReportTitle {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--color-text_primary);
 }

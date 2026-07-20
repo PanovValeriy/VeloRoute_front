@@ -1,35 +1,181 @@
 .routeParams {
-  padding: 0.5rem;
-  border-radius: 1rem;
-  box-shadow: 0.5rem 0.5rem 0.5rem var(--color-route-shadow);
-  background-color: var(--color-route_card-background);
-  color: var(--color-route_card-text)
+  /*padding: 0.5rem;*/
+  /*border-radius: 1rem;*/
+  /*box-shadow: 0.5rem 0.5rem 0.5rem var(--color-route-shadow);*/
+  /*background-color: var(--color-route_card-background);*/
+  /*color: var(--color-route_card-text)*/
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.groupParam {
-  font-size: 1.5em;
-  font-weight: bold;
+.title {
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 40px;
+  color: var(--color-text_primary);
+
 }
 
-.param {
+.groupParamPrimary {
+  width: 100%;
+  height: 119px;
+  display: flex;
+  gap: 32px;
+}
+
+.length {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.length_value {
+  height: 100%;
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 20px;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
-
+  /*line-height: 32px;*/
+  color: var(--color-text_primary);
 }
 
-.paramLabel {
-  font-size: 1em;
-  text-decoration: underline;
+.complexity {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.paramValue {
-  font-size: 1em;
-  font-weight: bold;
+.complexity_value {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--color-text_primary);
 }
 
-.paramValue > a {
-  color: var(--color-route-link)
+.pointList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pointList_value {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--color-text_primary);
+}
+
+.groupParamSecondary {
+  height: 165px;
+  display: flex;
+  gap: 32px;
+}
+
+.roadCoverage {
+  display: flex;
+  flex-direction: column;
+}
+
+.roadCoverage_value {
+  width: 392px;
+  height: 106px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: 8px;
+  column-gap: 8px;
+}
+
+.roadCoverage_asphalt {
+  grid-row-start: 1;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--color-text_secondary);
+}
+
+.roadCoverage_gravel {
+  grid-row-start: 1;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--color-text_secondary);
+}
+
+.roadCoverage_soil {
+  grid-row-start: 2;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--color-text_secondary);
+}
+.roadCoverage_jungle {
+  grid-row-start: 2;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--color-text_secondary);
+}
+
+.roadCoverage_icon {
+  width: 1.5rem;
+}
+
+.roadCoverage_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.roadCoverage_description {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.track {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.track_value {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--color-text_secondary);
+}
+
+.param_name {
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 16px;
+  vertical-align: middle;
 }
