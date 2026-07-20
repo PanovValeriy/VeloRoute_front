@@ -23,7 +23,7 @@ interface IReportListResponse {
 const reportApi = createApi({
   reducerPath: 'report',
   baseQuery: fetchBaseQuery({baseUrl: API_SERVER}),
-  tagTypes: ['REPORT_LIST', 'REPORT'],
+  tagTypes: ['REPORT_LIST', 'REPORT', 'REPORT_RANDOM'],
   endpoints: (builder) => ({
       getReportList: builder.query<IReportListResponse, IReportListParam>({
         query: ({page=1, limit=reportDefault.limit, search='', sort='', routeId=0, eventId=0}) => {
@@ -44,7 +44,11 @@ const reportApi = createApi({
       getReport: builder.query<IReport, IReportParam>({
         query: ({reportId, code=''}) => ({url: `/report/${reportId}/?code=${code}`}),
         providesTags: ['REPORT'],
-      })
+      }),
+    getReportRandom: builder.query<IReportListResponse, null>({
+      query: () => ({url: 'report/random/3/'}),
+      providesTags: ['REPORT_RANDOM'],
+    })
   })
 })
 
@@ -52,6 +56,7 @@ export const {
   useLazyGetReportListQuery,
   useGetReportListQuery,
   useGetReportQuery,
+  useGetReportRandomQuery,
 } = reportApi
 
 export default reportApi

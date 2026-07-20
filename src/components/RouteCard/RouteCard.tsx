@@ -36,10 +36,15 @@ export default function RouteCard({className, route, showViews}: IProps) {
           <div className={cnDifficulty}>
             <Icon iconName="difficulty" className={styles.detailIcon} /> {route.complexity.name}
           </div>
-          <Icon iconName="delimeter" />
-          <div className={styles.views}>
-            <Icon iconName="views" className={styles.detailIcon} />{route.viewsCount}
-          </div>
+          {(showViews)
+            ? (
+              <>
+                <Icon iconName="delimeter" />
+                <div className={styles.views}>
+                  <Icon iconName="views" className={styles.detailIcon} />{route.viewsCount}
+                </div>
+              </>)
+            :null}
         </div>
         <div className={styles.buttonMore}>
           <Link to={'/route/'+route.id.toString()}><Button>Подробнее</Button></Link>

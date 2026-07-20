@@ -21,7 +21,7 @@ export default function SortPanel({className, options, value='', onApply}: IProp
   return (
     <div className={cnSortPanel}>
       <div className={styles.label}>Упорядочить по</div>
-      <Select className={styles.input} options={options} value={value} onChange={handleChangeSort} />
+      <Select options={options} value={value} onChange={handleChangeSort} />
     </div>
   )
 }

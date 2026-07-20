@@ -1,5 +1,6 @@
 .routeCard {
   width: 25rem;
+  min-width: 25rem;
   height: 15rem;
   border-radius: 1rem;
   background: var(--color-surface);

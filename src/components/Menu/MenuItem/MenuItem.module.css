@@ -13,5 +13,5 @@
 }
 
 .menuItemSelected {
-  border-bottom: 2px solid var(--color-primary_green);
+  border-bottom: 0.125rem solid var(--color-primary_green);
 }

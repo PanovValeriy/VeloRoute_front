@@ -54,9 +54,18 @@
   box-shadow: var(--color-info-shadow) 0.5rem 0.5rem 0.5rem !important;
 }
 
+.content {
+  width: 100%;
+  padding: 0 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 @media screen and (max-width: 650px) {
   .buttonGroup {
     align-items: center;
     flex-direction: column;
   }
 }
+

@@ -11,11 +11,9 @@ export default function Header({mainPage}: IProps) {
   const cnHeader = cn(styles.header, {[styles.headerBackground]: mainPage});
 
   return (
-    <>
-      <div className={cnHeader}>
-        <NavBar />
-        {mainPage ? <Title /> : null }
-      </div>
-    </>
+    <div className={cnHeader}>
+      <NavBar />
+      {mainPage ? <Title /> : null }
+    </div>
   )
 }

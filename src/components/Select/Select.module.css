@@ -1,3 +1,27 @@
 .select {
+  height: 1.9375rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  gap: 0.625rem;
+  border-width: 0.0625rem;
+  border: 0.0625rem solid var(--color-border);
+  background-color: transparent;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 100%;
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M7 10l5 5 5-5z" fill="%23555"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 0.625rem center;
+  padding-right: 1.875rem;
+}
 
+.select:hover {
+  border-color: var(--color-primary_hover);
+}
+
+.select:focus {
+  border-color: var(--color-primary_hover);
+  outline: 0.125rem solid var(--color-primary_hover);
 }

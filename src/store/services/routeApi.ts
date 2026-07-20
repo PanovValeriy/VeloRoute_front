@@ -23,7 +23,7 @@ interface IRouteParam {
 const routeApi = createApi({
   reducerPath: 'route',
   baseQuery: fetchBaseQuery({baseUrl: API_SERVER}),
-  tagTypes: ['ROUTE_LIST', 'ROUTE'],
+  tagTypes: ['ROUTE_LIST', 'ROUTE', 'ROUTE_RANDOM'],
   endpoints: (builder) => ({
     getRouteList: builder.query<IRouteListResponse, IRouteListParam>({
       query: ({page=1, limit=routeDefault.limit, search='', length='', complexity=0, sort = routeDefault.sort}) => {
@@ -45,12 +45,17 @@ const routeApi = createApi({
       query: ({routeId, code = ''}) => ({url: `route/${routeId}/?code=${code}`}),
       providesTags: ['ROUTE'],
     }),
+    getRouteRandom: builder.query<IRouteListResponse, null>({
+      query: () => ({url: 'route/random/3/'}),
+      providesTags: ['ROUTE_RANDOM'],
+    })
   })
 })
 
 export const {
   useLazyGetRouteListQuery,
   useGetRouteQuery,
+  useGetRouteRandomQuery,
 } = routeApi
 
 export default routeApi

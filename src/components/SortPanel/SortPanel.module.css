@@ -1,15 +1,14 @@
 .sortPanel {
   display: flex;
   flex-direction: column;
-  justify-content: stretch;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .label{
-  color: var(--color-main_card-text);
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 100%;
+  color: var(--color-text_primary);
 }
 
-.input {
-  color: var(--color-input-text);
-  background-color: var(--color-input-background);
-}

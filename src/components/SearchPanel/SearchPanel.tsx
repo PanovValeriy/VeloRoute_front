@@ -2,6 +2,7 @@ import styles from "./SearchPanel.module.css"
 import cn from "classnames"
 import React, {useEffect, useState} from "react";
 import Select from "../Select/Select";
+import Button from "../Button/Button";
 
 export interface IOnApplySearch {
   search?: string,
@@ -79,27 +80,33 @@ export default function SearchPanel({className, fields, search='', lengthFrom=0,
   return (
     <div className={cnSearchPanel}>
       {(fields.indexOf('search') !== -1)
-        ? <>
+        ? <div className={styles.searchField}>
             <div className={styles.label}>Строка поиска</div>
             <input className={styles.input} type="text" value={searchValue} onChange={handleChangeSearch} onKeyDown={handleKeyDown} onBlur={handleClickApply}  />
-          </>
+          </div>
         : null
       }
       {(fields.indexOf('length') !== -1)
-        ? <>
-            <div className={styles.label}>Протяженность</div>
-            <div className={styles.label}>от</div>
-            <input className={styles.input} type="number" value={lengthFromValue.toString()} onChange={handleChangeLengthFrom} onKeyDown={handleKeyDown} onBlur={handleClickApply}/>
-            <div className={styles.label}>до</div>
-            <input className={styles.input} type="number" value={lengthToValue.toString()} onChange={handleChangeLengthTo} onKeyDown={handleKeyDown} onBlur={handleClickApply} />
-        </>
+        ? <div className={styles.lengthField}>
+            <div className={styles.label}>Дистанция (км)</div>
+            <div className={styles.lengthEdit}>
+              <div className={styles.lengthFromTo}>
+                <div className={styles.label}>от</div>
+                <input className={styles.input} type="number" value={lengthFromValue.toString()} onChange={handleChangeLengthFrom} onKeyDown={handleKeyDown} onBlur={handleClickApply}/>
+              </div>
+              <div className={styles.lengthFromTo}>
+                <div className={styles.label}>до</div>
+                <input className={styles.input} type="number" value={lengthToValue.toString()} onChange={handleChangeLengthTo} onKeyDown={handleKeyDown} onBlur={handleClickApply} />
+              </div>
+            </div>
+        </div>
         : null
       }
       {(fields.indexOf('complexity') !== -1)
-        ? <>
+        ? <div className={styles.complexityField}>
             <div className={styles.label}>Сложность</div>
             <Select className={styles.input} options={complexityList?.map(item => ({value: item.value.toString(), label: item.label}))} value={complexityValue.toString()} onChange={handleChangeComplexity} />
-          </>
+          </div>
         : null
       }
       {(fields.indexOf('hideArchive') !== -1)
@@ -110,7 +117,7 @@ export default function SearchPanel({className, fields, search='', lengthFrom=0,
         : null
       }
       {/*<button className={styles.button} onClick={handleClickApply}>Применить</button>*/}
-      <button className={styles.button} onClick={handleClickClear}>Очистить</button>
+      <Button onClick={handleClickClear}>Очистить</Button>
     </div>
   )
 }

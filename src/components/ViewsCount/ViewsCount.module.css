@@ -4,7 +4,7 @@
   border-radius: 40%;
   min-width: 1.5rem;
   text-align: center;
-  border: 2px solid var(--color-views_count-border);
+  border: 0.125rem solid var(--color-views_count-border);
   background-color: var(--color-views_count-background);
   color: var(--color-views_count-text);
   font-weight: bold;

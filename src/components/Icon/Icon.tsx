@@ -1,5 +1,4 @@
 import {ReactComponent as SvgEvent} from "./icons/icon-event.svg";
-import {ReactComponent as SvgReport} from "./icons/icon-report.svg";
 import {ReactComponent as SvgMoon} from "./icons/icon_moon.svg";
 import {ReactComponent as SvgSun} from "./icons/icon_sun.svg";
 import {ReactComponent as SvgInfo} from "./icons/icon-info.svg";
@@ -9,6 +8,7 @@ import {ReactComponent as SvgDistance} from "./icons/icon_distance.svg"
 import {ReactComponent as SvgDifficulty} from "./icons/icon_difficulty.svg"
 import {ReactComponent as SvgViews} from "./icons/icon_views.svg"
 import {ReactComponent as SvgRoute} from "./icons/icon_route.svg"
+import {ReactComponent as SvgReport} from "./icons/icon_report.svg"
 import {ReactComponent as SvgArrowDown} from "./icons/icon_arrow-down.svg"
 import {ReactComponent as SvgArrowLeft} from "./icons/icon_arrow-left.svg"
 import {ReactComponent as SvgArrowRight} from "./icons/icon_arrow-right.svg"

@@ -1,13 +1,32 @@
 .viewRouteList {
-  background-color: var(--color-route-background);
+  padding: 0 6rem;
+  background-color: var(--color-background);
 }
 
 .title {
   width: 100%;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--color-route-text);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.625rem 0;
+}
+
+.maintitle {
+  width: 100%;
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 100%;
+  color: var(--color-text_primary);
+}
+
+.subtitle {
+  width: 100%;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 100%;
+  color: var(--color-text_secondary);
 }
 
 .routeList {
@@ -19,54 +38,12 @@
   height: 100%;
   padding: 0.5rem;
   display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  background-color: var(--color-route_card-background);
-  border-radius: 0.5rem;
-  width: 15rem;
+  gap: 2rem;
+  align-items: center;
+  background: var(--color-surface);
+  box-shadow: 0 0.5rem 1.5rem 0 #1F293714;
 }
 
 .linkItem {
   text-decoration: none;
-}
-
-.button {
-  background-color: var(--color-route-button) !important;
-}
-
-.button:hover {
-  background-color: var(--color-route-button-hover) !important;
-}
-
-.routeItem {
-  position: relative;
-  background-color: var(--color-route_card-background);
-  color: var(--color-route_card-text);
-  border: var(--color-button_image-border) 0.125rem solid;
-}
-
-.routeItem:hover {
-  background-color: var(--color-route_card-background-hover);
-}
-
-.viewsCount {
-  right: 0;
-  bottom: 0;
-}
-
-.pagination {
-  --color-pagination_page-text: var(--color-route-text);
-  --color-pagination-active_page-background: var(--color-route-button);
-  --color-pagination-active_page-text: var(--color-button-text);
-}
-
-@media screen and (max-width: 540px) {
-  .routeList {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .routeParam {
-    align-self: center;
-  }
 }

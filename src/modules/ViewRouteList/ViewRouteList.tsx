@@ -137,23 +137,24 @@ export default function ViewRouteList() {
 
   return (
     <div className={styles.viewRouteList}>
-      <Link className={styles.linkItem} to={"/"}><Button className={styles.button}>На главную</Button></Link>
-      <div className={styles.title}>Список маршрутов</div>
+      <div className={styles.title}>
+        <div className={styles.maintitle}>Список маршрутов</div>
+        <div className={styles.subtitle}>Находите и выбирайте лучшие веломаршруты для новых приключений</div>
+      </div>
+      <div className={styles.routeParam}>
+        <SortPanel options={sortList} value={param.sort} onApply={handleApplySort}/>
+        <SearchPanel fields={['search','length', 'complexity']} search={param.search} lengthFrom={lengthFrom} lengthTo={lengthTo} complexityList={complexityList} complexity={param.complexity} onApply={handleApplySearch}/>
+      </div>
       <div className={styles.routeList}>
-        <div className={styles.routeParam}>
-          <SortPanel options={sortList} value={param.sort} onApply={handleApplySort}/>
-          <SearchPanel fields={['search','length', 'complexity']} search={param.search} lengthFrom={lengthFrom} lengthTo={lengthTo} complexityList={complexityList} complexity={param.complexity} onApply={handleApplySearch}/>
-        </div>
         <div>
         <CardList>
           {data!.routeList.map((route, idx) => (
             <RouteCard key={idx} route={route} showViews={param.showCount !== ''}/>
           ))}
         </CardList>
-        <Pagination className={styles.pagination} current={param.page} pageSize={param.limit} total={data.recCount} hideOnSinglePage={true} onChange={handleChangePage} />
+        <Pagination current={param.page} pageSize={param.limit} total={data.recCount} hideOnSinglePage={true} onChange={handleChangePage} />
         </div>
       </div>
-      <Link className={styles.linkItem} to={"/"}><Button className={styles.button}>На главную</Button></Link>
     </div>
   )
 }

@@ -1,10 +1,8 @@
-import { IEventShort } from "../../types/types"
 import Icon from "../Icon/Icon"
 import styles from "./FirstEvent.module.css"
 import dayjs from "dayjs"
 import {Link} from "react-router-dom";
 import {useGetEventFirstQuery} from "../../store/services/eventApi";
-import {useEffect} from "react";
 
 export default function FirstEvent() {
   const {data: event, isLoading} = useGetEventFirstQuery(null)

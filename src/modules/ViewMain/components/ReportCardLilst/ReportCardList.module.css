@@ -1,0 +1,63 @@
+.reportCardList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 2rem;
+}
+
+.infoTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 1.375rem;
+  line-height: 100%;
+  vertical-align: middle;
+}
+
+.infoTitleIcon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.infoTitleIcon path {
+  fill: var(--color-primary_green)
+}
+
+.infoMoreButton {
+  display: flex;
+  align-items: center;
+
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  color: var(--color-accent_green);
+
+}
+
+.infoMoreButtonIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.infoMoreButtonIcon path {
+  fill: var(--color-accent_green);
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}

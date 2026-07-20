@@ -40,7 +40,9 @@ export default function Pagination({className, current = 1, pageSize = 10, total
 
   return (
     <div className={cnPagination}>
-      {paginatorButtons}
+      <div className={styles.buttons}>
+        {paginatorButtons}
+      </div>
     </div>
   )
 }

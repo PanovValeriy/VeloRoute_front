@@ -1,5 +1,6 @@
 .reportCard {
   width: 25rem;
+  min-width: 25rem;
   height: 10rem;
   border-radius: 1rem;
   background: var(--color-surface);
