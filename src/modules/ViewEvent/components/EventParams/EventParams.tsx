@@ -2,6 +2,8 @@ import styles from './EventParams.module.css'
 import {IEvent} from "../../../../types/types";
 import cn from 'classnames'
 import dayjs from "dayjs";
+import Icon from "../../../../components/Icon/Icon";
+import {Link} from "react-router-dom";
 
 interface IProps {
   className?: string;
@@ -14,51 +16,36 @@ export default function EventParams({className, event}: IProps) {
 
   return (
     <div className={cnEventParams}>
-      <div className={styles.groupParam}>Параметры маршрута</div>
-      {(event.route)
-        ? <div className={styles.param}>
-            <div className={styles.paramLabel}>Взятый за основу маршрут:</div>
-            <div className={styles.paramValue}><a href={`/route/${event.route?.id}`}>{event.route?.name}</a></div>
-          </div>
-        : null
-      }
-      <div className={styles.param}>
-        <div className={styles.paramLabel}>Протяженность маршрута:</div>
-        <div className={styles.paramValue}>{event.length}км</div>
-      </div>
-      <div className={styles.param}>
-        <div className={styles.paramLabel}>Темп:</div>
-        <div className={styles.paramValue}>{event.tempo.name}</div>
-      </div>
-      <div className={styles.groupParam}>Трек</div>
-      <div className={styles.param}>
-        <div className={styles.paramLabel}>Нитка маршрута:</div>
-        <div className={styles.paramValue}>
-          {event.pointList}
+      <div className={styles.title}>{event.name}</div>
+      <div className={styles.groupParamPrimary}>
+        <div className={styles.length}>
+          <div className={styles.param_name}>Протяженность</div>
+          <div className={styles.length_value}><Icon iconName="distance" /> {event.length} км</div>
+        </div>
+        <div className={styles.dateTimeStart}>
+          <div className={styles.param_name}>Дата и время</div>
+          <div className={styles.dateTimeStart_value}><Icon className={styles.dateTimeStart_icon} iconName="calendar" />{dayjs(event.startDateTime).format('DD.MM.YYYY')}</div>
+          <div className={styles.dateTimeStart_value}><Icon className={styles.dateTimeStart_icon} iconName="calendar" />{dayjs(event.startDateTime).format('HH.mm')}</div>
+        </div>
+        <div className={styles.placeStart}>
+          <div className={styles.param_name}>Место старта</div>
+          <div className={styles.placeStart_value}>{event.startPlace}</div>
+        </div>
+        <div className={styles.tempo}>
+          <div className={styles.param_name}>Темп</div>
+          <div className={styles.tempo_value}><Icon className={styles.tempo_icon} iconName="pace" />{event.tempo.name}</div>
         </div>
       </div>
-      <div className={styles.param}>
-        { (event.trackFileURL)
-          ? <>
-              <div className={styles.paramLabel}>Трек с маршрутом:</div>
-              <div className={styles.paramValue}>
-                <a href={event.trackFileURL}>{event.name}</a>
-              </div>
-            </>
-          : null }
-      </div>
-      <div className={styles.groupParam}>Место и время старта</div>
-      <div className={styles.param}>
-        <div className={styles.paramLabel}>Место старта:</div>
-        <div className={styles.paramValue}>{event.startPlace}</div>
-      </div>
-      <div className={styles.param}>
-        <div className={styles.paramLabel}>Дата старта:</div>
-        <div className={styles.paramValue}>{dayjs(event.startDateTime).format('DD.MM.YYYY')}</div>
-      </div>
-      <div className={styles.param}>
-        <div className={styles.paramLabel}>Время старта:</div>
-        <div className={styles.paramValue}>{dayjs(event.startDateTime).format('HH:mm')}</div>
+      <div className={styles.groupParamSecondary}>
+        <div className={styles.pointList}>
+          <div className={styles.param_name}>Нитка маршрута</div>
+          <div className={styles.pointList_value}>{event.pointList}</div>
+        </div>
+        <div className={styles.track}>
+          <div className={styles.param_name}>Маршрут</div>
+          <Link className={styles.track_value} to={'/route/'+event.route?.id}><Icon className={styles.track_icon} iconName="route" />{event.route?.name}</Link>
+          <a href={event.trackFileURL} className={styles.track_value}><Icon className={styles.track_icon} iconName="download" />Скачать GPX</a>
+        </div>
       </div>
     </div>
   )

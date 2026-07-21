@@ -1,6 +1,6 @@
 import styles from './ViewReport.module.css'
 import {useParams} from "react-router";
-import {useNavigate, useSearchParams} from "react-router-dom";
+import {useSearchParams} from "react-router-dom";
 import {useGetReportQuery} from "../../store/services/reportApi";
 import Content from "../../components/Content/Content";
 import ReportHeader from "./components/ReportHeader/ReportHeader";

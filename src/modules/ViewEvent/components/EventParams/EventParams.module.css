@@ -1,36 +1,184 @@
 
 .eventParams {
-  padding: 0.5rem;
-  background-color: var(--color-event_card-background);
-  border-radius: 1rem;
-  box-shadow: 0.5rem 0.5rem 0.5rem var(--color-event-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.groupParam {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: var(--color-event_card-text)
+.title {
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 100%;
+  color: var(--color-text_primary)
 }
 
-.param {
+.groupParamPrimary {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+}
+
+.length {
+  width: 9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.length_value {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  align-items: center;
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-text_primary);
+}
+
+.dateTimeStart {
+  width: 7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dateTimeStart_value {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: var(--color-text_primary);
+}
+
+.dateTimeStart_icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.dateTimeStart_icon path {
+  fill: var(--color-text_secondary);
+}
+
+.placeStart {
+  width: 11rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.placeStart_value {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: var(--color-text_primary);
+}
+
+.tempo {
+  width: 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tempo_value {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-text_primary);
+}
+
+.tempo_icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.tempo_icon path {
+  fill: var(--color-text_secondary);
+}
+
+.groupParamSecondary {
+  display: flex;
+  gap: 2rem;
+}
+
+.pointList {
+  width: 23rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pointList_value {
+  text-align: justify;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: var(--color-text_primary);
+}
+
+.track {
+  width: 11rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.track_value {
+  text-decoration: none;
+  height: 100%;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 0.75rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
-  color: var(--color-event_card-text)
+  color: var(--color-text_primary);
 }
 
-.paramLabel {
-  font-size: 1em;
-  text-decoration: underline;
+.track_icon {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
-.paramValue {
-  font-size: 1em;
-  font-weight: bold;
+.track_icon path {
+  fill: var(--color-accent_green);
 }
 
-.paramValue > a {
-  color: var(--color-event-link)
+.param_name {
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 1rem;
+  vertical-align: middle;
 }
+
+
+
+/*.param {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  gap: 0.5rem;*/
+/*  margin-bottom: 1rem;*/
+/*  flex-wrap: wrap;*/
+/*  color: var(--color-event_card-text)*/
+/*}*/
+
+/*.paramLabel {*/
+/*  font-size: 1em;*/
+/*  text-decoration: underline;*/
+/*}*/
+
+/*.paramValue {*/
+/*  font-size: 1em;*/
+/*  font-weight: bold;*/
+/*}*/
+
+/*.paramValue > a {*/
+/*  color: var(--color-event-link)*/
+/*}*/

@@ -1,21 +1,18 @@
 import styles from './ViewEvent.module.css'
 import stylesReportList from '../../components/ReportList/ReportList.module.css'
 import {useParams} from "react-router";
-import {useNavigate, useSearchParams} from "react-router-dom";
+import {useSearchParams} from "react-router-dom";
 import EventParams from "./components/EventParams/EventParams";
-import dayjs from "dayjs";
 import {useGetEventQuery} from "../../store/services/eventApi";
 import Content from "../../components/Content/Content";
 import {useGetReportListQuery} from "../../store/services/reportApi";
 import ReportList from "../../components/ReportList/ReportList";
-import DateCreateUpdate from "../../components/DateCreateUpdate/DateCreateUpdate";
-import Button from "../../components/Button/Button";
 
 export default function ViewEvent() {
 
   const {id} = useParams();
   const [searchParams] = useSearchParams()
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   const eventId: number = Number(id);
   const code = searchParams.get('code') || ''
   const {data: event, isLoading} = useGetEventQuery({eventId, code})
@@ -28,7 +25,7 @@ export default function ViewEvent() {
   if (!event) {
     return (
       <>
-        <button className={styles.button} onClick={() => navigate(-1)}>Назад</button>
+        {/*<button className={styles.button} onClick={() => navigate(-1)}>Назад</button>*/}
         <div>Событие не найдено</div>
       </>
     )
@@ -39,10 +36,9 @@ export default function ViewEvent() {
   }
   return (
     <div className={styles.viewEvent}>
-      <Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>
-      <DateCreateUpdate className={styles.dateCreateUpdate} dateCreate={event.dateCreate} dateUpdate={event.dateUpdate}/>
-      <div className={styles.title}>Событие "{event.name}" ({dayjs(event.startDateTime).format('DD.MM.YYYY')})</div>
-
+      {/*<Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>*/}
+      {/*<DateCreateUpdate className={styles.dateCreateUpdate} dateCreate={event.dateCreate} dateUpdate={event.dateUpdate}/>*/}
+      {/*<div className={styles.title}>Событие "{event.name}" ({dayjs(event.startDateTime).format('DD.MM.YYYY')})</div>*/}
       <div className={styles.params}>
         <div className={styles.paramsImageWrapper}>
           <img className={styles.paramsImage}
@@ -51,12 +47,9 @@ export default function ViewEvent() {
         </div>
         <EventParams className={styles.eventParams} event={event}/>
       </div>
-
-      <div className={styles.body}>
-        <Content pStyles={styles} body={eventBody} />
-      </div>
-      {((dataReportList) && (dataReportList.recCount !== 0)) ? <ReportList className={stylesReportList.fromEvent} reportList = {dataReportList.reportList}/> : null}
-      <Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>
+      <Content title="Описание события" body={eventBody} />
+      {((dataReportList) && (dataReportList.recCount !== 0)) ? <ReportList title="Список отчетов по событию" reportList = {dataReportList.reportList}/> : null}
+      {/*<Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>*/}
     </div>
   )
 }
