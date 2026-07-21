@@ -1,26 +1,46 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-text_secondary);
+  gap: 1rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  background: var(--color-surface);
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 150%;
+}
+
+.title {
+  align-self: start;
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 1.375rem;
+  color: var(--color-text_primary);
+}
+
 .paragraph {
-  margin: 0.5rem;
-  padding: 0;
-  width: 80%;
+  margin: 0;
+  width: 100%;
   text-align: justify;
-  font-size: 1.25em;
 }
 
 .photo {
   max-width: 37rem;
-  box-shadow: 0.625rem 0.3125rem 0.625rem gray;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1.5rem 0 #1F293714;
 }
 
 .map {
-  width: 80%;
+  width: 60%;
   height: 30rem;
   border-radius: 2rem;
 }
 
 .link {
-  color: var(--color-main-link);
+  color: var(--color-text_secondary);
   font-weight: bold;
 }
 

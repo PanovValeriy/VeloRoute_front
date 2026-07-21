@@ -1,12 +1,10 @@
 import styles from './ViewRoute.module.css'
-import stylesReportList from '../../components/ReportList/ReportList.module.css'
 import {NavigateFunction, useParams} from "react-router";
 import {useNavigate, useSearchParams} from "react-router-dom";
 import RouteParams from "./components/RouteParams/RouteParams";
 import {useGetRouteQuery} from "../../store/services/routeApi";
 import Content from "../../components/Content/Content";
 import {useGetReportListQuery} from "../../store/services/reportApi";
-import ReportList from "../../components/ReportList/ReportList";
 import Button from "../../components/Button/Button";
 import DateCreateUpdate from "../../components/DateCreateUpdate/DateCreateUpdate";
 import CardList from "../../components/CardList/CardList";
@@ -47,20 +45,16 @@ export default function ViewRoute() {
         </div>
         <RouteParams className={styles.routeParams} route={route}/>
       </div>
-      <div className={styles.body}>
-        <div className={styles.title}>Описание маршрута</div>
-        <Content pStyles={styles} body={route.description} />
-      </div>
+      <Content title="Описание маршрута" body={route.description} />
       {((dataReportList) && (dataReportList.recCount !== 0))
-        ? <>
-
-          <div className={styles.listReportTitle}>Отчеты по маршруту</div>
-          <CardList>
-            {dataReportList!.reportList.map((report, idx) => (
-              <ReportCard key={idx} report={report} showViews={false} />
-            ))}
-          </CardList>
-        </>
+        ? <div className={styles.listReport}>
+            <div className={styles.listReportTitle}>Отчеты по маршруту</div>
+            <CardList>
+              {dataReportList!.reportList.map((report, idx) => (
+                <ReportCard key={idx} report={report} showViews={false} />
+              ))}
+            </CardList>
+          </div>
         : null}
       {/*<Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>*/}
     </div>

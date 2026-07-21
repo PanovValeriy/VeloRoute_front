@@ -6,7 +6,7 @@
   align-self: start;
   font-family: Inter;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 1.375rem;
   color: var(--color-text_primary);
 }
 
@@ -41,42 +41,42 @@
   width: 60%;
 }
 
-.body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: var(--color-text_secondary);
+/*.body {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  align-items: center;*/
+/*  color: var(--color-text_secondary);*/
 
-  width: 1348px;
-  gap: 16px;
-  border-radius: 16px;
-  padding: 24px;
-  background: var(--color-surface);
+/*  width: 1348px;*/
+/*  gap: 16px;*/
+/*  border-radius: 16px;*/
+/*  padding: 24px;*/
+/*  background: var(--color-surface);*/
 
-  font-family: Inter;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-}
+/*  font-family: Inter;*/
+/*  font-weight: 500;*/
+/*  font-size: 16px;*/
+/*  line-height: 150%;*/
+/*}*/
 
-.paragraph {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  text-align: justify;
-}
+/*.paragraph {*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  width: 100%;*/
+/*  text-align: justify;*/
+/*}*/
 
-.photo {
-  max-width: 37rem;
-  border-radius: 1rem;
-  box-shadow: 0 8px 24px 0 #1F293714;
-}
+/*.photo {*/
+/*  max-width: 37rem;*/
+/*  border-radius: 1rem;*/
+/*  box-shadow: 0 8px 24px 0 #1F293714;*/
+/*}*/
 
-.map {
-  width: 60%;
-  height: 30rem;
-  border-radius: 2rem;
-}
+/*.map {*/
+/*  width: 60%;*/
+/*  height: 30rem;*/
+/*  border-radius: 2rem;*/
+/*}*/
 
 .link {
   color: var(--color-text_secondary);
@@ -109,6 +109,10 @@
 
 .button:hover {
   background-color: var(--color-route-button-hover) !important;
+}
+
+.listReport {
+  padding: 0.5rem;
 }
 
 .listReportTitle {
