@@ -25,7 +25,7 @@ export default function EventParams({className, event}: IProps) {
         <div className={styles.dateTimeStart}>
           <div className={styles.param_name}>Дата и время</div>
           <div className={styles.dateTimeStart_value}><Icon className={styles.dateTimeStart_icon} iconName="calendar" />{dayjs(event.startDateTime).format('DD.MM.YYYY')}</div>
-          <div className={styles.dateTimeStart_value}><Icon className={styles.dateTimeStart_icon} iconName="calendar" />{dayjs(event.startDateTime).format('HH.mm')}</div>
+          <div className={styles.dateTimeStart_value}><Icon className={styles.dateTimeStart_icon} iconName="clock" />{dayjs(event.startDateTime).format('HH.mm')}</div>
         </div>
         <div className={styles.placeStart}>
           <div className={styles.param_name}>Место старта</div>

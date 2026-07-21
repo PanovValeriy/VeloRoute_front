@@ -1,5 +1,4 @@
 import styles from './ViewEvent.module.css'
-import stylesReportList from '../../components/ReportList/ReportList.module.css'
 import {useParams} from "react-router";
 import {useSearchParams} from "react-router-dom";
 import EventParams from "./components/EventParams/EventParams";
