@@ -95,12 +95,6 @@
   color: var(--color-text_secondary);
 }
 
-.buttonMore {
-  height: 2rem;
-  border-radius: 0.5rem;
-  border-width: 0.0625rem;
-}
-
-.buttonMore button {
+.button {
   width: 100%;
 }

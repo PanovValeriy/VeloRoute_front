@@ -6,10 +6,8 @@ import {useGetRouteQuery} from "../../store/services/routeApi";
 import Content from "../../components/Content/Content";
 import {useGetReportListQuery} from "../../store/services/reportApi";
 import Button from "../../components/Button/Button";
-import DateCreateUpdate from "../../components/DateCreateUpdate/DateCreateUpdate";
-import CardList from "../../components/CardList/CardList";
-import ReportCard from "../../components/ReportCard/ReportCard";
 import React from "react";
+import ReportList from "../../components/ReportList/ReportList";
 
 export default function ViewRoute() {
 
@@ -36,7 +34,6 @@ export default function ViewRoute() {
   return (
     <div className={styles.viewRoute}>
       {/*<Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>*/}
-      <DateCreateUpdate className={styles.dateCreateUpdate} dateCreate={route.dateCreate} dateUpdate={route.dateUpdate} />
       <div className={styles.params}>
         <div className={styles.paramsImageWrapper}>
           <img className={styles.paramsImage}
@@ -46,17 +43,7 @@ export default function ViewRoute() {
         <RouteParams className={styles.routeParams} route={route}/>
       </div>
       <Content title="Описание маршрута" body={route.description} />
-      {((dataReportList) && (dataReportList.recCount !== 0))
-        ? <div className={styles.listReport}>
-            <div className={styles.listReportTitle}>Отчеты по маршруту</div>
-            <CardList>
-              {dataReportList!.reportList.map((report, idx) => (
-                <ReportCard key={idx} report={report} showViews={false} />
-              ))}
-            </CardList>
-          </div>
-        : null}
-      {/*<Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>*/}
+      {((dataReportList) && (dataReportList.recCount !== 0)) ? <ReportList title="Отчеты по маршруту" reportList = {dataReportList.reportList}/> : null}
     </div>
   )
 }

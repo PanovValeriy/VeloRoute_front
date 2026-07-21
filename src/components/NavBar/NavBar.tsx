@@ -1,4 +1,4 @@
-import { useState } from "react"
+import {useEffect, useState} from "react"
 import styles from "./NavBar.module.css"
 import { readTheme, toggleTheme } from "../../libs/libs"
 import IItem from "../../types/types"
@@ -12,17 +12,7 @@ export default function NavBar() {
 
   const [theme, setTheme] = useState(readTheme())
   const {pathname} = useLocation()
-  let initialMenu = 0
-  if (pathname.includes('route')) {
-    initialMenu = 1
-  }
-  if (pathname.includes('report')) {
-    initialMenu = 2
-  }
-  if (pathname.includes('event')) {
-    initialMenu = 3
-  }
-  const [selected, setSelected] = useState<number>(initialMenu)
+  const [selected, setSelected] = useState<number>(0)
 
   const menuItems: IItem[] = [
     {name: "Главная", url: '/', selected: selected === 0},
@@ -35,6 +25,19 @@ export default function NavBar() {
     toggleTheme()
     setTheme(readTheme())
   }
+
+  useEffect(()=> {
+    if (pathname.includes('route')) {
+      setSelected(1)
+    }
+    if (pathname.includes('report')) {
+      setSelected(2)
+    }
+    if (pathname.includes('event')) {
+      setSelected(3)
+    }
+
+  }, [pathname])
 
   return (
     <div className={styles.navBar}>

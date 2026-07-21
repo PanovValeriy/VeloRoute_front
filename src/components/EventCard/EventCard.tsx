@@ -4,7 +4,8 @@ import { IEventShort } from "../../types/types";
 import Icon from "../Icon/Icon";
 import dayjs from "dayjs";
 import Status from "../Status/Status";
-import ButtonLink from "../ButtonLink/ButtonLink";
+import {Link} from "react-router-dom";
+import Button from "../Button/Button";
 
 interface IProps {
   className?: string;
@@ -47,8 +48,8 @@ export default function EventCard({className, event, showViews}:IProps) {
             {event.typeEvent.name}
           </div>
         </div>
-        <div className={styles.buttonMore}>
-          <ButtonLink className={styles.button} to={'/event/'+event.id.toString()}>Подробнее</ButtonLink>
+        <div>
+          <Link to={'/event/'+event.id.toString()} tabIndex={-1}><Button className={styles.button}>Подробнее</Button></Link>
         </div>
       </div>
     </div>

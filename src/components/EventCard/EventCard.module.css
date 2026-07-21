@@ -110,11 +110,6 @@
   fill: var(--color-text_secondary);
 }
 
-.buttonMore {
-  display: flex;
-  justify-content: center;
-}
-
 .button {
   width: 100%;
 }

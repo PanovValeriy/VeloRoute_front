@@ -4,6 +4,7 @@ import cn from 'classnames'
 import dayjs from "dayjs";
 import Icon from "../../../../components/Icon/Icon";
 import {Link} from "react-router-dom";
+import ButtonLink from "../../../../components/ButtonLink/ButtonLink";
 
 interface IProps {
   className?: string;
@@ -43,8 +44,17 @@ export default function EventParams({className, event}: IProps) {
         </div>
         <div className={styles.track}>
           <div className={styles.param_name}>Маршрут</div>
-          <Link className={styles.track_value} to={'/route/'+event.route?.id}><Icon className={styles.track_icon} iconName="route" />{event.route?.name}</Link>
-          <a href={event.trackFileURL} className={styles.track_value}><Icon className={styles.track_icon} iconName="download" />Скачать GPX</a>
+          {(event.route)
+            ? <>
+                <ButtonLink type="link_route" href={'/route/'+event.route?.id}>{event.route?.name}</ButtonLink>
+              </>
+            :
+            null
+          }
+          {(event.trackFileURL)
+            ? <ButtonLink type="download" href={event.trackFileURL}>Скачать GPX</ButtonLink>
+            : null
+          }
         </div>
       </div>
     </div>

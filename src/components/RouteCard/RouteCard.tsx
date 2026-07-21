@@ -46,8 +46,8 @@ export default function RouteCard({className, route, showViews}: IProps) {
               </>)
             :null}
         </div>
-        <div className={styles.buttonMore}>
-          <Link to={'/route/'+route.id.toString()}><Button>Подробнее</Button></Link>
+        <div>
+          <Link to={'/route/'+route.id.toString()} tabIndex={-1}><Button className={styles.button}>Подробнее</Button></Link>
         </div>
       </div>
     </div>

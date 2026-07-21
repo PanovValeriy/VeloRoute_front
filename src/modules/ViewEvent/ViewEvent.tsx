@@ -36,8 +36,6 @@ export default function ViewEvent() {
   return (
     <div className={styles.viewEvent}>
       {/*<Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>*/}
-      {/*<DateCreateUpdate className={styles.dateCreateUpdate} dateCreate={event.dateCreate} dateUpdate={event.dateUpdate}/>*/}
-      {/*<div className={styles.title}>Событие "{event.name}" ({dayjs(event.startDateTime).format('DD.MM.YYYY')})</div>*/}
       <div className={styles.params}>
         <div className={styles.paramsImageWrapper}>
           <img className={styles.paramsImage}
@@ -47,8 +45,7 @@ export default function ViewEvent() {
         <EventParams className={styles.eventParams} event={event}/>
       </div>
       <Content title="Описание события" body={eventBody} />
-      {((dataReportList) && (dataReportList.recCount !== 0)) ? <ReportList title="Список отчетов по событию" reportList = {dataReportList.reportList}/> : null}
-      {/*<Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>*/}
+      {((dataReportList) && (dataReportList.recCount !== 0)) ? <ReportList title="Отчеты по событию" reportList = {dataReportList.reportList}/> : null}
     </div>
   )
 }

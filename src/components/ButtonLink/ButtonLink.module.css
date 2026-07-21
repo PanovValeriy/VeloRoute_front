@@ -1,31 +1,48 @@
 .buttonLink {
   text-decoration: none;
   display: inline-block;
-  border-width: 0.0625rem;
-  border-radius: 0.5rem;
-  border-color: var(--color-accent_green);
-  border-style: solid;
-  color: var(--color-accent_green);
-  background-color: var(--color-background_button);
   cursor: pointer;
   font-family: Inter;
   font-weight: 600;
+  font-size: 0.75rem;
+  color: var(--color-text_secondary);
+  &.link {
+    color: var(--color-accent_green);
+  }
 }
 
-.buttonLink:hover {
-  background-color: var(--color-accent_green);
-  color: var(--color-surface);
-}
-
-.buttonLinkInner {
-  border: none;
-  padding: 0 1rem;
+.buttonInner {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: space-around;
   gap: 0.5rem;
+}
+
+.iconWrapper {
+  width: 2rem;
   height: 2rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-border);
+  &.small {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.2rem;
+  }
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  &.small {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+}
+
+.icon path {
+  fill: var(--color-accent_green);
 }
 
 .buttonLink:focus {

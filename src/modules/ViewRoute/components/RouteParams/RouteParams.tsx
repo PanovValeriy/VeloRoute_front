@@ -3,6 +3,7 @@ import {IRoute} from "../../../../types/types";
 import cn from 'classnames'
 import Icon from "../../../../components/Icon/Icon";
 import Progress from "../../../../components/Progress/Progress";
+import ButtonLink from "../../../../components/ButtonLink/ButtonLink";
 
 interface IProps {
   className?: string;
@@ -15,32 +16,6 @@ export default function RouteParams({className, route}: IProps) {
 
   return (
     <div className={cnRouteParams}>
-      {/*<div className={styles.groupParam}>Параметры маршрута</div>*/}
-      {/*<div className={styles.param}>*/}
-      {/*  <div className={styles.paramLabel}>Протяженность маршрута:</div>*/}
-      {/*  <div className={styles.paramValue}>{route.length}км</div>*/}
-      {/*</div>*/}
-      {/*<div className={styles.param}>*/}
-      {/*  <div className={styles.paramLabel}>Характер покрытия:</div>*/}
-      {/*  <div className={styles.paramValue}>асфальт:{route.asphalt}%, грейдер:{route.grader}%, грунт:{route.soil}%, дебри:{route.jungle}%</div>*/}
-      {/*</div>*/}
-      {/*<div className={styles.param}>*/}
-      {/*  <div className={styles.paramLabel}>Сложность маршрута:</div>*/}
-      {/*  <div className={styles.paramValue}>{route.complexity.name}</div>*/}
-      {/*</div>*/}
-      {/*<div className={styles.groupParam}>Трек</div>*/}
-      {/*<div className={styles.param}>*/}
-      {/*  <div className={styles.paramLabel}>Нитка маршрута:</div>*/}
-      {/*  <div className={styles.paramValue}>*/}
-      {/*    {route.pointList}*/}
-      {/*  </div>*/}
-      {/*</div>*/}
-      {/*<div className={styles.param}>*/}
-      {/*  <div className={styles.paramLabel}>Трек маршрута:</div>*/}
-      {/*  <div className={styles.paramValue}>*/}
-      {/*    <a href={route.trackFileURL}>{route.name}</a>*/}
-      {/*  </div>*/}
-      {/*</div>*/}
       <div className={styles.title}>{route.name}</div>
       <div className={styles.groupParamPrimary}>
         <div className={styles.length}>
@@ -92,7 +67,10 @@ export default function RouteParams({className, route}: IProps) {
         </div>
         <div className={styles.track}>
           <div className={styles.param_name}>Трек маршрута</div>
-          <a href={route.trackFileURL} className={styles.track_value}><Icon iconName="download"/> Скачать в формате GPX</a>
+          {(route.trackFileURL)
+            ? <ButtonLink type="download" href={route.trackFileURL}>Скачать GPX</ButtonLink>
+            : null
+          }
         </div>
       </div>
     </div>

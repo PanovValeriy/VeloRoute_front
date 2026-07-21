@@ -22,7 +22,7 @@ export default function ReportCard({className, report, showViews}: IProps) {
           <div className={styles.title}>{report.name}</div>
           <div className={styles.date}><Icon iconName="calendar" className={styles.dateIcon} />{dayjs(report.date).format('MM.DD.YYYY')}</div>
         </div>
-        <div className={styles.buttonMore}><Link to={'/report/'+report.id.toString()}><Button>Подробнее</Button></Link></div>
+        <div className={styles.buttonMore}><Link tabIndex={-1} to={'/report/'+report.id.toString()}><Button>Подробнее</Button></Link></div>
       </div>
     </div>
   )
