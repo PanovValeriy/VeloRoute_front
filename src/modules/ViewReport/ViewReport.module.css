@@ -19,9 +19,3 @@
 .dateCreateUpdate {
   color: var(--color-text_secondary);
 }
-
-/*@media screen and (max-width: 650px) {*/
-/*  .photo {*/
-/*    max-width: 90%;*/
-/*  }*/
-/*}*/

@@ -81,9 +81,3 @@
 .button:hover {
   background-color: var(--color-info-button-hover) !important;
 }
-
-@media screen and (max-width: 650px) {
-  .photo {
-    max-width: 90%;
-  }
-}

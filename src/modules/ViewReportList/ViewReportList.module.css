@@ -60,14 +60,3 @@
   right: 0;
   bottom: 0;
 }
-
-@media screen and (max-width: 540px) {
-  .reportList {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .reportParam {
-    align-self: center;
-  }
-}

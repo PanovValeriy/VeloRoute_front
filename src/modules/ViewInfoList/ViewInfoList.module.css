@@ -47,14 +47,3 @@
 .infoItem:hover {
   background-color: var(--color-info_card-background-hover);
 }
-
-@media screen and (max-width: 540px) {
-  .infoList {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .infoParam {
-    align-self: center;
-  }
-}

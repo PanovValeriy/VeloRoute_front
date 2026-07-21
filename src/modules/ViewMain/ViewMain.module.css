@@ -61,11 +61,3 @@
   flex-direction: column;
   gap: 1rem;
 }
-
-@media screen and (max-width: 650px) {
-  .buttonGroup {
-    align-items: center;
-    flex-direction: column;
-  }
-}
-

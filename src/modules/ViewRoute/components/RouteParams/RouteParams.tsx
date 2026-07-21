@@ -63,7 +63,7 @@ export default function RouteParams({className, route}: IProps) {
             <div className={styles.roadCoverage_asphalt}>
               <Icon className={styles.roadCoverage_icon} iconName="asphalt"/>
               <div className={styles.roadCoverage_wrapper}>
-                <div className={styles.roadCoverage_description}><span>Асфальт</span><span>{route.asphalt}%</span></div>
+                <div className={styles.roadCoverage_description}><div>Асфальт</div><div>{route.asphalt}%</div></div>
                 <Progress value={route.asphalt} />
               </div>
             </div>

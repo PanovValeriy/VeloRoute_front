@@ -100,7 +100,7 @@
 }
 
 .tempo_icon path {
-  fill: var(--color-text_secondary);
+  stroke: var(--color-text_secondary);
 }
 
 .groupParamSecondary {
