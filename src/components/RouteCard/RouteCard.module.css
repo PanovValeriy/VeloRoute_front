@@ -58,10 +58,7 @@
 .detailIcon {
   width: 0.75rem;
   height: 0.75rem;
-}
-
-.detailIcon path {
-  stroke: var(--color-text_secondary);
+  fill: var(--color-text_secondary);
 }
 
 .difficulty {

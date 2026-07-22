@@ -37,6 +37,12 @@
   color: var(--color-text_primary);
 }
 
+.length_icon {
+  width: 2rem;
+  height: 2rem;
+  fill: var(--color-text_secondary);
+}
+
 .dateTimeStart {
   width: 7rem;
   display: flex;
@@ -57,9 +63,6 @@
 .dateTimeStart_icon {
   width: 1.5rem;
   height: 1.5rem;
-}
-
-.dateTimeStart_icon path {
   fill: var(--color-text_secondary);
 }
 
@@ -97,10 +100,7 @@
 .tempo_icon {
   width: 1.5rem;
   height: 1.5rem;
-}
-
-.tempo_icon path {
-  stroke: var(--color-text_secondary);
+  fill: var(--color-text_secondary);
 }
 
 .groupParamSecondary {
@@ -145,9 +145,6 @@
 .track_icon {
   width: 1.5rem;
   height: 1.5rem;
-}
-
-.track_icon path {
   fill: var(--color-accent_green);
 }
 

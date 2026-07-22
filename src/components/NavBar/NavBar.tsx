@@ -27,15 +27,14 @@ export default function NavBar() {
   }
 
   useEffect(()=> {
+
     if (pathname.includes('route')) {
       setSelected(1)
-    }
-    if (pathname.includes('report')) {
+    } else if (pathname.includes('report')) {
       setSelected(2)
-    }
-    if (pathname.includes('event')) {
+    } else if (pathname.includes('event')) {
       setSelected(3)
-    }
+    } else setSelected(0)
 
   }, [pathname])
 
@@ -46,7 +45,7 @@ export default function NavBar() {
       <div className={styles.right}>
         <FirstEvent />
         <div className={styles.theme} onClick={handleToggleTheme}>
-          <Icon iconName={ theme === 0 ? "sun" : "moon" } className={styles.iconTheme} />
+          <Icon className={styles.iconTheme} iconName={ theme === 0 ? "sun" : "moon" } />
         </div>
       </div>
     </div>

@@ -22,15 +22,6 @@
   height: 100%;
 }
 
-.logo g path{
-  fill: var(--color-primary_green);
-}
-
-.logo svg > path {
-  stroke: var(--color-primary_green);
-}
-
-
 .right {
   display: flex;
   gap: 1rem;
@@ -44,6 +35,6 @@
 .iconTheme {
   height: 100%;
   display: inline;
-  opacity: var(--opacity-icon_theme);
   cursor: pointer;
+  fill: var(--color-text_primary);
 }

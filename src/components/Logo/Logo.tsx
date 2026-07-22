@@ -1,6 +1,6 @@
 import cn from "classnames";
 import styles from "./Logo.module.css";
-import {ReactComponent as SvgLogo} from "./logo.svg";
+import {ReactComponent as SvgLogo} from "./icons/logo.svg";
 
 interface IProps {
   className?: string;

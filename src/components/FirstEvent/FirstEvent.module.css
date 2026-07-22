@@ -9,7 +9,11 @@
   background: var(--color-light_green);
   cursor: pointer;
   border-radius: 1rem;
+  &.noEvent {
+    cursor: default;
+  }
 }
+
 
 .icon path{
   fill: var(--color-primary_green);

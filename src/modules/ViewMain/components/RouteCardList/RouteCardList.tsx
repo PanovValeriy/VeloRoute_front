@@ -4,7 +4,6 @@ import {Link} from "react-router-dom";
 import {useGetRouteRandomQuery} from "../../../../store/services/routeApi";
 import RouteCard from "../../../../components/RouteCard/RouteCard";
 
-
 export default function RouteCardList() {
   const {data, isLoading} = useGetRouteRandomQuery(null)
   return (
@@ -14,7 +13,7 @@ export default function RouteCardList() {
           <Icon iconName="route" className={styles.infoTitleIcon}/> Маршруты
         </div>
         <div className={styles.infoMoreButton}>
-          <Link to="/routes" className={styles.infoMoreButton}>Смотерть все маршруты<Icon iconName="arrowRight" className={styles.infoMoreButtonIcon}/></Link>
+          <Link to="/routes" className={styles.infoMoreButton}>Смотреть все маршруты<Icon iconName="arrowRight" className={styles.infoMoreButtonIcon}/></Link>
         </div>
 
       </div>

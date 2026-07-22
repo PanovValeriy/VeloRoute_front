@@ -25,9 +25,6 @@
 .infoTitleIcon {
   width: 2rem;
   height: 2rem;
-}
-
-.infoTitleIcon path {
   fill: var(--color-primary_green)
 }
 
@@ -41,15 +38,11 @@
   vertical-align: middle;
   text-decoration: none;
   color: var(--color-accent_green);
-
 }
 
 .infoMoreButtonIcon {
   width: 1.5rem;
   height: 1.5rem;
-}
-
-.infoMoreButtonIcon path {
   fill: var(--color-accent_green);
 }
 

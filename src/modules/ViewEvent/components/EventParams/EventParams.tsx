@@ -21,7 +21,7 @@ export default function EventParams({className, event}: IProps) {
       <div className={styles.groupParamPrimary}>
         <div className={styles.length}>
           <div className={styles.param_name}>Протяженность</div>
-          <div className={styles.length_value}><Icon iconName="distance" /> {event.length} км</div>
+          <div className={styles.length_value}><Icon className={styles.length_icon} iconName="distance" /> {event.length} км</div>
         </div>
         <div className={styles.dateTimeStart}>
           <div className={styles.param_name}>Дата и время</div>

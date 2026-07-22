@@ -104,9 +104,6 @@
 .icon {
   width: 0.75rem;
   height: 0.75rem;
-}
-
-.icon path {
   fill: var(--color-text_secondary);
 }
 
