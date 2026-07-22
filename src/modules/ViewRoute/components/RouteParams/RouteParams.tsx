@@ -20,7 +20,7 @@ export default function RouteParams({className, route}: IProps) {
       <div className={styles.groupParamPrimary}>
         <div className={styles.length}>
           <div className={styles.param_name}>Протяженность</div>
-          <div className={styles.length_value}><Icon iconName="distance" />{route.length} км</div>
+          <div className={styles.length_value}><Icon className={styles.length_icon} iconName="distance" />{route.length} км</div>
         </div>
         <div className={styles.complexity}>
           <div className={styles.param_name}>Сложность</div>
