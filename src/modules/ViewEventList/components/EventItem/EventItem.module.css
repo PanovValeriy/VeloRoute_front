@@ -6,12 +6,12 @@
   font-size: 1.25em;
   font-weight: bold;
   text-align: center;
-  color: var(--color-event_card-text);
+  color: var(--color-text_primary);
 }
 
 .param {
   font-size: 0.75em;
-  color: var(--color-event_card-text);
+  color: var(--color-text_secondary);
 }
 
 .photoWrapper {

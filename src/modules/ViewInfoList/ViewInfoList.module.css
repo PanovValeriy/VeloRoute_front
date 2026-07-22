@@ -1,5 +1,5 @@
 .viewInfoList {
-  background-color: var(--color-info-background);
+  /*background-color: var(--color-info-background);*/
 }
 
 .title {
@@ -7,7 +7,7 @@
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
-  color: var(--color-info-title);
+  color: var(--color-text_primary);
 }
 
 .infoList {
@@ -21,7 +21,6 @@
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  background-color: var(--color-info_card-background);
   border-radius: 0.5rem;
 }
 

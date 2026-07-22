@@ -13,11 +13,11 @@
 .subtitle {
   font-size: 1.5rem;
   font-weight: bold;
-  color: var(--color-route-title);
+  /*color: var(--color-route-title);*/
 }
 
 .dateCreateUpdate {
-  color: var(--color-route-text);
+  /*color: var(--color-route-text);*/
 }
 
 .params {
@@ -47,31 +47,31 @@
 }
 
 .routeLink {
-  color: var(--color-route-link);
+  /*color: var(--color-route-link);*/
   font-weight: bold;
 }
 
 .reportLink {
-  color: var(--color-report-link);
+  /*color: var(--color-report-link);*/
   font-weight: bold;
 }
 
 .eventLink {
-  color: var(--color-event-link);
+  /*color: var(--color-event-link);*/
   font-weight: bold;
 }
 
 .infoLink {
-  color: var(--color-info-link);
+  /*color: var(--color-info-link);*/
   font-weight: bold;
 }
 
 .button {
-  background-color: var(--color-route-button) !important;
+  /*background-color: var(--color-route-button) !important;*/
 }
 
 .button:hover {
-  background-color: var(--color-route-button-hover) !important;
+  /*background-color: var(--color-route-button-hover) !important;*/
 }
 
 .listReport {

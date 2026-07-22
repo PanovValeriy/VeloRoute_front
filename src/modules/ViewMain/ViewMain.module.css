@@ -15,43 +15,43 @@
 }
 
 .buttonRoute {
-  background-color: var(--color-route_card-background) !important;
-  color: var(--color-route_card-text) !important;
+  /*background-color: var(--color-route_card-background) !important;*/
+  /*color: var(--color-route_card-text) !important;*/
 }
 
 .buttonRoute:hover {
-  background-color: var(--color-route_card-background-hover) !important;
-  box-shadow: var(--color-route-shadow) 0.5rem 0.5rem 0.5rem !important;
+  /*background-color: var(--color-route_card-background-hover) !important;*/
+  /*box-shadow: var(--color-route-shadow) 0.5rem 0.5rem 0.5rem !important;*/
 }
 
 .buttonReport {
-  background-color: var(--color-report_card-background) !important;
-  color: var(--color-report_card-text) !important;
+  /*background-color: var(--color-report_card-background) !important;*/
+  /*color: var(--color-report_card-text) !important;*/
 }
 
 .buttonReport:hover {
-  background-color: var(--color-report_card-background-hover) !important;
-  box-shadow: var(--color-report-shadow) 0.5rem 0.5rem 0.5rem !important;
+  /*background-color: var(--color-report_card-background-hover) !important;*/
+  /*box-shadow: var(--color-report-shadow) 0.5rem 0.5rem 0.5rem !important;*/
 }
 
 .buttonEvent {
-  background-color: var(--color-event_card-background) !important;
-  color: var(--color-event_card-text) !important;
+  /*background-color: var(--color-event_card-background) !important;*/
+  /*color: var(--color-event_card-text) !important;*/
 }
 
 .buttonEvent:hover {
-  background-color: var(--color-event_card-background-hover) !important;
-  box-shadow: var(--color-event-shadow) 0.5rem 0.5rem 0.5rem !important;
+  /*background-color: var(--color-event_card-background-hover) !important;*/
+  /*box-shadow: var(--color-event-shadow) 0.5rem 0.5rem 0.5rem !important;*/
 }
 
 .buttonInfo {
-  background-color: var(--color-info_card-background) !important;
-  color: var(--color-info_card-text) !important;
+  /*background-color: var(--color-info_card-background) !important;*/
+  /*color: var(--color-info_card-text) !important;*/
 }
 
 .buttonInfo:hover {
-  background-color: var(--color-info_card-background-hover) !important;
-  box-shadow: var(--color-info-shadow) 0.5rem 0.5rem 0.5rem !important;
+  /*background-color: var(--color-info_card-background-hover) !important;*/
+  /*box-shadow: var(--color-info-shadow) 0.5rem 0.5rem 0.5rem !important;*/
 }
 
 .content {

@@ -1,6 +1,6 @@
 .newsItem {
   margin: 0.5rem;
-  color: var(--color-news-link);
+  color: var(--color-text_primary);
 }
 
 .link {
@@ -8,25 +8,25 @@
 }
 
 .newsRoute {
-  color: var(--color-route-text);
+  color: var(--color-text_secondary);
 }
 
 .newsRoute .link {
-  color: var(--color-route-link);
+  color: var(--color-accent_green);
 }
 
 .newsReport {
-  color: var(--color-report-text);
+  color: var(--color-text_secondary);
 }
 
 .newsReport .link {
-  color: var(--color-report-link);
+  color: var(--color-accent_green);
 }
 
 .newsEvent {
-  color: var(--color-event-text);
+  color: var(--color-text_secondary);
 }
 
 .newsEvent .link {
-  color: var(--color-event-link);
+  color: var(--color-accent_green);
 }

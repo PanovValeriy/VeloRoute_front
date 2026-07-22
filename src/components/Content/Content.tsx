@@ -30,10 +30,10 @@ function createContent(content: string, pStyles: IStyles) {
   const formatMAP = '<iframe title="' + getKey() + '" className="' + pStyles.map + '" key="' + getKey() + '" src="$1"></iframe>'
   const formatLINK = '<linkinner className="' + pStyles.link + '" key="' + getKey() + '" href="$2">$1</linkinner>'
   const formatDOWNLOAD = '<buttonlink type="download" className="' + pStyles.link + '" key="' + getKey() + '" href="$2">$1</buttonlink>'
-  const formatROUTE = '<buttonlink type="link_route" className="' + pStyles.routeLink + '" key="' + getKey() + '" href="$2">$1</buttonlink>'
-  const formatREPORT = '<buttonlink type="link_report" className="' + pStyles.reportLink + '" key="' + getKey() + '" href="$2">$1</buttonlink>'
-  const formatEVENT = '<buttonlink type="link_event" className="' + pStyles.eventLink + '" key="' + getKey() + '" href="$2">$1</buttonlink>'
-  const formatINFO = '<buttonlink type="link_info" className="' + pStyles.infoLink + '" key="' + getKey() + '" href="$2">$1</buttonlink>'
+  const formatROUTE = '<buttonlink type="link_route" className="' + pStyles.link + '" key="' + getKey() + '" href="$2">$1</buttonlink>'
+  const formatREPORT = '<buttonlink type="link_report" className="' + pStyles.link + '" key="' + getKey() + '" href="$2">$1</buttonlink>'
+  const formatEVENT = '<buttonlink type="link_event" className="' + pStyles.link + '" key="' + getKey() + '" href="$2">$1</buttonlink>'
+  const formatINFO = '<buttonlink type="link_info" className="' + pStyles.link + '" key="' + getKey() + '" href="$2">$1</buttonlink>'
 
   for (let i=0; i < contentArr.length; i++) {
     if (contentArr[i].slice(0, 5) !== '[IMG]' && contentArr[i].slice(0,5) !== '[MAP]' && contentArr[i].slice(0,7) !== '[TITLE]') {

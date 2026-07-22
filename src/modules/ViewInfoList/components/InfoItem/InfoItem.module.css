@@ -1,9 +1,9 @@
 .infoItem {
-  background-color: var(--color-info_card-background);
+  /*background-color: var(--color-info_card-background);*/
   padding: 0.5rem;
 }
 .infoItem:hover {
-  background-color: var(--color-info_card-background-hover) !important;
+  /*background-color: var(--color-info_card-background-hover) !important;*/
 }
 
 .content {

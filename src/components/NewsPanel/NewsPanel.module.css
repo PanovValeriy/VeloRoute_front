@@ -1,14 +1,14 @@
 .newsPanel {
   margin: 1rem auto 0;
-  border: var(--color-news-border) 0.125rem solid;
+  border: var(--color-border) 0.125rem solid;
   border-radius: 0.5rem;
   padding: 0.5rem;
-  background-color: var(--color-news-background);
+  background-color: var(--color-background);
   max-width: 40rem;
 }
 
 .title {
   font-size: 1.2em;
   font-weight: bold;
-  color: var(--color-news-title);
+  color: var(--color-text_primary);
 }

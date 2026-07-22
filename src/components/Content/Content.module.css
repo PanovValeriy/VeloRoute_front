@@ -44,21 +44,6 @@
   font-weight: bold;
 }
 
-.routeLink {
-  color: var(--color-route-link);
-  font-weight: bold;
-}
-
-.reportLink {
-  color: var(--color-report-link);
-  font-weight: bold;
-}
-
-.eventLink {
-  color: var(--color-event-link);
-  font-weight: bold;
-}
-
 .subtitle {
   font-size: 1.5em;
   font-weight: bold;
