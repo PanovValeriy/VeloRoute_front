@@ -42,7 +42,7 @@ export default function NavBar() {
     <div className={styles.navBar}>
       <Link to={"/"} className={styles.logoLink}><Logo className={styles.logo}/></Link>
       <Menu items={menuItems} setSelected={setSelected} />
-      <div className={styles.right}>
+      <div className={styles.rightBlock}>
         <FirstEvent />
         <div className={styles.theme} onClick={handleToggleTheme}>
           <Icon className={styles.iconTheme} iconName={ theme === 0 ? "sun" : "moon" } />

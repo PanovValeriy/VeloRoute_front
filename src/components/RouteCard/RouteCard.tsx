@@ -21,14 +21,14 @@ export default function RouteCard({className, route, showViews}: IProps) {
 
   return (
     <div className={styles.routeCard}>
-      <div className={styles.foto}>
+      <div className={styles.photo}>
         <img src={route.photoURL} alt="Фото" />
       </div>
       <div className={styles.info}>
         <div className={styles.title}>
           {route.name}
         </div>
-        <div className={styles.details}>
+        <div className={styles.detail}>
           <div className={styles.distance}>
             <Icon iconName="distance" className={styles.detailIcon} /> {route.length}км
           </div>

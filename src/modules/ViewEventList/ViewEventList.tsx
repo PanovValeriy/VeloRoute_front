@@ -116,9 +116,9 @@ export default function ViewEventList() {
         <div className={styles.subtitle}>Находите и выбирайте лучшие веломаршруты для новых приключений</div>
       </div>
       <div className={styles.eventList}>
-        <div className={styles.eventParam}>
+        <div className={styles.eventFilter}>
           <SortPanel options={sortList} value={param.sort} onApply={handleApplySort}/>
-          <SearchPanel className={styles.searchPanel} fields={['search','hideArchive']} search={param.search} hideArchive={param.hideArchive} onApply={handleApplySearch}/>
+          <SearchPanel fields={['search','hideArchive']} search={param.search} hideArchive={param.hideArchive} onApply={handleApplySearch}/>
         </div>
         <div>
           <CardList>
@@ -126,7 +126,7 @@ export default function ViewEventList() {
               <EventCard key={idx} event={event} showViews={param.showCount !== ''} />
             ))}
           </CardList>
-          <Pagination className={styles.pagination} current={param.page} pageSize={param.limit} total={data.recCount} hideOnSinglePage={true} onChange={handleChangePage} />
+          <Pagination current={param.page} pageSize={param.limit} total={data.recCount} hideOnSinglePage={true} onChange={handleChangePage} />
         </div>
       </div>
     </div>

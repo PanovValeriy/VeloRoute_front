@@ -39,12 +39,12 @@ export default function EventCard({className, event, showViews}:IProps) {
             {event.length}км
           </div>
           <Icon iconName="delimeter" />
-          <div className={styles.pace}>
+          <div className={styles.tempo}>
             <Icon iconName="pace" className={styles.icon} />
             {event.tempo.name}
           </div>
           <Icon iconName="delimeter" />
-          <div className={styles.type}>
+          <div className={styles.typeEvent}>
             {event.typeEvent.name}
           </div>
         </div>

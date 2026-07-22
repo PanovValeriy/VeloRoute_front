@@ -1,17 +1,16 @@
 import styles from './ViewRoute.module.css'
-import {NavigateFunction, useParams} from "react-router";
-import {useNavigate, useSearchParams} from "react-router-dom";
+import {useParams} from "react-router";
+import {useSearchParams} from "react-router-dom";
 import RouteParams from "./components/RouteParams/RouteParams";
 import {useGetRouteQuery} from "../../store/services/routeApi";
 import Content from "../../components/Content/Content";
 import {useGetReportListQuery} from "../../store/services/reportApi";
-import Button from "../../components/Button/Button";
 import React from "react";
 import ReportList from "../../components/ReportList/ReportList";
 
 export default function ViewRoute() {
 
-  const navigate : NavigateFunction = useNavigate()
+  // const navigate : NavigateFunction = useNavigate()
   const {id} = useParams();
   const [searchParams] = useSearchParams()
   const code : string = searchParams.get('code') || ''
@@ -26,7 +25,7 @@ export default function ViewRoute() {
   if (!route) {
     return (
       <>
-        <Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>
+        {/*<Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>*/}
         <div>Маршрут не найден</div>
       </>
     )

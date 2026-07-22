@@ -3,7 +3,6 @@ import {IEvent} from "../../../../types/types";
 import cn from 'classnames'
 import dayjs from "dayjs";
 import Icon from "../../../../components/Icon/Icon";
-import {Link} from "react-router-dom";
 import ButtonLink from "../../../../components/ButtonLink/ButtonLink";
 
 interface IProps {
@@ -23,14 +22,14 @@ export default function EventParams({className, event}: IProps) {
           <div className={styles.param_name}>Протяженность</div>
           <div className={styles.length_value}><Icon className={styles.length_icon} iconName="distance" /> {event.length} км</div>
         </div>
-        <div className={styles.dateTimeStart}>
+        <div className={styles.startDateTime}>
           <div className={styles.param_name}>Дата и время</div>
-          <div className={styles.dateTimeStart_value}><Icon className={styles.dateTimeStart_icon} iconName="calendar" />{dayjs(event.startDateTime).format('DD.MM.YYYY')}</div>
-          <div className={styles.dateTimeStart_value}><Icon className={styles.dateTimeStart_icon} iconName="clock" />{dayjs(event.startDateTime).format('HH.mm')}</div>
+          <div className={styles.startDateTime_value}><Icon className={styles.startDateTime_icon} iconName="calendar" />{dayjs(event.startDateTime).format('DD.MM.YYYY')}</div>
+          <div className={styles.startDateTime_value}><Icon className={styles.startDateTime_icon} iconName="clock" />{dayjs(event.startDateTime).format('HH.mm')}</div>
         </div>
-        <div className={styles.placeStart}>
+        <div className={styles.startPlace}>
           <div className={styles.param_name}>Место старта</div>
-          <div className={styles.placeStart_value}>{event.startPlace}</div>
+          <div className={styles.startPlace_value}>{event.startPlace}</div>
         </div>
         <div className={styles.tempo}>
           <div className={styles.param_name}>Темп</div>

@@ -4,10 +4,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+
+  &.headerBackground {
+    height: 22rem;
+    background-image: var(--gradient-header);
+    background-size: cover;
+  }
 }
 
-.headerBackground {
-  height: 22rem;
-  background-image: var(--gradient-header);
-  background-size: cover;
-}

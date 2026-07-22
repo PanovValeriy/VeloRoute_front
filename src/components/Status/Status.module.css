@@ -10,9 +10,10 @@
   vertical-align: middle;
   border-color: var(--color-success);
   color: var(--color-success);
+
+  &.closed {
+    border-color: var(--color-error);
+    color: var(--color-error)
+  }
 }
 
-.closed {
-  border-color: var(--color-error);
-  color: var(--color-error)
-}

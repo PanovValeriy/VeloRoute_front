@@ -11,6 +11,11 @@
   }
 }
 
+.buttonLink:focus {
+  border-color: var(--color-accent_green);
+  outline: 0.0625rem solid var(--color-accent_green);
+}
+
 .buttonInner {
   display: flex;
   align-items: center;
@@ -40,9 +45,4 @@
     width: 0.75rem;
     height: 0.75rem;
   }
-}
-
-.buttonLink:focus {
-  border-color: var(--color-accent_green);
-  outline: 0.0625rem solid var(--color-accent_green);
 }

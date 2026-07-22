@@ -140,7 +140,7 @@ export default function ViewRouteList() {
         <div className={styles.maintitle}>Список маршрутов</div>
         <div className={styles.subtitle}>Находите и выбирайте лучшие веломаршруты для новых приключений</div>
       </div>
-      <div className={styles.routeParam}>
+      <div className={styles.routeFilter}>
         <SortPanel options={sortList} value={param.sort} onApply={handleApplySort}/>
         <SearchPanel fields={['search','length', 'complexity']} search={param.search} lengthFrom={lengthFrom} lengthTo={lengthTo} complexityList={complexityList} complexity={param.complexity} onApply={handleApplySearch}/>
       </div>

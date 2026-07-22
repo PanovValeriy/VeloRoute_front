@@ -47,7 +47,7 @@ export default function SearchPanel({className, fields, search='', lengthFrom=0,
   }
 
   function handleChangeComplexity({target:{value}}: React.ChangeEvent<HTMLSelectElement>): void {
-    setComplexityValue(parseInt(value))
+    setComplexityValue( parseInt(value))
   }
 
   function handleChangeHideArchive({target: {checked}}: React.ChangeEvent<HTMLInputElement>): void {
@@ -110,7 +110,7 @@ export default function SearchPanel({className, fields, search='', lengthFrom=0,
         : null
       }
       {(fields.indexOf('hideArchive') !== -1)
-        ? <div className={styles.hiveArchiveField}>
+        ? <div className={styles.hideArchiveField}>
             <input id="hideArchive" className={styles.input} type="checkbox" checked={hideArchiveValue} onChange={handleChangeHideArchive}/><label htmlFor="hideArchive" className={styles.label}>Скрыть прошедшие</label>
           </div>
         : null

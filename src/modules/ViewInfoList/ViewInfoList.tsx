@@ -1,6 +1,5 @@
 import styles from "./ViewInfoList.module.css"
 import {Link, useNavigate, useSearchParams} from "react-router-dom";
-import Button from "../../components/Button/Button";
 import React, {useEffect, useMemo} from "react";
 import Pagination from "../../components/Pagination/Pagination";
 import {infoDefault, reportDefault} from "../../constants";
@@ -49,7 +48,6 @@ export default function ViewInfoList() {
 
   return (
     <div className={styles.viewInfoList}>
-      <Link className={styles.linkItem} to={"/"}><Button className={styles.button}>На главную</Button></Link>
       <div className={styles.title}>Информация</div>
       <div className={styles.infoList}>
         {data!.infoList.map((info, idx) => (
@@ -61,7 +59,6 @@ export default function ViewInfoList() {
         ))}
         <Pagination current={param.page} pageSize={param.limit} total={data.recCount} hideOnSinglePage={true} onChange={handleChangePage} />
       </div>
-      <Link className={styles.linkItem} to={"/"}><Button className={styles.button}>На главную</Button></Link>
     </div>
   )
 }

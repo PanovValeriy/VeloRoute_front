@@ -2,36 +2,3 @@
   /*background-color: var(--color-info_card-background);*/
   padding: 0.5rem;
 }
-.infoItem:hover {
-  /*background-color: var(--color-info_card-background-hover) !important;*/
-}
-
-.content {
-  padding: 0.25rem;
-}
-
-.title {
-  font-size: 1.25em;
-  font-weight: bold;
-  text-align: center;
-}
-
-.date {
-  font-size: 0.75em;
-}
-
-.photoWrapper {
-  align-self: center;
-  display: flex;
-  flex-direction: column-reverse;
-  border-radius: 1rem;
-  overflow: hidden;
-  max-width: 100%;
-  max-height: 9rem;
-}
-
-.photo {
-  bottom: 0;
-  max-width: 100%;
-  max-height: 100%;
-}

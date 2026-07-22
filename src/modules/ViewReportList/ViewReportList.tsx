@@ -114,9 +114,9 @@ export default function ViewReportList() {
         <div className={styles.subtitle}>Находите и выбирайте лучшие веломаршруты для новых приключений</div>
       </div>
       <div className={styles.reportList}>
-        <div className={styles.reportParam}>
+        <div className={styles.reportFilter}>
           <SortPanel options={sortList} value={param.sort} onApply={handleApplySort}/>
-          <SearchPanel className={styles.searchPanel} fields={['search']} search={param.search} onApply={handleApplySearch}/>
+          <SearchPanel fields={['search']} search={param.search} onApply={handleApplySearch}/>
         </div>
         <div>
           <CardList>

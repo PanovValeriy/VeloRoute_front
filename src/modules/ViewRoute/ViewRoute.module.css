@@ -2,24 +2,6 @@
   padding: 0 6rem;
 }
 
-.title {
-  align-self: start;
-  font-family: Inter;
-  font-weight: 700;
-  font-size: 1.375rem;
-  color: var(--color-text_primary);
-}
-
-.subtitle {
-  font-size: 1.5rem;
-  font-weight: bold;
-  /*color: var(--color-route-title);*/
-}
-
-.dateCreateUpdate {
-  /*color: var(--color-route-text);*/
-}
-
 .params {
   padding: 1rem 0;
   display: flex;
@@ -39,48 +21,4 @@
 
 .routeParams {
   width: 60%;
-}
-
-.link {
-  color: var(--color-text_secondary);
-  font-weight: bold;
-}
-
-.routeLink {
-  /*color: var(--color-route-link);*/
-  font-weight: bold;
-}
-
-.reportLink {
-  /*color: var(--color-report-link);*/
-  font-weight: bold;
-}
-
-.eventLink {
-  /*color: var(--color-event-link);*/
-  font-weight: bold;
-}
-
-.infoLink {
-  /*color: var(--color-info-link);*/
-  font-weight: bold;
-}
-
-.button {
-  /*background-color: var(--color-route-button) !important;*/
-}
-
-.button:hover {
-  /*background-color: var(--color-route-button-hover) !important;*/
-}
-
-.listReport {
-  padding: 0.5rem;
-}
-
-.listReportTitle {
-  font-family: Inter;
-  font-weight: 600;
-  font-size: 1.375rem;
-  color: var(--color-text_primary);
 }
