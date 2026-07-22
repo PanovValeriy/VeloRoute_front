@@ -37,8 +37,8 @@
   --color-info: #38BDF8;
   --color-error: #E53935;
   --color-shadow: #000000;
-  --color-gradient_000: rgba(0, 0, 0, 1);
-  --color-gradient_035: rgba(0, 0, 0, 1);
-  --color-gradient_100: rgba(0, 0, 0, 0);
+  /*--color-gradient_000: rgba(0, 0, 0, 1);*/
+  /*--color-gradient_035: rgba(0, 0, 0, 1);*/
+  /*--color-gradient_100: rgba(0, 0, 0, 0);*/
   --gradient-header: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 35%, rgba(255, 255, 255, 0) 100%), url(/public/static/back_img.jpg);
 }

@@ -169,4 +169,5 @@
   font-weight: 700;
   font-size: 1rem;
   vertical-align: middle;
+  color: var(--color-text_primary);
 }

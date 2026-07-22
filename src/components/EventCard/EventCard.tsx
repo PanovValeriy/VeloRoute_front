@@ -29,18 +29,18 @@ export default function EventCard({className, event, showViews}:IProps) {
         </div>
         <div className={styles.details}>
           <div className={styles.startDateTime}>
-            <Icon iconName="calendar" className={styles.icon}/>
+            <Icon className={styles.icon} iconName="calendar" />
             <div>{dayjs(event.startDateTime).format('DD.MM.YYYY')}</div>
             <div>{dayjs(event.startDateTime).format('HH:mm')}</div>
           </div>
           <Icon iconName="delimeter" />
           <div className={styles.distance}>
-            <Icon iconName="distance" className={styles.icon} />
+            <Icon className={styles.icon} iconName="distance" />
             {event.length}км
           </div>
           <Icon iconName="delimeter" />
           <div className={styles.tempo}>
-            <Icon iconName="tempo" className={styles.icon} />
+            <Icon className={styles.icon} iconName="tempo" />
             {event.tempo.name}
           </div>
           <Icon iconName="delimeter" />
