@@ -50,11 +50,17 @@ export default function ViewEventList() {
     if (param.showCount) {
       urlParam.append('showCount', param.showCount)
     }
+    if (param.sort !== eventDefault.sort) {
+      urlParam.append('sort', param.sort)
+    }
     navigate(`/events?${urlParam}`)
   }
 
   function handleApplySearch({search='', hideArchive=false}: IOnApplySearch) {
     const urlParam: Record<string, any> = new URLSearchParams()
+    if (param.page !== 1) {
+      urlParam.append('page', param.page)
+    }
     if (param.limit !== eventDefault.limit) {
       urlParam.append('limit', param.limit)
     }
@@ -66,6 +72,9 @@ export default function ViewEventList() {
     }
     if (param.showCount) {
       urlParam.append('showCount', param.showCount)
+    }
+    if (param.sort !== eventDefault.sort) {
+      urlParam.append('sort', param.sort)
     }
     navigate(`/events?${urlParam}`)
   }

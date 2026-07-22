@@ -6,12 +6,12 @@ import {useGetEventQuery} from "../../store/services/eventApi";
 import Content from "../../components/Content/Content";
 import {useGetReportListQuery} from "../../store/services/reportApi";
 import ReportList from "../../components/ReportList/ReportList";
+import ButtonBack from "../../components/ButtonBack/ButtonBack";
 
 export default function ViewEvent() {
 
   const {id} = useParams();
   const [searchParams] = useSearchParams()
-  // const navigate = useNavigate()
   const eventId: number = Number(id);
   const code = searchParams.get('code') || ''
   const {data: event, isLoading} = useGetEventQuery({eventId, code})
@@ -23,10 +23,7 @@ export default function ViewEvent() {
 
   if (!event) {
     return (
-      <>
-        {/*<button className={styles.button} onClick={() => navigate(-1)}>Назад</button>*/}
-        <div>Событие не найдено</div>
-      </>
+      <div>Событие не найдено</div>
     )
   }
   let eventBody: string = event.description
@@ -35,7 +32,7 @@ export default function ViewEvent() {
   }
   return (
     <div className={styles.viewEvent}>
-      {/*<Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>*/}
+      <ButtonBack />
       <div className={styles.params}>
         <div className={styles.paramsImageWrapper}>
           <img className={styles.paramsImage}

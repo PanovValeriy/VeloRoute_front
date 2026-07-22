@@ -7,10 +7,10 @@ import Content from "../../components/Content/Content";
 import {useGetReportListQuery} from "../../store/services/reportApi";
 import React from "react";
 import ReportList from "../../components/ReportList/ReportList";
+import ButtonBack from "../../components/ButtonBack/ButtonBack";
 
 export default function ViewRoute() {
 
-  // const navigate : NavigateFunction = useNavigate()
   const {id} = useParams();
   const [searchParams] = useSearchParams()
   const code : string = searchParams.get('code') || ''
@@ -24,15 +24,12 @@ export default function ViewRoute() {
 
   if (!route) {
     return (
-      <>
-        {/*<Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>*/}
-        <div>Маршрут не найден</div>
-      </>
+      <div>Маршрут не найден</div>
     )
   }
   return (
     <div className={styles.viewRoute}>
-      {/*<Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>*/}
+      <ButtonBack />
       <div className={styles.params}>
         <div className={styles.paramsImageWrapper}>
           <img className={styles.paramsImage}

@@ -4,7 +4,7 @@ import {IReportListParam, useLazyGetReportListQuery} from "../../store/services/
 import React, {useEffect, useMemo} from "react";
 import CardList from "../../components/CardList/CardList";
 import Pagination from "../../components/Pagination/Pagination";
-import {reportDefault, routeDefault} from "../../constants";
+import {reportDefault} from "../../constants";
 import SortPanel from "../../components/SortPanel/SortPanel";
 import SearchPanel, {IOnApplySearch} from "../../components/SearchPanel/SearchPanel";
 import ReportCard from '../../components/ReportCard/ReportCard';
@@ -53,7 +53,10 @@ export default function ViewReportList() {
 
   function handleApplySearch({search= ''}: IOnApplySearch): void {
     const urlParam: Record<string, any> = new URLSearchParams()
-    if (param.limit !== routeDefault.limit) {
+    if (param.page !== 1) {
+      urlParam.append('page', param.page)
+    }
+    if (param.limit !== reportDefault.limit) {
       urlParam.append('limit', param.limit)
     }
     if (search !== '') {
@@ -73,7 +76,7 @@ export default function ViewReportList() {
     if (param.page !== 1) {
       urlParam.append('page', param.page)
     }
-    if (param.limit !== routeDefault.limit) {
+    if (param.limit !== reportDefault.limit) {
       urlParam.append('limit', param.limit)
     }
     if (param.search !== '') {
@@ -87,7 +90,6 @@ export default function ViewReportList() {
     }
     navigate(`/reports?${urlParam}`)
   }
-
 
   useEffect(() => {
     getReportList(param)

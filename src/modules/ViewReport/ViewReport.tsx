@@ -5,10 +5,10 @@ import {useGetReportQuery} from "../../store/services/reportApi";
 import Content from "../../components/Content/Content";
 import ReportHeader from "./components/ReportHeader/ReportHeader";
 import dayjs from "dayjs";
+import ButtonBack from "../../components/ButtonBack/ButtonBack";
 
 export default function ViewReport() {
 
-  // const navigate = useNavigate()
   const {id} = useParams()
   const [searchParams] = useSearchParams()
   const reportId: number = Number(id)
@@ -22,16 +22,12 @@ export default function ViewReport() {
 
   if (!report) {
     return (
-      <>
-        {/*<button className={styles.button} onClick={() => navigate(-1)}>Назад</button>*/}
-        <div>Отчет не найден</div>
-      </>
+      <div>Отчет не найден</div>
     )
   }
   return (
     <div className={styles.viewReport}>
-      {/*<Button className={styles.button} onClick={() => navigate(-1)}>Назад</Button>*/}
-      {/*<DateCreateUpdate className={styles.dateCreateUpdate} dateCreate={report.dateCreate} dateUpdate={report.dateUpdate} />*/}
+      <ButtonBack />
       <div className={styles.title}>Отчет "{report.name}" ({dayjs(report.date).format('DD.MM.YYYY')})</div>
       <ReportHeader dateReport={report.date} route={report.route} event={report.event} />
       <Content title="Отчет" body={report.body} />

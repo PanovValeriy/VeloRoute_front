@@ -1,0 +1,18 @@
+.buttonBack {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: var(--color-text_secondary);
+}
+
+.icon {
+  width: 1rem;
+  height: 1rem;
+  fill: var(--color-text_secondary);
+}

@@ -63,6 +63,9 @@ export default function ViewRouteList() {
 
   function handleApplySearch({search='', lengthFrom=0, lengthTo=0, complexity=0} : IOnApplySearch): void {
     const urlParam: Record<string, any> = new URLSearchParams()
+    if (param.page !== 1) {
+      urlParam.append('page', param.page)
+    }
     if (param.limit !== routeDefault.limit) {
       urlParam.append('limit', param.limit)
     }
