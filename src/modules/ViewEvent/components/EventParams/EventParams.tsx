@@ -33,7 +33,7 @@ export default function EventParams({className, event}: IProps) {
         </div>
         <div className={styles.tempo}>
           <div className={styles.param_name}>Темп</div>
-          <div className={styles.tempo_value}><Icon className={styles.tempo_icon} iconName="pace" />{event.tempo.name}</div>
+          <div className={styles.tempo_value}><Icon className={styles.tempo_icon} iconName="tempo" />{event.tempo.name}</div>
         </div>
       </div>
       <div className={styles.groupParamSecondary}>

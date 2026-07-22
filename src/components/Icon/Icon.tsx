@@ -19,7 +19,7 @@ import {ReactComponent as SvgJungle} from "./icons/icon_jungle.svg"
 import {ReactComponent as SvgClock} from "./icons/icon_clock.svg"
 import {ReactComponent as SvgDownload} from "./icons/icon_download.svg"
 import {ReactComponent as SvgLocation} from "./icons/icon_location.svg"
-import {ReactComponent as SvgPace} from "./icons/icon_pace.svg"
+import {ReactComponent as SvgTempo} from "./icons/icon_tempo.svg"
 import {ReactComponent as SvgSearch} from "./icons/icon_search.svg"
 
 
@@ -93,8 +93,8 @@ export default function Icon ({ iconName, className }: IProps) {
     case "location":
       return <SvgLocation className={className} />
 
-    case "pace":
-      return <SvgPace className={className} />
+    case "tempo":
+      return <SvgTempo className={className} />
 
     case "search":
       return <SvgSearch className={className} />

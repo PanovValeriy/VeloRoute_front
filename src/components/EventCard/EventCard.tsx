@@ -40,7 +40,7 @@ export default function EventCard({className, event, showViews}:IProps) {
           </div>
           <Icon iconName="delimeter" />
           <div className={styles.tempo}>
-            <Icon iconName="pace" className={styles.icon} />
+            <Icon iconName="tempo" className={styles.icon} />
             {event.tempo.name}
           </div>
           <Icon iconName="delimeter" />
