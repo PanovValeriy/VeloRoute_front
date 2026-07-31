@@ -23,6 +23,7 @@ import {ReactComponent as SvgSearch} from "./icons/icon_search.svg"
 import {ReactComponent as SvgHome} from "./icons/icon_home.svg";
 import {ReactComponent as SvgFilter} from "./icons/icon_filter.svg";
 import {ReactComponent as SvgInfo} from "./icons/icon_info.svg";
+import {ReactComponent as SvgClose} from "./icons/icon_close.svg";
 
 
 
@@ -107,6 +108,9 @@ export default function Icon ({ iconName, className }: IProps) {
 
     case "info":
       return <SvgInfo className={className} />
+
+    case "close":
+      return <SvgClose className={className} />
 
     default:
       return null;

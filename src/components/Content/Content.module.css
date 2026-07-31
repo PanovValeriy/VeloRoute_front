@@ -48,3 +48,14 @@
   font-size: 1.5em;
   font-weight: bold;
 }
+
+@media screen and (max-width: 650px) {
+  .photo {
+    width: 100%;
+  }
+
+  .map {
+    width: 90%;
+    height: 15rem;
+  }
+}

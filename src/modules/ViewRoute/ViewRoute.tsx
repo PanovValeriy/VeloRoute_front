@@ -8,6 +8,7 @@ import {useGetReportListQuery} from "../../store/services/reportApi";
 import React from "react";
 import ReportList from "../../components/ReportList/ReportList";
 import ButtonBack from "../../components/ButtonBack/ButtonBack";
+import RouteParamsMobile from "./components/RouteParamsMobile/RouteParamsMobile";
 
 export default function ViewRoute() {
 
@@ -37,6 +38,7 @@ export default function ViewRoute() {
                alt="image/Вариант 0.JPG"/>
         </div>
         <RouteParams className={styles.routeParams} route={route}/>
+        <RouteParamsMobile className={styles.routeParams} route={route} />
       </div>
       <Content title="Описание маршрута" body={route.description} />
       {((dataReportList) && (dataReportList.recCount !== 0)) ? <ReportList title="Отчеты по маршруту" reportList = {dataReportList.reportList}/> : null}

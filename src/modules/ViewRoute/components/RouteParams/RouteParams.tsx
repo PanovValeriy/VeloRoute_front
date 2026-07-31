@@ -45,7 +45,7 @@ export default function RouteParams({className, route}: IProps) {
             <div className={styles.roadCoverage_gravel}>
               <Icon className={styles.roadCoverage_icon} iconName="gravel"/>
               <div className={styles.roadCoverage_wrapper}>
-                <div className={styles.roadCoverage_description}><span>Гравий</span><span>{route.grader}%</span></div>
+                <div className={styles.roadCoverage_description}><span>Грейдер</span><span>{route.grader}%</span></div>
                 <Progress value={route.grader} />
               </div>
             </div>

@@ -171,3 +171,9 @@
   vertical-align: middle;
   color: var(--color-text_primary);
 }
+
+@media screen and (max-width: 650px) {
+  .routeParams {
+    display: none;
+  }
+}

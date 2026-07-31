@@ -22,3 +22,9 @@
 .routeParams {
   width: 60%;
 }
+
+@media screen and (max-width: 650px){
+  .viewRoute {
+    padding: 1rem 0.5rem;
+  }
+}
