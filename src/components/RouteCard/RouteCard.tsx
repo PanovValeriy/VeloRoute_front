@@ -32,14 +32,14 @@ export default function RouteCard({className, route, showViews}: IProps) {
           <div className={styles.distance}>
             <Icon iconName="distance" className={styles.detailIcon} /> {route.length}км
           </div>
-          <Icon iconName="delimeter" />
+          <Icon className={styles.iconDelimiter} iconName="delimiter" />
           <div className={cnDifficulty}>
             <Icon iconName="difficulty" className={styles.detailIcon} /> {route.complexity.name}
           </div>
           {(showViews)
             ? (
               <>
-                <Icon iconName="delimeter" />
+                <Icon className={styles.iconDelimiter} iconName="delimiter" />
                 <div className={styles.views}>
                   <Icon iconName="views" className={styles.detailIcon} />{route.viewsCount}
                 </div>

@@ -6,9 +6,18 @@
   justify-content: space-between;
 
   &.headerBackground {
-    height: 22rem;
+    height: 22.5rem;
     background-image: var(--gradient-header);
     background-size: cover;
   }
 }
 
+@media screen and (max-width: 650px) {
+  .header {
+
+    &.headerBackground {
+      height: 100%;
+      background-image: none;
+    }
+  }
+}

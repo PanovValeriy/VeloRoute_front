@@ -53,3 +53,21 @@
   justify-content: space-between;
   gap: 1rem;
 }
+
+@media screen and (max-width: 650px) {
+  .cards {
+    flex-direction: column;
+  }
+
+  .infoTitle {
+    font-size: 1.25rem;
+  }
+
+  .infoTitleIcon {
+    width: 1.5rem;
+  }
+
+  .infoMoreButton {
+    font-size: 0.75rem;
+  }
+}

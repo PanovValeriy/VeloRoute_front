@@ -45,3 +45,24 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+.caption {
+  display: none;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: var(--color-text_primary);
+}
+
+@media screen and (max-width: 650px) {
+  .firstEvent {
+    padding: 0.25rem 0.5rem;
+  }
+  .caption {
+    display: block;
+  }
+
+  .param {
+    display: none;
+  }
+}

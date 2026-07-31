@@ -12,11 +12,24 @@
 
 .maintitle {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-family: Inter;
   font-weight: 700;
   font-size: 2.5rem;
   color: var(--color-text_primary);
  }
+
+.buttonFilter {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  background-color: var(--color-border);
+  fill: var(--color-text_primary);
+  display: none;
+}
 
 .subtitle {
   width: 100%;
@@ -40,4 +53,30 @@
   align-items: center;
   background: var(--color-surface);
   box-shadow: 0 0.5rem 1.5rem 0 var(--color-shadow);
+  z-index: 20;
+}
+
+@media screen and  (max-width: 650px) {
+
+  .viewReportList {
+    padding: 1rem 0.5rem;
+  }
+
+  .reportFilter {
+    position: absolute;
+    display: none;
+    right: 0.5rem;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+    &.showFilter {
+      display: block;
+    }
+  }
+
+  .buttonFilter {
+    display: block;
+    margin-right: 0.5rem;
+  }
+
 }

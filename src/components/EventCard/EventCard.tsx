@@ -33,17 +33,17 @@ export default function EventCard({className, event, showViews}:IProps) {
             <div>{dayjs(event.startDateTime).format('DD.MM.YYYY')}</div>
             <div>{dayjs(event.startDateTime).format('HH:mm')}</div>
           </div>
-          <Icon iconName="delimeter" />
+          <Icon className={styles.iconDelimiter} iconName="delimiter" />
           <div className={styles.distance}>
             <Icon className={styles.icon} iconName="distance" />
             {event.length}км
           </div>
-          <Icon iconName="delimeter" />
+          <Icon className={styles.iconDelimiter} iconName="delimiter" />
           <div className={styles.tempo}>
             <Icon className={styles.icon} iconName="tempo" />
             {event.tempo.name}
           </div>
-          <Icon iconName="delimeter" />
+          <Icon className={styles.iconDelimiter} iconName="delimiter" />
           <div className={styles.typeEvent}>
             {event.typeEvent.name}
           </div>

@@ -1,7 +1,22 @@
 .menu {
   width: 30rem;
   height: 100%;
+}
+
+.menuWrapper {
+  width: 100%;
+  height: 100%;
   display : flex;
   justify-content: space-between;
   align-content: center;
+}
+
+@media screen and (max-width: 650px) {
+  .menu {
+    width: 100%;
+    padding: 1rem 0.5rem;
+    background-color: var(--color-surface);
+    border-radius: 1rem;
+  }
+
 }

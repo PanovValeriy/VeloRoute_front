@@ -3,3 +3,26 @@
   max-width: 90rem;
   margin: auto;
 }
+
+.menuMobile {
+  display: none;
+}
+
+.footer {
+  height: 4rem;
+  display: none;
+}
+
+@media screen and (max-width: 650px) {
+  .mainPage {
+    min-width: 10rem;
+  }
+
+  .menuMobile {
+    display: block;
+  }
+
+  .footer {
+    display: block;
+  }
+}

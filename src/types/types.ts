@@ -162,5 +162,6 @@ export interface IInfoShort {
 export default interface IItem {
   name: string;
   url: string;
-  selected: boolean
+  selected: boolean;
+  iconName?: string;
 }

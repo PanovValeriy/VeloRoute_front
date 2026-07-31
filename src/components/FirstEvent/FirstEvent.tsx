@@ -17,6 +17,7 @@ export default function FirstEvent() {
         <div className={styles.title}>{eventDate}</div>
         <div className={styles.description}>{(event) ? event.name : ""}</div>
       </div>
+      <div className={styles.caption}>{(event) ? 'Ближайшее событие' : 'Событий нет'}</div>
     </Link>
   )
 }

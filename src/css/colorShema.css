@@ -17,7 +17,7 @@
   --color-error: #E53935;
   --color-shadow: #1F293714;
   --color-background_button: transparent;
-  --image-name: url(/public/static/back_img.jpg);
+  --image-name: url(/public/static/back_img_01.jpg);
   --gradient-header: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 35%, rgba(255, 255, 255, 0) 100%), var(--image-name);
 }
 
@@ -37,8 +37,5 @@
   --color-info: #38BDF8;
   --color-error: #E53935;
   --color-shadow: #000000;
-  /*--color-gradient_000: rgba(0, 0, 0, 1);*/
-  /*--color-gradient_035: rgba(0, 0, 0, 1);*/
-  /*--color-gradient_100: rgba(0, 0, 0, 0);*/
-  --gradient-header: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 35%, rgba(255, 255, 255, 0) 100%), url(/public/static/back_img.jpg);
+  --gradient-header: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 35%, rgba(255, 255, 255, 0) 100%), var(--image-name);
 }

@@ -1,0 +1,27 @@
+.menuItemMobile {
+  text-decoration: none;
+  width: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.125rem;
+}
+
+.menuItemMobileIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: var(--color-text_secondary);
+  &.selected {
+    fill: var(--color-primary_green);
+  }
+}
+
+.menuItemMobileCaption {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 0.5rem;
+  color: var(--color-text_secondary);
+  &.selected {
+    color: var(--color-primary_green);
+  }
+}

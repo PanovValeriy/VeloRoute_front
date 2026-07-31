@@ -1,4 +1,5 @@
 import styles from './ViewRouteList.module.css'
+import cn from 'classnames'
 import {useNavigate, useSearchParams} from "react-router-dom";
 import {IRouteListParam, useLazyGetRouteListQuery} from "../../store/services/routeApi";
 import React, {useEffect, useMemo, useState} from "react";
@@ -8,6 +9,8 @@ import {routeDefault} from "../../constants";
 import Pagination from "../../components/Pagination/Pagination";
 import SortPanel from "../../components/SortPanel/SortPanel";
 import RouteCard from '../../components/RouteCard/RouteCard';
+import Icon from "../../components/Icon/Icon";
+import FormModal from "../../components/FormModal/FormModal";
 
 const sortList = [
   {value: 'name', label: 'по возрастанию названия'},
@@ -20,7 +23,7 @@ const sortList = [
 
 export default function ViewRouteList() {
 
-
+  const [showFilter, setShowFilter] = useState<boolean>(false)
   const [searchParams] = useSearchParams()
   const navigate = useNavigate()
   const [getRouteList, {data }] = useLazyGetRouteListQuery()
@@ -113,6 +116,10 @@ export default function ViewRouteList() {
     navigate(`/routes?${urlParam}`)
   }
 
+  function handleClickButtonFilter() {
+    setShowFilter(!showFilter)
+  }
+
   useEffect(() => {
     getRouteList(param)
   }, [getRouteList, param])
@@ -132,7 +139,7 @@ export default function ViewRouteList() {
   }
   const lengthFrom = parseInt(param.length?.split(',')[0] || '0')
   const lengthTo = parseInt(param.length?.split(',')[1] || '0')
-
+  const cnRouteFilter = cn(styles.routeFilter, {[styles.showFilter]: showFilter})
   if (param.limit && ((data.recCount !== 0) ? Math.ceil(data.recCount/param.limit) : 1) < (param.page || 1)) {
     handleChangePage((data.recCount !== 0) ? Math.ceil(data.recCount/param.limit) : 1, param.limit)
   }
@@ -140,22 +147,21 @@ export default function ViewRouteList() {
   return (
     <div className={styles.viewRouteList}>
       <div className={styles.title}>
-        <div className={styles.maintitle}>Список маршрутов</div>
+        <div className={styles.maintitle}><span>Список маршрутов</span><div onClick={handleClickButtonFilter}><Icon className={styles.buttonFilter} iconName="filter" /></div></div>
         <div className={styles.subtitle}>Находите и выбирайте лучшие веломаршруты для новых приключений</div>
       </div>
-      <div className={styles.routeFilter}>
+      {(showFilter) ? <FormModal onClick={() => setShowFilter(false)} /> : null}
+      <div className={cnRouteFilter}>
         <SortPanel options={sortList} value={param.sort} onApply={handleApplySort}/>
         <SearchPanel fields={['search','length', 'complexity']} search={param.search} lengthFrom={lengthFrom} lengthTo={lengthTo} complexityList={complexityList} complexity={param.complexity} onApply={handleApplySearch}/>
       </div>
       <div className={styles.routeList}>
-        <div>
         <CardList>
           {data!.routeList.map((route, idx) => (
             <RouteCard key={idx} route={route} showViews={param.showCount !== ''}/>
           ))}
         </CardList>
         <Pagination current={param.page} pageSize={param.limit} total={data.recCount} hideOnSinglePage={true} onChange={handleChangePage} />
-        </div>
       </div>
     </div>
   )

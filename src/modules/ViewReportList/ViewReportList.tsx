@@ -1,4 +1,5 @@
 import styles from './ViewReportList.module.css'
+import cn from "classnames"
 import {useNavigate, useSearchParams} from "react-router-dom";
 import {IReportListParam, useLazyGetReportListQuery} from "../../store/services/reportApi";
 import React, {useEffect, useMemo} from "react";
@@ -8,6 +9,8 @@ import {reportDefault} from "../../constants";
 import SortPanel from "../../components/SortPanel/SortPanel";
 import SearchPanel, {IOnApplySearch} from "../../components/SearchPanel/SearchPanel";
 import ReportCard from '../../components/ReportCard/ReportCard';
+import Icon from "../../components/Icon/Icon";
+import FormModal from "../../components/FormModal/FormModal";
 
 const sortList = [
   {value: 'name', label: 'по возрастанию названия'},
@@ -20,6 +23,7 @@ const sortList = [
 
 export default function ViewReportList() {
 
+  const [showFilter, setShowFilter] = React.useState(false);
   const [searchParams] = useSearchParams()
   const navigate = useNavigate()
   const [getReportList,{data, isLoading}] = useLazyGetReportListQuery()
@@ -91,6 +95,10 @@ export default function ViewReportList() {
     navigate(`/reports?${urlParam}`)
   }
 
+  function handleClickButtonFilter() {
+    setShowFilter(!showFilter)
+  }
+
   useEffect(() => {
     getReportList(param)
   }, [getReportList, param])
@@ -105,6 +113,8 @@ export default function ViewReportList() {
     return (<div>Отчеты отсутствуют</div>)
   }
 
+  const cnReportFilter = cn(styles.reportFilter, {[styles.showFilter]: showFilter})
+
   if (param.limit && ((data.recCount !== 0) ? Math.ceil(data.recCount/param.limit) : 1) < (param.page || 1)) {
     handleChangePage((data.recCount !== 0) ? Math.ceil(data.recCount/param.limit) : 1, param.limit)
   }
@@ -112,14 +122,15 @@ export default function ViewReportList() {
   return (
     <div className={styles.viewReportList}>
       <div className={styles.title}>
-        <div className={styles.maintitle}>Отчеты</div>
+        <div className={styles.maintitle}><span>Отчеты</span><div onClick={handleClickButtonFilter}><Icon className={styles.buttonFilter} iconName="filter" /></div></div>
         <div className={styles.subtitle}>Находите и выбирайте лучшие веломаршруты для новых приключений</div>
       </div>
+      {(showFilter) ? <FormModal onClick={()=>setShowFilter(false)} /> : null}
+      <div className={cnReportFilter}>
+        <SortPanel options={sortList} value={param.sort} onApply={handleApplySort}/>
+        <SearchPanel fields={['search']} search={param.search} onApply={handleApplySearch}/>
+      </div>
       <div className={styles.reportList}>
-        <div className={styles.reportFilter}>
-          <SortPanel options={sortList} value={param.sort} onApply={handleApplySort}/>
-          <SearchPanel fields={['search']} search={param.search} onApply={handleApplySearch}/>
-        </div>
         <div>
           <CardList>
           {data!.reportList.map((report, idx) => (

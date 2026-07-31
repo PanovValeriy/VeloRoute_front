@@ -1,9 +1,8 @@
 import {ReactComponent as SvgEvent} from "./icons/icon-event.svg";
 import {ReactComponent as SvgMoon} from "./icons/icon_moon.svg";
 import {ReactComponent as SvgSun} from "./icons/icon_sun.svg";
-import {ReactComponent as SvgInfo} from "./icons/icon-info.svg";
 import {ReactComponent as SvgCalendar} from "./icons/icon_calendar.svg"
-import {ReactComponent as SvgDelimeter} from "./icons/icon_delimeter.svg"
+import {ReactComponent as SvgDelimiter} from "./icons/icon_delimiter.svg"
 import {ReactComponent as SvgDistance} from "./icons/icon_distance.svg"
 import {ReactComponent as SvgDifficulty} from "./icons/icon_difficulty.svg"
 import {ReactComponent as SvgViews} from "./icons/icon_views.svg"
@@ -21,6 +20,10 @@ import {ReactComponent as SvgDownload} from "./icons/icon_download.svg"
 import {ReactComponent as SvgLocation} from "./icons/icon_location.svg"
 import {ReactComponent as SvgTempo} from "./icons/icon_tempo.svg"
 import {ReactComponent as SvgSearch} from "./icons/icon_search.svg"
+import {ReactComponent as SvgHome} from "./icons/icon_home.svg";
+import {ReactComponent as SvgFilter} from "./icons/icon_filter.svg";
+import {ReactComponent as SvgInfo} from "./icons/icon_info.svg";
+
 
 
 interface IProps {
@@ -39,9 +42,6 @@ export default function Icon ({ iconName, className }: IProps) {
     case "report":
       return <SvgReport className={className} />;
 
-    case "info":
-      return <SvgInfo className={className} />;
-
     case "moon":
       return <SvgMoon className={className} />;
 
@@ -51,8 +51,8 @@ export default function Icon ({ iconName, className }: IProps) {
     case "calendar":
       return <SvgCalendar className={className} />
 
-    case "delimeter":
-      return <SvgDelimeter className={className} />
+    case "delimiter":
+      return <SvgDelimiter className={className} />
 
     case "distance":
       return <SvgDistance className={className} />
@@ -98,6 +98,15 @@ export default function Icon ({ iconName, className }: IProps) {
 
     case "search":
       return <SvgSearch className={className} />
+
+    case "home":
+      return <SvgHome className={className} />
+
+    case "filter":
+      return <SvgFilter className={className} />
+
+    case "info":
+      return <SvgInfo className={className} />
 
     default:
       return null;

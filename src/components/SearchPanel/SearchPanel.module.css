@@ -69,3 +69,27 @@
   border-color: var(--color-text_primary);
   outline: 0.0625rem solid var(--color-text_primary);
 }
+
+@media screen and (max-width: 650px) {
+  .searchPanel {
+    flex-direction: column;
+    align-items: start  ;
+    gap: 1rem;
+  }
+
+  .searchField {
+    gap: 0.5rem;
+  }
+
+  .lengthField {
+    gap: 0.25rem;
+  }
+
+  .lengthFromTo {
+    gap: 0.25rem;
+  }
+
+  .complexityField {
+    gap: 0.5rem;
+  }
+}

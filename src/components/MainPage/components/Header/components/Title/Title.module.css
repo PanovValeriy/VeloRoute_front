@@ -20,3 +20,15 @@
   font-size: 1rem;
   color: var(--color-text_secondary);
 }
+
+@media screen and (max-width: 650px) {
+  .title {
+    padding: 1rem;
+  }
+  .subtitle_big {
+    font-size: 1.5rem;
+  }
+  .subtitle_small {
+    font-size: 0.75rem;
+  }
+}

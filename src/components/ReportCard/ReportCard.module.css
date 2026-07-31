@@ -11,12 +11,12 @@
 .photo {
   width: 12.5rem;
   height: 100%;
-  opacity: 1;
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .photo > img {
@@ -70,4 +70,11 @@
 
 .buttonMore button {
   width: 100%;
+}
+
+@media screen and (max-width: 650px) {
+  .reportCard {
+    width: 21.25rem;
+    min-width: 21.25rem;
+  }
 }

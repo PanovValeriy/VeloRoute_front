@@ -1,4 +1,5 @@
 import styles from './ViewEventList.module.css'
+import cn from "classnames"
 import {useNavigate, useSearchParams} from "react-router-dom";
 import {IEventListParams, useLazyGetEventListQuery} from "../../store/services/eventApi";
 import React, {useEffect, useMemo} from "react";
@@ -8,6 +9,8 @@ import Pagination from "../../components/Pagination/Pagination";
 import SortPanel from "../../components/SortPanel/SortPanel";
 import SearchPanel, {IOnApplySearch} from "../../components/SearchPanel/SearchPanel";
 import EventCard from '../../components/EventCard/EventCard';
+import Icon from "../../components/Icon/Icon";
+import FormModal from "../../components/FormModal/FormModal";
 
 const sortList = [
   {value: 'name', label: 'по возрастанию названия'},
@@ -20,6 +23,7 @@ const sortList = [
 
 export default function ViewEventList() {
 
+  const [showFilter, setShowFilter] = React.useState(false);
   const [searchParams] = useSearchParams()
   const navigate = useNavigate()
   const [getEventList, {data, isLoading}] = useLazyGetEventListQuery()
@@ -102,6 +106,10 @@ export default function ViewEventList() {
     navigate(`/events?${urlParam}`)
   }
 
+  function handleClickButtonFilter() {
+    setShowFilter(!showFilter)
+  }
+
   useEffect(() => {
     getEventList(param)
   }, [getEventList, param])
@@ -114,6 +122,8 @@ export default function ViewEventList() {
     return (<div>События отсутствуют</div>)
   }
 
+  const cnEventFilter = cn(styles.eventFilter, {[styles.showFilter]: showFilter})
+
   if (param.limit && ((data.recCount !== 0) ? Math.ceil(data.recCount/param.limit) : 1) < (param.page || 1)) {
     handleChangePage((data.recCount !== 0) ? Math.ceil(data.recCount/param.limit) : 1, param.limit)
   }
@@ -121,14 +131,15 @@ export default function ViewEventList() {
   return (
     <div className={styles.viewEventList}>
       <div className={styles.title}>
-        <div className={styles.maintitle}>События</div>
+        <div className={styles.maintitle}><span>События</span><div onClick={handleClickButtonFilter}><Icon className={styles.buttonFilter} iconName="filter" /></div></div>
         <div className={styles.subtitle}>Находите и выбирайте лучшие веломаршруты для новых приключений</div>
       </div>
+      {(showFilter) ? <FormModal onClick={()=>setShowFilter(false)} /> : null}
+      <div className={cnEventFilter}>
+        <SortPanel options={sortList} value={param.sort} onApply={handleApplySort}/>
+        <SearchPanel fields={['search','hideArchive']} search={param.search} hideArchive={param.hideArchive} onApply={handleApplySearch}/>
+      </div>
       <div className={styles.eventList}>
-        <div className={styles.eventFilter}>
-          <SortPanel options={sortList} value={param.sort} onApply={handleApplySort}/>
-          <SearchPanel fields={['search','hideArchive']} search={param.search} hideArchive={param.hideArchive} onApply={handleApplySearch}/>
-        </div>
         <div>
           <CardList>
             {data!.eventList.map((event, idx) => (

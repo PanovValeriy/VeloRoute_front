@@ -11,7 +11,10 @@
   height: 7.8125rem;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .photo > img {
@@ -94,4 +97,15 @@
 
 .button {
   width: 100%;
+}
+
+.iconDelimiter {
+  fill: var(--color-text_disabled);
+}
+
+@media screen and (max-width: 650px) {
+  .routeCard {
+    width: 21.25rem;
+    min-width: 21.25rem;
+  }
 }

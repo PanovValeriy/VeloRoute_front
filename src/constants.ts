@@ -22,4 +22,12 @@ export const infoDefault = {
   limit: 10,
 }
 
-export const backgroundImageList = ['/static/back_img_01.jpg']
+export const backgroundImageList = [
+  '/static/back_img_01.jpg',
+  '/static/back_img_02.jpg',
+  '/static/back_img_03.jpg',
+  '/static/back_img_04.jpg',
+  '/static/back_img_05.jpg',
+  '/static/back_img_06.jpg',
+  '/static/back_img_07.jpg',
+]

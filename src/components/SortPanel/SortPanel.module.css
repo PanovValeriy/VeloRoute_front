@@ -11,3 +11,8 @@
   color: var(--color-text_primary);
 }
 
+@media screen and (max-width: 650px) {
+  .sortPanel {
+    gap: 0.5rem;
+  }
+}

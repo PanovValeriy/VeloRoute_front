@@ -37,3 +37,14 @@
   cursor: pointer;
   fill: var(--color-text_primary);
 }
+
+@media screen and (max-width: 650px) {
+  .navBar {
+    height: 3rem;
+    width: 95%;
+  }
+
+  .menu {
+    display: none;
+  }
+}

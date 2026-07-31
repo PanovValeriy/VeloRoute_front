@@ -1,6 +1,6 @@
 import styles from "./MenuItem.module.css"
 import cn from "classnames"
-import IItem from "../../../types/types"
+import IItem from "../../../../types/types"
 import {Link} from "react-router-dom";
 
 interface IProps {
