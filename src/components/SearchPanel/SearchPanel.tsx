@@ -3,6 +3,7 @@ import cn from "classnames"
 import React, {useEffect, useState} from "react";
 import Select from "../Select/Select";
 import Button from "../Button/Button";
+import Icon from "../Icon/Icon";
 
 export interface IOnApplySearch {
   search?: string,
@@ -22,9 +23,10 @@ interface IProps {
   complexity?: number;
   hideArchive?: boolean;
   onApply: (param: IOnApplySearch) => void;
+  onClose: () => void;
 }
 
-export default function SearchPanel({className, fields, search='', lengthFrom=0, lengthTo=0, complexityList=[], complexity=0, hideArchive=false, onApply}: IProps) {
+export default function SearchPanel({className, fields, search='', lengthFrom=0, lengthTo=0, complexityList=[], complexity=0, hideArchive=false, onApply, onClose}: IProps) {
 
   const [searchValue, setSearchValue] = useState<string>(search)
   const [lengthFromValue, setLengthFromValue] = useState<number>(lengthFrom)
@@ -79,6 +81,7 @@ export default function SearchPanel({className, fields, search='', lengthFrom=0,
 
   return (
     <div className={cnSearchPanel}>
+      <div className={styles.buttonClose} onClick={onClose}><Icon className={styles.icon} iconName="close" /></div>
       {(fields.indexOf('search') !== -1)
         ? <div className={styles.searchField}>
             <div className={styles.label}>Строка поиска</div>

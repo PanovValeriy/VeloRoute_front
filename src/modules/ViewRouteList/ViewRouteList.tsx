@@ -116,10 +116,6 @@ export default function ViewRouteList() {
     navigate(`/routes?${urlParam}`)
   }
 
-  function handleClickButtonFilter() {
-    setShowFilter(!showFilter)
-  }
-
   useEffect(() => {
     getRouteList(param)
   }, [getRouteList, param])
@@ -147,13 +143,13 @@ export default function ViewRouteList() {
   return (
     <div className={styles.viewRouteList}>
       <div className={styles.title}>
-        <div className={styles.maintitle}><span>Список маршрутов</span><div onClick={handleClickButtonFilter}><Icon className={styles.buttonFilter} iconName="filter" /></div></div>
+        <div className={styles.maintitle}><span>Список маршрутов</span><div onClick={() => setShowFilter(true)}><Icon className={styles.buttonFilter} iconName="filter" /></div></div>
         <div className={styles.subtitle}>Находите и выбирайте лучшие веломаршруты для новых приключений</div>
       </div>
       {(showFilter) ? <FormModal onClick={() => setShowFilter(false)} /> : null}
       <div className={cnRouteFilter}>
         <SortPanel options={sortList} value={param.sort} onApply={handleApplySort}/>
-        <SearchPanel fields={['search','length', 'complexity']} search={param.search} lengthFrom={lengthFrom} lengthTo={lengthTo} complexityList={complexityList} complexity={param.complexity} onApply={handleApplySearch}/>
+        <SearchPanel fields={['search','length', 'complexity']} search={param.search} lengthFrom={lengthFrom} lengthTo={lengthTo} complexityList={complexityList} complexity={param.complexity} onApply={handleApplySearch} onClose={() => setShowFilter(false)} />
       </div>
       <div className={styles.routeList}>
         <CardList>

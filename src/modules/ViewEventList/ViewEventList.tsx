@@ -106,10 +106,6 @@ export default function ViewEventList() {
     navigate(`/events?${urlParam}`)
   }
 
-  function handleClickButtonFilter() {
-    setShowFilter(!showFilter)
-  }
-
   useEffect(() => {
     getEventList(param)
   }, [getEventList, param])
@@ -131,13 +127,13 @@ export default function ViewEventList() {
   return (
     <div className={styles.viewEventList}>
       <div className={styles.title}>
-        <div className={styles.maintitle}><span>События</span><div onClick={handleClickButtonFilter}><Icon className={styles.buttonFilter} iconName="filter" /></div></div>
+        <div className={styles.maintitle}><span>События</span><div onClick={() => setShowFilter(true)}><Icon className={styles.buttonFilter} iconName="filter" /></div></div>
         <div className={styles.subtitle}>Находите и выбирайте лучшие веломаршруты для новых приключений</div>
       </div>
       {(showFilter) ? <FormModal onClick={()=>setShowFilter(false)} /> : null}
       <div className={cnEventFilter}>
         <SortPanel options={sortList} value={param.sort} onApply={handleApplySort}/>
-        <SearchPanel fields={['search','hideArchive']} search={param.search} hideArchive={param.hideArchive} onApply={handleApplySearch}/>
+        <SearchPanel fields={['search','hideArchive']} search={param.search} hideArchive={param.hideArchive} onApply={handleApplySearch} onClose={() => setShowFilter(false)}/>
       </div>
       <div className={styles.eventList}>
         <div>
