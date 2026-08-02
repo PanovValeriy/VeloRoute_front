@@ -2,6 +2,7 @@ import styles from './ViewEvent.module.css'
 import {useParams} from "react-router";
 import {useSearchParams} from "react-router-dom";
 import EventParams from "./components/EventParams/EventParams";
+import EventParamsMobile from "./components/EventParamMobile/EventParamsMobile";
 import {useGetEventQuery} from "../../store/services/eventApi";
 import Content from "../../components/Content/Content";
 import {useGetReportListQuery} from "../../store/services/reportApi";
@@ -40,6 +41,7 @@ export default function ViewEvent() {
                alt=""/>
         </div>
         <EventParams className={styles.eventParams} event={event}/>
+        <EventParamsMobile className={styles.eventParams} event={event} />
       </div>
       <Content title="Описание события" body={eventBody} />
       {((dataReportList) && (dataReportList.recCount !== 0)) ? <ReportList title="Отчеты по событию" reportList = {dataReportList.reportList}/> : null}

@@ -1,0 +1,137 @@
+.eventParamsMobile {
+  display: none;
+}
+
+.title {
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-text_primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttonInfo {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--color-border);
+}
+
+.buttonIcon {
+  width: 2rem;
+  height: 2rem;
+  fill: var(--color-text_primary);
+}
+
+.details {
+  display: flex;
+  gap: 1rem;
+}
+
+.dateTime {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: var(--color-text_primary);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dateTimeIcon {
+  width: 1rem;
+  height: 1rem;
+  fill: var(--color-text_primary);
+}
+
+.length {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: var(--color-text_primary);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.lengthIcon {
+  width: 1rem;
+  height: 1rem;
+  fill: var(--color-text_primary);
+}
+
+.eventParamsFull {
+  display: none;
+  position: absolute;
+  left: 2.5%;
+  width: 95%;
+  flex-direction: column;
+  gap: 2rem;
+  border-radius: 2rem;
+  padding: 2rem;
+  background-color: var(--color-surface);
+  box-shadow: 0 1rem 1.5rem 0 var(--color-shadow);
+  z-index: 20;
+
+  &.showParamsFull {
+    display: flex;
+  }
+
+  >.buttonClose {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--color-border);
+
+    >.icon {
+      fill: var(--color-text_primary);
+    }
+  }
+
+}
+
+.groupHorizontal {
+  display: flex;
+  gap: 2rem;
+}
+
+.param {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  >.paramTitle {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: var(--color-text_primary);
+  }
+
+  >.paramValue {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 0.75rem;
+    color: var(--color-text_primary);
+
+    >.paramIcon {
+      width: 1rem;
+      height: 1rem;
+      min-width: 1rem;
+      fill: var(--color-text_primary);
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .eventParamsMobile {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

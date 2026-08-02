@@ -3,7 +3,7 @@
 }
 
 .params {
-  padding: 1rem;
+  padding: 1rem 0.5rem;
   display: flex;
   gap: 1rem;
 }
@@ -24,4 +24,18 @@
 
 .eventParams {
   width: 50%;
+}
+
+@media screen and (max-width: 650px) {
+  .viewEvent {
+    padding: 1rem 0.5rem;
+  }
+
+  .paramsImageWrapper {
+    width: 30%;
+  }
+
+  .eventParams {
+    width: 70%;
+  }
 }
