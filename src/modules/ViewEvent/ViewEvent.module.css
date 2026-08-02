@@ -9,7 +9,7 @@
 }
 
 .paramsImageWrapper {
-  width: 50%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -23,7 +23,7 @@
 }
 
 .eventParams {
-  width: 50%;
+  width: 60%;
 }
 
 @media screen and (max-width: 650px) {

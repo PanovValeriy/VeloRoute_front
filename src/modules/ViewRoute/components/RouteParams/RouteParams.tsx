@@ -4,6 +4,7 @@ import cn from 'classnames'
 import Icon from "../../../../components/Icon/Icon";
 import Progress from "../../../../components/Progress/Progress";
 import ButtonLink from "../../../../components/ButtonLink/ButtonLink";
+import React from "react";
 
 interface IProps {
   className?: string;
@@ -13,6 +14,11 @@ interface IProps {
 export default function RouteParams({className, route}: IProps) {
 
   const cnRouteParams = cn(styles.routeParams, className)
+  const cnComplexityIcon = cn(styles.icon, {
+    [styles.light]: route.complexity.id === 1,
+    [styles.medium]: route.complexity.id === 2,
+    [styles.hard]: route.complexity.id === 3,
+  })
 
   return (
     <div className={cnRouteParams}>
@@ -24,7 +30,7 @@ export default function RouteParams({className, route}: IProps) {
         </div>
         <div className={styles.complexity}>
           <div className={styles.param_name}>Сложность</div>
-          <div className={styles.complexity_value}>{route.complexity.name}</div>
+          <div className={styles.complexity_value}><span className={cnComplexityIcon} />{route.complexity.name}</div>
         </div>
         <div className={styles.pointList}>
           <div className={styles.param_name}>Нитка маршрута</div>

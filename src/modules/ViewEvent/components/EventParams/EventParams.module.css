@@ -39,7 +39,7 @@
 .length_icon {
   width: 2rem;
   height: 2rem;
-  fill: var(--color-text_secondary);
+  fill: var(--color-text_primary);
 }
 
 .startDateTime {
@@ -62,7 +62,7 @@
 .startDateTime_icon {
   width: 1.5rem;
   height: 1.5rem;
-  fill: var(--color-text_secondary);
+  fill: var(--color-text_primary);
 }
 
 .startPlace {
@@ -99,7 +99,7 @@
 .tempo_icon {
   width: 1.5rem;
   height: 1.5rem;
-  fill: var(--color-text_secondary);
+  fill: var(--color-text_primary);
 }
 
 .groupParamSecondary {

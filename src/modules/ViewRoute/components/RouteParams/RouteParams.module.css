@@ -39,7 +39,7 @@
 .length_icon {
   width: 2rem;
   height: 2rem;
-  fill: var(--color-text_secondary);
+  fill: var(--color-text_primary);
 }
 
 .complexity {
@@ -57,7 +57,27 @@
   font-weight: 600;
   font-size: 0.75rem;
   color: var(--color-text_primary);
+
+  > .icon {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--color-border);
+
+    &.light {
+      background-color: var(--color-success);
+    }
+
+    &.medium {
+      background-color: var(--color-info);
+    }
+
+    &.hard {
+      background-color: var(--color-error);
+    }
+  }
 }
+
 
 .pointList {
   display: flex;
@@ -143,7 +163,7 @@
 .roadCoverage_icon {
   width: 1.5rem;
   height: 1.5rem;
-  fill: var(--color-text_secondary);
+  fill: var(--color-text_primary);
 }
 
 .roadCoverage_wrapper {
