@@ -37,6 +37,7 @@
   color: var(--color-text_primary);
   display: flex;
   gap: 0.5rem;
+  align-items: center;
 }
 
 .dateTimeIcon {
@@ -52,6 +53,7 @@
   color: var(--color-text_primary);
   display: flex;
   gap: 0.5rem;
+  align-items: center;
 }
 
 .lengthIcon {

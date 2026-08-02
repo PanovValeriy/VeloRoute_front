@@ -16,10 +16,6 @@ export default function RouteParamsMobile({className, route}: IProps) {
 
   const [showParamFull, setShowParamsFull] = useState(false);
 
-  function handleClickButtonShowParamFull() {
-    setShowParamsFull(!showParamFull);
-  }
-
   const cnRouteParamsMobile = cn(styles.routeParamsMobile, className)
   const cnComplexityIcon = cn(styles.icon, {
     [styles.light]: route.complexity.id === 1,
@@ -30,7 +26,7 @@ export default function RouteParamsMobile({className, route}: IProps) {
 
   return (
     <div className={cnRouteParamsMobile}>
-      <div className={styles.title}><span>{route.name}</span><div className={styles.buttonInfo} onClick={handleClickButtonShowParamFull} ><Icon className={styles.iconInfo} iconName="info" /></div></div>
+      <div className={styles.title}><span>{route.name}</span><div className={styles.buttonInfo} onClick={() => setShowParamsFull(true)} ><Icon className={styles.iconInfo} iconName="info" /></div></div>
       <div className={styles.paramsBasic}>
         <div className={styles.length}><Icon className={styles.icon} iconName="distance" /><span>{route.length} км</span></div>
         <div className={styles.complexity}><span className={cnComplexityIcon} /><span>{route.complexity.name}</span></div>

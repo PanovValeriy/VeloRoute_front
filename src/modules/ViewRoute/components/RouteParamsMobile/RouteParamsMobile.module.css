@@ -30,6 +30,7 @@
   >.length {
     display: flex;
     gap: 1rem;
+    align-items: center;
     font-family: Inter;
     font-weight: 600;
     font-size: 0.75rem;

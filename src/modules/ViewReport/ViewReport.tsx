@@ -28,9 +28,15 @@ export default function ViewReport() {
   return (
     <div className={styles.viewReport}>
       <ButtonBack />
-      <div className={styles.title}>Отчет "{report.name}" ({dayjs(report.date).format('DD.MM.YYYY')})</div>
-      <ReportHeader dateReport={report.date} route={report.route} event={report.event} />
+      <div className={styles.title}>{report.name}</div>
+      <div className={styles.dateRide}>Дата поездки: {dayjs(report.date).format('DD.MM.YYYY')}</div>
+      <div className={styles.header}>
+        <ReportHeader className={styles.header} route={report.route} event={report.event} />
+      </div>
       <Content title="Отчет" body={report.body} />
+      <div className={styles.footer}>
+        <ReportHeader route={report.route} event={report.event} />
+      </div>
     </div>
   )
 }

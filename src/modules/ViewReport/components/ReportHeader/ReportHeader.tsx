@@ -11,12 +11,11 @@ import EventCard from "../../../../components/EventCard/EventCard";
 
 interface IProps {
   className?: string;
-  dateReport?: Date;
   route?: IRoute | null;
   event?: IEvent | null;
 }
 
-export default function ReportHeader({className, dateReport, route, event}: IProps) {
+export default function ReportHeader({className, route, event}: IProps) {
 
   const cnReportHeader = cn(styles.reportHeader, className)
   let routeShort: IRouteShort | undefined = undefined
@@ -60,9 +59,6 @@ export default function ReportHeader({className, dateReport, route, event}: IPro
 
   return (
     <div className={cnReportHeader}>
-      {/*<div>Дата поездки: {dayjs(dateReport).format('DD.MM.YYYY')}</div>*/}
-      {/*{(route) ? <div>Маршрут: <a href={`/route/${route.id}`}>{route?.name}</a></div> : null}*/}
-      {/*{(event) ? <div>Событие: <a href={`/event/${event.id}`}>{event?.name}</a></div> : null}*/}
       {(routeShort)
         ? <div className={styles.cardWrapper}>
             Маршрут

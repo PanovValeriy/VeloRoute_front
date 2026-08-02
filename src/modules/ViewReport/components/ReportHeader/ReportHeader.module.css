@@ -15,3 +15,9 @@
   font-size: 1rem;
   color: var(--color-text_primary);
 }
+
+@media screen and (max-width: 650px) {
+  .reportHeader {
+    flex-direction: column;
+  }
+}
