@@ -15,7 +15,7 @@ export default function FirstEvent() {
       <Icon iconName="calendar" className={styles.icon}/>
       <div className={styles.param}>
         <div className={styles.title}>{eventDate}</div>
-        <div className={styles.description}>{(event) ? event.name : ""}</div>
+        {(event) ? <div className={styles.description}>{event.name}</div> : null}
       </div>
       <div className={styles.caption}>{(event) ? 'Ближайшее событие' : 'Событий нет'}</div>
     </Link>

@@ -14,7 +14,7 @@ export default function ReportCardList() {
           <Icon iconName="report" className={styles.infoTitleIcon}/> Отчеты
         </div>
         <div className={styles.infoMoreButton}>
-          <Link to="/routes" className={styles.infoMoreButton}>Смотреть все отчеты<Icon iconName="arrowRight" className={styles.infoMoreButtonIcon}/></Link>
+          <Link to="/reports" className={styles.infoMoreButton}>Смотреть все отчеты<Icon iconName="arrowRight" className={styles.infoMoreButtonIcon}/></Link>
         </div>
 
       </div>

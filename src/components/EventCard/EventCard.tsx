@@ -35,8 +35,7 @@ export default function EventCard({className, event, showViews}:IProps) {
           </div>
           <Icon className={styles.iconDelimiter} iconName="delimiter" />
           <div className={styles.distance}>
-            <Icon className={styles.icon} iconName="distance" />
-            {event.length}км
+            <Icon className={styles.icon} iconName="distance" /><span>{event.length} км</span>
           </div>
           <Icon className={styles.iconDelimiter} iconName="delimiter" />
           <div className={styles.tempo}>
