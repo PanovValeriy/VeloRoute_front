@@ -1,0 +1,31 @@
+.checkbox {
+  border: none;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: var(--color-text_secondary);
+}
+
+.label {
+
+}
+
+.input {
+  appearance: none;
+  display: none;
+}
+
+.icon {
+  width: 1rem;
+  height: 1rem;
+  fill: transparent;
+  stroke: var(--color-text_disabled);
+}
+
+.input:checked ~ .icon {
+  fill: var(--color-primary_green);
+  stroke: var(--color-primary_green);
+}

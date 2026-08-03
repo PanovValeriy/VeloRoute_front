@@ -6,6 +6,7 @@
 }
 
 .buttonClose {
+  display: none;
   width: 1.5rem;
   height: 1.5rem;
   position: absolute;
@@ -74,7 +75,7 @@
   font-family: Inter;
   font-weight: 400;
   font-size: 0.75rem;
-  color: var(--color-text_primary);
+  color: var(--color-text_secondary);
 }
 
 .input:hover {
@@ -107,5 +108,9 @@
 
   .complexityField {
     gap: 0.5rem;
+  }
+
+  .buttonClose {
+    display: block;
   }
 }

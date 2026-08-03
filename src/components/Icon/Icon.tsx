@@ -24,6 +24,7 @@ import {ReactComponent as SvgHome} from "./icons/icon_home.svg";
 import {ReactComponent as SvgFilter} from "./icons/icon_filter.svg";
 import {ReactComponent as SvgInfo} from "./icons/icon_info.svg";
 import {ReactComponent as SvgClose} from "./icons/icon_close.svg";
+import {ReactComponent as SvgCheckbox} from "./icons/icon_checkbox.svg";
 
 
 
@@ -111,6 +112,9 @@ export default function Icon ({ iconName, className }: IProps) {
 
     case "close":
       return <SvgClose className={className} />
+
+    case "checkbox":
+      return <SvgCheckbox className={className} />
 
     default:
       return null;

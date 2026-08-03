@@ -4,6 +4,7 @@ import React, {useEffect, useState} from "react";
 import Select from "../Select/Select";
 import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
+import Checkbox from "../Checkbox/Checkbox";
 
 export interface IOnApplySearch {
   search?: string,
@@ -114,7 +115,7 @@ export default function SearchPanel({className, fields, search='', lengthFrom=0,
       }
       {(fields.indexOf('hideArchive') !== -1)
         ? <div className={styles.hideArchiveField}>
-            <input id="hideArchive" className={styles.input} type="checkbox" checked={hideArchiveValue} onChange={handleChangeHideArchive}/><label htmlFor="hideArchive" className={styles.label}>Скрыть прошедшие</label>
+            <Checkbox className={styles.input} checked={hideArchiveValue} onChange={handleChangeHideArchive} label="Скрыть прошедшие" />
           </div>
         : null
       }
