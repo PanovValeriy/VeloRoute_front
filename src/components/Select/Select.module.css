@@ -5,7 +5,7 @@
   gap: 0.625rem;
   border-width: 0.0625rem;
   border: 0.0625rem solid var(--color-border);
-  background-color: transparent;
+  background-color: var(--color-surface);
   font-family: Inter;
   font-weight: 400;
   font-size: 0.75rem;
@@ -16,7 +16,12 @@
   background-position: right 0.625rem center;
   padding-right: 1.875rem;
   color: var(--color-text_primary);
+}
+
+.select option {
+  color: var(--color-text_primary);
   border-color: var(--color-border);
+  background-color: var(--color-surface);
 }
 
 .select:hover {

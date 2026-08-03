@@ -18,7 +18,7 @@
   --color-shadow: #1F293714;
   --color-background_button: transparent;
   --image-name: url(/public/static/back_img_01.jpg);
-  --gradient-header: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 35%, rgba(255, 255, 255, 0) 100%), var(--image-name);
+  --gradient-header: linear-gradient(90deg, rgba(247, 249, 248, 1) 0%, rgba(247, 249, 248, 1) 35%, rgba(247, 249, 248, 0) 100%), var(--image-name);
 }
 
 :root[data-theme='dark'] {
@@ -37,5 +37,5 @@
   --color-info: #38BDF8;
   --color-error: #E53935;
   --color-shadow: #000000;
-  --gradient-header: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 35%, rgba(255, 255, 255, 0) 100%), var(--image-name);
+  --gradient-header: linear-gradient(90deg, rgba(18, 20, 23, 1) 0%, rgba(18, 20, 23, 1) 35%, rgba(18, 20, 23, 0) 100%), var(--image-name);
 }
