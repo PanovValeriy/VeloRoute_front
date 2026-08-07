@@ -1,4 +1,5 @@
 .eventCard {
+  position: relative;
   width: 25rem;
   height: 15rem;
   border-radius: 1rem;
@@ -6,6 +7,12 @@
   box-shadow: 0 0.5rem 1.5rem 0 var(--color-shadow);
   display: flex;
   flex-direction: column;
+}
+
+.viewCount {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
 }
 
 .photo {

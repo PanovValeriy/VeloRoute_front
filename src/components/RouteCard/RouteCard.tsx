@@ -4,6 +4,7 @@ import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
 import styles from "./RouteCard.module.css";
 import cn from "classnames";
+import ViewCount from "../ViewCount/ViewCount";
 
 interface IProps {
   className?: string;
@@ -21,6 +22,7 @@ export default function RouteCard({className, route, showViews}: IProps) {
 
   return (
     <div className={styles.routeCard}>
+      {showViews ? <ViewCount className={styles.viewCount} count={route.viewsCount} /> : null}
       <div className={styles.photo}>
         <img src={route.photoURL} alt="Фото" />
       </div>
@@ -36,15 +38,6 @@ export default function RouteCard({className, route, showViews}: IProps) {
           <div className={cnDifficulty}>
             <Icon iconName="difficulty" className={styles.detailIcon} /> {route.complexity.name}
           </div>
-          {(showViews)
-            ? (
-              <>
-                <Icon className={styles.iconDelimiter} iconName="delimiter" />
-                <div className={styles.views}>
-                  <Icon iconName="views" className={styles.detailIcon} />{route.viewsCount}
-                </div>
-              </>)
-            :null}
         </div>
         <div>
           <Link to={'/route/'+route.id.toString()} tabIndex={-1}><Button className={styles.button}>Подробнее</Button></Link>

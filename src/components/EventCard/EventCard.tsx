@@ -6,6 +6,7 @@ import dayjs from "dayjs";
 import Status from "../Status/Status";
 import {Link} from "react-router-dom";
 import Button from "../Button/Button";
+import ViewCount from "../ViewCount/ViewCount";
 
 interface IProps {
   className?: string;
@@ -19,6 +20,7 @@ export default function EventCard({className, event, showViews}:IProps) {
 
   return (
     <div className={cnEventCard}>
+      {showViews ? <ViewCount className={styles.viewCount} count={event.viewsCount} /> : null}
       <div className={styles.photo}>
         <img src={event.photoURL} alt="Фото" />
       </div>

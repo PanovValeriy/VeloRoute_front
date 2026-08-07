@@ -4,6 +4,7 @@ import styles from "./ReportCard.module.css"
 import Button from "../Button/Button";
 import dayjs from "dayjs";
 import Icon from "../Icon/Icon";
+import ViewCount from "../ViewCount/ViewCount";
 
 interface IProps {
   className?: string;
@@ -14,6 +15,7 @@ interface IProps {
 export default function ReportCard({className, report, showViews}: IProps) {
   return (
     <div className={styles.reportCard}>
+      {showViews ? <ViewCount className={styles.viewCount} count={report.viewsCount} /> : null}
       <div className={styles.photo}>
         <img src={report.photoURL} alt="Фото" />
       </div>

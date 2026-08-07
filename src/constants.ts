@@ -30,4 +30,6 @@ export const backgroundImageList = [
   '/static/back_img_05.jpg',
   '/static/back_img_06.jpg',
   '/static/back_img_07.jpg',
+  '/static/back_img_07.jpg',
+  '/static/back_img_08.jpg',
 ]

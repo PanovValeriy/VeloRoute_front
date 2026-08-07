@@ -1,0 +1,23 @@
+.viewCount {
+  top: 12px;
+  left: 12px;
+  padding: 0.25rem 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-surface);
+}
+
+.icon {
+  width: 0.75rem;
+  height: 0.75rem;
+  fill: var(--color-text_primary);
+}
+
+.label {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 0.625rem;
+  color: var(--color-text_primary);
+}
