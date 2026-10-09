@@ -28,9 +28,6 @@ export default function ViewEvent() {
     )
   }
   let eventBody: string = event.description
-  if (event.miniReport) {
-    eventBody = eventBody + '\n[TITLE]Миниотчет[/TITLE]\n' + event.miniReport;
-  }
   return (
     <div className={styles.viewEvent}>
       <ButtonBack />
@@ -44,6 +41,7 @@ export default function ViewEvent() {
         <EventParamsMobile className={styles.eventParams} event={event} />
       </div>
       <Content title="Описание события" body={eventBody} />
+      {(event.miniReport) ? <Content title={'Миниотчет'} body={event.miniReport} /> : null}
       {((dataReportList) && (dataReportList.recCount !== 0)) ? <ReportList title="Отчеты по событию" reportList = {dataReportList.reportList}/> : null}
     </div>
   )
