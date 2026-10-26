@@ -12,6 +12,7 @@ import {readTheme, showTheme, setBackgroundImageRandom} from "./libs/libs";
 import ViewInfoList from "./modules/ViewInfoList/ViewInfoList";
 import ViewInfo from "./modules/ViewInfo/ViewInfo";
 import {AuthProvider} from "./context/AuthContext";
+import ViewLogin from "./modules/ViewLogin/ViewLogin";
 function App() {
 
   showTheme(readTheme())
@@ -21,7 +22,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<MainPage mainPage={true}/>}>
-            <Route path={"/"} element={<ViewMain />} />
+            <Route path="/" element={<ViewMain />} />
+            <Route path="/login" element={<ViewLogin />} />
           </Route>
           <Route element={<MainPage />}>
             <Route path="/routes" element={<ViewRouteList />}/>

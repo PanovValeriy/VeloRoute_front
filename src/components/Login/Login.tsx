@@ -3,6 +3,7 @@ import cn from "classnames"
 import Button from "../Button/Button";
 import {Link} from "react-router-dom";
 import {useState} from "react";
+import {useAuth} from "../../context/AuthContext";
 
 export interface ILoginValues {
   login: string;
@@ -11,21 +12,31 @@ export interface ILoginValues {
 
 interface ILoginProps {
   className?: string;
-  error?: string;
-  onLogin: (data: ILoginValues) => void;
-  onCancelLogin: () => void;
+  onLoginOk: () => void;
+  onLoginCancel: () => void;
 }
 
 
-export default function Login({ className, error, onLogin, onCancelLogin }: ILoginProps) {
+export default function Login({ className, onLoginOk, onLoginCancel }: ILoginProps) {
 
+  const {login: getLogin} = useAuth()
   const cnLogin = cn(styles.login, className);
   const [loginValue, setLoginValue] = useState<string>('')
   const [passwordValue, setPasswordValue] = useState<string>('')
+  const [error, setError] = useState<string>('')
 
-  function handleLogin() {
-    onLogin({login: loginValue, password: passwordValue})
+  async function handleLogin () {
+    setError('')
+    try {
+      const d = await getLogin(loginValue, passwordValue)
+      console.log(d)
+      onLoginOk()
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Неверный логин или пароль'
+      setError(message)
+    }
   }
+
   return (
     <div className={styles.back}>
       <div className={cnLogin}>
@@ -34,7 +45,7 @@ export default function Login({ className, error, onLogin, onCancelLogin }: ILog
         <input type="password" className={styles.input} name={'password'} placeholder={"Введите пароль"} value={passwordValue} required onChange={e => setPasswordValue(e.target.value)} />
         {!!error ? <div className={styles.error}>{error}</div> : null}
         <Button className={styles.buttonOk} onClick={handleLogin}>Войти</Button>
-        <Button className={styles.buttonCancel} onClick={onCancelLogin}>Отмена</Button>
+        <Button className={styles.buttonCancel} onClick={onLoginCancel}>Отмена</Button>
         <div className={styles.register}>Нет аккаунта <Link className={styles.registerLink} to={"#"}>Зарегистрироваться</Link></div>
       </div>
     </div>
