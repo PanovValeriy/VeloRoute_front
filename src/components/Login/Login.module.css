@@ -1,0 +1,116 @@
+.back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  background-color: rgba(100, 100, 100, 0.8);
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 286px;
+  height: 349px;
+  margin: auto;
+  top: 332px;
+  left: 577px;
+  border-radius: 16px;
+  padding: 24px;
+  z-index: 25;
+  box-shadow: 0 8px 20px 0 #0000000F;
+  background-color: var(--color-surface);
+}
+
+.caption {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 26px;
+  text-align: center;
+  vertical-align: middle;
+  color: var(--color-text_primary);
+}
+
+.input {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  gap: 0.625rem;
+  border-width: 0.0625rem;
+  border: 0.0625rem solid var(--color-border);
+  background-color: transparent;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: var(--color-text_secondary);
+}
+
+.input:hover {
+  border-color: var(--color-text_primary);
+}
+
+.input:focus {
+  border-color: var(--color-text_primary);
+  outline: 0.0625rem solid var(--color-text_primary);
+}
+
+.error {
+  width: 238px;
+  height: 12px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 10px;
+  vertical-align: middle;
+  color: var(--color-error);
+}
+
+.buttonOk {
+  color: var(--color-surface) !important;
+  background-color: var(--color-primary_green) !important;
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.buttonOk:hover {
+  background-color: var(--color-accent_green) !important;
+}
+
+.buttonCancel {
+  border: 1px solid var(--color-primary_green);
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.register {
+  width: 238px;
+  height: 30px;
+  gap: 8px;
+  padding-top: 9px;
+  padding-right: 16px;
+  padding-bottom: 9px;
+  padding-left: 16px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+  vertical-align: middle;
+  color: var(--color-text_secondary);
+}
+
+.registerLink {
+  color: var(--color-accent_green);
+
+}

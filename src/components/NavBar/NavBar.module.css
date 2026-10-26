@@ -47,4 +47,8 @@
   .menu {
     display: none;
   }
+
+  .buttonProfile {
+    display: none !important;
+  }
 }

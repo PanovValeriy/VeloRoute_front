@@ -5,6 +5,7 @@ import IItem from "../../types/types"
 import MenuItemMobile from "./components/MenuItemMobile/MenuItemMobile";
 import {useEffect, useState} from "react";
 import {useLocation} from "react-router";
+import ButtonProfile from "../ButtonProfile/ButtonProfile";
 
 
 interface IProps {
@@ -50,6 +51,7 @@ export default function Menu({className, mobile}:IProps) {
         : (
           <div className={styles.menuWrapper}>
             {items.map((item, idx) => <MenuItemMobile key={idx} item={item} setSelected={() => setSelected(idx)}/>)}
+            <ButtonProfile />
           </div>
         )
       }

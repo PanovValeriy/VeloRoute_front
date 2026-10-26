@@ -1,4 +1,4 @@
-import {backgroundImageList} from "../constants"
+import {backgroundImageList, TOKEN_KEY} from "../constants"
 export const THEME_VALUES = ['light', 'dark']
 export const THEME_LABELS = ['Светлая', 'Темная']
 

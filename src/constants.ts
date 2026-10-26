@@ -2,6 +2,8 @@ export const SERVER = 'http://localhost:8000/'
 // export const SERVER = '/'
 
 export const API_SERVER = `${SERVER}api/`
+export const TOKEN_KEY = 'auth_token';
+export const USER_DATA_KEY = 'user_data';
 
 export const routeDefault = {
   limit: 6,

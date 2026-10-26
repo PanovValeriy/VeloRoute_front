@@ -5,9 +5,11 @@ import reportApi from "./services/reportApi";
 import eventApi from "./services/eventApi";
 import newsApi from "./services/newsApi";
 import infoApi from "./services/infoApi";
+import userApi from "./services/userApi";
 
 export const store = configureStore({
   reducer: {
+    [userApi.reducerPath]: userApi.reducer,
     [routeApi.reducerPath]: routeApi.reducer,
     [reportApi.reducerPath]: reportApi.reducer,
     [eventApi.reducerPath]: eventApi.reducer,
@@ -16,6 +18,7 @@ export const store = configureStore({
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat([
+      userApi.middleware,
       routeApi.middleware,
       reportApi.middleware,
       eventApi.middleware,
@@ -26,6 +29,3 @@ export const store = configureStore({
 
 setupListeners(store.dispatch)
 export type RootState = ReturnType<typeof store.getState>
-// export type AppDispatch = typeof store.dispatch
-// export const useAppDispatch = useDispatch.withTypes<AppDispatch>()
-// export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector

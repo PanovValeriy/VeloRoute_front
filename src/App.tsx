@@ -11,28 +11,31 @@ import ViewEvent from "./modules/ViewEvent/ViewEvent";
 import {readTheme, showTheme, setBackgroundImageRandom} from "./libs/libs";
 import ViewInfoList from "./modules/ViewInfoList/ViewInfoList";
 import ViewInfo from "./modules/ViewInfo/ViewInfo";
+import {AuthProvider} from "./context/AuthContext";
 function App() {
 
   showTheme(readTheme())
   setBackgroundImageRandom()
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<MainPage mainPage={true}/>}>
-          <Route path={"/"} element={<ViewMain />} />
-        </Route>
-        <Route element={<MainPage />}>
-          <Route path="/routes" element={<ViewRouteList />}/>
-          <Route path="/route/:id" element={<ViewRoute />}/>
-          <Route path="/reports" element={<ViewReportList />}/>
-          <Route path="/report/:id" element={<ViewReport />}/>
-          <Route path="/events" element={<ViewEventList />}/>
-          <Route path="/event/:id" element={<ViewEvent />}/>
-          <Route path="/infos" element={<ViewInfoList />} />
-          <Route path="/info/:id" element={<ViewInfo />}/>
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<MainPage mainPage={true}/>}>
+            <Route path={"/"} element={<ViewMain />} />
+          </Route>
+          <Route element={<MainPage />}>
+            <Route path="/routes" element={<ViewRouteList />}/>
+            <Route path="/route/:id" element={<ViewRoute />}/>
+            <Route path="/reports" element={<ViewReportList />}/>
+            <Route path="/report/:id" element={<ViewReport />}/>
+            <Route path="/events" element={<ViewEventList />}/>
+            <Route path="/event/:id" element={<ViewEvent />}/>
+            <Route path="/infos" element={<ViewInfoList />} />
+            <Route path="/info/:id" element={<ViewInfo />}/>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 

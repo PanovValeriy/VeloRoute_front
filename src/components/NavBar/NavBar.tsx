@@ -7,10 +7,12 @@ import {Link} from "react-router"
 import Menu from "../Menu/Menu"
 import FirstEvent from "../FirstEvent/FirstEvent"
 import Icon from "../Icon/Icon"
+import ButtonProfile from "../ButtonProfile/ButtonProfile";
 
 interface IProps {
   className?: string,
 }
+
 
 export default function NavBar({className}: IProps) {
   const cnNavBar = cn(styles.navBar, className)
@@ -28,6 +30,7 @@ export default function NavBar({className}: IProps) {
       <Menu className={styles.menu} mobile={false}/>
       <div className={styles.rightBlock}>
         <FirstEvent />
+        <ButtonProfile className={styles.buttonProfile} />
         <div className={styles.theme} onClick={handleToggleTheme}>
           <Icon className={styles.iconTheme} iconName={ theme === 0 ? "sun" : "moon" } />
         </div>
