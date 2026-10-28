@@ -1,24 +1,24 @@
 .buttonProfile {
   cursor: pointer;
-  width: 39px;
-  height: 48px;
-  gap: 4px;
+  width: 2.4375rem;
+  height: 3rem;
+  gap: 0.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .buttonProfileIcon {
-  width: 32px !important;
-  height: 32px !important;
+  width: 2rem !important;
+  height: 2rem !important;
   fill: var(--color-text_secondary);
   border-radius: 50%;
   background-color: var(--color-border);
 }
 
 .buttonProfileIconAuth {
-  width: 24px !important;
-  height: 24px !important;
+  width: 1.5rem !important;
+  height: 1.5rem !important;
   fill: var(--color-accent_green);
   border-radius: 50%;
   background-color: var(--color-border);
@@ -27,10 +27,10 @@
 
 .buttonProfileName {
   width: 100%;
-  height: 12px;
+  height: 0.75rem;
   font-family: Inter;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 0.625rem;
   line-height: 100%;
   color: var(--color-text_primary);
   text-align: center;
@@ -38,10 +38,10 @@
 
 .buttonProfileCaption {
   width: 100%;
-  height: 12px;
+  height: 0.75rem;
   font-family: Inter;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 0.625rem;
   line-height: 100%;
   color: var(--color-text_primary);
   text-align: center;
@@ -49,8 +49,8 @@
 
 @media screen and (max-width: 650px) {
   .buttonProfileIcon, .buttonProfileIconAuth {
-    width: 24px !important;
-    height: 24px !important;
+    width: 1.5rem !important;
+    height: 1.5rem !important;
   }
 
   .buttonProfileName {
