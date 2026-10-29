@@ -5,6 +5,7 @@ import Button from "../Button/Button";
 import dayjs from "dayjs";
 import Icon from "../Icon/Icon";
 import ViewCount from "../ViewCount/ViewCount";
+import LikeCount from "../LikeCount/LikeCount";
 
 interface IProps {
   className?: string;
@@ -15,9 +16,10 @@ interface IProps {
 export default function ReportCard({className, report, showViews}: IProps) {
   return (
     <div className={styles.reportCard}>
-      {showViews ? <ViewCount className={styles.viewCount} count={report.viewsCount} /> : null}
       <div className={styles.photo}>
         <img src={report.photoURL} alt="Фото" />
+        {showViews ? <ViewCount className={styles.viewCount} count={report.viewsCount} /> : null}
+        <LikeCount className={styles.likeCount} count={report.likesCount} selected={report.like} />
       </div>
       <div className={styles.info}>
         <div className={styles.description}>

@@ -1,4 +1,4 @@
-import {ReactComponent as SvgEvent} from "./icons/icon-event.svg";
+import {ReactComponent as SvgEvent} from "./icons/icon_event.svg";
 import {ReactComponent as SvgMoon} from "./icons/icon_moon.svg";
 import {ReactComponent as SvgSun} from "./icons/icon_sun.svg";
 import {ReactComponent as SvgCalendar} from "./icons/icon_calendar.svg"
@@ -26,7 +26,8 @@ import {ReactComponent as SvgInfo} from "./icons/icon_info.svg";
 import {ReactComponent as SvgClose} from "./icons/icon_close.svg";
 import {ReactComponent as SvgCheckbox} from "./icons/icon_checkbox.svg";
 import {ReactComponent as SvgUser} from "./icons/icon_user.svg";
-
+import {ReactComponent as SvgLike}  from "./icons/icon_like.svg";
+import {ReactComponent as SvgMember} from "./icons/icon_member.svg";
 
 
 interface IProps {
@@ -119,6 +120,12 @@ export default function Icon ({ iconName, className }: IProps) {
 
     case "user":
       return <SvgUser className={className} />
+
+    case "like":
+      return <SvgLike className={className} />
+
+    case "member":
+      return <SvgMember className={className} />
 
     default:
       return null;

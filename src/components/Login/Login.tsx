@@ -28,8 +28,7 @@ export default function Login({ className, onLoginOk, onLoginCancel }: ILoginPro
   async function handleLogin () {
     setError('')
     try {
-      const d = await getLogin(loginValue, passwordValue)
-      console.log(d)
+      await getLogin(loginValue, passwordValue)
       onLoginOk()
     } catch (err) {
       const message = err instanceof Error ? err.message : 'Неверный логин или пароль'

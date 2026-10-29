@@ -32,6 +32,8 @@ export default function ReportHeader({className, route, event}: IProps) {
       soil: route.soil,
       jungle: route.jungle,
       viewsCount: 0,
+      likesCount: route.likesCount,
+      like: route.like,
     }
   }
 
@@ -50,6 +52,10 @@ export default function ReportHeader({className, route, event}: IProps) {
       startPlace: event.startPlace,
       viewsCount: 0,
       miniReportTrue: false,
+      likesCount: event.likesCount,
+      like: event.like,
+      membersCount: event.membersCount,
+      member: event.member,
     }
   }
 

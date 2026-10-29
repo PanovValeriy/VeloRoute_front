@@ -11,6 +11,7 @@ import SearchPanel, {IOnApplySearch} from "../../components/SearchPanel/SearchPa
 import EventCard from '../../components/EventCard/EventCard';
 import Icon from "../../components/Icon/Icon";
 import FormModal from "../../components/FormModal/FormModal";
+import {useAuth} from "../../context/AuthContext";
 
 const sortList = [
   {value: 'name', label: 'по возрастанию названия'},
@@ -25,6 +26,7 @@ export default function ViewEventList() {
 
   const [showFilter, setShowFilter] = React.useState(false);
   const [searchParams] = useSearchParams()
+  const {isAuthenticated} = useAuth()
   const navigate = useNavigate()
   const [getEventList, {data, isLoading}] = useLazyGetEventListQuery()
 
@@ -108,7 +110,7 @@ export default function ViewEventList() {
 
   useEffect(() => {
     getEventList(param)
-  }, [getEventList, param])
+  }, [getEventList, param, isAuthenticated])
 
   if (isLoading) {
     return (<div>Загрузка</div>)
@@ -123,7 +125,6 @@ export default function ViewEventList() {
   if (param.limit && ((data.recCount !== 0) ? Math.ceil(data.recCount/param.limit) : 1) < (param.page || 1)) {
     handleChangePage((data.recCount !== 0) ? Math.ceil(data.recCount/param.limit) : 1, param.limit)
   }
-
   return (
     <div className={styles.viewEventList}>
       <div className={styles.title}>

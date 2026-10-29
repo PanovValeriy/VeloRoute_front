@@ -11,6 +11,7 @@ import SearchPanel, {IOnApplySearch} from "../../components/SearchPanel/SearchPa
 import ReportCard from '../../components/ReportCard/ReportCard';
 import Icon from "../../components/Icon/Icon";
 import FormModal from "../../components/FormModal/FormModal";
+import {useAuth} from "../../context/AuthContext";
 
 const sortList = [
   {value: 'name', label: 'по возрастанию названия'},
@@ -26,6 +27,7 @@ export default function ViewReportList() {
   const [showFilter, setShowFilter] = React.useState(false);
   const [searchParams] = useSearchParams()
   const navigate = useNavigate()
+  const {isAuthenticated} = useAuth()
   const [getReportList,{data, isLoading}] = useLazyGetReportListQuery()
   const param: IReportListParam = useMemo<IReportListParam>(() => ({
     page: parseInt(searchParams.get('page') || '1'),
@@ -97,7 +99,7 @@ export default function ViewReportList() {
 
   useEffect(() => {
     getReportList(param)
-  }, [getReportList, param])
+  }, [getReportList, param, isAuthenticated])
 
   if (isLoading) {
     return (

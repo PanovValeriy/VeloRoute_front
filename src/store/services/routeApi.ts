@@ -1,6 +1,7 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 import {API_SERVER, routeDefault} from "../../constants";
 import {IGetListParam, IRoute, IRouteShort} from "../../types/types";
+import {getHeaders} from "../../api/auth";
 
 export interface IRouteListParam extends IGetListParam {
   search?: string;
@@ -22,7 +23,10 @@ interface IRouteParam {
 
 const routeApi = createApi({
   reducerPath: 'route',
-  baseQuery: fetchBaseQuery({baseUrl: API_SERVER}),
+  baseQuery: fetchBaseQuery({
+    baseUrl: API_SERVER,
+    prepareHeaders: getHeaders
+  }),
   tagTypes: ['ROUTE_LIST', 'ROUTE', 'ROUTE_RANDOM'],
   endpoints: (builder) => ({
     getRouteList: builder.query<IRouteListResponse, IRouteListParam>({
@@ -55,7 +59,7 @@ const routeApi = createApi({
 export const {
   useLazyGetRouteListQuery,
   useGetRouteQuery,
-  useGetRouteRandomQuery,
+  useLazyGetRouteRandomQuery,
 } = routeApi
 
 export default routeApi

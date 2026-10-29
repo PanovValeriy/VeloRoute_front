@@ -52,6 +52,8 @@ export interface IRoute {
   grader: number;         // грейдер
   soil: number;           // грунт
   jungle: number;         // дебри
+  likesCount: number;     // количество лайков
+  like: boolean;          // текущий пользователь установил лайк
   dateCreate: Date;       // дата создания
   dateUpdate: Date;       // дата обновления
 }
@@ -69,6 +71,8 @@ export interface IRouteShort {
   soil: number;           // грунт
   jungle: number;         // дебри
   viewsCount: number;     // количество просмотров
+  likesCount: number;     // количество лайков
+  like: boolean;          // текущий пользователь установил лайк
 }
 
 // Отчет
@@ -81,6 +85,8 @@ export interface IReport {
   event: IEvent | null;   // мероприятие
   photoURL: string;       // ссылка на фотографию
   body: string;           // тело отчета
+  likesCount: number;     // количество лайков
+  like: boolean;          // текущий пользователь установил лайк
   dateCreate: Date;       // дата создания
   dateUpdate: Date;       // дата обновления
 }
@@ -93,6 +99,8 @@ export interface IReportShort {
   name: string;           // название отчета
   photoURL: string;       // ссылка на фотографию
   viewsCount: number;     // количество просмотров
+  likesCount: number;     // количество лайков
+  like: boolean;          // текущий пользователь установил лайк
 }
 
 // Событие
@@ -110,6 +118,11 @@ export interface IEvent {
   tempo: ITempo;          // темп
   startDateTime: Date;    // дата и время старта
   startPlace: string;     // место старта
+  likesCount: number;     // количество лайков
+  like: boolean;          // текущий пользователь установил лайк
+  membersCount: number;   // количество участников
+  member: boolean;        // текущий пользователь участник
+  members_set: string[];  // список участников
   dateCreate: Date;       // дата создания
   dateUpdate: Date;       // дата обновления
   miniReport: string;     // миниотчет
@@ -128,6 +141,10 @@ export interface IEventShort {
   startDateTime: Date;    // дата и время старта
   startPlace: string;     // место старта
   viewsCount: number;     // количество просмотров
+  likesCount: number;     // количество лайков
+  like: boolean;          // текущий пользователь установил лайк
+  membersCount: number;   // количество участников
+  member: boolean;        // текущий пользователь участник
   miniReportTrue: boolean;// наличие миниотчета
 }
 

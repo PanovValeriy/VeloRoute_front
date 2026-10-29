@@ -1,11 +1,18 @@
 import styles from "./ReportCardList.module.css"
 import Icon from "../../../../components/Icon/Icon";
 import {Link} from "react-router-dom";
-import {useGetReportRandomQuery} from "../../../../store/services/reportApi";
+import {useLazyGetReportRandomQuery} from "../../../../store/services/reportApi";
 import ReportCard from "../../../../components/ReportCard/ReportCard";
+import {useAuth} from "../../../../context/AuthContext";
+import {useEffect} from "react";
 
 export default function ReportCardList() {
-  const {data, isLoading} = useGetReportRandomQuery(null)
+  const {isAuthenticated} = useAuth()
+  const [getReportRandom, {data, isLoading}] = useLazyGetReportRandomQuery()
+
+  useEffect(() => {
+    getReportRandom(null)
+  }, [getReportRandom, isAuthenticated])
 
   return (
     <div className={styles.reportCardList}>

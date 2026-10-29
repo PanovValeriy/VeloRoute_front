@@ -1,6 +1,7 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 import {API_SERVER, eventDefault} from "../../constants";
 import {IEvent, IEventShort, IGetListParam} from "../../types/types";
+import {getHeaders} from "../../api/auth";
 
 export interface IEventListParams extends IGetListParam {
   search?: string,
@@ -22,7 +23,10 @@ interface IEventListResponse {
 
 const eventApi = createApi({
   reducerPath: 'event',
-  baseQuery: fetchBaseQuery({baseUrl: API_SERVER}),
+  baseQuery: fetchBaseQuery({
+    baseUrl: API_SERVER,
+    prepareHeaders: getHeaders,
+  }),
   tagTypes: ['EVENT_LIST', 'EVENT', 'EVENT_FIRST'],
   endpoints: (builder)=> ({
     getEventList: builder.query<IEventListResponse, IEventListParams>({

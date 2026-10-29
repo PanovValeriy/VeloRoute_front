@@ -18,6 +18,7 @@ export default function ViewEvent() {
   const {data: event, isLoading} = useGetEventQuery({eventId, code})
   const {data: dataReportList} = useGetReportListQuery({eventId, sort: 'date:desc'})
 
+
   if (isLoading) {
     return (<div>Загрузка</div>)
   }

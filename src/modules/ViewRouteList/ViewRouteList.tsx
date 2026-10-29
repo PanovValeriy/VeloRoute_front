@@ -11,6 +11,7 @@ import SortPanel from "../../components/SortPanel/SortPanel";
 import RouteCard from '../../components/RouteCard/RouteCard';
 import Icon from "../../components/Icon/Icon";
 import FormModal from "../../components/FormModal/FormModal";
+import {useAuth} from "../../context/AuthContext";
 
 const sortList = [
   {value: 'name', label: 'по возрастанию названия'},
@@ -26,6 +27,7 @@ export default function ViewRouteList() {
   const [showFilter, setShowFilter] = useState<boolean>(false)
   const [searchParams] = useSearchParams()
   const navigate = useNavigate()
+  const {isAuthenticated} = useAuth()
   const [getRouteList, {data }] = useLazyGetRouteListQuery()
   const [complexityList, setComplexityList] = useState<{value: number, label: string}[]>([{value: 0, label:'Все'}])
   const param: IRouteListParam = useMemo<IRouteListParam>(() => ({
@@ -118,7 +120,7 @@ export default function ViewRouteList() {
 
   useEffect(() => {
     getRouteList(param)
-  }, [getRouteList, param])
+  }, [getRouteList, param, isAuthenticated])
 
   useEffect(() => {
     const cl = [

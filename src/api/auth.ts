@@ -64,3 +64,11 @@ export function removeToken() {
 export function isAuthenticated(): boolean {
   return !!getToken();
 }
+
+export function getHeaders(headers: Headers) {
+  const token = getToken();
+  if (token) {
+    headers.set("Authorization", "Token " + token);
+  }
+  return headers
+}

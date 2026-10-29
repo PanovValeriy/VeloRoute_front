@@ -1,5 +1,4 @@
 .reportCard {
-  position: relative;
   width: 25rem;
   min-width: 25rem;
   height: 10rem;
@@ -12,10 +11,17 @@
 .viewCount {
   position: absolute;
   top: 0.75rem;
+  right: 0.75rem;
+}
+
+.likeCount {
+  position: absolute;
+  top: 0.75rem;
   left: 0.75rem;
 }
 
 .photo {
+  position: relative;
   width: 12.5rem;
   height: 100%;
   border-top-left-radius: 1rem;

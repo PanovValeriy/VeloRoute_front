@@ -1,6 +1,7 @@
 import {IGetListParam, IReport, IReportShort} from "../../types/types";
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 import {API_SERVER, reportDefault} from "../../constants";
+import {getHeaders} from "../../api/auth";
 
 export interface IReportListParam extends IGetListParam {
   search?: string;
@@ -22,7 +23,10 @@ interface IReportListResponse {
 
 const reportApi = createApi({
   reducerPath: 'report',
-  baseQuery: fetchBaseQuery({baseUrl: API_SERVER}),
+  baseQuery: fetchBaseQuery({
+    baseUrl: API_SERVER,
+    prepareHeaders: getHeaders
+  }),
   tagTypes: ['REPORT_LIST', 'REPORT', 'REPORT_RANDOM'],
   endpoints: (builder) => ({
       getReportList: builder.query<IReportListResponse, IReportListParam>({
@@ -56,7 +60,7 @@ export const {
   useLazyGetReportListQuery,
   useGetReportListQuery,
   useGetReportQuery,
-  useGetReportRandomQuery,
+  useLazyGetReportRandomQuery,
 } = reportApi
 
 export default reportApi

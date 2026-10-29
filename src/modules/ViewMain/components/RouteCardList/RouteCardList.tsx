@@ -1,11 +1,18 @@
 import styles from "./RouteCardList.module.css"
 import Icon from "../../../../components/Icon/Icon";
 import {Link} from "react-router-dom";
-import {useGetRouteRandomQuery} from "../../../../store/services/routeApi";
+import {useLazyGetRouteRandomQuery} from "../../../../store/services/routeApi";
 import RouteCard from "../../../../components/RouteCard/RouteCard";
+import {useEffect} from "react";
+import {useAuth} from "../../../../context/AuthContext";
 
 export default function RouteCardList() {
-  const {data, isLoading} = useGetRouteRandomQuery(null)
+  const {isAuthenticated} = useAuth()
+  const [getRouteRandom ,{data, isLoading}] = useLazyGetRouteRandomQuery()
+
+  useEffect(() => {
+    getRouteRandom(null)
+  }, [getRouteRandom, isAuthenticated])
   return (
     <div className={styles.routeCardList}>
       <div className={styles.info}>

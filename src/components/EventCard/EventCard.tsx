@@ -7,6 +7,7 @@ import Status from "../Status/Status";
 import {Link} from "react-router-dom";
 import Button from "../Button/Button";
 import ViewCount from "../ViewCount/ViewCount";
+import MemberCount from "../MemberCount/MemberCount";
 
 interface IProps {
   className?: string;
@@ -17,10 +18,10 @@ interface IProps {
 export default function EventCard({className, event, showViews}:IProps) {
   const closed = dayjs(event.startDateTime) < dayjs(new Date())
   const cnEventCard = cn(styles.eventCard, className)
-
   return (
     <div className={cnEventCard}>
       {showViews ? <ViewCount className={styles.viewCount} count={event.viewsCount} /> : null}
+      <MemberCount className={styles.memberCount} count={event.membersCount} selected={event.member} />
       <div className={styles.photo}>
         <img src={event.photoURL} alt="Фото" />
       </div>

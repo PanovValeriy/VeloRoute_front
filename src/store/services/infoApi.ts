@@ -1,6 +1,7 @@
 import {IGetListParam, IInfoShort, IReport} from "../../types/types";
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 import {API_SERVER, infoDefault} from "../../constants";
+import {getHeaders} from "../../api/auth";
 
 export interface IInfoListParam extends IGetListParam {
 }
@@ -17,7 +18,10 @@ interface IInfoListResponse {
 
 const infoApi = createApi({
   reducerPath: 'info',
-  baseQuery: fetchBaseQuery({baseUrl: API_SERVER}),
+  baseQuery: fetchBaseQuery({
+    baseUrl: API_SERVER,
+    prepareHeaders: getHeaders
+  }),
   tagTypes: ['INFO_LIST', 'INFO'],
   endpoints: (builder) => ({
     getInfoList: builder.query<IInfoListResponse, IInfoListParam>({

@@ -5,6 +5,7 @@ import Icon from "../Icon/Icon";
 import styles from "./RouteCard.module.css";
 import cn from "classnames";
 import ViewCount from "../ViewCount/ViewCount";
+import LikeCount from "../LikeCount/LikeCount";
 
 interface IProps {
   className?: string;
@@ -23,6 +24,7 @@ export default function RouteCard({className, route, showViews}: IProps) {
   return (
     <div className={styles.routeCard}>
       {showViews ? <ViewCount className={styles.viewCount} count={route.viewsCount} /> : null}
+      <LikeCount className={styles.likeCount} count={route.likesCount} selected={route.like} />
       <div className={styles.photo}>
         <img src={route.photoURL} alt="Фото" />
       </div>

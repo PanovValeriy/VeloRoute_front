@@ -1,6 +1,7 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 import {API_SERVER} from "../../constants";
 import {INews} from "../../types/types";
+import {getHeaders} from "../../api/auth";
 
 export interface INewsListResponse {
   recCount: number;
@@ -15,7 +16,10 @@ interface INewsListParams {
 
 const newsApi = createApi({
   reducerPath: 'news',
-  baseQuery: fetchBaseQuery({baseUrl: API_SERVER}),
+  baseQuery: fetchBaseQuery({
+    baseUrl: API_SERVER,
+    prepareHeaders: getHeaders
+  }),
   tagTypes: ['NEWS_LIST'],
   endpoints: (builder) => ({
     getNewsList: builder.query<INewsListResponse, INewsListParams>({
