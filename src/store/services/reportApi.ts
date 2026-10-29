@@ -52,6 +52,13 @@ const reportApi = createApi({
     getReportRandom: builder.query<IReportListResponse, null>({
       query: () => ({url: 'report/random/3/'}),
       providesTags: ['REPORT_RANDOM'],
+    }),
+    toggleReportLike: builder.mutation<any, number>({
+      query:(reportId) => ({
+        url: `/report/like/${reportId}/`,
+        method: 'POST'
+      }),
+      invalidatesTags: ['REPORT']
     })
   })
 })
@@ -60,7 +67,9 @@ export const {
   useLazyGetReportListQuery,
   useGetReportListQuery,
   useGetReportQuery,
+  useLazyGetReportQuery,
   useLazyGetReportRandomQuery,
+  useToggleReportLikeMutation,
 } = reportApi
 
 export default reportApi

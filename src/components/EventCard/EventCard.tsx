@@ -13,15 +13,17 @@ interface IProps {
   className?: string;
   event: IEventShort;
   showViews?: boolean;
+  showLikes?: boolean;
+  showMember?: boolean;
 }
 
-export default function EventCard({className, event, showViews}:IProps) {
+export default function EventCard({className, event, showViews=false, showLikes=false, showMember=true}:IProps) {
   const closed = dayjs(event.startDateTime) < dayjs(new Date())
   const cnEventCard = cn(styles.eventCard, className)
   return (
     <div className={cnEventCard}>
       {showViews ? <ViewCount className={styles.viewCount} count={event.viewsCount} /> : null}
-      <MemberCount className={styles.memberCount} count={event.membersCount} selected={event.member} />
+      {showMember ? <MemberCount className={styles.memberCount} count={event.membersCount} selected={event.member} /> : null}
       <div className={styles.photo}>
         <img src={event.photoURL} alt="Фото" />
       </div>

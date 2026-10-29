@@ -52,6 +52,13 @@ const routeApi = createApi({
     getRouteRandom: builder.query<IRouteListResponse, null>({
       query: () => ({url: 'route/random/3/'}),
       providesTags: ['ROUTE_RANDOM'],
+    }),
+    toggleRouteLike: builder.mutation<any, number>({
+      query:(routeId ) => ({
+        url: `route/like/${routeId}/`,
+        method: 'POST'
+      }),
+      invalidatesTags: ['ROUTE']
     })
   })
 })
@@ -60,6 +67,7 @@ export const {
   useLazyGetRouteListQuery,
   useGetRouteQuery,
   useLazyGetRouteRandomQuery,
+  useToggleRouteLikeMutation,
 } = routeApi
 
 export default routeApi

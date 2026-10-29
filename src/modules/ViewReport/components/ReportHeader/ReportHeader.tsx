@@ -68,13 +68,13 @@ export default function ReportHeader({className, route, event}: IProps) {
       {(routeShort)
         ? <div className={styles.cardWrapper}>
             Маршрут
-            <RouteCard route={routeShort} showViews={false}/>
+            <RouteCard route={routeShort} showViews={false} showLikes={false}/>
           </div>
         : null}
       {(eventShort)
         ? <div className={styles.cardWrapper}>
             Событие
-            <EventCard event={eventShort} showViews={false}/>
+            <EventCard event={eventShort} showViews={false} showMember={false}/>
           </div>
         : null}
     </div>

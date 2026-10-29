@@ -11,15 +11,16 @@ interface IProps {
   className?: string;
   report: IReportShort;
   showViews?: boolean;
+  showLikes?: boolean;
 }
 
-export default function ReportCard({className, report, showViews}: IProps) {
+export default function ReportCard({className, report, showViews=false, showLikes=true}: IProps) {
   return (
     <div className={styles.reportCard}>
       <div className={styles.photo}>
         <img src={report.photoURL} alt="Фото" />
         {showViews ? <ViewCount className={styles.viewCount} count={report.viewsCount} /> : null}
-        <LikeCount className={styles.likeCount} count={report.likesCount} selected={report.like} />
+        {showLikes ? <LikeCount className={styles.likeCount} count={report.likesCount} selected={report.like} /> : null}
       </div>
       <div className={styles.info}>
         <div className={styles.description}>

@@ -2,6 +2,37 @@
   padding: 0 6rem;
 }
 
+.backLine {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.like {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.likeIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  stroke: var(--color-text_primary);
+}
+
+.likeSelected {
+  stroke: var(--color-error);
+  fill: var(--color-error);
+}
+
+.likeText {
+  min-width: 2rem;
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 1.625rem;
+  color: var(--color-text_primary);
+}
+
 .title {
   width: 100%;
   font-family: Inter;
@@ -20,7 +51,7 @@
 }
 
 .header {
-  display: block;
+  display: flex;
 }
 
 .footer {
@@ -40,4 +71,12 @@
     display: block;
   }
 
+  .likeIcon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .likeText {
+    font-size: 1rem;
+  }
 }

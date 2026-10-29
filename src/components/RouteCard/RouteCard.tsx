@@ -11,9 +11,10 @@ interface IProps {
   className?: string;
   route: IRouteShort;
   showViews?: boolean;
+  showLikes?: boolean;
 }
 
-export default function RouteCard({className, route, showViews}: IProps) {
+export default function RouteCard({className, route, showViews=false, showLikes=true}: IProps) {
   const cnDifficulty = cn(styles.difficulty, className,
     {
       [styles.light]: route.complexity.id === 1,
@@ -24,7 +25,7 @@ export default function RouteCard({className, route, showViews}: IProps) {
   return (
     <div className={styles.routeCard}>
       {showViews ? <ViewCount className={styles.viewCount} count={route.viewsCount} /> : null}
-      <LikeCount className={styles.likeCount} count={route.likesCount} selected={route.like} />
+      {showLikes ? <LikeCount className={styles.likeCount} count={route.likesCount} selected={route.like} /> : null }
       <div className={styles.photo}>
         <img src={route.photoURL} alt="Фото" />
       </div>
