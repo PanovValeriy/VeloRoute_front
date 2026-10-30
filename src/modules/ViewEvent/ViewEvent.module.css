@@ -26,6 +26,11 @@
   width: 60%;
 }
 
+.eventMembers {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 @media screen and (max-width: 650px) {
   .viewEvent {
     padding: 1rem 0.5rem;

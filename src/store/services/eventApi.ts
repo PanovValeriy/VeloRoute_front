@@ -59,6 +59,24 @@ const eventApi = createApi({
         }
       },
       providesTags: ['EVENT_FIRST']
+    }),
+    toggleEventLike: builder.mutation<any, number>({
+      query: (eventId)=> {
+        return {
+          url: `/event/like/${eventId}/`,
+          method: 'POST'
+        }
+      },
+      invalidatesTags: ['EVENT']
+    }),
+    toggleEventMember: builder.mutation<any, number>({
+      query: (eventId) => {
+        return {
+          url: `/event/member/${eventId}/`,
+          method: 'POST'
+        }
+      },
+      invalidatesTags: ['EVENT']
     })
   })
 })
@@ -67,6 +85,8 @@ export const {
   useLazyGetEventListQuery,
   useGetEventQuery,
   useGetEventFirstQuery,
+  useToggleEventLikeMutation,
+  useToggleEventMemberMutation,
 } = eventApi
 
 export default eventApi

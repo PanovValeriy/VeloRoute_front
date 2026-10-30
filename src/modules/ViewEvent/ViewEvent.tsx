@@ -8,6 +8,9 @@ import Content from "../../components/Content/Content";
 import {useGetReportListQuery} from "../../store/services/reportApi";
 import ReportList from "../../components/ReportList/ReportList";
 import ButtonBack from "../../components/ButtonBack/ButtonBack";
+import EventMembers from "./components/EventMembers/EventMembers";
+import {useAuth} from "../../context/AuthContext";
+import dayjs from "dayjs";
 
 export default function ViewEvent() {
 
@@ -15,9 +18,9 @@ export default function ViewEvent() {
   const [searchParams] = useSearchParams()
   const eventId: number = Number(id);
   const code = searchParams.get('code') || ''
+  const {isAuthenticated} = useAuth()
   const {data: event, isLoading} = useGetEventQuery({eventId, code})
   const {data: dataReportList} = useGetReportListQuery({eventId, sort: 'date:desc'})
-
 
   if (isLoading) {
     return (<div>Загрузка</div>)
@@ -28,7 +31,10 @@ export default function ViewEvent() {
       <div>Событие не найдено</div>
     )
   }
+
+  const showMembers = isAuthenticated || dayjs(event.startDateTime) > dayjs(new Date())
   let eventBody: string = event.description
+
   return (
     <div className={styles.viewEvent}>
       <ButtonBack />
@@ -41,6 +47,7 @@ export default function ViewEvent() {
         <EventParams className={styles.eventParams} event={event}/>
         <EventParamsMobile className={styles.eventParams} event={event} />
       </div>
+      {(showMembers) ? <EventMembers className={styles.eventMembers} event={event} /> : null}
       <Content title="Описание события" body={eventBody} />
       {(event.miniReport) ? <Content title={'Миниотчет'} body={event.miniReport} /> : null}
       {((dataReportList) && (dataReportList.recCount !== 0)) ? <ReportList title="Отчеты по событию" reportList = {dataReportList.reportList}/> : null}
