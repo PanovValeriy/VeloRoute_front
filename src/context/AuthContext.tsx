@@ -1,6 +1,6 @@
 import React, {createContext, useCallback, useContext, useState} from 'react'
 import {USER_DATA_KEY} from "../constants";
-import {apiLogin, getToken, IUserData, removeToken, saveToken} from "../api/auth";
+import {apiChangePassword, apiLogin, getToken, IChangePassword, IUserData, removeToken, saveToken} from "../api/auth";
 
 export interface IAuthState {
   user: IUserData | null;
@@ -55,6 +55,16 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const updateUser = useCallback((userData: IUserData) => {
     localStorage.setItem(USER_DATA_KEY, JSON.stringify(userData))
     setState((prev) => ({...prev, user: userData}))
+  }, [])
+
+  const changeUserPassword = useCallback(async (passwords: IChangePassword) => {
+    setIsLoading(true)
+    try {
+      const result = await apiChangePassword(passwords)
+      console.log(result)
+    } finally {
+      setIsLoading(false)
+    }
   }, [])
 
   const value: IAuthContextType = {

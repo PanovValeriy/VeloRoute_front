@@ -1,0 +1,102 @@
+.profile {
+  width: 41.5626rem;
+  height: 17rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--color-surface);
+  box-shadow: 0 0.5rem 1.25rem 0 var(--color-shadow);
+}
+
+.titleLine {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.buttonLogout {
+  border-color: var(--color-error);
+  color: var(--color-error);
+  &:hover {
+    background-color: transparent;
+    color: var(--color-error);
+    outline: 0.0625rem solid var(--color-error);
+  }
+  &:focus {
+    border-color: var(--color-error);
+    outline: 0.0625rem solid var(--color-error);
+  }
+}
+
+.userLine {
+  height: 4rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.userAvatar {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: var(--color-border);
+  fill: var(--color-text_secondary);
+}
+
+.userNameGroup {
+  height: 3.125rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.userName {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--color-text_primary);
+}
+
+.userLogin {
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 0.625rem;
+  color: var(--color-text_secondary);
+}
+
+.item {
+  height: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.itemIcon {
+  width: 1rem;
+  height: 1rem;
+  fill: var(--color-text_secondary);
+}
+
+.itemName {
+  width: 3.625rem;
+  height: 0.9375rem;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: var(--color-text_secondary);
+}
+
+.itemValue {
+  height: 0.9375rem;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: var(--color-text_primary);
+}

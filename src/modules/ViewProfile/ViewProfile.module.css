@@ -1,0 +1,15 @@
+.viewProfile {
+
+}
+
+.title {
+  font-family: Inter;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--color-text_primary)
+}
+
+.group {
+  display: flex;
+  gap: 2rem;
+}
