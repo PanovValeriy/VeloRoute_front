@@ -13,6 +13,7 @@ import ViewInfoList from "./modules/ViewInfoList/ViewInfoList";
 import ViewInfo from "./modules/ViewInfo/ViewInfo";
 import {AuthProvider} from "./context/AuthContext";
 import ViewLogin from "./modules/ViewLogin/ViewLogin";
+import ViewRegister from "./modules/ViewRegister/ViewRegister";
 function App() {
 
   showTheme(readTheme())
@@ -23,9 +24,10 @@ function App() {
         <Routes>
           <Route element={<MainPage mainPage={true}/>}>
             <Route path="/" element={<ViewMain />} />
-            <Route path="/login" element={<ViewLogin />} />
           </Route>
           <Route element={<MainPage />}>
+            <Route path="/login" element={<ViewLogin />} />
+            <Route path="/register" element={<ViewRegister />} />
             <Route path="/routes" element={<ViewRouteList />}/>
             <Route path="/route/:id" element={<ViewRoute />}/>
             <Route path="/reports" element={<ViewReportList />}/>

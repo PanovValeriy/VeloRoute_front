@@ -1,7 +1,7 @@
 import styles from "./Menu.module.css"
 import cn from "classnames"
 import MenuItem from "./components/MenuItem/MenuItem";
-import IItem from "../../types/types"
+import {IItem} from "../../types/types"
 import MenuItemMobile from "./components/MenuItemMobile/MenuItemMobile";
 import {useEffect, useState} from "react";
 import {useLocation} from "react-router";
@@ -28,15 +28,17 @@ export default function Menu({className, mobile}:IProps) {
   ]
 
   useEffect(()=> {
-
     if (pathname.includes('route')) {
       setSelected(1)
     } else if (pathname.includes('report')) {
       setSelected(2)
     } else if (pathname.includes('event')) {
       setSelected(3)
-    } else setSelected(0)
-
+    } else if (pathname === '/') {
+      setSelected(0)
+    } else {
+      setSelected(-1)
+    }
   }, [pathname])
 
 

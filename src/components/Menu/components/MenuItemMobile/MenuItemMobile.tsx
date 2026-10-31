@@ -1,7 +1,7 @@
 import styles from "./MenuItemMobile.module.css"
 import cn from "classnames"
 import Icon from "../../../Icon/Icon";
-import IItem from "../../../../types/types";
+import {IItem} from "../../../../types/types";
 import {Link} from "react-router-dom";
 
 interface IProps {

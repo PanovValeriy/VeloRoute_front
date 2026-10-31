@@ -176,9 +176,26 @@ export interface IInfoShort {
 }
 
 // Пункт меню
-export default interface IItem {
+export interface IItem {
   name: string;
   url: string;
   selected: boolean;
   iconName?: string;
 }
+
+// Запись для регистрации
+export interface IRegister {
+  login: string;
+  password: string;
+  firstName?: string;
+  lastName?: string;
+  nickName?: string;
+}
+
+export interface IErrorResponse {
+  data: {
+    detail: string;
+  },
+  status: number;
+}
+

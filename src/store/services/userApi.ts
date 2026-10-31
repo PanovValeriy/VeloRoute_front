@@ -1,5 +1,6 @@
-import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
+import {BaseQueryFn, createApi, FetchArgs, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 import {API_SERVER} from "../../constants";
+import {IErrorResponse, IRegister} from "../../types/types";
 
 export interface IUserResponse {
   id: number;
@@ -25,7 +26,7 @@ export interface ILoginParams {
 
 const userApi = createApi({
   reducerPath: 'user',
-  baseQuery: fetchBaseQuery({baseUrl: API_SERVER}),
+  baseQuery: fetchBaseQuery({baseUrl: API_SERVER}) as BaseQueryFn<string | FetchArgs, unknown, IErrorResponse, {}>,
   tagTypes: ['USER'],
   endpoints: (builder) => ({
     getProfile: builder.query<IUserResponse, IUserParams>({
@@ -56,10 +57,26 @@ const userApi = createApi({
           method: 'POST'
         }
       }
+    }),
+    register: builder.mutation<any, IRegister>({
+      query: (data: IRegister) => {
+        return {
+          url: '/user/register/',
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        }
+      }
     })
   })
 })
 
-export const {useGetProfileQuery, useLoginQuery, useLazyLoginQuery, useLogoutQuery} = userApi
+export const {
+  useGetProfileQuery,
+  useLoginQuery,
+  useLazyLoginQuery,
+  useLogoutQuery,
+  useRegisterMutation,
+} = userApi
 
 export default userApi

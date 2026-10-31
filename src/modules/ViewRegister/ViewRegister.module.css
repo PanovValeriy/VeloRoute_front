@@ -1,0 +1,20 @@
+.viewRegister {
+  display: flex;
+  width: 17.875rem;
+  height: 31.9375rem;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  gap: 1rem;
+}
+
+.title {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 1.625rem;
+  text-align: center;
+}
+
+.field {
+  display: flex;
+  gap: 0.5rem
+}

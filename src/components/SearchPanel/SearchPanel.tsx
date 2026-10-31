@@ -1,6 +1,6 @@
 import styles from "./SearchPanel.module.css"
 import cn from "classnames"
-import React, {useEffect, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import Select from "../Select/Select";
 import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
@@ -57,9 +57,10 @@ export default function SearchPanel({className, fields, search='', lengthFrom=0,
     setHideArchiveValue(checked)
   }
 
-  function handleClickApply(): void {
+  const handleClickApply = useCallback(() => {
     onApply({search: searchValue, lengthFrom: (lengthFromValue || 0), lengthTo: (lengthToValue || 0), complexity: complexityValue, hideArchive: hideArchiveValue})
-  }
+  }, [searchValue, lengthFromValue, lengthToValue, complexityValue, hideArchiveValue, onApply])
+
 
   function handleKeyDown(evt: React.KeyboardEvent<HTMLInputElement>): void {
     if (evt.code === 'Enter' || evt.code === 'NumpadEnter') {
@@ -78,7 +79,7 @@ export default function SearchPanel({className, fields, search='', lengthFrom=0,
 
   useEffect(() => {
     handleClickApply()
-  }, [complexityValue, hideArchiveValue])
+  }, [handleClickApply])
 
   return (
     <div className={cnSearchPanel}>
@@ -119,7 +120,6 @@ export default function SearchPanel({className, fields, search='', lengthFrom=0,
           </div>
         : null
       }
-      {/*<button className={styles.button} onClick={handleClickApply}>Применить</button>*/}
       <Button onClick={handleClickClear}>Очистить</Button>
     </div>
   )

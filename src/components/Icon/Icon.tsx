@@ -28,6 +28,9 @@ import {ReactComponent as SvgCheckbox} from "./icons/icon_checkbox.svg";
 import {ReactComponent as SvgUser} from "./icons/icon_user.svg";
 import {ReactComponent as SvgLike}  from "./icons/icon_like.svg";
 import {ReactComponent as SvgMember} from "./icons/icon_member.svg";
+import {ReactComponent as SvgName} from "./icons/icon_name.svg";
+import {ReactComponent as SvgNickName} from "./icons/icon_nickname.svg";
+import {ReactComponent as SvgPassword} from "./icons/icon_password.svg";
 
 
 interface IProps {
@@ -126,6 +129,15 @@ export default function Icon ({ iconName, className }: IProps) {
 
     case "member":
       return <SvgMember className={className} />
+
+    case "name":
+      return <SvgName className={className} />
+
+    case "nickname":
+      return <SvgNickName className={className} />
+
+    case "password":
+      return <SvgPassword className={className} />
 
     default:
       return null;
