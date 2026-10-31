@@ -79,7 +79,7 @@ export default function SearchPanel({className, fields, search='', lengthFrom=0,
 
   useEffect(() => {
     handleClickApply()
-  }, [handleClickApply])
+  }, [])
 
   return (
     <div className={cnSearchPanel}>
