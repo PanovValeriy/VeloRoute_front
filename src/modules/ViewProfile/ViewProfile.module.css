@@ -13,3 +13,13 @@
   display: flex;
   gap: 2rem;
 }
+
+@media screen and (max-width: 650px) {
+  .group {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0.5rem;
+    gap: 1rem;
+  }
+}
