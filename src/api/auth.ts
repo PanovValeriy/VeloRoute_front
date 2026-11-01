@@ -39,12 +39,26 @@ export async function apiLogin(login: string, password: string): Promise<ILoginR
   return response.json();
 }
 
+export async function apiProfile(): Promise<IUserData> {
+  const response = await fetch(`${API_SERVER}user/profile/`, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Token ${getToken()}`,
+    }
+  })
+  if (!response.ok) {
+    const errorData: ILoginError = await response.json().catch(() => {})
+    throw new Error(errorData.detail || errorData.message || 'Ошибка получения профиля')
+  }
+  return response.json();
+}
+
 export async function apiChangePassword(passwords: IChangePassword): Promise<string> {
   const response = await fetch(`${API_SERVER}user/changepassword/`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': "Token " + getToken(),
+      'Authorization': `Token ${getToken()}`,
     },
     body: JSON.stringify(passwords),
   })

@@ -1,6 +1,15 @@
 import React, {createContext, useCallback, useContext, useState} from 'react'
 import {USER_DATA_KEY} from "../constants";
-import {apiChangePassword, apiLogin, getToken, IChangePassword, IUserData, removeToken, saveToken} from "../api/auth";
+import {
+  apiChangePassword,
+  apiLogin,
+  apiProfile,
+  getToken,
+  IChangePassword,
+  IUserData,
+  removeToken,
+  saveToken
+} from "../api/auth";
 
 export interface IAuthState {
   user: IUserData | null;
@@ -15,6 +24,7 @@ export interface IAuthContextType {
   login: (login: string, password: string) => Promise<IUserData>;
   logout: () => void;
   updateUser: (userData: IUserData) => void;
+  reloadProfile: () => void;
 }
 
 function getInitialAuthState(): IAuthState {
@@ -57,6 +67,25 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setState((prev) => ({...prev, user: userData}))
   }, [])
 
+  const reloadProfile = useCallback(async (): Promise<void> => {
+    setIsLoading(true)
+    try {
+      const user = await apiProfile()
+      localStorage.setItem(USER_DATA_KEY, JSON.stringify(user))
+      setState((prev) =>({...prev, user}))
+    }
+    catch {
+      const userNew = state.user
+      if (userNew) {
+        userNew.status = -1
+        setState((prev) => ({...prev, user: userNew}))
+      }
+    }
+    finally {
+      setIsLoading(false)
+    }
+  }, [])
+
   const changeUserPassword = useCallback(async (passwords: IChangePassword) => {
     setIsLoading(true)
     try {
@@ -74,7 +103,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     isLoading,
     login,
     logout,
-    updateUser
+    updateUser,
+    reloadProfile,
   }
 
   return (
