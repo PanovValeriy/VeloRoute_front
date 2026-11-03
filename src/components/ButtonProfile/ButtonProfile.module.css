@@ -14,15 +14,10 @@
   fill: var(--color-text_secondary);
   border-radius: 50%;
   background-color: var(--color-border);
-}
 
-.buttonProfileIconAuth {
-  width: 1.5rem !important;
-  height: 1.5rem !important;
-  fill: var(--color-accent_green);
-  border-radius: 50%;
-  background-color: var(--color-border);
-  text-align: center;
+  &.auth {
+    fill: var(--color-accent_green);
+  }
 }
 
 .buttonProfileName {

@@ -22,9 +22,11 @@ export default function ButtonProfile({className}: IProps) {
     }
   }
 
+  const cnButtonProfileIcon = cn(styles.buttonProfileIcon, {[styles.auth]: isAuthenticated});
+
   return (
     <div className={cnButtonProfile} onClick={handleClickLogin}>
-        <Icon className={isAuthenticated ? styles.buttonProfileIconAuth : styles.buttonProfileIcon} iconName={"user"} />
+        <Icon className={cnButtonProfileIcon} iconName={"user"} />
       <div className={styles.buttonProfileCaption}>{isLoadingLogin ? 'Вход...' : !isAuthenticated ? 'Войти' : user?.nickName}</div>
     </div>
   )
