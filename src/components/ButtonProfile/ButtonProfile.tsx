@@ -18,15 +18,14 @@ export default function ButtonProfile({className}: IProps) {
     if (!isAuthenticated) {
       navigate("/login");
     } else {
-      getLogout()
+      navigate("/profile")
     }
   }
 
   return (
     <div className={cnButtonProfile} onClick={handleClickLogin}>
-      <Icon className={isAuthenticated ? styles.buttonProfileIconAuth : styles.buttonProfileIcon} iconName={"user"} />
-      {isAuthenticated ? <div className={styles.buttonProfileName}>{user?.nickName}</div> : null}
-      <div className={styles.buttonProfileCaption}>{isLoadingLogin ? 'Вход...' : !isAuthenticated ? 'Войти' : 'Выйти'}</div>
+        <Icon className={isAuthenticated ? styles.buttonProfileIconAuth : styles.buttonProfileIcon} iconName={"user"} />
+      <div className={styles.buttonProfileCaption}>{isLoadingLogin ? 'Вход...' : !isAuthenticated ? 'Войти' : user?.nickName}</div>
     </div>
   )
 }

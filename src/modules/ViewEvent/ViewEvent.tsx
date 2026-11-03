@@ -3,7 +3,7 @@ import {useParams} from "react-router";
 import {useSearchParams} from "react-router-dom";
 import EventParams from "./components/EventParams/EventParams";
 import EventParamsMobile from "./components/EventParamMobile/EventParamsMobile";
-import {useGetEventQuery} from "../../store/services/eventApi";
+import {useLazyGetEventQuery} from "../../store/services/eventApi";
 import Content from "../../components/Content/Content";
 import {useGetReportListQuery} from "../../store/services/reportApi";
 import ReportList from "../../components/ReportList/ReportList";
@@ -11,6 +11,7 @@ import ButtonBack from "../../components/ButtonBack/ButtonBack";
 import EventMembers from "./components/EventMembers/EventMembers";
 import {useAuth} from "../../context/AuthContext";
 import dayjs from "dayjs";
+import { useEffect } from 'react';
 
 export default function ViewEvent() {
 
@@ -18,9 +19,13 @@ export default function ViewEvent() {
   const [searchParams] = useSearchParams()
   const eventId: number = Number(id);
   const code = searchParams.get('code') || ''
-  const {isAuthenticated} = useAuth()
-  const {data: event, isLoading} = useGetEventQuery({eventId, code})
+  const {user, isAuthenticated} = useAuth()
+  const [getEvent, {data: event, isLoading}] = useLazyGetEventQuery()
   const {data: dataReportList} = useGetReportListQuery({eventId, sort: 'date:desc'})
+
+  useEffect(() => {
+    getEvent({eventId, code})
+  }, [user])
 
   if (isLoading) {
     return (<div>Загрузка</div>)
