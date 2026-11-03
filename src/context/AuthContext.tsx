@@ -16,6 +16,11 @@ export interface IAuthState {
   token: string | null;
 }
 
+export interface IResultChangePassword {
+  error: boolean;
+  detail: string;
+}
+
 export interface IAuthContextType {
   user: IUserData | null;
   token: string | null;
@@ -25,6 +30,8 @@ export interface IAuthContextType {
   logout: () => void;
   updateUser: (userData: IUserData) => void;
   reloadProfile: () => void;
+  changePassword: (passwords: IChangePassword) => void;
+  resultChangePassword: IResultChangePassword;
 }
 
 function getInitialAuthState(): IAuthState {
@@ -41,6 +48,7 @@ const AuthContext = createContext<IAuthContextType | null>(null)
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [state, setState] = useState<IAuthState>(getInitialAuthState())
   const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [resultChangePassword, setResultChangePassword] = useState<IResultChangePassword>({error: false, detail: ''})
 
   const login = useCallback(async (login: string, password: string): Promise<IUserData> => {
     setIsLoading(true)
@@ -84,17 +92,21 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     finally {
       setIsLoading(false)
     }
-  }, [])
+  }, [state.user])
 
-  const changeUserPassword = useCallback(async (passwords: IChangePassword) => {
+  const changePassword = useCallback(async (passwords: IChangePassword): Promise<void> => {
     setIsLoading(true)
     try {
-      const result = await apiChangePassword(passwords)
-      console.log(result)
+      const data = await apiChangePassword(passwords)
+      setResultChangePassword({error: false, detail: data.detail})
+    } catch (error) {
+      setResultChangePassword({error: true, detail: (error instanceof Error) ? error.message : 'Ошибка смены пароля'})
     } finally {
       setIsLoading(false)
     }
+    return
   }, [])
+
 
   const value: IAuthContextType = {
     user: state.user,
@@ -105,6 +117,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     logout,
     updateUser,
     reloadProfile,
+    changePassword,
+    resultChangePassword,
   }
 
   return (

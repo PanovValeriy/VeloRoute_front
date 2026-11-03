@@ -17,7 +17,7 @@ export default function ViewProfile() {
     if (isAuthenticated) {
       reload()
     }
-  }, []);
+  }, [isAuthenticated]);
 
   if (user && user.status !== 0 ) {
     logout()

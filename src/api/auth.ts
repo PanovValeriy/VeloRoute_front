@@ -1,4 +1,5 @@
 import {API_SERVER, TOKEN_KEY} from "../constants";
+import {IResultChangePassword} from "../context/AuthContext";
 
 export interface IUserData {
   id: number;
@@ -53,7 +54,7 @@ export async function apiProfile(): Promise<IUserData> {
   return response.json();
 }
 
-export async function apiChangePassword(passwords: IChangePassword): Promise<string> {
+export async function apiChangePassword(passwords: IChangePassword): Promise<IResultChangePassword> {
   const response = await fetch(`${API_SERVER}user/changepassword/`, {
     method: 'PUT',
     headers: {

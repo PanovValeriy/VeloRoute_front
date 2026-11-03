@@ -3,6 +3,7 @@ import cn from 'classnames'
 import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
 import {IUserData} from "../../api/auth";
+import {useAuth} from "../../context/AuthContext";
 
 interface IProps {
   className?: string;
@@ -10,12 +11,13 @@ interface IProps {
 }
 
 export default function Profile({className, user}: IProps) {
+  const {logout} = useAuth()
   const cnProfile = cn(styles.profile, className)
   return (
     <div className={cnProfile}>
       <div className={styles.titleLine}>
         <div className={styles.title}>Личные данные</div>
-        <Button className={styles.buttonLogout}>Выйти</Button>
+        <Button className={styles.buttonLogout} onClick={logout}>Выйти</Button>
       </div>
       <div className={styles.userLine}>
         <Icon className={styles.userAvatar} iconName={'user'} />
