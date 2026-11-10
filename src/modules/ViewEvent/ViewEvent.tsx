@@ -25,7 +25,7 @@ export default function ViewEvent() {
 
   useEffect(() => {
     getEvent({eventId, code})
-  }, [user])
+  }, [user, eventId, code, getEvent])
 
   if (isLoading) {
     return (<div>Загрузка</div>)

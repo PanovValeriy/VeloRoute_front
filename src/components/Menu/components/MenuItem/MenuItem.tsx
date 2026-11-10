@@ -15,7 +15,7 @@ export default function MenuItem({className, item, setSelected}: IProps) {
 const cnMenuItem = cn(styles.menuItem, className, {[styles.menuItemSelected]: item.selected})
 
   return (
-    <Link className={cnMenuItem} to={item.url} onClick={() => setSelected()}>
+    <Link className={cnMenuItem} to={item.url} onClick={() => setSelected()} replace={true} >
       {item.name}
     </Link>
   )

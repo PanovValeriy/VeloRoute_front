@@ -9,7 +9,7 @@ interface IProps {
 }
 
 export default function ButtonProfile({className}: IProps) {
-  const {user, isAuthenticated, logout: getLogout, isLoading: isLoadingLogin} = useAuth()
+  const {user, isAuthenticated, isLoading: isLoadingLogin} = useAuth()
   const navigate = useNavigate();
 
   const cnButtonProfile = cn(styles.buttonProfile, className);

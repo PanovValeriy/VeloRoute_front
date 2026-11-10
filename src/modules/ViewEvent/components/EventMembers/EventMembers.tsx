@@ -48,7 +48,7 @@ export default function EventMembers({className, event}: IProps) {
           <div className={styles.membersCountLineButton} onClick={() => {setMemberListHide(!memberListHide)}}><Icon className={styles.membersCountLineButton} iconName="arrowDown" /></div>
         </div>
         <div className={cnMembersList}>
-          {event.members_set.map((item) => (<div className={styles.memberItem}>{item}</div>))}
+          {event.members_set.map((item, index) => (<div className={styles.memberItem} key={index}>{item}</div>))}
         </div>
       </div>
       {(showMemberButton) ? <Button className={cnMemberButton} onClick={() => setShowConfirm(true)}>{!event.member ? 'Записаться' : 'Отменить запись'}</Button> : null}
