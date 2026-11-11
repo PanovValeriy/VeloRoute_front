@@ -7,9 +7,10 @@ import {IResultChangePassword, useAuth} from "../../context/AuthContext";
 
 interface IProps {
   className?: string;
+  onChangePasswordOk?: () => void;
 }
 
-export default function ChangePassword({className}: IProps) {
+export default function ChangePassword({className, onChangePasswordOk}: IProps) {
   const [passwordOld, setPasswordOld] = useState<string>('')
   const [passwordNew, setPasswordNew] = useState<string>('')
   const [passwordConfirm, setPasswordConfirm] = useState<string>('')
@@ -35,6 +36,9 @@ export default function ChangePassword({className}: IProps) {
       setDetail({error: false, detail: 'Происходит смена пароля ...'})
     } else {
       setDetail(resultChangePassword)
+      if (!detail.error && detail.detail && onChangePasswordOk) {
+        onChangePasswordOk()
+      }
     }
   }, [isLoading, resultChangePassword])
 

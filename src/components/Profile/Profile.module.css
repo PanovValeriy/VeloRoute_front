@@ -1,6 +1,5 @@
 .profile {
   width: 41.5626rem;
-  height: 17rem;
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -100,6 +99,16 @@
   font-size: 0.75rem;
   color: var(--color-text_primary);
 }
+
+.buttonChangePasswordWrapper {
+  text-align: right;
+}
+
+.buttonChangePassword {
+  border-color: var(--color-primary_green);
+  color: var(--color-text_primary);
+}
+
 
 @media screen and (max-width: 650px) {
   .profile {

@@ -4,6 +4,7 @@ import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
 import {IUserData} from "../../api/auth";
 import {useAuth} from "../../context/AuthContext";
+import { useNavigate } from 'react-router';
 
 interface IProps {
   className?: string;
@@ -12,7 +13,13 @@ interface IProps {
 
 export default function Profile({className, user}: IProps) {
   const {logout} = useAuth()
+  const navigate = useNavigate()
   const cnProfile = cn(styles.profile, className)
+
+  function handleChangePassword() {
+    navigate('/changepassword')
+  }
+
   return (
     <div className={cnProfile}>
       <div className={styles.titleLine}>
@@ -45,6 +52,9 @@ export default function Profile({className, user}: IProps) {
         <Icon className={styles.itemIcon} iconName={'nickname'} />
         <div className={styles.itemName}>Ник</div>
         <div className={styles.itemValue}>{user.nickName}</div>
+      </div>
+      <div className={styles.buttonChangePasswordWrapper}>
+        <Button className={styles.buttonChangePassword} onClick={handleChangePassword}>Сменить пароль</Button>
       </div>
     </div>
   )
